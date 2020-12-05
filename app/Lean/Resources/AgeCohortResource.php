@@ -18,7 +18,7 @@ class AgeCohortResource extends LeanResource
         'id',
         'name',
     ];
-    public static string $title = 'Age Cohort';
+    public static string $title = 'name';
     public static string $icon = 'heroicon-o-user-group';
 
     /**
@@ -37,5 +37,9 @@ class AgeCohortResource extends LeanResource
             Number::make('max_age')->optional(),
             //
         ];
+    }
+
+    public static function label(): string {
+        return "Age Cohort";
     }
 }

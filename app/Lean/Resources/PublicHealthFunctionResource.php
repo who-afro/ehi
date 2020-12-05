@@ -17,7 +17,7 @@ class PublicHealthFunctionResource extends LeanResource
         'id',
         'name',
     ];
-    public static string $title = 'Public Health Function';
+    public static string $title = 'name';
     public static string $icon = 'heroicon-o-shield-check';
 
     /**
@@ -33,5 +33,9 @@ class PublicHealthFunctionResource extends LeanResource
             Trix::make('description')
                 ->label(__('Description'))->optional(),
         ];
+    }
+
+    public static function label(): string {
+        return "Public Health Function";
     }
 }

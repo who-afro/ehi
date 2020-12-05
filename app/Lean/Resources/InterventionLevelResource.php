@@ -17,7 +17,7 @@ class InterventionLevelResource extends LeanResource
         'id',
         'name',
     ];
-    public static string $title = 'Intervention Level';
+    public static string $title = 'name';
     public static string $icon = 'heroicon-o-office-building';
 
     /**
@@ -33,5 +33,9 @@ class InterventionLevelResource extends LeanResource
             Trix::make('description')
                 ->label(__('Description'))->optional(),
         ];
+    }
+
+    public static function label(): string {
+        return "Intervention Level";
     }
 }
