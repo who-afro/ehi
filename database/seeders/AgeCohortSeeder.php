@@ -2,11 +2,16 @@
 
 namespace Database\Seeders;
 
-use App\Models\AgeCohort;
-use Illuminate\Database\Seeder;
+use Flynsarmy\CsvSeeder\CsvSeeder;
+use Illuminate\Support\Facades\DB;
 
-class AgeCohortSeeder extends Seeder
+class AgeCohortSeeder extends CsvSeeder
 {
+    public function __construct()
+    {
+        $this->table = 'age_cohorts';
+        $this->filename = base_path().'/database/seeders/csv/age_cohorts.csv';
+    }
     /**
      * Run the database seeds.
      *
@@ -14,6 +19,7 @@ class AgeCohortSeeder extends Seeder
      */
     public function run()
     {
-        AgeCohort::factory()->count(5)->create();
+        DB::table($this->table)->truncate();
+        parent::run();
     }
 }

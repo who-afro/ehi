@@ -2,11 +2,16 @@
 
 namespace Database\Seeders;
 
-use App\Models\PublicHealthFunction;
-use Illuminate\Database\Seeder;
+use Flynsarmy\CsvSeeder\CsvSeeder;
+use Illuminate\Support\Facades\DB;
 
-class PublicHealthFunctionSeeder extends Seeder
+class PublicHealthFunctionSeeder extends CsvSeeder
 {
+    public function __construct()
+    {
+        $this->table = 'public_health_functions';
+        $this->filename = base_path().'/database/seeders/csv/public_health_functions.csv';
+    }
     /**
      * Run the database seeds.
      *
@@ -14,6 +19,7 @@ class PublicHealthFunctionSeeder extends Seeder
      */
     public function run()
     {
-        PublicHealthFunction::factory()->count(5)->create();
+        DB::table($this->table)->truncate();
+        parent::run();
     }
 }

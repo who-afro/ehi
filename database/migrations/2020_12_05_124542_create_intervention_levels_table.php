@@ -20,6 +20,13 @@ class CreateInterventionLevelsTable extends Migration
             $table->uuid('uuid')->unique();
             $table->timestamps();
         });
+
+        Schema::disableForeignKeyConstraints();
+        // run the baseline data seeder
+        Artisan::call('db:seed',[
+            '--class' => 'InterventionLevelSeeder'
+        ]);
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ffb89fe15433006801106108d8ee601",
+    "content-hash": "bccbf85a5af4a5c78d98c5845efefb12",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -117,24 +117,25 @@
         },
         {
             "name": "blade-ui-kit/blade-heroicons",
-            "version": "0.3.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blade-ui-kit/blade-heroicons.git",
-                "reference": "b80c667dfe6eb5c69730e11810ca2d5d1654314a"
+                "reference": "2cfa969f0e2ef7350ad46ad449bb760a905ae044"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blade-ui-kit/blade-heroicons/zipball/b80c667dfe6eb5c69730e11810ca2d5d1654314a",
-                "reference": "b80c667dfe6eb5c69730e11810ca2d5d1654314a",
+                "url": "https://api.github.com/repos/blade-ui-kit/blade-heroicons/zipball/2cfa969f0e2ef7350ad46ad449bb760a905ae044",
+                "reference": "2cfa969f0e2ef7350ad46ad449bb760a905ae044",
                 "shasum": ""
             },
             "require": {
-                "blade-ui-kit/blade-icons": "^0.5.0",
+                "blade-ui-kit/blade-icons": "^0.4.5",
                 "illuminate/support": "^7.14|^8.0",
-                "php": "^7.3|^8.0"
+                "php": "^7.2"
             },
             "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
                 "orchestra/testbench": "^5.0|^6.0",
                 "phpunit/phpunit": "^8.0|^9.0"
             },
@@ -172,7 +173,7 @@
             ],
             "support": {
                 "issues": "https://github.com/blade-ui-kit/blade-heroicons/issues",
-                "source": "https://github.com/blade-ui-kit/blade-heroicons/tree/0.3.1"
+                "source": "https://github.com/blade-ui-kit/blade-heroicons/tree/0.2.2"
             },
             "funding": [
                 {
@@ -180,20 +181,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-23T21:21:12+00:00"
+            "time": "2020-09-04T12:23:47+00:00"
         },
         {
             "name": "blade-ui-kit/blade-icons",
-            "version": "0.5.1",
+            "version": "0.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blade-ui-kit/blade-icons.git",
-                "reference": "d6bb74cdf0420900d14c6bc2304e28d0463dd0a9"
+                "reference": "b93505c65a1fc095df517d5640bae295779411e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blade-ui-kit/blade-icons/zipball/d6bb74cdf0420900d14c6bc2304e28d0463dd0a9",
-                "reference": "d6bb74cdf0420900d14c6bc2304e28d0463dd0a9",
+                "url": "https://api.github.com/repos/blade-ui-kit/blade-icons/zipball/b93505c65a1fc095df517d5640bae295779411e6",
+                "reference": "b93505c65a1fc095df517d5640bae295779411e6",
                 "shasum": ""
             },
             "require": {
@@ -201,9 +202,10 @@
                 "illuminate/filesystem": "^7.14|^8.0",
                 "illuminate/support": "^7.14|^8.0",
                 "illuminate/view": "^7.14|^8.0",
-                "php": "^7.3|^8.0"
+                "php": "^7.2"
             },
             "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
                 "mockery/mockery": "^1.3",
                 "orchestra/testbench": "^5.0|^6.0",
                 "phpunit/phpunit": "^8.0|^9.0"
@@ -230,6 +232,10 @@
             ],
             "authors": [
                 {
+                    "name": "Adam Wathan",
+                    "email": "adam.wathan@gmail.com"
+                },
+                {
                     "name": "Dries Vints",
                     "email": "dries@vints.io",
                     "homepage": "https://driesvints.com",
@@ -254,28 +260,29 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-05T20:40:53+00:00"
+            "time": "2020-09-04T11:36:46+00:00"
         },
         {
             "name": "blade-ui-kit/blade-zondicons",
-            "version": "0.2.0",
+            "version": "0.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blade-ui-kit/blade-zondicons.git",
-                "reference": "8e0b7a38c69720930247a335b96f06b2504c3b97"
+                "reference": "04f6c285987c6b03849e804035a2d3ab4b05be60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blade-ui-kit/blade-zondicons/zipball/8e0b7a38c69720930247a335b96f06b2504c3b97",
-                "reference": "8e0b7a38c69720930247a335b96f06b2504c3b97",
+                "url": "https://api.github.com/repos/blade-ui-kit/blade-zondicons/zipball/04f6c285987c6b03849e804035a2d3ab4b05be60",
+                "reference": "04f6c285987c6b03849e804035a2d3ab4b05be60",
                 "shasum": ""
             },
             "require": {
-                "blade-ui-kit/blade-icons": "^0.5.0",
+                "blade-ui-kit/blade-icons": "^0.4.5",
                 "illuminate/support": "^7.14|^8.0",
-                "php": "^7.3|^8.0"
+                "php": "^7.2"
             },
             "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
                 "orchestra/testbench": "^5.0|^6.0",
                 "phpunit/phpunit": "^8.0|^9.0"
             },
@@ -321,7 +328,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-31T20:21:33+00:00"
+            "time": "2020-09-04T12:38:53+00:00"
         },
         {
             "name": "brick/math",
@@ -768,6 +775,60 @@
             "time": "2020-11-14T15:56:27+00:00"
         },
         {
+            "name": "ezyang/htmlpurifier",
+            "version": "v4.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezyang/htmlpurifier.git",
+                "reference": "08e27c97e4c6ed02f37c5b2b20488046c8d90d75"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/08e27c97e4c6ed02f37c5b2b20488046c8d90d75",
+                "reference": "08e27c97e4c6ed02f37c5b2b20488046c8d90d75",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "simpletest/simpletest": "dev-master#72de02a7b80c6bb8864ef9bf66d41d2f58f826bd"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "HTMLPurifier": "library/"
+                },
+                "files": [
+                    "library/HTMLPurifier.composer.php"
+                ],
+                "exclude-from-classmap": [
+                    "/library/HTMLPurifier/Language/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Edward Z. Yang",
+                    "email": "admin@htmlpurifier.org",
+                    "homepage": "http://ezyang.com"
+                }
+            ],
+            "description": "Standards compliant HTML filter written in PHP",
+            "homepage": "http://htmlpurifier.org/",
+            "keywords": [
+                "html"
+            ],
+            "support": {
+                "issues": "https://github.com/ezyang/htmlpurifier/issues",
+                "source": "https://github.com/ezyang/htmlpurifier/tree/master"
+            },
+            "time": "2020-06-29T00:56:53+00:00"
+        },
+        {
             "name": "fideloper/proxy",
             "version": "4.4.1",
             "source": {
@@ -824,6 +885,66 @@
                 "source": "https://github.com/fideloper/TrustedProxy/tree/4.4.1"
             },
             "time": "2020-10-22T13:48:01+00:00"
+        },
+        {
+            "name": "flynsarmy/csv-seeder",
+            "version": "v2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Flynsarmy/laravel-csv-seeder.git",
+                "reference": "c770b291978fc8680cf68e0fa7b33e1e8690219b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Flynsarmy/laravel-csv-seeder/zipball/c770b291978fc8680cf68e0fa7b33e1e8690219b",
+                "reference": "c770b291978fc8680cf68e0fa7b33e1e8690219b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.1.0",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "nunomaduro/larastan": "^0.6.0@dev",
+                "orchestra/testbench": "6.*",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Flynsarmy\\CsvSeeder\\CsvSeederServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Flynsarmy\\CsvSeeder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Flyn San",
+                    "email": "flynsarmy@gmail.com"
+                }
+            ],
+            "description": "Allows seeding of the database with CSV files",
+            "keywords": [
+                "csv",
+                "laravel",
+                "seed",
+                "seeding",
+                "seeds"
+            ],
+            "support": {
+                "issues": "https://github.com/Flynsarmy/laravel-csv-seeder/issues",
+                "source": "https://github.com/Flynsarmy/laravel-csv-seeder/tree/v2.0.4"
+            },
+            "time": "2020-10-05T06:40:18+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -2079,6 +2200,61 @@
             "time": "2020-10-18T11:50:25+00:00"
         },
         {
+            "name": "leanadmin/lean",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:LeanAdmin/lean.git",
+                "reference": "11855bb715a83bda939d16e7f247326c08acace2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LeanAdmin/lean/zipball/11855bb715a83bda939d16e7f247326c08acace2",
+                "reference": "11855bb715a83bda939d16e7f247326c08acace2",
+                "shasum": ""
+            },
+            "require": {
+                "blade-ui-kit/blade-heroicons": "^0.2.2",
+                "illuminate/support": "^8.0",
+                "livewire/livewire": "^2.0",
+                "stevebauman/purify": "^3.0"
+            },
+            "require-dev": {
+                "nunomaduro/larastan": "^0.6.10",
+                "orchestra/testbench": "^6.0.0",
+                "vimeo/psalm": "^4.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lean\\LeanServiceProvider"
+                    ],
+                    "aliases": {
+                        "Lean": "Lean\\Lean"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lean\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Lean\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "Proprietary"
+            ],
+            "support": {
+                "source": "https://github.com/LeanAdmin/lean/tree/v0.1.0",
+                "issues": "https://github.com/LeanAdmin/lean/issues"
+            },
+            "time": "2020-11-29T19:30:23+00:00"
+        },
+        {
             "name": "livewire/livewire",
             "version": "v2.3.5",
             "source": {
@@ -3296,6 +3472,71 @@
                 }
             ],
             "time": "2020-08-18T17:17:46+00:00"
+        },
+        {
+            "name": "stevebauman/purify",
+            "version": "v3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stevebauman/purify.git",
+                "reference": "08e8830f0ab9d302f8d76d4f5854910b24bacbb3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stevebauman/purify/zipball/08e8830f0ab9d302f8d76d4f5854910b24bacbb3",
+                "reference": "08e8830f0ab9d302f8d76d4f5854910b24bacbb3",
+                "shasum": ""
+            },
+            "require": {
+                "ezyang/htmlpurifier": "^4.9.0",
+                "illuminate/support": "~5.5|~6.0|~7.0|~8.0",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.7",
+                "phpunit/phpunit": "~7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Stevebauman\\Purify\\PurifyServiceProvider"
+                    ],
+                    "aliases": {
+                        "Purify": "Stevebauman\\Purify\\Facades\\Purify"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Stevebauman\\Purify\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Bauman",
+                    "email": "steven_bauman@outlook.com"
+                }
+            ],
+            "description": "An HTML Purifier / Sanitizer for Laravel",
+            "keywords": [
+                "Purifier",
+                "clean",
+                "cleaner",
+                "html",
+                "laravel",
+                "purification",
+                "purify"
+            ],
+            "support": {
+                "issues": "https://github.com/stevebauman/purify/issues",
+                "source": "https://github.com/stevebauman/purify/tree/v3.0.3"
+            },
+            "time": "2020-09-08T20:33:16+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -9739,7 +9980,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.3|^8.0"
+        "php": "^7.4|^8.0"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"

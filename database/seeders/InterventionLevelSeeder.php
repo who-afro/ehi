@@ -3,10 +3,17 @@
 namespace Database\Seeders;
 
 use App\Models\InterventionLevel;
+use Flynsarmy\CsvSeeder\CsvSeeder;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class InterventionLevelSeeder extends Seeder
+class InterventionLevelSeeder extends CsvSeeder
 {
+    public function __construct()
+    {
+        $this->table = 'intervention_levels';
+        $this->filename = base_path().'/database/seeders/csv/intervention_levels.csv';
+    }
     /**
      * Run the database seeds.
      *
@@ -14,6 +21,7 @@ class InterventionLevelSeeder extends Seeder
      */
     public function run()
     {
-        InterventionLevel::factory()->count(5)->create();
+        DB::table($this->table)->truncate();
+        parent::run();
     }
 }
