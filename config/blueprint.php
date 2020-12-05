@@ -27,7 +27,7 @@ return [
     | your own custom namespace when generating these components.
     |
     */
-    'models_namespace' => '',
+    'models_namespace' => 'Models',
     'controllers_namespace' => 'Http\\Controllers',
 
 
@@ -114,7 +114,7 @@ return [
     | or wish to improve static analysis.
     |
     */
-    'generate_fqcn_route' => false,
+    'generate_fqcn_route' => true,
 
     /*
     |--------------------------------------------------------------------------
