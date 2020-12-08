@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bccbf85a5af4a5c78d98c5845efefb12",
+    "content-hash": "e2efbc46f5b96a32df17be4cfc47df02",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2201,22 +2201,22 @@
         },
         {
             "name": "leanadmin/lean",
-            "version": "v0.1.0",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:LeanAdmin/lean.git",
-                "reference": "11855bb715a83bda939d16e7f247326c08acace2"
+                "reference": "e14a8ad2108e67c23e265dc1fa1bfd266ded1a0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LeanAdmin/lean/zipball/11855bb715a83bda939d16e7f247326c08acace2",
-                "reference": "11855bb715a83bda939d16e7f247326c08acace2",
+                "url": "https://api.github.com/repos/LeanAdmin/lean/zipball/e14a8ad2108e67c23e265dc1fa1bfd266ded1a0a",
+                "reference": "e14a8ad2108e67c23e265dc1fa1bfd266ded1a0a",
                 "shasum": ""
             },
             "require": {
                 "blade-ui-kit/blade-heroicons": "^0.2.2",
                 "illuminate/support": "^8.0",
-                "livewire/livewire": "^2.0",
+                "livewire/livewire": "^2.3.4",
                 "stevebauman/purify": "^3.0"
             },
             "require-dev": {
@@ -2249,10 +2249,10 @@
                 "Proprietary"
             ],
             "support": {
-                "source": "https://github.com/LeanAdmin/lean/tree/v0.1.0",
+                "source": "https://github.com/LeanAdmin/lean/tree/v0.2.0",
                 "issues": "https://github.com/LeanAdmin/lean/issues"
             },
-            "time": "2020-11-29T19:30:23+00:00"
+            "time": "2020-12-07T21:35:08+00:00"
         },
         {
             "name": "livewire/livewire",
@@ -2693,24 +2693,24 @@
         },
         {
             "name": "paragonie/constant_time_encoding",
-            "version": "v2.3.0",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/constant_time_encoding.git",
-                "reference": "47a1cedd2e4d52688eb8c96469c05ebc8fd28fa2"
+                "reference": "f34c2b11eb9d2c9318e13540a1dbc2a3afbd939c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/constant_time_encoding/zipball/47a1cedd2e4d52688eb8c96469c05ebc8fd28fa2",
-                "reference": "47a1cedd2e4d52688eb8c96469c05ebc8fd28fa2",
+                "url": "https://api.github.com/repos/paragonie/constant_time_encoding/zipball/f34c2b11eb9d2c9318e13540a1dbc2a3afbd939c",
+                "reference": "f34c2b11eb9d2c9318e13540a1dbc2a3afbd939c",
                 "shasum": ""
             },
             "require": {
                 "php": "^7|^8"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6|^7",
-                "vimeo/psalm": "^1|^2|^3"
+                "phpunit/phpunit": "^6|^7|^8|^9",
+                "vimeo/psalm": "^1|^2|^3|^4"
             },
             "type": "library",
             "autoload": {
@@ -2756,7 +2756,7 @@
                 "issues": "https://github.com/paragonie/constant_time_encoding/issues",
                 "source": "https://github.com/paragonie/constant_time_encoding"
             },
-            "time": "2019-11-06T19:20:29+00:00"
+            "time": "2020-12-06T15:14:20+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -7456,16 +7456,16 @@
         },
         {
             "name": "laravel-shift/blueprint",
-            "version": "v1.19.2",
+            "version": "v1.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-shift/blueprint.git",
-                "reference": "eaa83005db8ca6b38e68936b8266761ac13e304d"
+                "reference": "7fec017bb25ef89b3747a9d59f36475b62fcee20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-shift/blueprint/zipball/eaa83005db8ca6b38e68936b8266761ac13e304d",
-                "reference": "eaa83005db8ca6b38e68936b8266761ac13e304d",
+                "url": "https://api.github.com/repos/laravel-shift/blueprint/zipball/7fec017bb25ef89b3747a9d59f36475b62fcee20",
+                "reference": "7fec017bb25ef89b3747a9d59f36475b62fcee20",
                 "shasum": ""
             },
             "require": {
@@ -7508,9 +7508,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-shift/blueprint/issues",
-                "source": "https://github.com/laravel-shift/blueprint/tree/v1.19.2"
+                "source": "https://github.com/laravel-shift/blueprint/tree/v1.20.0"
             },
-            "time": "2020-10-19T12:18:01+00:00"
+            "time": "2020-12-05T21:02:47+00:00"
         },
         {
             "name": "laravel-shift/faker-registry",
@@ -7554,25 +7554,25 @@
         },
         {
             "name": "maximebf/debugbar",
-            "version": "v1.16.3",
+            "version": "v1.16.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maximebf/php-debugbar.git",
-                "reference": "1a1605b8e9bacb34cc0c6278206d699772e1d372"
+                "reference": "c86c717e4bf3c6d98422da5c38bfa7b0f494b04c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/1a1605b8e9bacb34cc0c6278206d699772e1d372",
-                "reference": "1a1605b8e9bacb34cc0c6278206d699772e1d372",
+                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/c86c717e4bf3c6d98422da5c38bfa7b0f494b04c",
+                "reference": "c86c717e4bf3c6d98422da5c38bfa7b0f494b04c",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1",
+                "php": "^7.1|^8",
                 "psr/log": "^1.0",
                 "symfony/var-dumper": "^2.6|^3|^4|^5"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5"
+                "phpunit/phpunit": "^7.5.20 || ^9.4.2"
             },
             "suggest": {
                 "kriswallsmith/assetic": "The best way to manage assets",
@@ -7613,9 +7613,9 @@
             ],
             "support": {
                 "issues": "https://github.com/maximebf/php-debugbar/issues",
-                "source": "https://github.com/maximebf/php-debugbar/tree/v1.16.3"
+                "source": "https://github.com/maximebf/php-debugbar/tree/v1.16.4"
             },
-            "time": "2020-05-06T07:06:27+00:00"
+            "time": "2020-12-07T10:48:48+00:00"
         },
         {
             "name": "mockery/mockery",
