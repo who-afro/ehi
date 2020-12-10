@@ -1,0 +1,6 @@
+id,name,description,uuid,created_at,updated_at
+1,Health Promotion,<div>Interventions across sectors important for health living and wellbeing. Consult PEN and PEN+ to ensure risk factors are included</div>,133cf495-2275-4810-9207-7aa2d7cd8588,2020-12-05 18:47:52,2020-12-05 19:00:06
+2,Disease Prevention,<div>Intervention targeted at preventing the condition from occurring or limiting its severity. E.g. Measles immunization<br /><br /></div>,6f9dd69b-3c23-4736-a5c6-f67dc3e05304,2020-12-05 18:48:48,2020-12-05 19:00:47
+3,Curative,<div>Interventions to directly respond to the condition aimed at its resolution </div>,6fa60b61-f01f-426f-8b06-7a6e9583391d,2020-12-05 18:49:03,2020-12-05 19:04:09
+4,Rehabilitative,<div>Interventions aimed at managing the residual effects of the condition </div>,4eda472c-a4bd-43b8-89b4-90b1ce2b9162,2020-12-05 18:49:16,2020-12-05 19:04:24
+5,Pallative,"<div>Interventions aimed at easing the death process, where other interventions have not stopped it</div>",00cf17a2-4595-493f-a9c6-b9433bd705c1,2020-12-05 18:49:29,2020-12-05 19:04:40

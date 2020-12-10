@@ -13,6 +13,7 @@
         "blade-ui-kit/blade-icons": "^0.4",
         "blade-ui-kit/blade-zondicons": "^0.1",
         "fideloper/proxy": "^4.4",
+        "flynsarmy/csv-seeder": "^2.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",

@@ -1,0 +1,5 @@
+id,name,description,who,snomed,uuid,created_at,updated_at
+1,Meningitis,"<div> Neonatal, bacterial, viral and other types of meningitis </div>",,,e5c401ef-c8d7-451d-89b7-78553379d757,2020-12-10 20:02:21,2020-12-10 20:02:21
+2,Whooping Cough,<div> </div>,,,77331e34-4590-4a78-a889-084deb3b5682,2020-12-10 20:04:07,2020-12-10 20:04:07
+3,Encephalitis,<div> </div>,,,a566c370-f975-452c-9451-cc6322ee4e1a,2020-12-10 20:04:57,2020-12-10 20:04:57
+4,Measles,<div> </div>,,,24fbc8d5-93a5-4168-ab61-b220e8bf9f99,2020-12-10 20:07:15,2020-12-10 20:07:15
