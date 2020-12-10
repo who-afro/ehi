@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Lean\Lean;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Lean::routes(['home' => '/admin/p/dashboard']);
+});
