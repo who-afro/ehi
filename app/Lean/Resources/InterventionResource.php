@@ -20,7 +20,7 @@ class InterventionResource extends LeanResource
         'id',
         'details',
     ];
-    public static string $title = 'details';
+    public static string $title = 'id';
     public static string $icon = 'heroicon-o-user-group';
 
     /**
@@ -30,13 +30,14 @@ class InterventionResource extends LeanResource
     {
         return [
             ID::make('id'),
-            BelongsTo::make('agecohort')->parent(AgeCohortResource::class)
-                ->label(__('Age Cohort')),
-            BelongsTo::make('interventionlevel')->parent(InterventionLevelResource::class)
-                ->label(__('Intervention Level')),
-            BelongsTo::make('publichealthfunction')->parent(PublicHealthFunctionResource::class)->label(__('Public Health Function')),
             BelongsTo::make('condition')->parent(ConditionResource::class)
-                ->label(__('Condition')),
+                ->label(__('Condition'))->placeholder('Select Condition'),
+            BelongsTo::make('interventionlevel')->parent(InterventionLevelResource::class)
+                ->label(__('Intervention Level'))->placeholder('Select Intervention Level'),
+            BelongsTo::make('agecohort')->parent(AgeCohortResource::class)
+                ->label(__('Age Cohort'))->placeholder('Select Age Cohort'),
+            BelongsTo::make('publichealthfunction')->parent(PublicHealthFunctionResource::class)->label(__('Public Health Function'))->placeholder('Select Public Health Function'),
+
             Trix::make('details')
                 ->label(__('Intervention'))
                 ->rules(['required']),

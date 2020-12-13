@@ -18,11 +18,19 @@ class CreateInterventionsTable extends Migration
             $table->text('details');
             $table->timestamps();
             $table->uuid('uuid')->unique();
-            $table->foreignId('intervention_id')->index()->constrained();
             $table->foreignId('intervention_level_id')->index()->constrained();
+            $table->foreignId('public_health_function_id')->index()->constrained();
             $table->foreignId('condition_id')->index()->constrained();
             $table->foreignId('age_cohort_id')->index()->constrained();
+            $table->unique(['intervention_level_id', 'public_health_function_id', 'condition_id', 'age_cohort_id'], 'intervention_unique_categorization');
         });
+
+        Schema::disableForeignKeyConstraints();
+        // run the baseline data seeder
+        Artisan::call('db:seed',[
+            '--class' => 'InterventionSeeder'
+        ]);
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

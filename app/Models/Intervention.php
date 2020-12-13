@@ -17,6 +17,10 @@ class Intervention extends Model
      */
     protected $fillable = [
         'details',
+        'intervention_level_id',
+        'public_health_function_id',
+        'condition_id',
+        'age_cohort_id',
         'uuid'
     ];
 
@@ -40,21 +44,21 @@ class Intervention extends Model
 
     public function ageCohort()
     {
-        return $this->belongsTo(\App\Models\AgeCohort::class);
+        return $this->belongsTo(AgeCohort::class);
     }
 
     public function interventionLevel()
     {
-        return $this->belongsTo(\App\Models\InterventionLevel::class);
+        return $this->belongsTo(InterventionLevel::class);
     }
 
     public function publicHealthFunction()
     {
-        return $this->belongsTo(\App\Models\PublicHealthFunction::class);
+        return $this->belongsTo(PublicHealthFunction::class);
     }
 
     public function condition()
     {
-        return $this->belongsTo(\App\Models\Condition::class);
+        return $this->belongsTo(Condition::class);
     }
 }

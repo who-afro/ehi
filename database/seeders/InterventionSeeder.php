@@ -5,12 +5,12 @@ namespace Database\Seeders;
 use Flynsarmy\CsvSeeder\CsvSeeder;
 use Illuminate\Support\Facades\DB;
 
-class InterventionLevelSeeder extends CsvSeeder
+class InterventionSeeder extends CsvSeeder
 {
     public function __construct()
     {
-        $this->table = 'intervention_levels';
-        $this->filename = base_path().'/database/seeders/csv/intervention_levels.csv';
+        $this->table = 'interventions';
+        $this->filename = base_path().'/database/seeders/csv/interventions.csv';
     }
     /**
      * Run the database seeds.
