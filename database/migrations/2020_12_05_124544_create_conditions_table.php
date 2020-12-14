@@ -22,6 +22,13 @@ class CreateConditionsTable extends Migration
             $table->uuid('uuid')->unique();
             $table->timestamps();
         });
+
+        Schema::disableForeignKeyConstraints();
+        // run the baseline data seeder
+        Artisan::call('db:seed',[
+            '--class' => 'ConditionSeeder'
+        ]);
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

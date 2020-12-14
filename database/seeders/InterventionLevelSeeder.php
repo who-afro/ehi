@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\InterventionLevel;
 use Flynsarmy\CsvSeeder\CsvSeeder;
-use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 class InterventionLevelSeeder extends CsvSeeder
