@@ -10,7 +10,7 @@
                         Total interventions
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                        71,897
+                        {{ $interventions }}
                     </dd>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                         Conditions
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                        58.16%
+                        {{ $conditions }}
                     </dd>
                 </div>
             </div>
