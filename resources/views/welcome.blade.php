@@ -6,4 +6,8 @@
     </x-slot>
 
     <x-intervention-stats></x-intervention-stats>
+
+    <livewire:interventions-list-component>
+
+    </livewire:interventions-list-component>
 </x-app-layout>

@@ -2,10 +2,22 @@
 
 namespace App\View\Components;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\Component;
 
 class InterventionStats extends Component
 {
+
+    /**
+     * The count of available interventions
+     * @var integer
+     */
+    public $interventions;
+    /**
+     * The count of available conditions
+     * @var integer
+     */
+    public $conditions;
     /**
      * Create a new component instance.
      *
@@ -13,7 +25,8 @@ class InterventionStats extends Component
      */
     public function __construct()
     {
-        //
+        $this->interventions = DB::table('interventions')->count();
+        $this->conditions = DB::table('conditions')->count();
     }
 
     /**
