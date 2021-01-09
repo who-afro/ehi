@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Lean\Pages\Home;
 use App\Lean\Resources\AgeCohortResource;
 use App\Lean\Resources\ConditionResource;
 use App\Lean\Resources\InterventionLevelResource;
