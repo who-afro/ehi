@@ -15,13 +15,13 @@ use Lean\Lean;
 |
 */
 
-Route::redirect('/', "interventions");
-Route::get('/interventions', Interventions::class)->name("interventions");
+Route::redirect('/', "interventions-list");
+Route::get('/interventions-list', Interventions::class)->name("interventions-list");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return redirect('/admin/p/home');
 })->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Lean::routes(['home' => '/admin/p/dashboard']);
+    Lean::routes(['home' => '/admin/p/home']);
 });

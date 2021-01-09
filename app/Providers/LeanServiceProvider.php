@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Lean\Pages;
+use App\Lean\Pages\Home;
 use App\Lean\Resources\AgeCohortResource;
 use App\Lean\Resources\ConditionResource;
 use App\Lean\Resources\InterventionLevelResource;
@@ -22,14 +22,12 @@ class LeanServiceProvider extends ServiceProvider
     public function boot()
     {
         Lean::addPage('home', Welcome::class);
+
         Lean::addResource('age-cohort', AgeCohortResource::class);
-        // Lean::addResource('intervention', InterventionResource::class);
+        Lean::addResource('condition', ConditionResource::class);
         Lean::addResource('intervention-level', InterventionLevelResource::class);
         Lean::addResource('public-health-function', PublicHealthFunctionResource::class);
-        Lean::addResource('condition', ConditionResource::class);
+
         Lean::addResource('intervention', InterventionResource::class);
-        // Lean::addResource('products', Resources\ProductResource::class);
-        // Lean::addResource('tags', Resources\TagResource::class);
-        // Lean::addPage('dashboard', Pages\Dashboard::class);
     }
 }

@@ -21,7 +21,7 @@
         "laravel/sanctum": "^2.6",
         "laravel/telescope": "^4.3",
         "laravel/tinker": "^2.5",
-        "leanadmin/lean": "dev-master",
+        "leanadmin/lean": "0.3.0",
         "livewire/livewire": "^2.0"
     },
     "require-dev": {
