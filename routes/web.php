@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Interventions;
 use Illuminate\Support\Facades\Route;
 use Lean\Lean;
 
@@ -14,9 +15,8 @@ use Lean\Lean;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', "interventions");
+Route::get('/interventions', Interventions::class)->name("interventions");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

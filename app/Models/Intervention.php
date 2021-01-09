@@ -55,12 +55,10 @@ class Intervention extends Model
     public function publicHealthFunction()
     {
         return $this->belongsTo(PublicHealthFunction::class);
-        return $this->belongsTo(\App\Models\PublicHealthFunction::class);
     }
 
     public function condition()
     {
         return $this->belongsTo(Condition::class);
-        return $this->belongsTo(\App\Models\Condition::class);
     }
 }
