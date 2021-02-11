@@ -1,0 +1,6 @@
+id,name,description,uuid,created_at,updated_at
+1,Immunization,,58f7ba0d-9e25-4a27-820b-55b48fbc19bb,2021-02-11 18:46:20,2021-02-11 18:46:20
+2,Outpatient,<div> </div>,1ba73fc5-942d-4035-a3b8-c743e2e7b4fc,2021-02-11 18:46:32,2021-02-11 18:46:32
+3,Inpatient,<div> </div>,44c1cc14-ac9b-4a24-a832-1d2cf5c4be36,2021-02-11 18:46:42,2021-02-11 18:46:42
+4,Diagnostics,<div> </div>,96158022-9004-4fb1-a743-7d8610d889c5,2021-02-11 18:47:04,2021-02-11 18:47:04
+5,Emergency Care,<div> </div>,13cabd4c-eb02-4e54-aca3-073ec3878216,2021-02-11 18:50:39,2021-02-11 18:50:39
