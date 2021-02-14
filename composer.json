@@ -1,10 +1,11 @@
 {
-    "name": "laravel/laravel",
+    "name": "ehi/ehi",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "WHO Regional Menu Of Essential Health Interventions",
     "keywords": [
-        "framework",
-        "laravel"
+        "who",
+        "disease control interventions",
+        "essential health interventions"
     ],
     "license": "MIT",
     "require": {
@@ -21,7 +22,7 @@
         "laravel/sanctum": "^2.6",
         "laravel/telescope": "^4.3",
         "laravel/tinker": "^2.5",
-        "leanadmin/lean": "0.3.0",
+        "leanadmin/lean": "^0.3",
         "livewire/livewire": "^2.0"
     },
     "require-dev": {
@@ -79,8 +80,8 @@
     },
     "repositories": {
         "lean": {
-            "type": "vcs",
-            "url": "git@github.com:LeanAdmin/lean.git"
+            "type": "composer",
+            "url": "https://lean-admin.dev/releases"
         }
     }
 }

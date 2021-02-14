@@ -7,6 +7,7 @@
     <x-interventions-filter></x-interventions-filter>
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-4 space-y-4 space-x-8 text-4xl font-semibold text-gray-900 flex-1 w-1/2">
         <x-input.text wire:model="filters.search" placeholder="Search Interventions..." class="p-2 rounded border w-full appearance-none"/>
+        <x-button.primary wire:click="applyFilter">Apply</x-button.primary><x-button.secondary wire:click="resetFilters">Reset Filters</x-button.secondary>
     </div>
     <div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -46,7 +47,7 @@
                                 </div>
                                 <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                     <dt class="text-sm font-medium text-gray-500">
-                                        Intervention Level
+                                        Level of Care
                                     </dt>
                                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                         {{$v->interventionLevel->name}}
@@ -58,6 +59,36 @@
                                     </dt>
                                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                         {!! $v["details"]  !!}
+                                    </dd>
+                                </div>
+                                <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500">
+                                        Program Areas
+                                    </dt>
+                                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                        <ul class="list-disc">
+                                        @forelse($v->programAreas as $k => $p)
+                                            <li>{{$p->name}}</li>
+                                            @empty
+                                                <i>No assigned program areas<i>
+                                        @endforelse
+                                        </ul>
+
+                                    </dd>
+                                </div>
+                                <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500">
+                                        Intervention Groups
+                                    </dt>
+                                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                        <ul class="list-disc">
+                                            @forelse($v->interventionGroups as $l => $ig)
+                                                <li>{{$ig->name}}</li>
+                                            @empty
+                                                <i>No assigned intervention groups<i>
+                                            @endforelse
+                                        </ul>
+
                                     </dd>
                                 </div>
                             </dl>

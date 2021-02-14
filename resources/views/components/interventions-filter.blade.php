@@ -49,13 +49,45 @@
             <div class="bg-white shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
                     <dt class="text-sm font-medium text-gray-500 truncate">
-                        Intervention Level
+                        Level of Care
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                        <x-input.select class="p-2 rounded border w-full appearance-none" wire:model="filters.intervention_level_id" id="filter-intervention_level_id" placeholder="Select Intervention Level">
+                        <x-input.select class="p-2 rounded border w-full appearance-none" wire:model="filters.intervention_level_id" id="filter-intervention_level_id" placeholder="Select Level of Care">
 
                             @foreach(App\Models\InterventionLevel::all() as $interventionLevel)
                                 <option value="{{$interventionLevel->id}}">{{$interventionLevel->name}}</option>
+                            @endforeach
+                        </x-input.select>
+                    </dd>
+                </div>
+            </div>
+        </dl>
+        <dl class="mt-5 grid grid-cols-4 gap-4">
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <dt class="text-sm font-medium text-gray-500 truncate">
+                        Program Area
+                    </dt>
+                    <dd class="mt-1 text-3xl font-semibold text-gray-900">
+                        <x-input.select class="p-2 rounded border w-full appearance-none" wire:model="filters.program_area_id" id="filter-program_area_id" placeholder="Select an Program Area">
+
+                            @foreach(App\Models\ProgramArea::all() as $programArea)
+                                <option value="{{$programArea->id}}">{{$programArea->name}}</option>
+                            @endforeach
+                        </x-input.select>
+                    </dd>
+                </div>
+            </div>
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <dt class="text-sm font-medium text-gray-500 truncate">
+                        Intervention Group
+                    </dt>
+                    <dd class="mt-1 text-3xl font-semibold text-gray-900">
+                        <x-input.select class="p-2 rounded border w-full appearance-none" wire:model="filters.intervention_group_id" id="filter-intervention_group_id" placeholder="Select Intervention Group">
+
+                            @foreach(App\Models\InterventionGroup::all() as $interventionGroup)
+                                <option value="{{$interventionGroup->id}}">{{$interventionGroup->name}}</option>
                             @endforeach
                         </x-input.select>
                     </dd>

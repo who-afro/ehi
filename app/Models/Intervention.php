@@ -62,11 +62,11 @@ class Intervention extends Model
         return $this->belongsTo(Condition::class);
     }
 
-    public function programareas() {
+    public function programAreas() {
         return $this->belongsToMany(ProgramArea::class);
     }
 
-    public function interveniongroups() {
+    public function interventionGroups() {
         return $this->belongsToMany(InterventionGroup::class);
     }
 }
