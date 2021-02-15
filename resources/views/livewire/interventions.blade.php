@@ -5,9 +5,14 @@
         </h2>
     </x-slot>
     <x-interventions-filter></x-interventions-filter>
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-4 space-y-4 space-x-8 text-4xl font-semibold text-gray-900 flex-1 w-1/2">
-        <x-input.text wire:model="filters.search" placeholder="Search Interventions..." class="p-2 rounded border w-full appearance-none"/>
-        <x-button.primary wire:click="applyFilter">Apply</x-button.primary><x-button.secondary wire:click="resetFilters">Reset Filters</x-button.secondary>
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 font-semibold grid grid-cols-4 gap-4">
+        <div class="col-span-3">
+            <x-input.text wire:model="filters.search" placeholder="Search Interventions..." class="p-2 rounded border w-full appearance-none"/>
+        </div>
+        <div class="">
+            <x-button.primary wire:click="applyFilter">Apply</x-button.primary>
+            <x-button.secondary wire:click="resetFilters">Reset Filters</x-button.secondary>
+        </div>
     </div>
     <div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -96,7 +101,7 @@
                     </div>
                 </div>
             @empty
-                No Interventions found for the specified criteria
+                <div class="mt-8">No Interventions found for the specified criteria</div>
             @endforelse
         </div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
