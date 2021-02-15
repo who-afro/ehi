@@ -75,7 +75,7 @@
                                         @forelse($v->programAreas as $k => $p)
                                             <li>{{$p->name}}</li>
                                             @empty
-                                                <i>No assigned program areas<i>
+                                                <i>No assigned program areas</i>
                                         @endforelse
                                         </ul>
 
@@ -90,7 +90,7 @@
                                             @forelse($v->interventionGroups as $l => $ig)
                                                 <li>{{$ig->name}}</li>
                                             @empty
-                                                <i>No assigned intervention groups<i>
+                                                <i>No assigned intervention groups</i>
                                             @endforelse
                                         </ul>
 
