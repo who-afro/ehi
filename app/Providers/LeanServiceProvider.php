@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Lean\Pages\Welcome;
 use App\Lean\Resources\AgeCohortResource;
 use App\Lean\Resources\ConditionResource;
 use App\Lean\Resources\InterventionGroupResource;
@@ -9,9 +10,9 @@ use App\Lean\Resources\InterventionLevelResource;
 use App\Lean\Resources\InterventionResource;
 use App\Lean\Resources\ProgramAreaResource;
 use App\Lean\Resources\PublicHealthFunctionResource;
+use App\Lean\Resources\UserResource;
 use Illuminate\Support\ServiceProvider;
 use Lean\Lean;
-use Lean\Livewire\Pages\Welcome;
 
 class LeanServiceProvider extends ServiceProvider
 {
@@ -32,5 +33,6 @@ class LeanServiceProvider extends ServiceProvider
         Lean::addResource('intervention', InterventionResource::class);
         Lean::addResource('intervention-group', InterventionGroupResource::class);
         Lean::addResource('program-area', ProgramAreaResource::class);
+        Lean::addResource('user', UserResource::class);
     }
 }

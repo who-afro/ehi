@@ -22,6 +22,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return redirect('/admin/p/home');
 })->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Lean::routes(['home' => '/admin/p/home']);
-});
+Lean::routes([
+    'home' => '/admin/p/home',
+]);
