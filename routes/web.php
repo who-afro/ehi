@@ -19,7 +19,7 @@ Route::redirect('/', "interventions-list");
 Route::get('/interventions-list', Interventions::class)->name("interventions-list");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return redirect('/admin/p/home');
+    return view('dashboard');
 })->name('dashboard');
 
 Lean::routes([
