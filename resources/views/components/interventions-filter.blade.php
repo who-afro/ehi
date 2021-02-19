@@ -78,21 +78,6 @@
                     </dd>
                 </div>
             </div>
-            <div class="bg-white shadow rounded-lg">
-                <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">
-                        Intervention Group
-                    </dt>
-                    <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                        <x-input.select class="p-2 rounded border w-full appearance-none" wire:model="filters.intervention_group_id" id="filter-intervention_group_id" placeholder="Select Intervention Group">
-
-                            @foreach(App\Models\InterventionGroup::all() as $interventionGroup)
-                                <option value="{{$interventionGroup->id}}">{{$interventionGroup->name}}</option>
-                            @endforeach
-                        </x-input.select>
-                    </dd>
-                </div>
-            </div>
         </dl>
     </div>
 </div>

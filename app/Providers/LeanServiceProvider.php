@@ -31,7 +31,6 @@ class LeanServiceProvider extends ServiceProvider
         Lean::addResource('public-health-function', PublicHealthFunctionResource::class);
 
         Lean::addResource('intervention', InterventionResource::class);
-        Lean::addResource('intervention-group', InterventionGroupResource::class);
         Lean::addResource('program-area', ProgramAreaResource::class);
         Lean::addResource('user', UserResource::class);
     }
