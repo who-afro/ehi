@@ -10,6 +10,7 @@ use App\Lean\Resources\InterventionLevelResource;
 use App\Lean\Resources\InterventionResource;
 use App\Lean\Resources\ProgramAreaResource;
 use App\Lean\Resources\PublicHealthFunctionResource;
+use App\Lean\Resources\ServiceResource;
 use App\Lean\Resources\UserResource;
 use Illuminate\Support\ServiceProvider;
 use Lean\Lean;
@@ -33,5 +34,6 @@ class LeanServiceProvider extends ServiceProvider
         Lean::addResource('intervention', InterventionResource::class);
         Lean::addResource('program-area', ProgramAreaResource::class);
         Lean::addResource('user', UserResource::class);
+        Lean::addResource('service', ServiceResource::class);
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInterventionProgramAreaTable extends Migration
+class CreateServiceProgramAreaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateInterventionProgramAreaTable extends Migration
      */
     public function up()
     {
-        Schema::create('intervention_program_area', function (Blueprint $table) {
-            $table->foreignId('intervention_id');
+        Schema::create('service_program_area', function (Blueprint $table) {
+            $table->foreignId('service_id');
             $table->foreignId('program_area_id');
         });
     }
@@ -26,6 +26,6 @@ class CreateInterventionProgramAreaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('intervention_program_area');
+        Schema::dropIfExists('service_program_area');
     }
 }

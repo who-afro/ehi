@@ -23,7 +23,8 @@
         "laravel/telescope": "^4.3",
         "laravel/tinker": "^2.5",
         "leanadmin/lean": "^0.5.1",
-        "livewire/livewire": "^2.0"
+        "livewire/livewire": "^2.0",
+        "laravel/nova": "~3.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
@@ -82,6 +83,10 @@
         "lean": {
             "type": "composer",
             "url": "https://lean-admin.dev/releases"
+        },
+        "nova": {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
         }
     }
 }

@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class ProgramArea extends Model
+class Service extends Model
 {
     use HasFactory;
 
@@ -30,12 +31,6 @@ class ProgramArea extends Model
         'id' => 'integer',
     ];
 
-
-    public function services()
-    {
-        return $this->belongsToMany(Service::class);
-    }
-
     public static function boot()
     {
         parent::boot();
@@ -43,5 +38,24 @@ class ProgramArea extends Model
         self::creating(function($model){
             $model->uuid = Str::uuid();
         });
+
+        // Order by name ASC
+        static::addGlobalScope('order', function (Builder $builder) {
+            $builder->orderBy('name');
+        });
+    }
+
+    public function services()
+    {
+        return $this->hasMany(Service::class, 'parent_id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(Service::class);
+    }
+
+    public function programAreas() {
+        return $this->belongsToMany(ProgramArea::class);
     }
 }
