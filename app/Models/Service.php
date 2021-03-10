@@ -47,15 +47,24 @@ class Service extends Model
 
     public function services()
     {
-        return $this->hasMany(Service::class, 'parent_id');
+        return $this->hasMany(Service::class, 'parent_id', 'id');
     }
 
     public function parent()
     {
-        return $this->belongsTo(Service::class);
+        return $this->belongsTo(Service::class, 'parent_id', 'id');
+    }
+
+    public function childrenServices()
+    {
+        return $this->hasMany(Service::class, 'parent_id', 'id')->with('services');
     }
 
     public function programAreas() {
         return $this->belongsToMany(ProgramArea::class);
+    }
+
+    public function interventions() {
+        return $this->belongsToMany(Intervention::class)->withPivot('details');
     }
 }
