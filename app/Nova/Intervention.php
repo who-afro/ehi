@@ -55,6 +55,7 @@ class Intervention extends Resource
                     Text::make('Details'),
                 ];
             }),
+            Text::make("Services Count", function() {return $this->services()->count(); })
         ];
     }
 
