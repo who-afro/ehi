@@ -47,7 +47,23 @@
                 </div>
             </div>
             <div class="bg-white shadow rounded-lg">
-                <div class="px-4 py-5 sm:p-6">
+                <div class="bg-white shadow rounded-lg">
+                    <div class="px-4 py-5 sm:p-6">
+                        <dt class="text-sm font-medium text-gray-500 truncate">
+                            Program Area
+                        </dt>
+                        <dd class="mt-1 text-3xl font-semibold text-gray-900">
+                            <x-input.select class="p-2 rounded border w-full appearance-none" wire:model="filters.program_area_id" id="filter-program_area_id" placeholder="Select an Program Area">
+
+                                @foreach(App\Models\ProgramArea::all() as $programArea)
+                                    <option value="{{$programArea->id}}">{{$programArea->name}}</option>
+                                @endforeach
+                            </x-input.select>
+                        </dd>
+                    </div>
+                </div>
+                <!-- TODO: Determine if we need to keep hiding the level of care especially for the page filters -->
+                <div class="px-4 py-5 sm:p-6 hidden">
                     <dt class="text-sm font-medium text-gray-500 truncate">
                         Level of Care
                     </dt>
@@ -63,21 +79,7 @@
             </div>
         </dl>
         <dl class="mt-5 grid grid-cols-4 gap-4">
-            <div class="bg-white shadow rounded-lg">
-                <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">
-                        Program Area
-                    </dt>
-                    <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                        <x-input.select class="p-2 rounded border w-full appearance-none" wire:model="filters.program_area_id" id="filter-program_area_id" placeholder="Select an Program Area">
 
-                            @foreach(App\Models\ProgramArea::all() as $programArea)
-                                <option value="{{$programArea->id}}">{{$programArea->name}}</option>
-                            @endforeach
-                        </x-input.select>
-                    </dd>
-                </div>
-            </div>
         </dl>
     </div>
 </div>
