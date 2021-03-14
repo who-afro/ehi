@@ -154,7 +154,7 @@
                     <nav class="flex-1 px-2 space-y-1 bg-white" aria-label="Sidebar">
                         <div>
                             <!-- Current: "bg-gray-100 text-gray-900", Default: "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
-                            <a href="#"
+                            <a href="/"
                                class="bg-gray-100 text-gray-900 group w-full flex items-center pl-2 py-2 text-sm font-medium rounded-md">
                                 <!-- Current: "text-gray-600", Default: "text-gray-400 group-hover:text-gray-500" -->
                                 <!-- Heroicon name: outline/home -->
