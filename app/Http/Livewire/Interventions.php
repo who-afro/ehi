@@ -18,7 +18,8 @@ class Interventions extends Component
         'public_health_function_id' => '',
         'program_area_id' => '',
         'search' => null,
-        'applyFilter' => ''
+        'applyFilter' => '',
+        'number_of_items_per_page' => 10
     ];
 
     /**
@@ -44,12 +45,12 @@ class Interventions extends Component
     public function getInterventionList(): \Illuminate\Contracts\Pagination\LengthAwarePaginator
     {
         return Intervention::with('condition:id,name', 'ageCohort:id,name', 'interventionLevel:id,name', 'publicHealthFunction:id,name')
-            ->when($this->filters['age_cohort_id'], fn($query, $age_cohort_id) => $query->where('age_cohort_id', $age_cohort_id))
-            ->when($this->filters['condition_id'], fn($query, $condition_id) => $query->where('condition_id', $condition_id))
-            ->when($this->filters['intervention_level_id'], fn($query, $intervention_level_id) => $query->where('intervention_level_id', $intervention_level_id))
-            ->when($this->filters['public_health_function_id'], fn($query, $public_health_function_id) => $query->where('public_health_function_id', $public_health_function_id))
+            ->when($this->filters['age_cohort_id'], fn($query, $age_cohort_id) => $query->whereIn('age_cohort_id', $age_cohort_id))
+            ->when($this->filters['condition_id'], fn($query, $condition_id) => $query->whereIn('condition_id', $condition_id))
+            ->when($this->filters['intervention_level_id'], fn($query, $intervention_level_id) => $query->whereIn('intervention_level_id',  $intervention_level_id))
+            ->when($this->filters['public_health_function_id'], fn($query, $public_health_function_id) => $query->whereIn('public_health_function_id', $public_health_function_id))
             ->when($this->filters['search'], fn($query, $search) => $query->where('details', 'like', '%' . $search . '%'))
-            ->paginate(10);
+            ->paginate($this->filters['number_of_items_per_page']);
     }
 
 

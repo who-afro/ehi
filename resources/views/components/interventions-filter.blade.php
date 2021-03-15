@@ -7,12 +7,12 @@
                         Age Cohort
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                        <x-input.select class="p-2 rounded border w-full appearance-none" wire:model="filters.age_cohort_id" id="filter-age_cohort_id" placeholder="Select an Age Cohort">
+                        <x-input.select-multiple class="p-2 rounded border w-full appearance-none" wire:model="filters.age_cohort_id" id="filter-age_cohort_id" placeholder="Select an Age Cohort">
 
                             @foreach(App\Models\AgeCohort::all() as $ageCohort)
                                 <option value="{{$ageCohort->id}}">{{$ageCohort->name}}</option>
                             @endforeach
-                        </x-input.select>
+                        </x-input.select-multiple>
                     </dd>
                 </div>
             </div>
@@ -22,12 +22,12 @@
                         Conditions
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                        <x-input.select class="p-2 rounded border w-full appearance-none" wire:model="filters.condition_id" id="filter-condition_id" placeholder="Select a Condition">
+                        <x-input.select-multiple class="p-2 rounded border w-full appearance-none" wire:model="filters.condition_id" id="filter-condition_id" placeholder="Select a Condition">
 
                             @foreach(App\Models\Condition::all() as $condition)
                                 <option value="{{$condition->id}}">{{$condition->name}}</option>
                             @endforeach
-                        </x-input.select>
+                        </x-input.select-multiple>
                     </dd>
                 </div>
             </div>
@@ -37,12 +37,12 @@
                         Public Health Function
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                        <x-input.select class="p-2 rounded border w-full appearance-none" wire:model="filters.public_health_function_id" id="filter-public_health_function_id" placeholder="Select Public Health Function">
+                        <x-input.select-multiple class="p-2 rounded border w-full appearance-none" wire:model="filters.public_health_function_id" id="filter-public_health_function_id" placeholder="Select Public Health Function">
 
                             @foreach(App\Models\PublicHealthFunction::all() as $publicHealthFunction)
                                 <option value="{{$publicHealthFunction->id}}">{{$publicHealthFunction->name}}</option>
                             @endforeach
-                        </x-input.select>
+                        </x-input.select-multiple>
                     </dd>
                 </div>
             </div>
@@ -53,12 +53,12 @@
                             Program Area
                         </dt>
                         <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                            <x-input.select class="p-2 rounded border w-full appearance-none" wire:model="filters.program_area_id" id="filter-program_area_id" placeholder="Select an Program Area">
+                            <x-input.select-multiple class="p-2 rounded border w-full appearance-none" wire:model="filters.program_area_id" id="filter-program_area_id" placeholder="Select an Program Area">
 
                                 @foreach(App\Models\ProgramArea::all() as $programArea)
                                     <option value="{{$programArea->id}}">{{$programArea->name}}</option>
                                 @endforeach
-                            </x-input.select>
+                            </x-input.select-multiple>
                         </dd>
                     </div>
                 </div>
