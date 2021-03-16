@@ -41,7 +41,6 @@
                                 {{$v->publicHealthFunction->name}}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
-                                Program Areas
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
                                 <ul class="list-disc">
