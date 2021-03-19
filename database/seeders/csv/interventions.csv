@@ -1,4 +1,4 @@
-id,details,created_at,updated_at,uuid,intervention_level_id,public_health_function_id,condition_id,age_cohort_id
+id,details,created_at,updated_at,uuid,level_of_care_id,public_health_function_id,condition_id,age_cohort_id
 1,<div>* Education to pregnant women and families on Meningitis including prevention measures <br />* Promoting good nutrition /create awareness on good nutrition for pregnant women <br />* Education on good hygiene practice including hand hygiene among pregnant women to prevent meningitis <br />* Create awareness among pregnant women on <br />  - Information on ANC attendance <br />  - Information on the importance of immunization for children <br />  - Information/creation of awareness on healthy living<br />* Sensitize community health workers on meningitis in pregnant women including recognition of the signs and symptoms </div>,2020-12-11 05:09:06,2020-12-11 05:18:07,2ca4a7c7-f7bb-418f-a063-21c3a85c1ab4,1,1,1,1
 2,<div>* Proper hygiene / handwashing among pregnant women to prevent meningitis <br />* Pregnant women to keep away from people who have meningitis.</div>,2020-12-11 05:22:46,2020-12-11 05:22:46,38d92039-aacb-49b1-9992-19af7c271a02,1,2,1,1
 3,"<div>* Recognition of signs of meningitis in pregnant women such as neck stiffness , neck and /or back pain; and fever<br />* Urgent referral /transfer to a health facility of pregnant women suspected to have meningitis<br />* Supportive therapy for pregnant women suspected to have meningitis if urgent transfer is not feasible <br />  - Relieve the fever through administration of medication for fever<br />  - Medication for pain <br />  - Encourage fluid intake <br />   - Bed rest </div>",2020-12-11 05:28:35,2020-12-11 05:28:35,fc31684a-688f-4714-b1cb-3c9ff338f03b,1,3,1,1
@@ -23,19 +23,19 @@ id,details,created_at,updated_at,uuid,intervention_level_id,public_health_functi
 22,<div> Physiotherapy services for adults with meningitis complications who may be referred back to communities from health facilities </div>,2020-12-13 12:42:07,2020-12-13 12:42:07,8ff58db4-f8a0-45e3-94b1-07366a8582aa,1,4,1,5
 23,<div> Psychosocial support </div>,2020-12-13 12:42:30,2020-12-13 12:42:30,60961e90-8537-4387-9383-13f0e6da4fc2,1,5,1,5
 24,"<pre>* Create awareness to the elderly persons; their  families and communities   on meningitis and prevention measures
-*  Information/creation of awareness on healthy living for the elderly 
+*  Information/creation of awareness on healthy living for the elderly
 * Awareness on good nutrition
-* Provision of IEC materials 
+* Provision of IEC materials
 * Promote good hygiene practices including hand hygiene  for the elderly
 * Community health workers sensitization on meningitis including recognition of meningitis features among the elderly </pre><div><br /></div>",2020-12-13 12:46:29,2020-12-13 12:46:29,7bffc323-b0ea-4e37-8076-534608b172bd,1,1,1,6
-25,"<pre>* Practice good hygiene practices including cough, sneezing etiquette 
-* Hand washing with soap and water 
+25,"<pre>* Practice good hygiene practices including cough, sneezing etiquette
+* Hand washing with soap and water
 * Limit the elderly contact with persons with meningitis </pre><div><br /></div>",2020-12-13 12:50:00,2020-12-13 12:50:00,915246d7-cb42-4fe0-bf60-613e534b3b73,1,2,1,6
-26,"<pre>* Recognition of danger signs of meningitis  in the elderly which include, stiff neck, headache, neck and/or back pain; fever;   
+26,"<pre>* Recognition of danger signs of meningitis  in the elderly which include, stiff neck, headache, neck and/or back pain; fever;
 * Urgent referral of elderly persons suspected to have meningitis to a health facility
-* Supportive therapy to an elderly person if immediate referral   is not possible i.e. 
+* Supportive therapy to an elderly person if immediate referral   is not possible i.e.
   - Give fluids
-  - Proper feeding 
+  - Proper feeding
   - Manage fever with medicine for fever such as paracetamol   </pre><div><br /></div>",2020-12-13 12:51:07,2020-12-13 12:51:07,2d7f7622-8bb8-4c4d-9a65-2249fb7487ff,1,3,1,6
 27,<div>Physiotherapy services for the elderly persons with meningitis complications who may be referred back to communities from health facilities</div>,2020-12-13 12:51:38,2020-12-13 12:51:38,c1f30913-0309-468c-9563-8afe8a06e409,1,4,1,6
 28,<div>* Psychosocial support </div><div>* Counselling </div>,2020-12-13 12:52:14,2020-12-13 12:52:14,01af480d-6dc2-4d99-9f5c-bf09045376f3,1,5,1,6

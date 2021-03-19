@@ -33,7 +33,7 @@ class InterventionResource extends LeanResource
             BelongsTo::make('condition')->parent(ConditionResource::class)
                 ->label(__('Condition'))->placeholder('Select Condition', true),
             BelongsTo::make('interventionlevel')->parent(InterventionLevelResource::class)
-                ->label(__('Intervention Level'))->placeholder('Select Intervention Level', true),
+                ->label(__('Level of Care'))->placeholder('Select Level of Care', true),
             BelongsTo::make('agecohort')->parent(AgeCohortResource::class)
                 ->label(__('Age Cohort'))->placeholder('Select Age Cohort', true),
             BelongsTo::make('publichealthfunction')->parent(PublicHealthFunctionResource::class)->label(__('Public Health Function'))->placeholder('Select Public Health Function', true),

@@ -14,7 +14,7 @@ class Interventions extends Component
     public $filters = [
         'age_cohort_id' => '',
         'condition_id' => '',
-        'intervention_level_id' => '',
+        'level_of_care_id' => '',
         'public_health_function_id' => '',
         'program_area_id' => '',
         'search' => null,
@@ -47,7 +47,7 @@ class Interventions extends Component
         return Intervention::with('condition:id,name', 'ageCohort:id,name', 'interventionLevel:id,name', 'publicHealthFunction:id,name', 'services')
             ->when($this->filters['age_cohort_id'], fn($query, $age_cohort_id) => $query->whereIn('age_cohort_id', $age_cohort_id))
             ->when($this->filters['condition_id'], fn($query, $condition_id) => $query->whereIn('condition_id', $condition_id))
-            ->when($this->filters['intervention_level_id'], fn($query, $intervention_level_id) => $query->whereIn('intervention_level_id',  $intervention_level_id))
+            ->when($this->filters['level_of_care_id'], fn($query, $level_of_care_id) => $query->whereIn('level_of_care_id',  $level_of_care_id))
             ->when($this->filters['public_health_function_id'], fn($query, $public_health_function_id) => $query->whereIn('public_health_function_id', $public_health_function_id))
             ->when($this->filters['search'], fn($query, $search) => $query->where('details', 'like', '%' . $search . '%'))
             ->paginate($this->filters['number_of_items_per_page']);

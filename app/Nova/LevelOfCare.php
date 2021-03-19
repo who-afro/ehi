@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 
-class InterventionLevel extends Resource
+class LevelOfCare extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\InterventionLevel::class;
+    public static $model = \App\Models\LevelOfCare::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.

@@ -68,9 +68,9 @@
                         Level of Care
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                        <x-input.select class="p-2 rounded border w-full appearance-none" wire:model="filters.intervention_level_id" id="filter-intervention_level_id" placeholder="Select Level of Care">
+                        <x-input.select class="p-2 rounded border w-full appearance-none" wire:model="filters.level_of_care_id" id="filter-level_of_care_id" placeholder="Select Level of Care">
 
-                            @foreach(App\Models\InterventionLevel::all() as $interventionLevel)
+                            @foreach(App\Models\LevelOfCare::all() as $interventionLevel)
                                 <option value="{{$interventionLevel->id}}">{{$interventionLevel->name}}</option>
                             @endforeach
                         </x-input.select>

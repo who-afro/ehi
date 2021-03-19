@@ -46,7 +46,7 @@ class Intervention extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             BelongsTo::make('Condition'),
-            BelongsTo::make('InterventionLevel'),
+            BelongsTo::make('LevelOfCare'),
             BelongsTo::make('AgeCohort'),
             BelongsTo::make('PublicHealthFunction'),
             Markdown::make('Details','details')->alwaysShow(),

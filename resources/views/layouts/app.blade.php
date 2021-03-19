@@ -202,8 +202,8 @@
                             </button>
                             <!-- Expandable link section, show/hide based on state. -->
                             <div class="space-y-1">
-                                @foreach(App\Models\InterventionLevel::all() as $levelofCare)
-                                    <a href="{{ route('level-of-care', ['intervention_level_id' => $levelofCare->id]) }}"
+                                @foreach(App\Models\LevelOfCare::all() as $levelofCare)
+                                    <a href="{{ route('level-of-care', ['level_of_care_id' => $levelofCare->id]) }}"
                                        class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         {{ $levelofCare->name }}
                                     </a>

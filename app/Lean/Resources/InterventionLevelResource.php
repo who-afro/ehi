@@ -4,7 +4,7 @@
 namespace App\Lean\Resources;
 
 
-use App\Models\InterventionLevel;
+use App\Models\LevelOfCare;
 use Lean\Fields\ID;
 use Lean\Fields\Text;
 use Lean\Fields\Trix;
@@ -12,7 +12,7 @@ use Lean\LeanResource;
 
 class InterventionLevelResource extends LeanResource
 {
-    public static string $model = InterventionLevel::class;
+    public static string $model = LevelOfCare::class;
     public static array $searchable = [
         'id',
         'name',
@@ -36,6 +36,6 @@ class InterventionLevelResource extends LeanResource
     }
 
     public static function label(): string {
-        return "Intervention Level";
+        return "Level of Care";
     }
 }

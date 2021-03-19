@@ -20,7 +20,7 @@ use Lean\Lean;
 
 Route::view('/', "welcome");
 Route::get('/interventions-list', Interventions::class)->name("interventions-list");
-Route::get('/level-of-care/{intervention_level_id}', LevelOfCareInterventions::class)->name("level-of-care");
+Route::get('/level-of-care/{level_of_care_id}', LevelOfCareInterventions::class)->name("level-of-care");
 Route::get('/public-health-function/{public_health_function_id}', PublicHealthFunctionInterventions::class)->name("public-health-function");
 Route::get('/program-area/{program_area_id}', ProgramAreaInterventions::class)->name("program-area");
 

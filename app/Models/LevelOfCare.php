@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class InterventionLevel extends Model
+class LevelOfCare extends Model
 {
     use HasFactory;
 

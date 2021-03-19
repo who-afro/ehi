@@ -17,7 +17,7 @@ class Intervention extends Model
      */
     protected $fillable = [
         'details',
-        'intervention_level_id',
+        'level_of_care_id',
         'public_health_function_id',
         'condition_id',
         'age_cohort_id',
@@ -49,7 +49,7 @@ class Intervention extends Model
 
     public function interventionLevel()
     {
-        return $this->belongsTo(InterventionLevel::class);
+        return $this->belongsTo(LevelOfCare::class);
     }
 
     public function publicHealthFunction()

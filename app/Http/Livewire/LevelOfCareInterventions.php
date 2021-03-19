@@ -6,8 +6,8 @@ namespace App\Http\Livewire;
 
 class LevelOfCareInterventions extends Interventions
 {
-    public function mount($intervention_level_id)
+    public function mount($level_of_care_id)
     {
-        $this->filters['intervention_level_id'] = array($intervention_level_id);
+        $this->filters['level_of_care_id'] = array($level_of_care_id);
     }
 }

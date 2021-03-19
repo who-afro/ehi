@@ -2,18 +2,17 @@
 
 namespace Database\Factories;
 
+use App\Models\LevelOfCare;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
-use App\Models\InterventionLevel;
 
-class InterventionLevelFactory extends Factory
+class LevelOfCareFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = InterventionLevel::class;
+    protected $model = LevelOfCare::class;
 
     /**
      * Define the model's default state.
