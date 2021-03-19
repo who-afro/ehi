@@ -241,6 +241,36 @@
                             </div>
                         </div>
 
+                            <div class="space-y-1">
+                                <button
+                                    class="group w-full flex items-center pl-2 pr-1 py-2 text-sm font-medium rounded-md bg-white text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                    <!-- Heroicon name: outline/folder -->
+                                    <svg class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6"
+                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
+                                    </svg>
+                                    Age Cohort
+                                    <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
+                                    <svg
+                                        class="ml-auto h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150"
+                                        viewBox="0 0 20 20" aria-hidden="true">
+                                        <path d="M6 6L14 10L6 14V6Z" fill="currentColor"/>
+                                    </svg>
+                                </button>
+                                <!-- Expandable link section, show/hide based on state. -->
+                                <div class="space-y-1">
+
+                                    @foreach(App\Models\AgeCohort::all() as $ageCohort)
+                                        <a href="{{ route('age-cohort', ['age_cohort_id' => $ageCohort->id]) }}"
+                                           class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                            {{$ageCohort->name}}
+                                        </a>
+                                    @endforeach
+                                </div>
+                            </div>
+
                         <div class="space-y-1">
                             <button
                                 class="group w-full flex items-center pl-2 pr-1 py-2 text-sm font-medium rounded-md bg-white text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">

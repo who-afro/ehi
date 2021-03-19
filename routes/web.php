@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\AgeCohortInterventions;
 use App\Http\Livewire\Interventions;
 use App\Http\Livewire\LevelOfCareInterventions;
 use App\Http\Livewire\ProgramAreaInterventions;
@@ -19,6 +20,7 @@ use Lean\Lean;
 */
 
 Route::view('/', "welcome");
+Route::get('/age-cohort/{age_cohort_id}', AgeCohortInterventions::class)->name("age-cohort");
 Route::get('/interventions-list', Interventions::class)->name("interventions-list");
 Route::get('/level-of-care/{level_of_care_id}', LevelOfCareInterventions::class)->name("level-of-care");
 Route::get('/public-health-function/{public_health_function_id}', PublicHealthFunctionInterventions::class)->name("public-health-function");
