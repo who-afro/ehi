@@ -45,10 +45,10 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
                                 <ul class="list-disc">
 
-                                @forelse($v->services as $s => $service)
-                                    <li>{{$service->name}} - {{ $service->pivot->details }}</li>
+                                @forelse($v->interventionCategories as $s => $interventionCategory)
+                                    <li>{{$interventionCategory->name}} - {{ $interventionCategory->pivot->details }}</li>
                                 @empty
-                                        <li>There are no services</li>
+                                        <li>There are no intervention categories</li>
                                 @endforelse
                                 </ul>
 

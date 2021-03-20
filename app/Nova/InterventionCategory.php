@@ -6,19 +6,18 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Service extends Resource
+class InterventionCategory extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Service::class;
+    public static $model = \App\Models\InterventionCategory::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -46,10 +45,10 @@ class Service extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+            BelongsTo::make('Parent', 'parent', 'App\Nova\InterventionCategory')->nullable()->sortable(),
             Text::make(__('Name'), 'name')->sortable(),
             Text::make(__('Description'), 'description'),
-            BelongsTo::make('Parent', 'parent', 'App\Nova\Service')->nullable(),
-            HasMany::make('Services')->nullable(),
+            HasMany::make('Intervention Sub-categories', 'interventionCategories', 'App\Nova\InterventionCategory')->nullable(),
             BelongsToMany::make('ProgramAreas')->nullable(),
         ];
     }
@@ -96,5 +95,10 @@ class Service extends Resource
     public function actions(Request $request)
     {
         return [];
+    }
+
+    public static function relatableParent(NovaRequest $request, $query)
+    {
+        return $query->whereNull('parent_id');
     }
 }

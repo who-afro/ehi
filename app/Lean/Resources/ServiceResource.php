@@ -2,7 +2,7 @@
 
 namespace App\Lean\Resources;
 
-use App\Models\Service;
+use App\Models\InterventionCategory;
 use Lean\Fields\ID;
 use Lean\Fields\Pikaday;
 use Lean\Fields\Relations\BelongsTo;
@@ -13,7 +13,7 @@ use Lean\LeanResource;
 
 class ServiceResource extends LeanResource
 {
-    public static string $model = Service::class;
+    public static string $model = InterventionCategory::class;
 
     public static array $searchable = [
         'id',
@@ -26,8 +26,8 @@ class ServiceResource extends LeanResource
     public static int $resultsPerPage;
 
     public static array $lang = [
-        // 'create.submit' => 'Create Service',
-        // 'notifications.created' => 'Service created!',
+        // 'create.submit' => 'Create InterventionCategorySeeder',
+        // 'notifications.created' => 'InterventionCategorySeeder created!',
         // ...
     ];
 
@@ -47,7 +47,7 @@ class ServiceResource extends LeanResource
 
     public static function label(): string
     {
-        return __('Service');
+        return __('InterventionCategorySeeder');
     }
 
     public static function pluralLabel(): string

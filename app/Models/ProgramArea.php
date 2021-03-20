@@ -32,9 +32,9 @@ class ProgramArea extends Model
     ];
 
 
-    public function services()
+    public function interventionCategories()
     {
-        return $this->belongsToMany(Service::class);
+        return $this->belongsToMany(InterventionCategory::class);
     }
 
     public static function boot()

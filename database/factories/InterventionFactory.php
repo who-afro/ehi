@@ -2,9 +2,8 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\Intervention;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class InterventionFactory extends Factory
 {

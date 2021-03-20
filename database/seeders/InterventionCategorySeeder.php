@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Service;
 use Illuminate\Database\Seeder;
 
-class ServiceSeeder extends Seeder
+class InterventionCategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +13,6 @@ class ServiceSeeder extends Seeder
      */
     public function run()
     {
-        Service::factory()->count(5)->create();
+        InterventionCategorySeeder::factory()->count(5)->create();
     }
 }

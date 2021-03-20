@@ -44,7 +44,7 @@ class ProgramArea extends Resource
             ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name')->sortable(),
             Text::make(__('Description'), 'description'),
-            BelongsToMany::make("Services")
+            BelongsToMany::make("InterventionCategories")
         ];
     }
 

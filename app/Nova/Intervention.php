@@ -50,12 +50,12 @@ class Intervention extends Resource
             BelongsTo::make('AgeCohort'),
             BelongsTo::make('PublicHealthFunction'),
             Markdown::make('Details','details')->alwaysShow(),
-            BelongsToMany::make('Services')->nullable()->fields(function () {
+            BelongsToMany::make('InterventionCategories')->nullable()->fields(function () {
                 return [
                     Text::make('Details'),
                 ];
             }),
-            Text::make("Services Count", function() {return $this->services()->count(); })
+            Text::make("Intervention Categories Count", function() {return $this->interventionCategories()->count(); })
         ];
     }
 

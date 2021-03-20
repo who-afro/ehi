@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Service extends Model
+class InterventionCategory extends Model
 {
     use HasFactory;
 
@@ -45,19 +45,19 @@ class Service extends Model
         });
     }
 
-    public function services()
-    {
-        return $this->hasMany(Service::class, 'parent_id', 'id');
-    }
-
     public function parent()
     {
-        return $this->belongsTo(Service::class, 'parent_id', 'id');
+        return $this->belongsTo(InterventionCategory::class, 'parent_id', 'id');
     }
 
-    public function childrenServices()
+    public function interventionCategories()
     {
-        return $this->hasMany(Service::class, 'parent_id', 'id')->with('services');
+        return $this->hasMany(InterventionCategory::class, 'parent_id', 'id');
+    }
+
+    public function childrenCategories()
+    {
+        return $this->hasMany(InterventionCategory::class, 'parent_id', 'id')->with('interventionCategories');
     }
 
     public function programAreas() {

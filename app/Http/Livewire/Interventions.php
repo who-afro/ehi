@@ -44,7 +44,7 @@ class Interventions extends Component
 
     public function getInterventionList(): \Illuminate\Contracts\Pagination\LengthAwarePaginator
     {
-        return Intervention::with('condition:id,name', 'ageCohort:id,name', 'interventionLevel:id,name', 'publicHealthFunction:id,name', 'services')
+        return Intervention::with('condition:id,name', 'ageCohort:id,name', 'interventionLevel:id,name', 'publicHealthFunction:id,name', 'interventionCategories')
             ->when($this->filters['age_cohort_id'], fn($query, $age_cohort_id) => $query->whereIn('age_cohort_id', $age_cohort_id))
             ->when($this->filters['condition_id'], fn($query, $condition_id) => $query->whereIn('condition_id', $condition_id))
             ->when($this->filters['level_of_care_id'], fn($query, $level_of_care_id) => $query->whereIn('level_of_care_id',  $level_of_care_id))

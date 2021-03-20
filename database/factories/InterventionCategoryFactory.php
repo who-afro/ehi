@@ -2,18 +2,17 @@
 
 namespace Database\Factories;
 
+use App\Models\InterventionCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
-use App\Models\Service;
 
-class ServiceFactory extends Factory
+class InterventionCategoryFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Service::class;
+    protected $model = InterventionCategory::class;
 
     /**
      * Define the model's default state.
