@@ -47,7 +47,7 @@ class Intervention extends Model
         return $this->belongsTo(AgeCohort::class);
     }
 
-    public function interventionLevel()
+    public function levelofcare()
     {
         return $this->belongsTo(LevelOfCare::class);
     }
