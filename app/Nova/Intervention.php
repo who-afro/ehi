@@ -2,6 +2,8 @@
 
 namespace App\Nova;
 
+use App\Nova\Filters\ConditionFilter;
+use App\Nova\Filters\InterventionCategoryCountFilter;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -78,7 +80,10 @@ class Intervention extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new ConditionFilter,
+            new InterventionCategoryCountFilter
+        ];
     }
 
     /**
