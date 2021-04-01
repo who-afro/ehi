@@ -36,6 +36,6 @@ class ConditionFilter extends Filter
      */
     public function options(Request $request)
     {
-        return Condition::orderBy('name')->pluck('name', 'name');
+        return Condition::pluck('id', 'name');
     }
 }
