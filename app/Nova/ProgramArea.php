@@ -4,7 +4,6 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
-use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 
 class ProgramArea extends Resource
@@ -29,7 +28,7 @@ class ProgramArea extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'description'
+        'name', 'description'
     ];
 
     /**
@@ -41,7 +40,6 @@ class ProgramArea extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name')->sortable(),
             Text::make(__('Description'), 'description'),
             BelongsToMany::make("InterventionCategories")
