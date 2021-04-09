@@ -14,17 +14,18 @@
         "blade-ui-kit/blade-icons": "^0.5",
         "blade-ui-kit/blade-zondicons": "^0.2",
         "fideloper/proxy": "^4.4",
+        "flagstudio/nova-actions-left": "^0.3.0",
         "flynsarmy/csv-seeder": "^2.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/jetstream": "^1.6",
+        "laravel/nova": "~3.0",
         "laravel/sanctum": "^2.6",
         "laravel/telescope": "^4.3",
         "laravel/tinker": "^2.5",
         "leanadmin/lean": "^0.5.1",
-        "livewire/livewire": "^2.0",
-        "laravel/nova": "~3.0"
+        "livewire/livewire": "^2.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

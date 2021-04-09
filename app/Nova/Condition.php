@@ -29,7 +29,7 @@ class Condition extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'description'
+        'name', 'description'
     ];
 
     /**
@@ -41,7 +41,6 @@ class Condition extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name')->sortable(),
             Text::make(__('Description'), 'description'),
             HasMany::make("Interventions", 'interventions')

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8916451684ea1c74653a440185c625cb",
+    "content-hash": "dc855b7887df3227e6c9164810cf9ae0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1341,6 +1341,51 @@
                 "source": "https://github.com/fideloper/TrustedProxy/tree/4.4.1"
             },
             "time": "2020-10-22T13:48:01+00:00"
+        },
+        {
+            "name": "flagstudio/nova-actions-left",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Flagstudio/nova-actions-left.git",
+                "reference": "c22ecc5e9d87ae87ed6f870e195c7d254ff1b064"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Flagstudio/nova-actions-left/zipball/c22ecc5e9d87ae87ed6f870e195c7d254ff1b064",
+                "reference": "c22ecc5e9d87ae87ed6f870e195c7d254ff1b064",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Flagstudio\\NovaActionsLeft\\NovaActionsLeftServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Flagstudio\\NovaActionsLeft\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Laravel Nova actions on the left",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/Flagstudio/nova-actions-left/issues",
+                "source": "https://github.com/Flagstudio/nova-actions-left/tree/master"
+            },
+            "time": "2020-08-25T06:17:08+00:00"
         },
         {
             "name": "flynsarmy/csv-seeder",

@@ -52,10 +52,10 @@ class Intervention extends Resource
     public function fields(Request $request)
     {
         return [
-            BelongsTo::make('Condition')->searchable(),
-            BelongsTo::make('LevelOfCare'),
-            BelongsTo::make('AgeCohort'),
-            BelongsTo::make('PublicHealthFunction'),
+            BelongsTo::make('Condition')->searchable()->sortable()->viewable(false),
+            BelongsTo::make('LevelOfCare')->viewable(false),
+            BelongsTo::make('AgeCohort')->viewable(false),
+            BelongsTo::make('PublicHealthFunction')->searchable()->sortable()->viewable(false),
             Markdown::make('Details','details')->alwaysShow(),
             BelongsToMany::make('Intervention Categories', 'InterventionCategories')->fields(function () {
                 return [
@@ -65,7 +65,7 @@ class Intervention extends Resource
                         }),
                 ];
             }),
-            Text::make("Intervention Categories Count", function() {return $this->interventionCategories()->count(); })
+            Text::make("Categories Count", function() {return $this->interventionCategories()->count(); })
         ];
     }
 

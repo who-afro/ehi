@@ -40,7 +40,6 @@ class AgeCohort extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
             Text::make(__('Name'), 'name')->sortable(),
             Text::make(__('Description'), 'description'),
         ];
