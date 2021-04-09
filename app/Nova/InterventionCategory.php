@@ -64,6 +64,7 @@ class InterventionCategory extends Resource
                         }),
                 ];
             }),
+            Text::make("Intervention Count", function() {return $this->interventions()->count(); })
         ];
     }
 
