@@ -36,6 +36,13 @@ class InterventionCategory extends Resource
     ];
 
     /**
+     * The number of resources to show per page via relationships.
+     *
+     * @var int
+     */
+    public static $perPageViaRelationship = 25;
+
+    /**
      * Get the fields displayed by the resource.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -44,12 +51,19 @@ class InterventionCategory extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
             BelongsTo::make('Parent', 'parent', 'App\Nova\InterventionCategory')->nullable()->sortable(),
             Text::make(__('Name'), 'name')->sortable(),
             Text::make(__('Description'), 'description'),
             HasMany::make('Intervention Sub-categories', 'interventionCategories', 'App\Nova\InterventionCategory')->nullable(),
             BelongsToMany::make('ProgramAreas')->nullable(),
+            BelongsToMany::make('Interventions')->fields(function () {
+                return [
+                    Text::make('Details', 'details')
+                        ->displayUsing(function(){
+                            return isset($this->pivot) ? $this->pivot->details : '';
+                        }),
+                ];
+            }),
         ];
     }
 

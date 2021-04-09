@@ -7,7 +7,6 @@ use App\Nova\Filters\InterventionCategoryCountFilter;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
@@ -34,8 +33,15 @@ class Intervention extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'details',
     ];
+
+    /**
+     * The number of resources to show per page via relationships.
+     *
+     * @var int
+     */
+    public static $perPageViaRelationship = 25;
 
     /**
      * Get the fields displayed by the resource.
@@ -46,15 +52,17 @@ class Intervention extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
-            BelongsTo::make('Condition'),
+            BelongsTo::make('Condition')->searchable(),
             BelongsTo::make('LevelOfCare'),
             BelongsTo::make('AgeCohort'),
             BelongsTo::make('PublicHealthFunction'),
             Markdown::make('Details','details')->alwaysShow(),
-            BelongsToMany::make('InterventionCategories')->nullable()->fields(function () {
+            BelongsToMany::make('Intervention Categories', 'InterventionCategories')->fields(function () {
                 return [
-                    Text::make('Details'),
+                    Text::make('Details', 'details')
+                        ->displayUsing(function(){
+                            return isset($this->pivot) ? $this->pivot->details : '';
+                        }),
                 ];
             }),
             Text::make("Intervention Categories Count", function() {return $this->interventionCategories()->count(); })
