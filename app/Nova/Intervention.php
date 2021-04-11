@@ -51,7 +51,7 @@ class Intervention extends Resource
     public function fields(Request $request)
     {
         return [
-            BelongsTo::make('Condition')->searchable()->sortable()->viewable(false),
+            BelongsTo::make('Condition')->sortable()->viewable(false),
             BelongsTo::make('LevelOfCare')->viewable(false),
             BelongsTo::make('AgeCohort')->viewable(false),
             BelongsTo::make('PublicHealthFunction')->sortable()->viewable(false),
