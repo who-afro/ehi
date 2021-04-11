@@ -54,7 +54,7 @@ class Intervention extends Resource
             BelongsTo::make('Condition')->searchable()->sortable()->viewable(false),
             BelongsTo::make('LevelOfCare')->viewable(false),
             BelongsTo::make('AgeCohort')->viewable(false),
-            BelongsTo::make('PublicHealthFunction')->searchable()->sortable()->viewable(false),
+            BelongsTo::make('PublicHealthFunction')->sortable()->viewable(false),
             Markdown::make('Details','details')->alwaysShow(),
             BelongsToMany::make('Intervention Categories', 'InterventionCategories')->fields(function () {
                 return [
