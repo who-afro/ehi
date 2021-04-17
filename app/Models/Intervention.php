@@ -63,7 +63,7 @@ class Intervention extends Model
     }
 
     public function programAreas() {
-        return $this->belongsToMany(ProgramArea::class);
+        return $this->belongsToMany(ProgramGroup::class);
     }
 
     public function interventioncategories() {

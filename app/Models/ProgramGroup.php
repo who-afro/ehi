@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class ProgramArea extends Model
+class ProgramGroup extends Model
 {
     use HasFactory;
 
@@ -20,7 +20,6 @@ class ProgramArea extends Model
         'name',
         'description',
         'uuid',
-        'program_group_id'
     ];
 
     /**
@@ -33,14 +32,9 @@ class ProgramArea extends Model
     ];
 
 
-    public function programGroup()
+    public function programAreas()
     {
-        return $this->belongsTo(ProgramGroup::class);
-    }
-
-    public function conditions()
-    {
-        return $this->belongsToMany(Condition::class, 'program_area_conditions');
+        return $this->hasMany(ProgramArea::class);
     }
 
     public static function boot()

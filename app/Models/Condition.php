@@ -37,6 +37,10 @@ class Condition extends Model
         return $this->hasMany(Intervention::class);
     }
 
+    public function conditions() {
+        return $this->belongsToMany(ProgramArea::class, 'program_area_conditions');
+    }
+
     public static function boot()
     {
         parent::boot();

@@ -3,17 +3,18 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Text;
 
-class ProgramArea extends Resource
+class ProgramGroup extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\ProgramArea::class;
+    public static $model = \App\Models\ProgramGroup::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -42,7 +43,7 @@ class ProgramArea extends Resource
         return [
             Text::make(__('Name'), 'name')->sortable(),
             Text::make(__('Description'), 'description'),
-            BelongsTo::make("ProgramGroup")
+            HasMany::make("ProgramAreas")
         ];
     }
 

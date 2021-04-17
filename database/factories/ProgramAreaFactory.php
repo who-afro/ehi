@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\ProgramArea;
+use App\Models\ProgramGroup;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProgramAreaFactory extends Factory
@@ -12,7 +12,7 @@ class ProgramAreaFactory extends Factory
      *
      * @var string
      */
-    protected $model = ProgramArea::class;
+    protected $model = ProgramGroup::class;
 
     /**
      * Define the model's default state.

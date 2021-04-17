@@ -7,12 +7,12 @@ use Flynsarmy\CsvSeeder\CsvSeeder;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ProgramAreaSeeder extends CsvSeeder
+class ProgramGroupSeeder extends CsvSeeder
 {
     public function __construct()
     {
-        $this->table = 'program_areas';
-        $this->filename = base_path().'/database/seeders/csv/program_areas.csv';
+        $this->table = 'program_groups';
+        $this->filename = base_path().'/database/seeders/csv/program_groups.csv';
     }
     /**
      * Run the database seeds.
