@@ -54,7 +54,7 @@ class InterventionCategory extends Resource
             Text::make(__('Name'), 'name')->sortable(),
             Text::make(__('Description'), 'description'),
             Text::make("Intervention Count", function() {return $this->interventions()->count(); }),
-            BelongsToMany::make('ProgramAreas')->nullable(),
+            HasMany::make('Intervention Sub-categories', 'interventionCategories', 'App\Nova\InterventionCategory')->nullable(),
             BelongsToMany::make('Interventions')->fields(function () {
                 return [
                     Text::make('Details', 'details')
@@ -63,8 +63,6 @@ class InterventionCategory extends Resource
                         }),
                 ];
             }),
-            HasMany::make('Intervention Sub-categories', 'interventionCategories', 'App\Nova\InterventionCategory')->nullable(),
-
         ];
     }
 
