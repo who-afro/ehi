@@ -18,7 +18,7 @@ class InterventionCategoryCountFilter extends Filter
     public function apply(Request $request, $query, $value)
     {
         if ($value === '0') {
-            return $query->whereDoesntHave('interventionCategories');
+            return $query->DoesntHave('interventionCategories');
         }
         return $query->has('interventionCategories');
 
