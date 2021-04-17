@@ -58,10 +58,10 @@ class Intervention extends Resource
             Markdown::make('Details','details')->alwaysShow(),
             BelongsToMany::make('Intervention Categories', 'InterventionCategories')->fields(function () {
                 return [
-                    Text::make('Details', 'details')
+                    Markdown::make('Details', 'details')
                         ->displayUsing(function(){
                             return isset($this->pivot) ? $this->pivot->details : '';
-                        }),
+                        })->alwaysShow(),
                 ];
             }),
             Text::make("Categories Count", function() {return $this->interventionCategories()->count(); })
