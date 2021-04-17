@@ -43,7 +43,8 @@ class ProgramGroup extends Resource
         return [
             Text::make(__('Name'), 'name')->sortable(),
             Text::make(__('Description'), 'description'),
-            HasMany::make("ProgramAreas")
+            HasMany::make("ProgramAreas"),
+            Text::make("Program Areas", function() {return $this->programAreas()->count(); })
         ];
     }
 

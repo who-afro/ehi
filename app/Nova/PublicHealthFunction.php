@@ -41,6 +41,7 @@ class PublicHealthFunction extends Resource
         return [
             Text::make(__('Name'), 'name')->sortable(),
             Text::make(__('Description'), 'description'),
+            Text::make("Interventions", function() {return $this->interventions()->count(); }),
         ];
     }
 

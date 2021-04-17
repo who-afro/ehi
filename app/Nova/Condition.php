@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Text;
 
@@ -42,7 +43,10 @@ class Condition extends Resource
         return [
             Text::make(__('Name'), 'name')->sortable(),
             Text::make(__('Description'), 'description'),
-            HasMany::make("Interventions", 'interventions')
+            HasMany::make("Interventions", 'interventions'),
+            BelongsToMany::make("Program Area", 'programAreas'),
+            Text::make("Interventions", function() {return $this->interventions()->count(); }),
+            Text::make("Program Areas", function() {return $this->programAreas()->count(); })
         ];
     }
 
