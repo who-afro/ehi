@@ -6,7 +6,6 @@ use App\Http\Livewire\LevelOfCareInterventions;
 use App\Http\Livewire\ProgramAreaInterventions;
 use App\Http\Livewire\PublicHealthFunctionInterventions;
 use Illuminate\Support\Facades\Route;
-use Lean\Lean;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +28,3 @@ Route::get('/program-area/{program_area_id}', ProgramAreaInterventions::class)->
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
-Lean::routes([
-    'home' => '/admin/p/home',
-]);
