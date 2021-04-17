@@ -43,10 +43,10 @@ class Condition extends Resource
         return [
             Text::make(__('Name'), 'name')->sortable(),
             Text::make(__('Description'), 'description'),
-            HasMany::make("Interventions", 'interventions'),
-            BelongsToMany::make("Program Area", 'programAreas'),
             Text::make("Interventions", function() {return $this->interventions()->count(); }),
-            Text::make("Program Areas", function() {return $this->programAreas()->count(); })
+            Text::make("Program Areas", function() {return $this->programAreas()->count(); }),
+            BelongsToMany::make("Program Areas", 'programAreas'),
+            HasMany::make("Interventions", 'interventions'),
         ];
     }
 

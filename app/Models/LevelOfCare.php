@@ -31,6 +31,10 @@ class LevelOfCare extends Model
         'id' => 'integer',
     ];
 
+    public function interventions() {
+        return $this->hasMany(Intervention::class);
+    }
+
     public static function boot()
     {
         parent::boot();
