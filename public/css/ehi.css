@@ -10,3 +10,7 @@
 .h-header {
     height: 5rem;
 }
+/* required for the accordian on the program area overview page to work - for now */
+.max-h-0 {
+    max-height: 0;
+}

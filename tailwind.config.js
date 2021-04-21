@@ -19,6 +19,9 @@ module.exports = {
                 teal: colors.teal,
                 rose: colors.rose,
             },
+            listStyleType: {
+                roman: 'lower-roman'
+            },
         },
     },
 
