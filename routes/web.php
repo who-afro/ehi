@@ -21,8 +21,11 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', "welcome");
 Route::get('/age-cohort/{age_cohort_id}', AgeCohortInterventions::class)->name("age-cohort");
 Route::get('/interventions-list', Interventions::class)->name("interventions-list");
+Route::view('/level-of-care-overview', 'level-of-care-overview')->name("level-of-care-overview");
 Route::get('/level-of-care/{level_of_care_id}', LevelOfCareInterventions::class)->name("level-of-care");
+Route::view('/public-health-function-overview', 'public-health-function-overview')->name("public-health-function-overview");
 Route::get('/public-health-function/{public_health_function_id}', PublicHealthFunctionInterventions::class)->name("public-health-function");
+Route::view('/program-area-overview', 'program-area-overview')->name("program-area-overview");
 Route::get('/program-area/{program_area_id}', ProgramAreaInterventions::class)->name("program-area");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

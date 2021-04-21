@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Intervention;
+use App\Models\InterventionDetails;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -44,11 +44,29 @@ class Interventions extends Component
 
     public function getInterventionList(): \Illuminate\Contracts\Pagination\LengthAwarePaginator
     {
-        return Intervention::with('condition:id,name', 'ageCohort:id,name', 'levelOfCare:id,name', 'publicHealthFunction:id,name', 'interventionCategories')
-            ->when($this->filters['age_cohort_id'], fn($query, $age_cohort_id) => $query->whereIn('age_cohort_id', $age_cohort_id))
-            ->when($this->filters['condition_id'], fn($query, $condition_id) => $query->whereIn('condition_id', $condition_id))
-            ->when($this->filters['level_of_care_id'], fn($query, $level_of_care_id) => $query->whereIn('level_of_care_id',  $level_of_care_id))
-            ->when($this->filters['public_health_function_id'], fn($query, $public_health_function_id) => $query->whereIn('public_health_function_id', $public_health_function_id))
+        return InterventionDetails::with('intervention', 'interventionCategory')
+            ->when($this->filters['age_cohort_id'], fn($query, $age_cohort_id) => $query->whereHas('intervention.ageCohort',
+                function($query) use ($age_cohort_id) {
+                    $query->where('age_cohort_id', $age_cohort_id);
+                }))
+            ->when($this->filters['condition_id'], fn($query, $condition_id) => $query->whereHas('intervention.condition',
+                function($query) use ($condition_id) {
+                    $query->where('condition_id', $condition_id);
+                }))
+            ->when($this->filters['level_of_care_id'], fn($query, $level_of_care_id) => $query->whereHas('intervention.levelOfCare',
+                function($query) use ($level_of_care_id) {
+                    $query->where('level_of_care_id', $level_of_care_id);
+                }))
+            ->when($this->filters['public_health_function_id'],
+                fn($query, $public_health_function_id) => $query->whereHas('intervention.publicHealthFunction',
+                    function($query) use ($public_health_function_id) {
+                        $query->where('public_health_function_id', $public_health_function_id);
+            }))
+            ->when($this->filters['program_area_id'],
+                fn($query, $program_area_id) => $query->whereHas('intervention.condition.programAreas',
+                    function($query) use ($program_area_id) {
+                        $query->whereIn('program_area_id', $program_area_id);
+                    }))
             ->when($this->filters['search'], fn($query, $search) => $query->where('details', 'like', '%' . $search . '%'))
             ->paginate($this->filters['number_of_items_per_page']);
     }
@@ -63,9 +81,13 @@ class Interventions extends Component
         if ($this->filters['applyFilter'] == 'show') {
             $interventions =  $this->getInterventionList();
         }
-        return view('livewire.interventions',
+        return view($this->getView(),
             [
                 'interventions' => $interventions
             ]);
+    }
+
+    protected function getView() {
+        return 'livewire.interventions';
     }
 }

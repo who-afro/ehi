@@ -6,25 +6,23 @@
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                     <tr>
-                        <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase ">
-                            Condition
-                        </th>
-                        <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase">
-                            Age Cohort
-                        </th>
-                        <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase">
-                            Public Health Function
-                        </th>
-                        <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase">
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase whitespace-nowrap">
                             Program Area
                         </th>
-                        <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase">
-                            Services
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase whitespace-nowrap">
+                            Condition
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase  whitespace-nowrap">
+                            Age Cohort
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase whitespace-nowrap">
+                            Public Health Function
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase">
+                            Intervention Category
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase">
+                            Intervention
                         </th>
                     </tr>
                     </thead>
@@ -32,26 +30,22 @@
                     @forelse($interventions as $k => $v)
                         <tr class="{{ $loop->odd ? 'bg-white' : 'bg-gray-50' }}">
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
-                                {{$v->condition->name}}
+                                {{$v->intervention->condition->programAreas}}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
-                                {{$v->ageCohort->name}}
+                                {{$v->intervention->condition->name}}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
-                                {{$v->publicHealthFunction->name}}
+                                {{$v->intervention->ageCohort->name}}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
+                                {{$v->intervention->publicHealthFunction->name}}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
-                                <ul class="list-disc">
-
-                                @forelse($v->interventionCategories as $s => $interventionCategory)
-                                    <li>{{$interventionCategory->name}} - {{ $interventionCategory->pivot->details }}</li>
-                                @empty
-                                        <li>There are no intervention categories</li>
-                                @endforelse
-                                </ul>
-
+                                {{$v->interventionCategory->name}}
+                            </td>
+                            <td class="px-6 py-4 text-sm text-left text-gray-500">
+                                {{ $v->details}}
                             </td>
                         </tr>
                     @empty

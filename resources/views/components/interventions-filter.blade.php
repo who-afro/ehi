@@ -55,7 +55,7 @@
                         <dd class="mt-1 text-3xl font-semibold text-gray-900">
                             <x-input.select-multiple class="p-2 rounded border w-full appearance-none" wire:model="filters.program_area_id" id="filter-program_area_id" placeholder="Select an Program Area">
 
-                                @foreach(App\Models\ProgramGroup::all() as $programArea)
+                                @foreach(App\Models\ProgramArea::all() as $programArea)
                                     <option value="{{$programArea->id}}">{{$programArea->name}}</option>
                                 @endforeach
                             </x-input.select-multiple>
