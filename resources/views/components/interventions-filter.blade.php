@@ -78,8 +78,6 @@
                 </div>
             </div>
         </dl>
-        <dl class="mt-5 grid grid-cols-4 gap-4">
 
-        </dl>
     </div>
 </div>

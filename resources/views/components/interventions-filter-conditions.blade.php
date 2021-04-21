@@ -1,0 +1,90 @@
+<div>
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-8">
+        <dl class="mt-5 grid grid-cols-4 gap-4">
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <dt class="text-sm font-medium text-gray-500 truncate">
+                        Age Cohort
+                    </dt>
+                    <dd class="mt-1 text-3xl font-semibold text-gray-900">
+                        <x-input.select-multiple class="p-2 rounded border w-full appearance-none"
+                                                 wire:model="filters.age_cohort_id" id="filter-age_cohort_id"
+                                                 placeholder="Select an Age Cohort">
+
+                            @foreach(App\Models\AgeCohort::all() as $ageCohort)
+                                <option value="{{$ageCohort->id}}">{{$ageCohort->name}}</option>
+                            @endforeach
+                        </x-input.select-multiple>
+                    </dd>
+                </div>
+            </div>
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <dt class="text-sm font-medium text-gray-500 truncate">
+                        Public Health Function
+                    </dt>
+                    <dd class="mt-1 text-3xl font-semibold text-gray-900">
+                        <x-input.select-multiple class="p-2 rounded border w-full appearance-none"
+                                                 wire:model="filters.public_health_function_id"
+                                                 id="filter-public_health_function_id"
+                                                 placeholder="Select Public Health Function">
+
+                            @foreach(App\Models\PublicHealthFunction::all() as $publicHealthFunction)
+                                <option value="{{$publicHealthFunction->id}}">{{$publicHealthFunction->name}}</option>
+                            @endforeach
+                        </x-input.select-multiple>
+                    </dd>
+                </div>
+            </div>
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6 hidden">
+                    <dt class="text-sm font-medium text-gray-500 truncate">
+                        Level of Care
+                    </dt>
+                    <dd class="mt-1 text-3xl font-semibold text-gray-900">
+                        <x-input.select class="p-2 rounded border w-full appearance-none"
+                                        wire:model="filters.level_of_care_id" id="filter-level_of_care_id"
+                                        placeholder="Select Level of Care">
+
+                            @foreach(App\Models\LevelOfCare::all() as $interventionLevel)
+                                <option value="{{$interventionLevel->id}}">{{$interventionLevel->name}}</option>
+                            @endforeach
+                        </x-input.select>
+                    </dd>
+                </div>
+                <div class="bg-white shadow rounded-lg">
+                    <div class="px-4 py-5 sm:p-6">
+                        <dt class="text-sm font-medium text-gray-500 truncate">
+                            Intervention Category
+                        </dt>
+                        <dd class="mt-1 text-3xl font-semibold text-gray-900">
+                            <x-input.select-multiple class="p-2 rounded border w-full appearance-none"
+                                                     wire:model="filters.intervention_category_id"
+                                                     id="filter-intervention_category_id"
+                                                     placeholder="Select an Intervention Category">
+
+                                @foreach(App\Models\InterventionCategory::all() as $interventionCategory)
+                                    <option
+                                        value="{{$interventionCategory->id}}">{{$interventionCategory->name}}</option>
+                                @endforeach
+                            </x-input.select-multiple>
+                        </dd>
+                    </div>
+                </div>
+            </div>
+        </dl>
+        <span class="hidden">
+            <x-input.select-multiple class="p-2 rounded border w-full appearance-none" wire:model="filters.program_area_id" id="filter-program_area_id" placeholder="Select an Program Area">
+
+                                @foreach(App\Models\ProgramArea::all() as $programArea)
+                    <option value="{{$programArea->id}}">{{$programArea->name}}</option>
+                @endforeach
+                            </x-input.select-multiple>
+            <x-input.select-multiple class="p-2 rounded border w-full appearance-none" wire:model="filters.condition_id" id="filter-condition_id" placeholder="Select a Condition">
+                            @foreach(App\Models\Condition::all() as $condition)
+                    <option value="{{$condition->id}}">{{$condition->name}}</option>
+                @endforeach
+                        </x-input.select-multiple>
+        </span>
+    </div>
+</div>

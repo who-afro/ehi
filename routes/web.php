@@ -3,6 +3,7 @@
 use App\Http\Livewire\AgeCohortInterventions;
 use App\Http\Livewire\Interventions;
 use App\Http\Livewire\LevelOfCareInterventions;
+use App\Http\Livewire\ConditionInterventions;
 use App\Http\Livewire\ProgramAreaInterventions;
 use App\Http\Livewire\PublicHealthFunctionInterventions;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,7 @@ Route::view('/public-health-function-overview', 'public-health-function-overview
 Route::get('/public-health-function/{public_health_function_id}', PublicHealthFunctionInterventions::class)->name("public-health-function");
 Route::view('/program-area-overview', 'program-area-overview')->name("program-area-overview");
 Route::get('/program-area/{program_area_id}', ProgramAreaInterventions::class)->name("program-area");
+Route::get('/condition/{condition_id}/program-area/{program_area_id}', ConditionInterventions::class)->name("condition");
 Route::view('/intervention-category', 'intervention-category-overview')->name("intervention-category-overview");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

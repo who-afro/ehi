@@ -10,4 +10,8 @@ class ProgramAreaInterventions extends Interventions
     {
         $this->filters['program_area_id'] = array($program_area_id);
     }
+
+    protected function getView() {
+        return 'livewire.program-area-interventions';
+    }
 }
