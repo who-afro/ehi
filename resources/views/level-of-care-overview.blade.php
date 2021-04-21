@@ -4,12 +4,11 @@
             {{ __('Level of Care (Service Delivery)') }}
         </h2>
     </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="overflow-hidden shadow-xl sm:rounded-lg">
-                <h2 class="text-lg font-bold">Community Level</h2>
-                <p class="text-lg">
+        <div class="mx-auto sm:px-6 lg:px-8">
+            <div class="prose">
+                <p>This thematic area covers the areas in which service delivery occurs</p>
+                <h2>Community Level</h2>
+                <p>
                     The community level is the foundation of the service delivery system, where individuals, families
                     and communities at large are expected to take ownership of their health. The focus at this level is
                     mainly on health promotion services (demand creation) as well as specific supply side services
@@ -18,24 +17,24 @@
                     do have workforce in the name of community health workers who mainly work under supervision of
                     qualified health personnel from a health facility.
                 </p>
-                <h2 class="text-lg font-bold">Primary care level</h2>
-                <p class="text-lg">This is the first physical level of the health system and therefore forms the link
+                <h2>Primary care level</h2>
+                <p>This is the first physical level of the health system and therefore forms the link
                     between the community and mainstream health care system. It is the first care level where most
                     client’s health needs should be addressed. The primary care level usually a health centre in most
                     countries (smaller health centres may be called dispensaries, health stations, health posts,
                     clinics) serves a defined catchment area or defined community sections or units.</p>
-                <p class="text-lg">The Primary care level offers Health promotion, health preventive services, simple
+                <p>The Primary care level offers Health promotion, health preventive services, simple
                     diagnostic, curative and rehabilitation services mainly for ambulant patients. Normally, the
                     facilities in this level do not have beds except perhaps those needed for emergencies and for
                     maternity care. In most instances. In most instances, the staffing at Primary care level are mainly
                     nurses assisted by community or auxiliary health workers. Others may have physician assistants or
                     medical assistants or what is known as clinical officers in other countries.</p>
-                <h2 class="text-lg font-bold">Secondary and Tertiary level ( Hospital level )</h2>
-                <p class="text-lg">Hospital level complements the primary care level and offers a more comprehensive
+                <h2>Secondary and Tertiary level ( Hospital level )</h2>
+                <p>Hospital level complements the primary care level and offers a more comprehensive
                     package of services including inpatient services. Different countries have different structures and
                     sub categories of the hospital level. In most instances, the hospital level is divided into several
-                    categories including:
-                <ol class="list-decimal text-lg">
+                    categories including:</p>
+                <ol>
                     <li>First level hospital or primary care hospital which is normally a district /sub national level
                         hospital that is a recognized referral facility providing a 24-hour medical care and represents
                         a higher level of competence than the source of referral, e.g. health centre. It may be very
@@ -58,8 +57,6 @@
                         lower level centers by telemedicine
                     </li>
                 </ol>
-                </p>
             </div>
         </div>
-    </div>
 </x-app-layout>

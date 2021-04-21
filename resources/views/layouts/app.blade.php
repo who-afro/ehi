@@ -33,14 +33,16 @@
                     <nav class="flex-1 px-2 space-y-1 bg-white" aria-label="Sidebar">
                         @auth
                             <div>
-
-                                <a href="{{url('nova')}}"
-                                   class="bg-gray-100 text-gray-900 group w-full flex items-center pl-2 py-2 text-sm font-medium rounded-md">
+                                <a href="{{url('nova')}}" class="bg-gray-100 text-gray-900 group w-full flex items-center pl-2 py-2 text-sm font-medium rounded-md">
                                     <!-- Current: "text-gray-600", Default: "text-gray-400 group-hover:text-gray-500" -->
                                     <!-- Heroicon name: outline/cog -->
-                                    <svg class="mr-4 h-6 w-6 text-cyan-200 group-hover:text-cyan-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <svg class="mr-4 h-6 w-6 text-cyan-200 group-hover:text-cyan-200"
+                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                                     </svg>
                                     Administration
                                 </a>
@@ -60,6 +62,18 @@
                                 Welcome
                             </a>
                         </div>
+                            <div>
+                                <!-- Current: "bg-gray-100 text-gray-900", Default: "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
+                                <a href="{{ route('intervention-category-overview') }}"
+                                   class="bg-gray-100 text-gray-900 group w-full flex items-center pl-2 py-2 text-sm font-medium rounded-md">
+                                    <!-- Current: "text-gray-600", Default: "text-gray-400 group-hover:text-gray-500" -->
+                                    <!-- Heroicon name: view-grid -->
+                                    <svg class="text-gray-500 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                                    </svg>
+                                    Intervention Category
+                                </a>
+                            </div>
 
                         <div class="space-y-1">
                             <button
@@ -71,7 +85,8 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                           d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
                                 </svg>
-                                <a href="{{ route('level-of-care-overview') }}" class="group w-full flex items-center pl-1 pr-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">Level of Care</a>
+                                <a href="{{ route('level-of-care-overview') }}"
+                                   class="group w-full flex items-center pl-1 pr-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">Level of Care</a>
                                 <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
                                 <svg
                                     class="ml-auto h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150"
@@ -100,7 +115,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                           d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
                                 </svg>
-                                Public Health Function
+                                <a href="{{ route('public-health-function-overview') }}">Public Health Function</a>
                                 <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
                                 <svg
                                     class="ml-auto h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150"
@@ -119,37 +134,6 @@
                                 @endforeach
                             </div>
                         </div>
-
-                            <div class="space-y-1">
-                                <button
-                                    class="group w-full flex items-center pl-2 pr-1 py-2 text-sm font-medium rounded-md bg-white text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                                    <!-- Heroicon name: outline/folder -->
-                                    <svg class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6"
-                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                         stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
-                                    </svg>
-                                    Age Cohort
-                                    <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
-                                    <svg
-                                        class="ml-auto h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150"
-                                        viewBox="0 0 20 20" aria-hidden="true">
-                                        <path d="M6 6L14 10L6 14V6Z" fill="currentColor"/>
-                                    </svg>
-                                </button>
-                                <!-- Expandable link section, show/hide based on state. -->
-                                <div class="space-y-1">
-
-                                    @foreach(App\Models\AgeCohort::all() as $ageCohort)
-                                        <a href="{{ route('age-cohort', ['age_cohort_id' => $ageCohort->id]) }}"
-                                           class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                            {{$ageCohort->name}}
-                                        </a>
-                                    @endforeach
-                                </div>
-                            </div>
-
                         <div class="space-y-1">
                             <button
                                 class="group w-full flex items-center pl-2 pr-1 py-2 text-sm font-medium rounded-md bg-white text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">
@@ -160,7 +144,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                           d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
-                                Program Area
+                                <a href="{{ route('program-area-overview') }}">Program Area</a>
                                 <!-- Expanded: "text-gray-400 rotate-90", Collapsed: "text-gray-300" -->
                                 <svg
                                     class="ml-auto h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150"
@@ -182,8 +166,6 @@
                     </nav>
                 </div>
             </div>
-
-
         </div>
     </div>
     <div class="flex flex-col w-0 flex-1 overflow-hidden">

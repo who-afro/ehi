@@ -27,6 +27,7 @@ Route::view('/public-health-function-overview', 'public-health-function-overview
 Route::get('/public-health-function/{public_health_function_id}', PublicHealthFunctionInterventions::class)->name("public-health-function");
 Route::view('/program-area-overview', 'program-area-overview')->name("program-area-overview");
 Route::get('/program-area/{program_area_id}', ProgramAreaInterventions::class)->name("program-area");
+Route::view('/intervention-category', 'intervention-category-overview')->name("intervention-category-overview");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

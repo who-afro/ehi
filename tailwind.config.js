@@ -1,5 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
+const colors = require('tailwindcss/colors');
+
 module.exports = {
     purge: [
         './vendor/laravel/jetstream/**/*.blade.php',
@@ -11,6 +13,11 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+            },
+            colors: {
+                'light-blue': colors.lightBlue,
+                teal: colors.teal,
+                rose: colors.rose,
             },
         },
     },
