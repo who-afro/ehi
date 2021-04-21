@@ -30,7 +30,13 @@
                     @forelse($interventions as $k => $v)
                         <tr class="{{ $loop->odd ? 'bg-white' : 'bg-gray-50' }}">
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
-                                {{$v->intervention->condition->programAreas}}
+                                <ul class="list-disc">
+                                @forelse($v->intervention->condition->programAreas as $i => $p)
+                                    <li>{{$p->name}}</li>
+                                @empty
+
+                                @endforelse
+                                </ul>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
                                 {{$v->intervention->condition->name}}
