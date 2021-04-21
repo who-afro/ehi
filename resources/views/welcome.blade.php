@@ -34,41 +34,23 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach(App\Models\Condition::all() as $condition)
+                                        @foreach(App\Models\Condition::withCount('interventions')->get() as $condition)
                                             <tr class="bg-white">
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                                     {{$condition->name}}
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                    {{$condition->programAreas}}
+                                                    @forelse($condition->programAreas as $i => $p)
+                                                        <li>{{$p->name}}</li>
+                                                    @empty
+
+                                                    @endforelse
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                    {{$condition->intervention_count }}
+                                                    {{$condition->interventions_count }}
                                                 </td>
                                             </tr>
                                         @endforeach
-                                        <!-- Odd row -->
-
-
-                                        <!-- Even row -->
-                                        <tr class="bg-gray-50">
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                Cody Fisher
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                Product Directives Officer
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                cody.fisher@example.com
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                Owner
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                            </td>
-                                        </tr>
-
                                         </tbody>
                                     </table>
                                 </div>
