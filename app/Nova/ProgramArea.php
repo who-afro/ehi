@@ -22,6 +22,12 @@ class ProgramArea extends Resource
      * @var string
      */
     public static $title = 'name';
+    /**
+     * The number of resources to show per page via relationships.
+     *
+     * @var int
+     */
+    public static $perPageViaRelationship = 25;
 
     /**
      * The columns that should be searched.
