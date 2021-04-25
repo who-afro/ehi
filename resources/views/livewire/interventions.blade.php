@@ -10,9 +10,10 @@
             <x-input.text wire:model="filters.search" placeholder="Search Interventions..."
                           class="p-2 rounded border w-full appearance-none"/>
         </div>
-        <div class="">
+        <div class="flex flex-row gap gap-x-2">
             <x-button.primary wire:click="applyFilter">Apply</x-button.primary>
             <x-button.secondary wire:click="resetFilters">Reset Filters</x-button.secondary>
+            <x-far-file-excel class="w-6 text-green-700" /><x-far-file-pdf class="w-6 text-red-600" />
         </div>
     </div>
     <div>
