@@ -32,5 +32,5 @@ Route::get('/condition/{condition_id}/program-area/{program_area_id}', Condition
 Route::view('/intervention-category', 'intervention-category-overview')->name("intervention-category-overview");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('welcome');
 })->name('dashboard');
