@@ -3,7 +3,7 @@
 namespace App\Nova;
 
 use App\Nova\Filters\ConditionFilter;
-use App\Nova\Filters\InterventionCategoryCountFilter;
+use App\Nova\Filters\ServiceAreaFilter;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -56,7 +56,7 @@ class Intervention extends Resource
             BelongsTo::make('AgeCohort')->viewable(false),
             BelongsTo::make('PublicHealthFunction')->sortable()->viewable(false),
             Markdown::make('Details','details')->alwaysShow(),
-            BelongsToMany::make('Intervention Categories', 'InterventionCategories')->fields(function () {
+            BelongsToMany::make('Service Areas', 'serviceAreas')->fields(function () {
                 return [
                     Markdown::make('Details', 'details')
                         ->displayUsing(function(){
@@ -64,7 +64,7 @@ class Intervention extends Resource
                         })->alwaysShow(),
                 ];
             }),
-            Text::make("Categories Count", function() {return $this->interventionCategories()->count(); })
+            Text::make("Service Area Count", function() {return $this->serviceAreas()->count(); })
         ];
     }
 
@@ -89,7 +89,7 @@ class Intervention extends Resource
     {
         return [
             new ConditionFilter,
-            new InterventionCategoryCountFilter
+            new ServiceAreaFilter
         ];
     }
 

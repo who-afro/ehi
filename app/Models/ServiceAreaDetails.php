@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class InterventionDetails extends Pivot
+class ServiceAreaDetails extends Pivot
 {
 
     /**
@@ -12,7 +12,7 @@ class InterventionDetails extends Pivot
      *
      * @var string
      */
-    protected $table = 'intervention_intervention_category';
+    protected $table = 'intervention_service_area';
     /**
      * The attributes that are mass assignable.
      *
@@ -21,11 +21,11 @@ class InterventionDetails extends Pivot
     protected $guarded = [
         'details',
         'intervention_id',
-        'intervention_category_id',
+        'service_area_id',
     ];
 
-    public function interventionCategory() {
-        return $this->belongsTo(InterventionCategory::class);
+    public function serviceArea() {
+        return $this->belongsTo(ServiceArea::class);
     }
 
     public function intervention() {

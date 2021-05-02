@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\InterventionDetails;
+use App\Models\ServiceAreaDetails;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -16,7 +16,7 @@ class Interventions extends Component
         'condition_id' => '',
         'level_of_care_id' => '',
         'public_health_function_id' => '',
-        'intervention_category_id' => '',
+        'service_area_id' => '',
         'program_area_id' => '',
         'search' => null,
         'applyFilter' => '',
@@ -45,8 +45,8 @@ class Interventions extends Component
 
     public function getInterventionListQuery()
     {
-        return InterventionDetails::with('intervention', 'interventionCategory')
-            ->when($this->filters['intervention_category_id'], fn($query, $intervention_category_id) => $query->whereIn('intervention_category_id', $intervention_category_id))
+        return ServiceAreaDetails::with('intervention', 'serviceArea')
+            ->when($this->filters['service_area_id'], fn($query, $service_area_id) => $query->whereIn('service_area_id', $service_area_id))
             ->when($this->filters['age_cohort_id'], fn($query, $age_cohort_id) => $query->whereHas('intervention.ageCohort',
                 function($query) use ($age_cohort_id) {
                     $query->where('age_cohort_id', $age_cohort_id);

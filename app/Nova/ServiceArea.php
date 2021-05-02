@@ -9,14 +9,14 @@ use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class InterventionCategory extends Resource
+class ServiceArea extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\InterventionCategory::class;
+    public static $model = \App\Models\ServiceArea::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -50,11 +50,11 @@ class InterventionCategory extends Resource
     public function fields(Request $request)
     {
         return [
-            BelongsTo::make('Parent', 'parent', 'App\Nova\InterventionCategory')->nullable()->sortable(),
+            BelongsTo::make('Parent', 'parent', 'App\Nova\ServiceArea')->nullable()->sortable(),
             Text::make(__('Name'), 'name')->sortable(),
             Text::make(__('Description'), 'description'),
             Text::make("Intervention Count", function() {return $this->interventions()->count(); }),
-            HasMany::make('Intervention Sub-categories', 'interventionCategories', 'App\Nova\InterventionCategory')->nullable(),
+            HasMany::make('Child Service Areas', 'serviceAreas', 'App\Nova\ServiceArea')->nullable(),
             BelongsToMany::make('Interventions')->fields(function () {
                 return [
                     Text::make('Details', 'details')

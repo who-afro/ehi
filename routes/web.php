@@ -29,7 +29,7 @@ Route::get('/public-health-function/{public_health_function_id}', PublicHealthFu
 Route::view('/program-area-overview', 'program-area-overview')->name("program-area-overview");
 Route::get('/program-area/{program_area_id}', ProgramAreaInterventions::class)->name("program-area");
 Route::get('/condition/{condition_id}/program-area/{program_area_id}', ConditionInterventions::class)->name("condition");
-Route::view('/intervention-category', 'intervention-category-overview')->name("intervention-category-overview");
+Route::view('/service-area', 'service-area-overview')->name("service-area-overview");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('welcome');

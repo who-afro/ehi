@@ -5,7 +5,7 @@ namespace App\Nova\Filters;
 use Illuminate\Http\Request;
 use Laravel\Nova\Filters\Filter;
 
-class InterventionCategoryCountFilter extends Filter
+class ServiceAreaFilter extends Filter
 {
     /**
      * Apply the filter to the given query.
@@ -18,9 +18,9 @@ class InterventionCategoryCountFilter extends Filter
     public function apply(Request $request, $query, $value)
     {
         if ($value === '0') {
-            return $query->DoesntHave('interventionCategories');
+            return $query->DoesntHave('serviceAreas');
         }
-        return $query->has('interventionCategories');
+        return $query->has('serviceAreas');
 
     }
 

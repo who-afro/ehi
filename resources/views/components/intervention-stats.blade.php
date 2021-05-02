@@ -28,10 +28,10 @@
             <div class="bg-white shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
                     <dt class="text-sm font-medium text-gray-500 truncate">
-                        Intervention Categories
+                        Service Areass
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">
-                        {{ $intervention_categories }}
+                        {{ $service_areas }}
                     </dd>
                 </div>
             </div>

@@ -19,7 +19,7 @@
                             Public Health Function
                         </th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase">
-                            Intervention Category
+                            Service Area
                         </th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase">
                             Intervention
@@ -48,7 +48,7 @@
                                 {{$v->intervention->publicHealthFunction->name}}
                             </td>
                             <td class="px-6 py-4 text-sm text-left text-gray-500">
-                                {{$v->interventionCategory->name}}
+                                {{$v->serviceArea->name}}
                             </td>
                             <td class="px-6 py-4 text-sm text-left text-gray-500">
                                 {{ $v->details}}

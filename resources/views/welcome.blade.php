@@ -133,10 +133,10 @@
                             </div>
                             <div class="mt-8">
                                 <h3 class="text-lg font-medium">
-                                    <a href="{{ route('intervention-category-overview') }}" class="focus:outline-none">
+                                    <a href="{{ route('service-area-overview') }}" class="focus:outline-none">
                                         <!-- Extend touch target to entire panel -->
                                         <span class="absolute inset-0" aria-hidden="true"></span>
-                                        Intervention Category
+                                        Service Area
                                     </a>
                                 </h3>
                                 <p class="mt-2 text-sm text-gray-500">

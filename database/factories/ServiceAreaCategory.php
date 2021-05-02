@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\InterventionCategory;
+use App\Models\ServiceArea;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class InterventionCategoryFactory extends Factory
+class ServiceAreaCategory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = InterventionCategory::class;
+    protected $model = ServiceArea::class;
 
     /**
      * Define the model's default state.

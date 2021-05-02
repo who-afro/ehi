@@ -1,7 +1,7 @@
 <div>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Condition Interventions') }}
+            {{ __('Program Area Interventions') }}
         </h2>
     </x-slot>
     <nav class="flex" aria-label="Breadcrumb">
@@ -23,7 +23,7 @@
                     <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                     </svg>
-                    <a href="{{ route('program-area-overview') }}" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">{{ $program_area->name }}</a>
+                    <a href="{{ route('program-area-overview') }}" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">{{ $program_area ?? ''->name }}</a>
                 </div>
             </li>
 
@@ -58,7 +58,7 @@
                             <thead class="bg-gray-50">
                             <tr>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase">
-                                    Service Areas
+                                    Service Area
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase">
                                     Intervention

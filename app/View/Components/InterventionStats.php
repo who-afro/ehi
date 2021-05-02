@@ -18,7 +18,7 @@ class InterventionStats extends Component
      * @var integer
      */
     public $conditions;
-    public $intervention_categories;
+    public $service_areas;
     public $program_areas;
     /**
      * Create a new component instance.
@@ -27,10 +27,10 @@ class InterventionStats extends Component
      */
     public function __construct()
     {
-        $this->interventions = DB::table('intervention_intervention_category')->count();
+        $this->interventions = DB::table('intervention_service_area')->count();
         $this->conditions = DB::table('conditions')->count();
         $this->program_areas = DB::table('program_areas')->count();
-        $this->intervention_categories = DB::table('intervention_categories')->count();
+        $this->service_areas = DB::table('service_areas')->count();
     }
 
     /**

@@ -55,17 +55,17 @@
                 <div class="bg-white shadow rounded-lg">
                     <div class="px-4 py-5 sm:p-6">
                         <dt class="text-sm font-medium text-gray-500 truncate">
-                            Intervention Category
+                            Service Area
                         </dt>
                         <dd class="mt-1 text-3xl font-semibold text-gray-900">
                             <x-input.select-multiple class="p-2 rounded border w-full appearance-none"
-                                                     wire:model="filters.intervention_category_id"
-                                                     id="filter-intervention_category_id"
-                                                     placeholder="Select an Intervention Category">
+                                                     wire:model="filters.service_area_id"
+                                                     id="filter-service_area_id"
+                                                     placeholder="Select a Service Area">
 
-                                @foreach(App\Models\InterventionCategory::all() as $interventionCategory)
+                                @foreach(App\Models\ServiceArea::all() as $serviceArea)
                                     <option
-                                        value="{{$interventionCategory->id}}">{{$interventionCategory->name}}</option>
+                                        value="{{$serviceArea->id}}">{{$serviceArea->name}}</option>
                                 @endforeach
                             </x-input.select-multiple>
                         </dd>

@@ -66,7 +66,7 @@ class Intervention extends Model
         return $this->belongsToMany(ProgramGroup::class);
     }
 
-    public function interventioncategories() {
-        return $this->belongsToMany(InterventionCategory::class)->withPivot('details');
+    public function serviceAreas() {
+        return $this->belongsToMany(ServiceArea::class)->withPivot('details');
     }
 }
