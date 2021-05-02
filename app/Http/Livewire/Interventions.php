@@ -43,7 +43,7 @@ class Interventions extends Component
     }
 
 
-    public function getInterventionList(): \Illuminate\Contracts\Pagination\LengthAwarePaginator
+    public function getInterventionListQuery()
     {
         return InterventionDetails::with('intervention', 'interventionCategory')
             ->when($this->filters['intervention_category_id'], fn($query, $intervention_category_id) => $query->whereIn('intervention_category_id', $intervention_category_id))
@@ -63,14 +63,17 @@ class Interventions extends Component
                 fn($query, $public_health_function_id) => $query->whereHas('intervention.publicHealthFunction',
                     function($query) use ($public_health_function_id) {
                         $query->where('public_health_function_id', $public_health_function_id);
-            }))
+                    }))
             ->when($this->filters['program_area_id'],
                 fn($query, $program_area_id) => $query->whereHas('intervention.condition.programAreas',
                     function($query) use ($program_area_id) {
                         $query->whereIn('program_area_id', $program_area_id);
                     }))
-            ->when($this->filters['search'], fn($query, $search) => $query->where('details', 'like', '%' . $search . '%'))
-            ->paginate($this->filters['number_of_items_per_page']);
+            ->when($this->filters['search'], fn($query, $search) => $query->where('details', 'like', '%' . $search . '%'));
+    }
+    public function getInterventionList(): \Illuminate\Contracts\Pagination\LengthAwarePaginator
+    {
+        return $this->getInterventionListQuery()->paginate($this->filters['number_of_items_per_page']);
     }
 
 
@@ -87,6 +90,13 @@ class Interventions extends Component
             [
                 'interventions' => $interventions
             ]);
+    }
+
+    public function exportCSV()
+    {
+        return response()->streamDownload(function () {
+            echo $this->getInterventionListQuery()->toCsv();
+        }, 'interventions-'.now()->toDateString().'.csv');
     }
 
     protected function getView() {
