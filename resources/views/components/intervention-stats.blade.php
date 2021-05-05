@@ -7,7 +7,7 @@
         <dl class="mt-5 grid grid-cols-3 gap-4">
             <div class="bg-white shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">
+                    <dt class="font-medium text-gray-500 truncate">
                         Program Areas
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">
@@ -17,7 +17,7 @@
             </div>
             <div class="bg-white shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">
+                    <dt class="font-medium text-gray-500 truncate">
                         Conditions
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">
@@ -27,7 +27,7 @@
             </div>
             <div class="bg-white shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">
+                    <dt class="font-medium text-gray-500 truncate">
                         Service Areass
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">
@@ -37,7 +37,7 @@
             </div>
             <div class="bg-white shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">
+                    <dt class="font-medium text-gray-500 truncate">
                         Total interventions
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">

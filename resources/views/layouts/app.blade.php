@@ -23,7 +23,7 @@
 <div class="h-screen flex overflow-hidden bg-gray-100">
     <!-- Static sidebar for desktop -->
     <div class="hidden bg-indigo-700 md:flex md:flex-shrink-0">
-        <div class="flex flex-col w-72">
+        <div class="flex flex-col w-80">
             <!-- Sidebar component, swap this element with another sidebar if you like -->
             <div class="flex flex-col flex-grow border-r border-gray-200 pt-5 pb-4 bg-white overflow-y-auto">
                 <div class="flex items-center flex-shrink-0 px-4">
@@ -33,7 +33,7 @@
                     <nav class="flex-1 px-2 space-y-1 bg-white" aria-label="Sidebar">
                         @auth
                             <div>
-                                <a href="{{url('nova')}}" class="bg-gray-100 text-gray-900 group w-full flex items-center pl-2 py-2 text-sm font-medium rounded-md">
+                                <a href="{{url('nova')}}" class="bg-gray-100 text-gray-900 group w-full flex items-center pl-2 py-2 font-medium rounded-md">
                                     <!-- Current: "text-gray-600", Default: "text-gray-400 group-hover:text-gray-500" -->
                                     <!-- Heroicon name: outline/cog -->
                                     <svg class="mr-4 h-6 w-6 text-cyan-200 group-hover:text-cyan-200"
@@ -51,7 +51,7 @@
                         <div x-data="{ open: false">
                             <!-- Current: "bg-gray-100 text-gray-900", Default: "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
                             <a x-data href="/"
-                               class="bg-gray-100 text-gray-900 group w-full flex items-center pl-2 py-2 text-sm font-medium rounded-md">
+                               class="bg-gray-100 text-gray-900 group w-full flex items-center pl-2 py-2 font-medium rounded-md">
                                 <!-- Current: "text-gray-600", Default: "text-gray-400 group-hover:text-gray-500" -->
                                 <!-- Heroicon name: outline/home -->
                                 <svg class="text-gray-500 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -65,7 +65,7 @@
                             <div>
                                 <!-- Current: "bg-gray-100 text-gray-900", Default: "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
                                 <a href="{{ route('service-area-overview') }}"
-                                   class="bg-gray-100 text-gray-900 group w-full flex items-center pl-2 py-2 text-sm font-medium rounded-md">
+                                   class="bg-gray-100 text-gray-900 group w-full flex items-center pl-2 py-2 font-medium rounded-md">
                                     <!-- Current: "text-gray-600", Default: "text-gray-400 group-hover:text-gray-500" -->
                                     <!-- Heroicon name: view-grid -->
                                     <svg class="text-gray-500 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -82,7 +82,7 @@
                                     x-data="{ open: false }"
                                 @endif
                                 class="space-y-1">
-                                <button type="button" class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" x-state:on="Current" x-state:off="Default" aria-controls="sub-menu-1" @click="open = !open" aria-expanded="true" x-bind:aria-expanded="open.toString()" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
+                                <button type="button" class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" x-state:on="Current" x-state:off="Default" aria-controls="sub-menu-1" @click="open = !open" aria-expanded="true" x-bind:aria-expanded="open.toString()" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                     <svg class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" x-description="Heroicon name: outline/users" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
                                     </svg>
@@ -92,11 +92,11 @@
                                     </svg>
                                 </button>
                                 <div x-description="Level of Care" class="space-y-1" id="sub-menu-1" x-show="open">
-                                    <a href="{{ route('level-of-care-overview') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <a href="{{ route('level-of-care-overview') }}" class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                        Overview
                                     </a>
                                     @foreach(App\Models\LevelOfCare::all() as $levelofCare)
-                                        <a href="{{ route('level-of-care', ['level_of_care_id' => $levelofCare->id]) }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                        <a href="{{ route('level-of-care', ['level_of_care_id' => $levelofCare->id]) }}" class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                             {{ $levelofCare->name }}
                                         </a>
                                     @endforeach
@@ -108,7 +108,7 @@
                                   @else
                                   x-data="{ open: false }"
                                   @endif class="space-y-1">
-                                <button type="button" class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" x-state:on="Current" x-state:off="Default" aria-controls="sub-menu-1" @click="open = !open" aria-expanded="true" x-bind:aria-expanded="open.toString()" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
+                                <button type="button" class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" x-state:on="Current" x-state:off="Default" aria-controls="sub-menu-1" @click="open = !open" aria-expanded="true" x-bind:aria-expanded="open.toString()" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                     <svg class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" x-description="Heroicon name: outline/folder" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
                                     </svg>
@@ -118,12 +118,12 @@
                                     </svg>
                                 </button>
                                 <div x-description="Level of Care" class="space-y-1" id="sub-menu-1" x-show="open">
-                                    <a href="{{ route('public-health-function-overview') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <a href="{{ route('public-health-function-overview') }}" class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         Overview
                                     </a>
                                     @foreach(App\Models\PublicHealthFunction::all() as $publicHealthFunction)
                                         <a href="{{ route('public-health-function', ['public_health_function_id' => $publicHealthFunction->id]) }}"
-                                           class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                           class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                             {{$publicHealthFunction->name}}
                                         </a>
                                     @endforeach
@@ -135,7 +135,7 @@
                                   @else
                                   x-data="{ open: false }"
                                   @endif class="space-y-1">
-                                <button type="button" class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" x-state:on="Current" x-state:off="Default" aria-controls="sub-menu-1" @click="open = !open" aria-expanded="true" x-bind:aria-expanded="open.toString()" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
+                                <button type="button" class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" x-state:on="Current" x-state:off="Default" aria-controls="sub-menu-1" @click="open = !open" aria-expanded="true" x-bind:aria-expanded="open.toString()" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                     <svg class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" x-description="Heroicon name: outline/folder" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                     </svg>
@@ -145,12 +145,12 @@
                                     </svg>
                                 </button>
                                 <div x-description="Level of Care" class="space-y-1" id="sub-menu-1" x-show="open">
-                                    <a href="{{ route('program-area-overview') }}" class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    <a href="{{ route('program-area-overview') }}" class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                         Overview
                                     </a>
                                     @foreach(App\Models\ProgramArea::all() as $programArea)
                                         <a href="{{ route('program-area', ['program_area_id' => $programArea->id]) }}"
-                                           class="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                           class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
                                             {{$programArea->name}}
                                         </a>
                                     @endforeach

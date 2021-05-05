@@ -34,7 +34,7 @@
                                         Program Areas
                                     </a>
                                 </h3>
-                                <p class="mt-2 text-sm text-gray-500">
+                                <p class="mt-2 text-gray-500">
                                     Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus
                                     qui ut at blanditiis et quo et molestiae.
                                 </p>
@@ -69,7 +69,7 @@
                                         Level of Care
                                     </a>
                                 </h3>
-                                <p class="mt-2 text-sm text-gray-500">
+                                <p class="mt-2 text-gray-500">
                                     Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus
                                     qui ut at blanditiis et quo et molestiae.
                                 </p>
@@ -104,7 +104,7 @@
                                         Public Health Function
                                     </a>
                                 </h3>
-                                <p class="mt-2 text-sm text-gray-500">
+                                <p class="mt-2 text-gray-500">
                                     Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus
                                     qui ut at blanditiis et quo et molestiae.
                                 </p>
@@ -139,7 +139,7 @@
                                         Service Area
                                     </a>
                                 </h3>
-                                <p class="mt-2 text-sm text-gray-500">
+                                <p class="mt-2 text-gray-500">
                                     Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus
                                     qui ut at blanditiis et quo et molestiae.
                                 </p>

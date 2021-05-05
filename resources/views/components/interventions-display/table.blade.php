@@ -6,22 +6,22 @@
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                     <tr>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase whitespace-nowrap">
+                        <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-900 uppercase whitespace-nowrap">
                             Program Area
                         </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase whitespace-nowrap">
+                        <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-900 uppercase whitespace-nowrap">
                             Condition
                         </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase  whitespace-nowrap">
+                        <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-900 uppercase  whitespace-nowrap">
                             Age Cohort
                         </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase whitespace-nowrap">
+                        <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-900 uppercase whitespace-nowrap">
                             Public Health Function
                         </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase">
+                        <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-900 uppercase">
                             Service Area
                         </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase">
+                        <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-900 uppercase">
                             Intervention
                         </th>
                     </tr>

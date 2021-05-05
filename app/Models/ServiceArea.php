@@ -60,7 +60,7 @@ class ServiceArea extends Model
         return $this->hasMany(ServiceArea::class, 'parent_id', 'id')->whereNull('parent_id');
     }
 
-    public function childServiceAreass()
+    public function childServiceAreas()
     {
         return $this->hasMany(ServiceArea::class, 'parent_id', 'id')->with('serviceAreas');
     }

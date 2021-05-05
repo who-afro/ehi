@@ -2,10 +2,12 @@
 
 namespace App\Http\Livewire;
 
+use App\Exports\InterventionsExport;
 use App\Models\ServiceAreaDetails;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Interventions extends Component
 {
@@ -92,11 +94,37 @@ class Interventions extends Component
             ]);
     }
 
-    public function exportCSV()
+    public function exportExcel()
     {
-        return response()->streamDownload(function () {
-            echo $this->getInterventionListQuery()->toCsv();
-        }, 'interventions-'.now()->toDateString().'.csv');
+        return(new InterventionsExport($this->getExportData()))->download( $this->getExcelExportFileName());
+    }
+
+    public function exportPDF()
+    {
+        return(new InterventionsExport($this->getExportData()))->download( $this->getPDFExportFileName(), \Maatwebsite\Excel\Excel::DOMPDF);
+    }
+
+    public function getExcelExportFileName() {
+        return 'interventions-'.now()->toDateString().'-'.now()->secondsSinceMidnight().'.xlsx';
+    }
+
+    public function getPDFExportFileName() {
+        return 'interventions-'.now()->toDateString().'-'.now()->secondsSinceMidnight().'.pdf';
+    }
+
+    public function getExportData() {
+        return $this->getInterventionListQuery()->get()
+            ->map(function($item) {
+                // rebuild the data export to match the expectations for the particular page
+                $row['Program Area'] = $item->intervention->condition->programAreas->pluck('name')->implode(', ');
+                $row['Condition'] = $item->intervention->condition->name;
+                $row['Age Cohort'] = $item->intervention->ageCohort->name;
+                $row['Public Health Function'] = $item->intervention->publicHealthFunction->name;
+                $row['Service Area'] = $item->serviceArea->name;
+                $row['Intervention'] = $item->details;
+
+                return $row;
+        });
     }
 
     protected function getView() {

@@ -23,17 +23,7 @@
                     <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                     </svg>
-                    <a href="{{ route('program-area-overview') }}" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">{{ $program_area ?? ''->name }}</a>
-                </div>
-            </li>
-
-            <li>
-                <div class="flex items-center">
-                    <!-- Heroicon name: solid/chevron-right -->
-                    <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                    </svg>
-                    <span class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700" aria-current="page">{{ $condition->name }}</span>
+                    <a href="{{ route('program-area-overview') }}" class="ml-4 font-medium text-gray-500 hover:text-gray-700">{{ $programArea->name }}</a>
                 </div>
             </li>
         </ol>
@@ -57,16 +47,16 @@
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
                             <tr>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase">
+                                <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-900 uppercase">
                                     Service Area
                                 </th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase">
+                                <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-900 uppercase">
                                     Intervention
                                 </th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase  whitespace-nowrap">
+                                <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-900 uppercase  whitespace-nowrap">
                                     Age Cohort
                                 </th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase whitespace-nowrap">
+                                <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-900 uppercase whitespace-nowrap">
                                     Public Health Function
                                 </th>
 
@@ -75,16 +65,16 @@
                             <tbody>
                             @forelse($interventions as $k => $v)
                                 <tr class="{{ $loop->odd ? 'bg-white' : 'bg-gray-50' }}">
-                                    <td class="px-6 py-4 text-sm text-left text-gray-500">
+                                    <td class="px-6 py-4 text-left text-gray-500">
                                         {{$v->serviceArea->name}}
                                     </td>
-                                    <td class="px-6 py-4 text-sm text-left text-gray-500">
+                                    <td class="px-6 py-4 text-left text-gray-500">
                                         {{ $v->details}}
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
+                                    <td class="px-6 py-4 whitespace-nowrap text-left text-gray-500">
                                         {{$v->intervention->ageCohort->name}}
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
+                                    <td class="px-6 py-4 whitespace-nowrap text-left text-gray-500">
                                         {{$v->intervention->publicHealthFunction->name}}
                                     </td>
 

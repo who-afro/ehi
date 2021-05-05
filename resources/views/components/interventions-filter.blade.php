@@ -3,7 +3,7 @@
         <dl class="mt-5 grid grid-cols-4 gap-4">
             <div class="bg-white shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">
+                    <dt class="font-medium text-gray-500 truncate">
                         Age Cohort
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">
@@ -18,7 +18,7 @@
             </div>
             <div class="bg-white shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">
+                    <dt class="font-medium text-gray-500 truncate">
                         Conditions
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">
@@ -33,7 +33,7 @@
             </div>
             <div class="bg-white shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
-                    <dt class="text-sm font-medium text-gray-500 truncate">
+                    <dt class="font-medium text-gray-500 truncate">
                         Public Health Function
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">
@@ -49,7 +49,7 @@
             <div class="bg-white shadow rounded-lg">
                 <div class="bg-white shadow rounded-lg">
                     <div class="px-4 py-5 sm:p-6">
-                        <dt class="text-sm font-medium text-gray-500 truncate">
+                        <dt class="font-medium text-gray-500 truncate">
                             Program Area
                         </dt>
                         <dd class="mt-1 text-3xl font-semibold text-gray-900">
@@ -64,7 +64,7 @@
                 </div>
                 <!-- TODO: Determine if we need to keep hiding the level of care especially for the page filters -->
                 <div class="px-4 py-5 sm:p-6 hidden">
-                    <dt class="text-sm font-medium text-gray-500 truncate">
+                    <dt class="font-medium text-gray-500 truncate">
                         Level of Care
                     </dt>
                     <dd class="mt-1 text-3xl font-semibold text-gray-900">

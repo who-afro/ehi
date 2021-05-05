@@ -5,11 +5,20 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-
-            </div>
-        </div>
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 prose">
+        The services areas are in the categories listed below:
+        <ol>
+            @foreach(App\Models\ServiceArea::whereNull('parent_id')->with('childServiceAreas')->get() as $serviceArea)
+                <li>
+                    {{ $serviceArea->name }} - <span class="text-gray-400">{{ $serviceArea->description }}</span>
+                    <ul>
+                        @forelse($serviceArea->childServiceAreas as $i => $childServiceArea)
+                            <li><a href="{{ route('service-area', ['parent_id' => $serviceArea->id, 'service_area_id' => $childServiceArea->id]) }}">{{ $childServiceArea->name }}</a> - <span class="text-gray-400">{{ $childServiceArea->description }}</span></li>
+                        @empty
+                        @endforelse
+                    </ul>
+                </li>
+            @endforeach
+        </ol>
     </div>
 </x-app-layout>

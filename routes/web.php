@@ -6,6 +6,7 @@ use App\Http\Livewire\LevelOfCareInterventions;
 use App\Http\Livewire\ConditionInterventions;
 use App\Http\Livewire\ProgramAreaInterventions;
 use App\Http\Livewire\PublicHealthFunctionInterventions;
+use App\Http\Livewire\ServiceAreaInterventions;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,7 @@ Route::view('/program-area-overview', 'program-area-overview')->name("program-ar
 Route::get('/program-area/{program_area_id}', ProgramAreaInterventions::class)->name("program-area");
 Route::get('/condition/{condition_id}/program-area/{program_area_id}', ConditionInterventions::class)->name("condition");
 Route::view('/service-area', 'service-area-overview')->name("service-area-overview");
+Route::get('/service-area/{service_area_id}/parent/{parent_id?}', ServiceAreaInterventions::class)->name("service-area");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('welcome');
