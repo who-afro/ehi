@@ -1,0 +1,26 @@
+<div class="bg-white shadow rounded-lg">
+    <!-- TODO: Determine if we need to keep hiding the level of care especially for the page filters -->
+    <div class="px-4 py-5">
+        <dt class="font-medium text-gray-500 truncate">
+            Level of Care
+        </dt>
+        <dd class="text-gray-700 overflow-y-auto px-1">
+            @foreach(App\Models\LevelOfCare::all() as $levelOfCare)
+                <div class="flex items-start">
+                    <div class="flex items-center">
+                        <!-- Zero-width space character, used to align checkbox properly -->
+                        &#8203;
+                        <input id="level_of_care_{ $levelOfCare->id }}" type="checkbox"
+                               class="form-checkbox text-indigo-600 border-2 rounded-md shadow-sm h4 w4"
+                               wire:model="filters.level_of_care_id"
+                               value="{{ $levelOfCare->id }}"/>
+                    </div>
+                    <label for="level_of_care_{ $levelOfCare->id }}" class="ml-2 text-gray-700">
+                        {{ $levelOfCare->name }}
+                    </label>
+
+                </div>
+            @endforeach
+        </dd>
+    </div>
+</div>

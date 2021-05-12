@@ -1,7 +1,7 @@
 <div>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Program Area Interventions') }}
+            {{ __('Service Area Interventions') }}
         </h2>
     </x-slot>
     <nav class="flex" aria-label="Breadcrumb">
@@ -40,17 +40,17 @@
             </li>
         </ol>
     </nav>
-    <x-interventions-filter-conditions></x-interventions-filter-conditions>
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 font-semibold grid grid-cols-4 gap-4 mb-4">
-        <div class="col-span-3">
-            <x-input.text wire:model="filters.search" placeholder="Search Interventions..."
-                          class="p-2 rounded border w-full appearance-none"/>
-        </div>
-        <div class="">
-            <x-button.primary wire:click="applyFilter">Apply</x-button.primary>
-            <x-button.secondary wire:click="resetFilters">Reset Filters</x-button.secondary>
+    <div>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-8">
+            <dl class="mt-5 grid grid-cols-4 gap-2 max-h-72">
+                <x-filters.age-cohort></x-filters.age-cohort>
+                <x-filters.conditions></x-filters.conditions>
+                <x-filters.public-health-function></x-filters.public-health-function>
+                <x-filters.level-of-care></x-filters.level-of-care>
+            </dl>
         </div>
     </div>
+    <x-search-and-export></x-search-and-export>
     <div>
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">

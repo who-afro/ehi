@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', "welcome");
+Route::view('/', "welcome")->name("home");
 Route::get('/age-cohort/{age_cohort_id}', AgeCohortInterventions::class)->name("age-cohort");
 Route::get('/interventions-list', Interventions::class)->name("interventions-list");
 Route::view('/level-of-care-overview', 'level-of-care-overview')->name("level-of-care-overview");
@@ -30,8 +30,8 @@ Route::get('/public-health-function/{public_health_function_id}', PublicHealthFu
 Route::view('/program-area-overview', 'program-area-overview')->name("program-area-overview");
 Route::get('/program-area/{program_area_id}', ProgramAreaInterventions::class)->name("program-area");
 Route::get('/condition/{condition_id}/program-area/{program_area_id}', ConditionInterventions::class)->name("condition");
-Route::view('/service-area', 'service-area-overview')->name("service-area-overview");
-Route::get('/service-area/{service_area_id}/parent/{parent_id?}', ServiceAreaInterventions::class)->name("service-area");
+Route::view('/service-area-overview', 'service-area-overview')->name("service-area-overview");
+Route::get('/service-area/{service_area_id}', ServiceAreaInterventions::class)->name("service-area");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('welcome');

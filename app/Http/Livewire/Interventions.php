@@ -7,19 +7,18 @@ use App\Models\ServiceAreaDetails;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Maatwebsite\Excel\Facades\Excel;
 
 class Interventions extends Component
 {
     use WithPagination;
 
     public $filters = [
-        'age_cohort_id' => '',
-        'condition_id' => '',
-        'level_of_care_id' => '',
-        'public_health_function_id' => '',
-        'service_area_id' => '',
-        'program_area_id' => '',
+        'age_cohort_id' => [],
+        'condition_id' => [],
+        'level_of_care_id' => [],
+        'public_health_function_id' => [],
+        'service_area_id' => [],
+        'program_area_id' => [],
         'search' => null,
         'applyFilter' => '',
         'number_of_items_per_page' => 10
@@ -51,20 +50,20 @@ class Interventions extends Component
             ->when($this->filters['service_area_id'], fn($query, $service_area_id) => $query->whereIn('service_area_id', $service_area_id))
             ->when($this->filters['age_cohort_id'], fn($query, $age_cohort_id) => $query->whereHas('intervention.ageCohort',
                 function($query) use ($age_cohort_id) {
-                    $query->where('age_cohort_id', $age_cohort_id);
+                    $query->whereIn('age_cohort_id', $age_cohort_id);
                 }))
             ->when($this->filters['condition_id'], fn($query, $condition_id) => $query->whereHas('intervention.condition',
                 function($query) use ($condition_id) {
-                    $query->where('condition_id', $condition_id);
+                    $query->whereIn('condition_id', $condition_id);
                 }))
             ->when($this->filters['level_of_care_id'], fn($query, $level_of_care_id) => $query->whereHas('intervention.levelOfCare',
                 function($query) use ($level_of_care_id) {
-                    $query->where('level_of_care_id', $level_of_care_id);
+                    $query->whereIn('level_of_care_id', $level_of_care_id);
                 }))
             ->when($this->filters['public_health_function_id'],
                 fn($query, $public_health_function_id) => $query->whereHas('intervention.publicHealthFunction',
                     function($query) use ($public_health_function_id) {
-                        $query->where('public_health_function_id', $public_health_function_id);
+                        $query->whereIn('public_health_function_id', $public_health_function_id);
                     }))
             ->when($this->filters['program_area_id'],
                 fn($query, $program_area_id) => $query->whereHas('intervention.condition.programAreas',
