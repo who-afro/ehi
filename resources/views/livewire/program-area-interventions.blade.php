@@ -32,7 +32,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-8">
             <dl class="mt-5 grid grid-cols-4 gap-2 max-h-72">
                 <x-filters.age-cohort></x-filters.age-cohort>
-                <x-filters.conditions></x-filters.conditions>
+                <x-filters.conditions :program-area-id="$programArea->id" :program-area-name="$programArea->name" />
                 <x-filters.public-health-function></x-filters.public-health-function>
             </dl>
         </div>

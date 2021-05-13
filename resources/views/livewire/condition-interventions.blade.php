@@ -1,7 +1,7 @@
 <div>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Condition Interventions') }}
+           Interventions for {{ $condition->name }}
         </h2>
     </x-slot>
     <nav class="flex" aria-label="Breadcrumb">
@@ -38,7 +38,15 @@
             </li>
         </ol>
     </nav>
-    <x-interventions-filter-conditions></x-interventions-filter-conditions>
+    <div>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-8">
+            <dl class="mt-5 grid grid-cols-4 gap-2 max-h-72">
+                <x-filters.age-cohort></x-filters.age-cohort>
+                <x-filters.level-of-care></x-filters.level-of-care>
+                <x-filters.public-health-function></x-filters.public-health-function>
+            </dl>
+        </div>
+    </div>
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 font-semibold grid grid-cols-4 gap-4 mb-4">
         <div class="col-span-3">
             <x-input.text wire:model="filters.search" placeholder="Search Interventions..."
