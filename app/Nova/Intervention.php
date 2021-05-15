@@ -2,8 +2,12 @@
 
 namespace App\Nova;
 
+use App\Nova\Filters\AgeCohortFilter;
 use App\Nova\Filters\ConditionFilter;
+use App\Nova\Filters\LevelOfCareFilter;
+use App\Nova\Filters\PublicHealthFunctionFilter;
 use App\Nova\Filters\ServiceAreaFilter;
+use App\Nova\Lenses\InterventionServiceAreas;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -89,6 +93,9 @@ class Intervention extends Resource
     {
         return [
             new ConditionFilter,
+            new LevelOfCareFilter,
+            new AgeCohortFilter,
+            new PublicHealthFunctionFilter,
             new ServiceAreaFilter
         ];
     }
