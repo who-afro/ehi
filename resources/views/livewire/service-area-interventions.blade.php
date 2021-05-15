@@ -1,8 +1,6 @@
 <div>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Service Area Interventions') }}
-        </h2>
     </x-slot>
     <nav class="flex" aria-label="Breadcrumb">
         <ol class="flex items-center space-x-4">

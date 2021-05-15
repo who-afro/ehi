@@ -1,8 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Welcome to the Digital Menu of Essential Interventions ') }}
-        </h2>
     </x-slot>
 
     <div class="py-12">
@@ -35,8 +33,7 @@
                                     </a>
                                 </h3>
                                 <p class="mt-2 text-gray-500">
-                                    Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus
-                                    qui ut at blanditiis et quo et molestiae.
+                                    Disease and condition groupings from the WHO Global burden of diseases
                                 </p>
                             </div>
                             <span
@@ -70,8 +67,7 @@
                                     </a>
                                 </h3>
                                 <p class="mt-2 text-gray-500">
-                                    Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus
-                                    qui ut at blanditiis et quo et molestiae.
+                                    Areas in which the service delivery occurs, community, primary care and hospitals
                                 </p>
                             </div>
                             <span
@@ -105,8 +101,7 @@
                                     </a>
                                 </h3>
                                 <p class="mt-2 text-gray-500">
-                                    Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus
-                                    qui ut at blanditiis et quo et molestiae.
+                                    Grouping of interventions within the scope of public health
                                 </p>
                             </div>
                             <span
@@ -140,8 +135,7 @@
                                     </a>
                                 </h3>
                                 <p class="mt-2 text-gray-500">
-                                    Doloribus dolores nostrum quia qui natus officia quod et dolorem. Sit repellendus
-                                    qui ut at blanditiis et quo et molestiae.
+                                    Categorization of intevention based services
                                 </p>
                             </div>
                             <span
