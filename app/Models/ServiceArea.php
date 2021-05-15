@@ -31,6 +31,17 @@ class ServiceArea extends Model
         'id' => 'integer',
     ];
 
+    protected $with = ['parent'];
+
+    public function getFullNameAttribute() {
+        $parent_name = "";
+        if (!is_null($this->parent)) {
+            $parent_name = $this->parent->name." - ";
+        }
+
+        return $parent_name."".$this->name;
+    }
+
     public static function boot()
     {
         parent::boot();

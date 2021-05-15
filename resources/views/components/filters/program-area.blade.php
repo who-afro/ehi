@@ -17,7 +17,6 @@
                     <label for="program_area_{ $programArea->id }}" class="ml-2 text-gray-700">
                         {{ $programArea->name }}
                     </label>
-
                 </div>
             @endforeach
         </dd>

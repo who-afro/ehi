@@ -7,10 +7,10 @@
         <ol>
             @foreach(App\Models\ServiceArea::whereNull('parent_id')->with('childServiceAreas')->get() as $serviceArea)
                 <li>
-                    {{ $serviceArea->name }} - <span class="text-gray-400">{{ $serviceArea->description }}</span>
+                    <a href="{{ route('service-area', ['service_area_id' => $serviceArea->id]) }}">{{ $serviceArea->name }}</a>
                     <ul>
                         @forelse($serviceArea->childServiceAreas as $i => $childServiceArea)
-                            <li><a href="{{ route('service-area', ['service_area_id' => $serviceArea->id]) }}">{{ $childServiceArea->name }}</a> - <span class="text-gray-400">{{ $childServiceArea->description }}</span></li>
+                            <li><a href="{{ route('service-area', ['service_area_id' => $childServiceArea->id]) }}">{{ $childServiceArea->name }}</a></li>
                         @empty
                         @endforelse
                     </ul>
