@@ -3,6 +3,16 @@
         Options -MultiViews -Indexes
     </IfModule>
 
+    Header add Access-Control-Allow-Origin: "*"
+    Header add Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT, PATCH"
+    Header add Access-Control-Allow-Headers: "Content-Type"
+    <Limit GET POST PUT DELETE PATCH OPTIONS>
+        Require all granted
+    </Limit>
+    <LimitExcept GET POST PUT PATCH DELETE OPTIONS>
+        Require all denied
+    </LimitExcept>
+
     RewriteEngine On
 
     # Handle Authorization Header
