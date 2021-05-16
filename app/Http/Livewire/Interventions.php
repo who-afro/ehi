@@ -7,6 +7,7 @@ use App\Models\ServiceAreaDetails;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Maatwebsite\Excel\Excel;
 
 class Interventions extends Component
 {
@@ -80,16 +81,9 @@ class Interventions extends Component
 
     public function render()
     {
-        /**
-         * TODO: Fix this hack for showing no rows at the beginning
-         */
-        $interventions =  new LengthAwarePaginator(null, 0, 10);
-        if ($this->filters['applyFilter'] == 'show') {
-            $interventions =  $this->getInterventionList();
-        }
         return view($this->getView(),
             [
-                'interventions' => $interventions
+                'interventions' => $this->getInterventionList()
             ]);
     }
 
@@ -100,7 +94,7 @@ class Interventions extends Component
 
     public function exportPDF()
     {
-        return(new InterventionsExport($this->getExportData()))->download( $this->getPDFExportFileName(), \Maatwebsite\Excel\Excel::DOMPDF);
+        return(new InterventionsExport($this->getExportData()))->download( $this->getPDFExportFileName(), Excel::DOMPDF);
     }
 
     public function getExcelExportFileName() {

@@ -21,6 +21,11 @@
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">
                         <tr>
+                            @auth
+                                <th scope="col" class="px-6 py-3 text-left font-medium text-gray-900 uppercase">
+                                    Actions
+                                </th>
+                            @endauth
                             <th scope="col" class="px-6 py-3 text-left font-medium text-gray-900 uppercase">
                                 Condition
                             </th>
@@ -44,6 +49,12 @@
                         <tbody>
                         @forelse($interventions as $k => $v)
                             <tr class="{{ $loop->odd ? 'bg-white' : 'bg-gray-50' }}">
+                                @auth
+                                    <td class="px-6 whitespace-nowrap text-left text-gray-500 whitespace-no-wrap">
+                                        <a href="/nova/resources/interventions/{{$v->intervention->id}}/edit-attached/service-areas/{{$v->serviceArea->id}}?viaRelationship=serviceAreas" title="Edit Intervention" target="_blank"><span><x-heroicon-o-pencil class="h-6 w-6 text-indigo-600" />Edit</span>
+                                        </a>
+                                    </td>
+                                @endauth
                                 <td class="px-6 py-4 text-left text-gray-500">
                                     {{$v->intervention->condition->name}}
                                 </td>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -57,10 +58,10 @@ class ServiceArea extends Resource
             HasMany::make('Child Service Areas', 'serviceAreas', 'App\Nova\ServiceArea')->nullable(),
             BelongsToMany::make('Interventions')->fields(function () {
                 return [
-                    Text::make('Details', 'details')
+                    Markdown::make('Details', 'details')
                         ->displayUsing(function(){
                             return isset($this->pivot) ? $this->pivot->details : '';
-                        }),
+                        })->alwaysShow(),
                 ];
             }),
         ];
