@@ -50,7 +50,8 @@ class ProgramArea extends Resource
             Text::make(__('Name'), 'name')->sortable(),
             Text::make(__('Description'), 'description'),
             BelongsTo::make("Program Group", 'programGroup'),
-            BelongsToMany::make("Conditions")
+            BelongsToMany::make("Conditions"),
+            Text::make("Conditions Count", function() {return $this->conditions()->count(); })
         ];
     }
 
