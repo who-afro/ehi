@@ -14,3 +14,12 @@
 .max-h-0 {
     max-height: 0;
 }
+
+/* Add default styles to lists */
+ol {
+    list-style: lower-greek;
+}
+
+ul {
+    list-style: disc;
+}
