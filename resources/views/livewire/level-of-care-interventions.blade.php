@@ -3,10 +3,10 @@
             {{ $levelOfCare->name }}
     </x-slot>
     <div>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-8">
+        <div class="max-w-7xl mx-auto p-4">
             <dl class="mt-5 grid grid-cols-4 gap-2 max-h-72">
-                <x-filters.age-cohort />
                 <x-filters.conditions />
+                <x-filters.age-cohort />
                 <x-filters.public-health-function />
                 <x-filters.service-area />
             </dl>
@@ -30,7 +30,7 @@
                                 Age Cohort
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left font-medium text-gray-900 uppercase whitespace-nowrap">
+                                class="px-6 py-3 text-left font-medium text-gray-900 uppercase">
                                 Public Health Function
                             </th>
                             <th scope="col" class="px-6 py-3 text-left font-medium text-gray-900 uppercase">
@@ -44,10 +44,10 @@
                         <tbody>
                         @forelse($interventions as $k => $v)
                             <tr class="{{ $loop->odd ? 'bg-white' : 'bg-gray-50' }}">
-                                <td class="px-6 py-4 whitespace-nowrap text-left text-gray-500">
+                                <td class="px-6 py-4 text-left text-gray-500">
                                     {{$v->intervention->condition->name}}
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-left text-gray-500">
+                                <td class="px-6 py-4 text-left text-gray-500">
                                     {{$v->intervention->ageCohort->name}}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-left text-gray-500">
@@ -57,7 +57,7 @@
                                     {{$v->serviceArea->fullName}}
                                 </td>
                                 <td class="px-6 py-4 text-left text-gray-500">
-                                    {{ $v->details}}
+                                    {!! Str::markdown($v->details)!!}
                                 </td>
                             </tr>
                         @empty
