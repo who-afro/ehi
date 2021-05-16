@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class ServiceAreaDetails extends Pivot
+class InterventionServiceArea extends Pivot
 {
 
     /**

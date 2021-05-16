@@ -3,8 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Exports\InterventionsExport;
-use App\Models\ServiceAreaDetails;
-use Illuminate\Pagination\LengthAwarePaginator;
+use App\Models\InterventionServiceArea;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Maatwebsite\Excel\Excel;
@@ -47,7 +46,7 @@ class Interventions extends Component
 
     public function getInterventionListQuery()
     {
-        return ServiceAreaDetails::with('intervention', 'serviceArea')
+        return InterventionServiceArea::with('intervention', 'serviceArea')
             ->when($this->filters['service_area_id'], fn($query, $service_area_id) => $query->whereIn('service_area_id', $service_area_id))
             ->when($this->filters['age_cohort_id'], fn($query, $age_cohort_id) => $query->whereHas('intervention.ageCohort',
                 function($query) use ($age_cohort_id) {
