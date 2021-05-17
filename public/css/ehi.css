@@ -19,3 +19,7 @@
 td > ul {
     list-style: disc;
 }
+
+.prose a {
+    color: blue;
+}

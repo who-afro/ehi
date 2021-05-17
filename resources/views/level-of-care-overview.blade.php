@@ -2,7 +2,7 @@
     <x-slot name="header">
             {{ __('Level of Care (Service Delivery)') }}
     </x-slot>
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 prose">
+    <div class="max-w-7xl prose">
         <p>This thematic area covers the areas in which service delivery occurs</p>
         <h2>Community Level</h2>
         <p>
@@ -14,7 +14,7 @@
             do have workforce in the name of community health workers who mainly work under supervision of
             qualified health personnel from a health facility.
         </p>
-        <a href="/level-of-care/1" title="Community Level Interventions" class="flex items-center text-blue-700"><x-far-hand-point-right class="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-600" /> Click here to view the community level interventions </a>
+        <a href="/level-of-care/1" title="Community Level Interventions" class="flex items-center"><x-far-hand-point-right class="mr-3 h-6 w-6 text-blue-500 group-hover:text-blue-600" /> Click here to view the community level interventions </a>
         <h2>Primary care level</h2>
         <p>This is the first physical level of the health system and therefore forms the link
             between the community and mainstream health care system. It is the first care level where most
@@ -27,7 +27,7 @@
             maternity care. In most instances. In most instances, the staffing at Primary care level are mainly
             nurses assisted by community or auxiliary health workers. Others may have physician assistants or
             medical assistants or what is known as clinical officers in other countries.</p>
-        <a href="/level-of-care/2" title="Primary Care Level Interventions" class="flex items-center text-blue-700"><x-far-hand-point-right class="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-600" /> Click here to view the primary care level interventions </a>
+        <a href="/level-of-care/2" title="Primary Care Level Interventions" class="flex items-center text-blue-700"><x-far-hand-point-right class="mr-3 h-6 w-6 text-blue-500 group-hover:text-blue-600" /> Click here to view the primary care level interventions </a>
         <h2>Secondary and Tertiary level (Hospital level)</h2>
         <p>Hospital level complements the primary care level and offers a more comprehensive
             package of services including inpatient services. Different countries have different structures and
@@ -56,6 +56,6 @@
                 lower level centers by telemedicine
             </li>
         </ol>
-        <a href="/level-of-care/3" title="Hospital Level Interventions" class="flex items-center text-blue-700"><x-far-hand-point-right class="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-600" /> Click here to view the hospital level interventions </a>
+        <a href="/level-of-care/3" title="Hospital Level Interventions" class="flex items-center"><x-far-hand-point-right class="mr-3 h-6 w-6 text-blue-500 group-hover:text-blue-600" /> Click here to view the hospital level interventions </a>
     </div>
 </x-app-layout>
