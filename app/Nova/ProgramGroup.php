@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
 
 class ProgramGroup extends Resource
@@ -42,7 +43,7 @@ class ProgramGroup extends Resource
     {
         return [
             Text::make(__('Name'), 'name')->sortable(),
-            Text::make(__('Description'), 'description'),
+            Markdown::make(__('Description'), 'description')->alwaysShow(),
             HasMany::make("ProgramAreas"),
             Text::make("Program Areas", function() {return $this->programAreas()->count(); })
         ];

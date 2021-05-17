@@ -42,4 +42,8 @@ class AgeCohort extends Model
             $model->uuid = Str::uuid();
         });
     }
+
+    public function interventions() {
+        return $this->hasMany(Intervention::class);
+    }
 }

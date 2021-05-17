@@ -53,7 +53,7 @@ class ServiceArea extends Resource
         return [
             BelongsTo::make('Parent', 'parent', 'App\Nova\ServiceArea')->nullable()->sortable(),
             Text::make(__('Name'), 'name')->sortable(),
-            Text::make(__('Description'), 'description'),
+            Markdown::make(__('Description'), 'description')->alwaysShow(),
             Text::make("Intervention Count", function() {return $this->interventions()->count(); }),
             HasMany::make('Child Service Areas', 'serviceAreas', 'App\Nova\ServiceArea')->nullable(),
             BelongsToMany::make('Interventions')->fields(function () {

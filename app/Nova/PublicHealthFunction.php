@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
 
 class PublicHealthFunction extends Resource
@@ -41,7 +42,7 @@ class PublicHealthFunction extends Resource
     {
         return [
             Text::make(__('Name'), 'name')->sortable(),
-            Text::make(__('Description'), 'description'),
+            Markdown::make(__('Description'), 'description')->alwaysShow(),
             Text::make("Interventions", function() {return $this->interventions()->count(); }),
             HasMany::make("Interventions", 'interventions'),
         ];

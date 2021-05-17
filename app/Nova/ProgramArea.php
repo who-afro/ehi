@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
 
 class ProgramArea extends Resource
@@ -48,7 +49,7 @@ class ProgramArea extends Resource
     {
         return [
             Text::make(__('Name'), 'name')->sortable(),
-            Text::make(__('Description'), 'description'),
+            Markdown::make(__('Description'), 'description')->alwaysShow(),
             BelongsTo::make("Program Group", 'programGroup'),
             BelongsToMany::make("Conditions"),
             Text::make("Conditions Count", function() {return $this->conditions()->count(); })
