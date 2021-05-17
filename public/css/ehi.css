@@ -10,16 +10,12 @@
 .h-header {
     height: 5rem;
 }
-/* required for the accordian on the program area overview page to work - for now */
+/* required for the accordion on the program area overview page to work - for now */
 .max-h-0 {
     max-height: 0;
 }
 
-/* Add default styles to lists */
-ol {
-    list-style: lower-greek;
-}
-
-ul {
+/* Add default styles to lists in table cells */
+td > ul {
     list-style: disc;
 }
