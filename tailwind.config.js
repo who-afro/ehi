@@ -14,11 +14,6 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
-            colors: {
-                'light-blue': colors.lightBlue,
-                teal: colors.teal,
-                rose: colors.rose,
-            },
             listStyleType: {
                 roman: 'lower-roman'
             },

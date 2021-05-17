@@ -7,7 +7,7 @@
         The program areas in the digital toolkit are derived from the WHO Global burden of diseases
         <!-- accordian inspiration and code adapted from https://codepen.io/QJan84/pen/zYvRMMw -->
         <div class="grid grid-cols-2 gap-2 sm:grid-cols-2 mt-4" x-data="{selected:null}">
-                @foreach(App\Models\ProgramArea::with('conditions')->get() as $programArea)
+                @foreach(App\Models\ProgramArea::has('conditions')->get() as $programArea)
                     <div class="grid grid-cols-1 relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500 cursor-pointer" @click="selected !== {{ $programArea->id }} ? selected = {{ $programArea->id }} : selected = null">
                         <div>{{ $programArea->name }}</div>
 

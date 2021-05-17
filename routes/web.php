@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', "welcome")->name("home");
+Route::view('/faqs', "frequently-asked-questions")->name("faqs");
 Route::get('/age-cohort/{age_cohort_id}', AgeCohortInterventions::class)->name("age-cohort");
 Route::get('/interventions-list', Interventions::class)->name("interventions-list");
 Route::view('/level-of-care-overview', 'level-of-care-overview')->name("level-of-care-overview");
