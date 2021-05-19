@@ -1,18 +1,18 @@
 <div>
     <x-slot name="header">
-            {{ $levelOfCare->name }}
+            Interventions for {{ $ageCohort->name }}
     </x-slot>
     <div>
         <div class="max-w-7xl mx-auto p-4">
             <dl class="mt-5 grid grid-cols-4 gap-2 max-h-72">
                 <x-filters.condition />
-                <x-filters.age-cohort />
                 <x-filters.public-health-function />
+                <x-filters.level-of-care />
                 <x-filters.service-area />
             </dl>
         </div>
     </div>
-    <x-search-and-export/>
+    <x-search-and-export></x-search-and-export>
     <x-loading-indicator/>
     <div class="flex flex-col" wire:loading.remove>
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -22,21 +22,21 @@
                         <thead class="bg-gray-50">
                         <tr>
                             @auth
-                                <th scope="col" class="px-6 py-3 text-left font-medium text-gray-900 uppercase">
-                                    Actions
-                                </th>
+                            <th scope="col" class="px-6 py-3 text-left font-medium text-gray-900 uppercase">
+                                Actions
+                            </th>
                             @endauth
                             <th scope="col"
-                                class="px-6 py-3 text-left font-medium text-gray-900 uppercase whitespace-nowrap">
+                                class="px-6 py-3 text-left font-medium text-gray-900 uppercase">
                                 Condition
-                            </th>
-                            <th scope="col"
-                                class="px-6 py-3 text-left font-medium text-gray-900 uppercase  whitespace-nowrap">
-                                Age Cohort
                             </th>
                             <th scope="col"
                                 class="px-6 py-3 text-left font-medium text-gray-900 uppercase">
                                 Public Health Function
+                            </th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left font-medium text-gray-900 uppercase">
+                               Level of Care
                             </th>
                             <th scope="col" class="px-6 py-3 text-left font-medium text-gray-900 uppercase">
                                 Service Area
@@ -55,14 +55,14 @@
                                         </a>
                                     </td>
                                 @endauth
-                                <td class="px-6 py-4 text-left text-gray-500">
+                                <td class="px-6 py-4 whitespace-nowrap text-left text-gray-500">
                                     {{$v->intervention->condition->name}}
-                                </td>
-                                <td class="px-6 py-4 text-left text-gray-500">
-                                    {{$v->intervention->ageCohort->name}}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-left text-gray-500">
                                     {{$v->intervention->publicHealthFunction->name}}
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-left text-gray-500">
+                                    {{$v->intervention->levelOfCare->name}}
                                 </td>
                                 <td class="px-6 py-4 text-left text-gray-500">
                                     {{$v->serviceArea->fullName}}
@@ -79,6 +79,7 @@
             </div>
         </div>
     </div>
+
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-16 my-2">
         {{ $interventions->links() }}
     </div>

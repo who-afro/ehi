@@ -57,6 +57,41 @@
                         </div>
 
                         <div
+                            @if (Route::is('age-cohort*'))
+                            x-data="{ open: true }"
+                            @else
+                            x-data="{ open: false }"
+                            @endif
+                            class="space-y-1">
+                            <button type="button"
+                                    class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                    x-state:on="Current" x-state:off="Default" aria-controls="sub-menu-1"
+                                    @click="open = !open" aria-expanded="true" x-bind:aria-expanded="open.toString()"
+                                    x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
+                                <x-fas-child class="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
+                                Age Cohort
+                                <svg
+                                    class="ml-auto h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150 text-gray-400 rotate-90"
+                                    viewBox="0 0 20 20" x-state:on="Expanded" x-state:off="Collapsed" aria-hidden="true"
+                                    :class="{ 'text-gray-400 rotate-90': open, 'text-gray-300': !(open) }">
+                                    <path d="M6 6L14 10L6 14V6Z" fill="currentColor"></path>
+                                </svg>
+                            </button>
+                            <div x-description="Age Cohort" class="space-y-1" id="sub-menu-1" x-show="open">
+                                <a href="{{ route('age-cohort-overview') }}"
+                                   class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                    Overview
+                                </a>
+                                @foreach(App\Models\AgeCohort::all() as $ageCohort)
+                                    <a href="{{ route('age-cohort', ['age_cohort_id' => $ageCohort->id]) }}"
+                                       class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                                        {{ $ageCohort->name }}
+                                    </a>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        <div
                             @if (Route::is('level-of-care*'))
                             x-data="{ open: true }"
                             @else
