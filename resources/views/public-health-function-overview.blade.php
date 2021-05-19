@@ -3,7 +3,7 @@
             {{ __('Public Health Function') }}
     </x-slot>
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 prose">
+    <div class="max-w-7xl mx-auto p-4 prose">
         <p>This thematic area covers public health based interventions</p>
         <h2>Health Promotion</h2>
         <p>Health promotion is about empowering people and communities to increase control over their own health. The
@@ -12,6 +12,7 @@
             about the food they eat and healthcare services that they need. In includes ensuring that they have
             opportunities to make those choices. And that they are assured of an environment in which people can demand
             further policy actions to further improve their health.</p>
+        <a href="/public-health-function/1" title="Health Promotion" class="flex items-center"><x-far-hand-point-right class="mr-3 h-6 w-6 text-blue-500 group-hover:text-blue-600" /> Click here to view health promotion interventions </a>
         <h2>Disease prevention</h2>
         <p>Prevention, as it relates to health, is about avoiding disease before it starts. It is defined as the
             plans for, and the measures taken, to prevent the onset of a disease or other health problem before
@@ -21,6 +22,7 @@
             the risks of disease. In this case the broad determinants of health are addressed rather than
             individual exposure to risk factors. Examples of primordial prevention initiatives include improving
             sanitation, promoting healthy lifestyles in childhood:
+        </p>
         <ol>
             <li>Primary prevention—those preventive measures that prevent the onset of illness or injury before
                 the disease process begins.e.g. immunization and regular exercise.
@@ -34,12 +36,14 @@
                 contact with the healthcare system, and care providers in many roles and settings.
             </li>
         </ol>
+        <a href="/public-health-function/2" title="Disease Prevention" class="flex items-center"><x-far-hand-point-right class="mr-3 h-6 w-6 text-blue-500 group-hover:text-blue-600" /> Click here to view disease prevention interventions </a>
         <h2>Curative services</h2>
         <p>Curative care refers to treatment and therapies provided to a patient with the main intent of fully resolving an
         illness and the goal of bringing the patient—ideally—to their status of health before the illness presented
         itself. The care is therefore focused on intent of curing and not just reducing pain or stress. For instance,
         when a patient receives curative care for Breast Cancer, the goal is for any anatomical evidence of the cancer
             to disappear and for that patient's overall health to return to its status from before the cancer was diagnosed.</p>
+        <a href="/public-health-function/3" title="Curative" class="flex items-center"><x-far-hand-point-right class="mr-3 h-6 w-6 text-blue-500 group-hover:text-blue-600" /> Click here to view curative interventions </a>
         <h2>Rehabilitation care</h2>
         <p>Rehabilitative/Rehabilitation Services Health care services are aimed at helping one to get back or improve
         skills and functioning for daily living that have been lost or impaired because sickness, injury or disability.
@@ -50,6 +54,7 @@
         examples of types of rehabilitation services include, occupational, physical and speech. Each form of
         rehabilitation serves a unique purpose in helping a person reach full recovery, but all share the ultimate goal
         of helping the patient return to a healthy and active lifestyle.</p>
+        <a href="/public-health-function/4" title="Rehabilitative Services" class="flex items-center"><x-far-hand-point-right class="mr-3 h-6 w-6 text-blue-500 group-hover:text-blue-600" /> Click here to view rehabilitative interventions </a>
         <h2>Palliative care</h2>
         <p>Palliative care is an interdisciplinary medical caregiving approach aimed at optimizing quality of life and
         mitigating suffering among people with serious, complex illness. The World Health Organization describes
@@ -58,5 +63,6 @@
         early identification and impeccable assessment and treatment of pain and other problems, physical, psychosocial,
         and spiritual". Palliative care is therefore aimed at providing relief from the symptoms and stress of the
             illness. The goal is to improve quality of life for both the patient and the family.</p>
+        <a href="/public-health-function/5" title="Pallative care" class="flex items-center"><x-far-hand-point-right class="mr-3 h-6 w-6 text-blue-500 group-hover:text-blue-600" /> Click here to view pallative care interventions </a>
     </div>
 </x-app-layout>
