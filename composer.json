@@ -89,17 +89,9 @@
         ]
     },
     "repositories": {
-        "lean": {
-            "type": "composer",
-            "url": "https://lean-admin.dev/releases"
-        },
         "nova": {
             "type": "composer",
             "url": "https://nova.laravel.com"
-        },
-        "0": {
-            "type": "path",
-            "url": "./nova-components/DashboardOverview"
         }
     }
 }
