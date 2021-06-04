@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b20e42aa3fa766478e16e26f449ff02e",
+    "content-hash": "1e1a61debea7f313924fe0782dad271f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -568,6 +568,82 @@
                 "source": "https://github.com/codeat3/blade-eos-icons/tree/1.3.2"
             },
             "time": "2021-05-14T17:05:02+00:00"
+        },
+        {
+            "name": "composer/ca-bundle",
+            "version": "1.2.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/ca-bundle.git",
+                "reference": "78a0e288fdcebf92aa2318a8d3656168da6ac1a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/78a0e288fdcebf92aa2318a8d3656168da6ac1a5",
+                "reference": "78a0e288fdcebf92aa2318a8d3656168da6ac1a5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "ext-pcre": "*",
+                "php": "^5.3.2 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.55",
+                "psr/log": "^1.0",
+                "symfony/phpunit-bridge": "^4.2 || ^5",
+                "symfony/process": "^2.5 || ^3.0 || ^4.0 || ^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\CaBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle.",
+            "keywords": [
+                "cabundle",
+                "cacert",
+                "certificate",
+                "ssl",
+                "tls"
+            ],
+            "support": {
+                "irc": "irc://irc.freenode.org/composer",
+                "issues": "https://github.com/composer/ca-bundle/issues",
+                "source": "https://github.com/composer/ca-bundle/tree/1.2.9"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-01-12T12:10:35+00:00"
         },
         {
             "name": "dasprid/enum",
@@ -4508,6 +4584,64 @@
             "time": "2021-04-19T03:20:48+00:00"
         },
         {
+            "name": "pragmarx/datatables",
+            "version": "v1.4.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antonioribeiro/laravel4-datatables-package.git",
+                "reference": "142631346d01c074248b80c8bc55fdfea255e23e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antonioribeiro/laravel4-datatables-package/zipball/142631346d01c074248b80c8bc55fdfea255e23e",
+                "reference": "142631346d01c074248b80c8bc55fdfea255e23e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": ">=4.0.0",
+                "illuminate/filesystem": ">=4.0.0",
+                "illuminate/support": ">=4.0.0",
+                "illuminate/view": ">=4.0.0",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "laravel/laravel": ">=4.0.0",
+                "mockery/mockery": "0.7.2",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/migrations"
+                ],
+                "psr-0": {
+                    "Bllim\\Datatables": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bilal Gultekin",
+                    "email": "bilal@bilal.im"
+                }
+            ],
+            "description": "Server-side handler of DataTables Jquery Plugin for Laravel 4",
+            "keywords": [
+                "datatable",
+                "datatables",
+                "datatables jquery plugin",
+                "laravel",
+                "laravel4"
+            ],
+            "support": {
+                "source": "https://github.com/antonioribeiro/laravel4-datatables-package/tree/v1.4.12"
+            },
+            "time": "2019-09-13T13:59:39+00:00"
+        },
+        {
             "name": "pragmarx/google2fa",
             "version": "8.0.0",
             "source": {
@@ -4558,6 +4692,146 @@
                 "source": "https://github.com/antonioribeiro/google2fa/tree/8.0.0"
             },
             "time": "2020-04-05T10:47:18+00:00"
+        },
+        {
+            "name": "pragmarx/support",
+            "version": "v0.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antonioribeiro/support.git",
+                "reference": "fb0c7891ac6ce172f2d7e790cb70ef30a090f03c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antonioribeiro/support/zipball/fb0c7891ac6ce172f2d7e790cb70ef30a090f03c",
+                "reference": "fb0c7891ac6ce172f2d7e790cb70ef30a090f03c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "~4.0|~5.0|~6.0|~7.0|~8.0",
+                "php": ">=5.4.0",
+                "symfony/var-dumper": "~2.6|~3.0|~4.0|~5.0"
+            },
+            "suggest": {
+                "laravel/framework": "Laravel framework.",
+                "symfony/yaml": "The Yaml class needs it"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PragmaRX\\Support\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Antonio Carlos Ribeiro",
+                    "email": "acr@antoniocarlosribeiro.com",
+                    "role": "Creator"
+                }
+            ],
+            "description": "PragmaRX components support package",
+            "keywords": [
+                "laravel",
+                "pragmarx"
+            ],
+            "support": {
+                "issues": "https://github.com/antonioribeiro/support/issues",
+                "source": "https://github.com/antonioribeiro/support/tree/v0.9.3"
+            },
+            "time": "2020-09-27T14:43:22+00:00"
+        },
+        {
+            "name": "pragmarx/tracker",
+            "version": "v4.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antonioribeiro/tracker.git",
+                "reference": "1985a681abe457a9ad6e6a04393b6739a34f720d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antonioribeiro/tracker/zipball/1985a681abe457a9ad6e6a04393b6739a34f720d",
+                "reference": "1985a681abe457a9ad6e6a04393b6739a34f720d",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^2.6",
+                "jaybizzle/crawler-detect": "~1.0",
+                "jenssegers/agent": "~2.1",
+                "laravel/framework": "~5|~6|~7|~8",
+                "php": ">=7.0",
+                "pragmarx/datatables": "^1.4.12",
+                "pragmarx/support": "~0.6|~0.7|~0.8|~0.9",
+                "psr/log": "~1.0",
+                "ramsey/uuid": "^3 || ^4",
+                "snowplow/referer-parser": "~0.1",
+                "ua-parser/uap-php": "~3.4"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.8"
+            },
+            "suggest": {
+                "geoip/geoip": "~1.14",
+                "geoip2/geoip2": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "PragmaRX\\Tracker\\Vendor\\Laravel\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "Tracker": "PragmaRX\\Tracker\\Vendor\\Laravel\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PragmaRX\\Tracker\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Antonio Carlos Ribeiro",
+                    "email": "acr@antoniocarlosribeiro.com",
+                    "role": "Creator & Designer"
+                }
+            ],
+            "description": "A Laravel Visitor Tracker",
+            "keywords": [
+                "laravel",
+                "logging",
+                "mobile detection",
+                "pragmarx",
+                "tracker",
+                "tracking",
+                "user agent",
+                "visitor"
+            ],
+            "support": {
+                "issues": "https://github.com/antonioribeiro/tracker/issues",
+                "source": "https://github.com/antonioribeiro/tracker/tree/v4.0.1"
+            },
+            "time": "2020-09-27T15:14:59+00:00"
         },
         {
             "name": "psr/container",
@@ -5254,6 +5528,50 @@
                 "source": "https://github.com/sabberworm/PHP-CSS-Parser/tree/8.3.1"
             },
             "time": "2020-06-01T09:10:00+00:00"
+        },
+        {
+            "name": "snowplow/referer-parser",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/snowplow/referer-parser.git",
+                "reference": "5ce872b60999c63039723959a45928ef1196f03d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/snowplow/referer-parser/zipball/5ce872b60999c63039723959a45928ef1196f03d",
+                "reference": "5ce872b60999c63039723959a45928ef1196f03d",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.*",
+                "symfony/yaml": "*"
+            },
+            "suggest": {
+                "symfony/yaml": "Support for YAML configuration file"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Snowplow\\RefererParser": "php/src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lars Strojny",
+                    "email": "lars@strojny.net"
+                }
+            ],
+            "description": "Snowplow Refer(r)er parser for PHP",
+            "support": {
+                "issues": "https://github.com/snowplow/referer-parser/issues",
+                "source": "https://github.com/snowplow/referer-parser/tree/master"
+            },
+            "time": "2016-01-29T16:43:00+00:00"
         },
         {
             "name": "spatie/laravel-disable-floc",
@@ -7860,6 +8178,69 @@
             "time": "2020-07-13T06:12:54+00:00"
         },
         {
+            "name": "ua-parser/uap-php",
+            "version": "v3.9.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ua-parser/uap-php.git",
+                "reference": "b796c5ea5df588e65aeb4e2c6cce3811dec4fed6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ua-parser/uap-php/zipball/b796c5ea5df588e65aeb4e2c6cce3811dec4fed6",
+                "reference": "b796c5ea5df588e65aeb4e2c6cce3811dec4fed6",
+                "shasum": ""
+            },
+            "require": {
+                "composer/ca-bundle": "^1.1",
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.33",
+                "phpunit/phpunit": "^8 || ^9",
+                "symfony/console": "^3.4 || ^4.2 || ^4.3 || ^5.0",
+                "symfony/filesystem": "^3.4 || ^4.2 ||  ^4.3 || ^5.0",
+                "symfony/finder": "^3.4 || ^4.2 || ^4.3 || ^5.0",
+                "symfony/yaml": "^3.4 || ^4.2 || ^4.3 || ^5.0",
+                "vimeo/psalm": "^3.12"
+            },
+            "suggest": {
+                "symfony/console": "Required for CLI usage - ^3.4 || ^4.3 || ^5.0",
+                "symfony/filesystem": "Required for CLI usage - ^3.4 || ^4.3 || ^5.0",
+                "symfony/finder": "Required for CLI usage - ^3.4 || ^4.3 || ^5.0",
+                "symfony/yaml": "Required for CLI usage - ^3.4 || ^4.3 || ^5.0"
+            },
+            "bin": [
+                "bin/uaparser"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "UAParser\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Olsen",
+                    "email": "dmolsen@gmail.com"
+                },
+                {
+                    "name": "Lars Strojny",
+                    "email": "lars@strojny.net"
+                }
+            ],
+            "description": "A multi-language port of Browserscope's user agent parser.",
+            "support": {
+                "issues": "https://github.com/ua-parser/uap-php/issues",
+                "source": "https://github.com/ua-parser/uap-php/tree/v3.9.14"
+            },
+            "time": "2020-10-02T23:36:20+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v5.3.0",
             "source": {
@@ -8353,82 +8734,6 @@
                 "source": "https://github.com/barryvdh/ReflectionDocBlock/tree/v2.0.6"
             },
             "time": "2018-12-13T10:34:14+00:00"
-        },
-        {
-            "name": "composer/ca-bundle",
-            "version": "1.2.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "78a0e288fdcebf92aa2318a8d3656168da6ac1a5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/78a0e288fdcebf92aa2318a8d3656168da6ac1a5",
-                "reference": "78a0e288fdcebf92aa2318a8d3656168da6ac1a5",
-                "shasum": ""
-            },
-            "require": {
-                "ext-openssl": "*",
-                "ext-pcre": "*",
-                "php": "^5.3.2 || ^7.0 || ^8.0"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "^0.12.55",
-                "psr/log": "^1.0",
-                "symfony/phpunit-bridge": "^4.2 || ^5",
-                "symfony/process": "^2.5 || ^3.0 || ^4.0 || ^5.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\CaBundle\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                }
-            ],
-            "description": "Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle.",
-            "keywords": [
-                "cabundle",
-                "cacert",
-                "certificate",
-                "ssl",
-                "tls"
-            ],
-            "support": {
-                "irc": "irc://irc.freenode.org/composer",
-                "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.2.9"
-            },
-            "funding": [
-                {
-                    "url": "https://packagist.com",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/composer",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2021-01-12T12:10:35+00:00"
         },
         {
             "name": "composer/composer",

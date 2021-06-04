@@ -30,6 +30,7 @@
         "livewire/livewire": "^2.0",
         "maatwebsite/excel": "^3.1",
         "owenvoke/blade-fontawesome": "^1.8",
+        "pragmarx/tracker": "^4.0",
         "spatie/laravel-disable-floc": "^0.0.2",
         "vmitchell85/nova-links": "^1.0"
     },
@@ -73,7 +74,9 @@
             "@php artisan package:discover --ansi",
             "@php artisan vendor:publish --force --tag=livewire:assets --ansi",
             "@php artisan nova:publish",
-            "@php artisan telescope:publish"
+            "@php artisan telescope:publish",
+            "@php -r \"copy('.input.php.override', './vendor/laravel/framework/src/Illuminate/Support/Facades/Input.php');\"",
+            "@php artisan tracker:tables"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

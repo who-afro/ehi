@@ -179,6 +179,7 @@ return [
         App\Providers\JetstreamServiceProvider::class,
         App\Providers\TelescopeServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
 
     ],
 
@@ -232,6 +233,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Tracker' => 'PragmaRX\Tracker\Vendor\Laravel\Facade',
 
     ],
 
