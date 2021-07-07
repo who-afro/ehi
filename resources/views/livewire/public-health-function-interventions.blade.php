@@ -12,7 +12,7 @@
             </dl>
         </div>
     </div>
-    <x-search-and-export></x-search-and-export>
+    <x-search-and-export :filters="$filters"></x-search-and-export>
     <x-loading-indicator/>
     <div class="flex flex-col" wire:loading.remove>
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">

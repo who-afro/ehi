@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Exports\InterventionsExport;
 use App\Models\InterventionServiceArea;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Maatwebsite\Excel\Excel;
@@ -13,10 +14,10 @@ class Interventions extends Component
     use WithPagination;
 
     public $filters = [
-        'age_cohort_id' => [],
         'condition_id' => [],
-        'level_of_care_id' => [],
+        'age_cohort_id' => [],
         'public_health_function_id' => [],
+        'level_of_care_id' => [],
         'service_area_id' => [],
         'program_area_id' => [],
         'search' => null,
@@ -72,7 +73,7 @@ class Interventions extends Component
                     }))
             ->when($this->filters['search'], fn($query, $search) => $query->where('details', 'like', '%' . $search . '%'));
     }
-    public function getInterventionList(): \Illuminate\Contracts\Pagination\LengthAwarePaginator
+    public function getInterventionList(): LengthAwarePaginator
     {
         return $this->getInterventionListQuery()->paginate($this->filters['number_of_items_per_page']);
     }

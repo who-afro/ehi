@@ -13,4 +13,16 @@
             <x-far-file-pdf class="w-6 text-red-600" />
         </x-button.link>
     </div>
+    <div class="flex flex-row gap col-span-5 whitespace-nowrap">
+        Filtering by:
+        @foreach($filters as $key => $value)
+            @if($value)
+                @if(Str::contains($key, '_id'))
+                    <button type="button" class="inline-flex items-center ml-3 px-3 py-1.5 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    {{ trans("messages.pill_".$key) }}
+                    </button>
+                @endif
+            @endif
+        @endforeach
+    </div>
 </div>
