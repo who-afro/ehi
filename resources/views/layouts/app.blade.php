@@ -197,13 +197,15 @@
                                     FAQs
                                 </a>
                             </div>
-                            <div>
-                                <a href="{{ url('usage-statistics') }}"
-                                   class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 py-2 font-medium rounded-md">
-                                    <x-eos-query-stats class="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
-                                    Statistics
-                                </a>
-                            </div>
+                            @auth
+                                <div>
+                                    <a href="{{ url('usage-statistics') }}"
+                                       class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 py-2 font-medium rounded-md">
+                                        <x-eos-query-stats class="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
+                                        Statistics
+                                    </a>
+                                </div>
+                            @endauth
                         </div>
                     </nav>
                 </div>
