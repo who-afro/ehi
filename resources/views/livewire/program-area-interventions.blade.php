@@ -4,8 +4,9 @@
     </x-slot>
     <div>
         <div class="max-w-7xl mx-auto p-4">
-            <dl class="mt-5 grid grid-cols-4 gap-2 max-h-72">
+            <dl class="mt-5 grid grid-cols-5 gap-2 max-h-72">
                 <x-filters.age-cohort />
+                <x-filters.condition :programAreaId="$programArea->id" />
                 <x-filters.public-health-function />
                 <x-filters.level-of-care />
                 <x-filters.service-area />
