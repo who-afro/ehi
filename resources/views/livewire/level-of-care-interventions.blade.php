@@ -1,6 +1,6 @@
 <div>
     <x-slot name="header">
-            {{ $levelOfCare->name }}
+            {{ $levelOfCare->name }} Interventions
     </x-slot>
     <div>
         <div class="max-w-7xl mx-auto p-4">
@@ -56,16 +56,16 @@
                                     </td>
                                 @endauth
                                 <td class="px-6 py-4 text-left text-gray-500">
-                                    {{$v->intervention->condition->name}}
+                                    <a href="{{ route('condition', ['condition_id' => $v->intervention->condition->id, 'program_area_id' => $v->intervention->condition->programAreas[0]->id]) }}" class="text-blue-700 group-hover:text-blue-900">{{$v->intervention->condition->name}}</a>
                                 </td>
                                 <td class="px-6 py-4 text-left text-gray-500">
-                                    {{$v->intervention->ageCohort->name}}
+                                    <a href="{{ route('age-cohort', ['age_cohort_id' => $v->intervention->ageCohort->id]) }}" class="text-blue-700 group-hover:text-blue-900">{{$v->intervention->ageCohort->name}}</a>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-left text-gray-500">
-                                    {{$v->intervention->publicHealthFunction->name}}
+                                    <a href="{{ route('public-health-function', ['public_health_function_id' => $v->intervention->publicHealthFunction->id]) }}" class="text-blue-700 group-hover:text-blue-900">{{$v->intervention->publicHealthFunction->name}}</a>
                                 </td>
                                 <td class="px-6 py-4 text-left text-gray-500">
-                                    {{$v->serviceArea->fullName}}
+                                    <a href="{{ route('service-area', ['service_area_id' => $v->serviceArea->id]) }}" class="text-blue-700 group-hover:text-blue-900">{{$v->serviceArea->fullName}}</a>
                                 </td>
                                 <td class="px-6 py-4 text-left text-gray-500">
                                     {!! Str::markdown($v->details)!!}
