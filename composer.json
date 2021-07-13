@@ -85,7 +85,6 @@
             "@php artisan key:generate --ansi"
         ],
         "post-install-cmd": [
-            "@php artisan migrate --force",
             "@php artisan cache:clear",
             "@php artisan config:clear",
             "@php artisan route:clear"
