@@ -1,10 +1,10 @@
 <div>
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-8">
+    <div class="max-w-7xl mx-auto px-6 py-4">
         <h3 class="text-lg leading-6 font-medium text-gray-900">
             Intervention Statistics
         </h3>
         <p>This section provides a summary of the statistics for the digital menu of interventions</p>
-        <dl class="mt-5 grid grid-cols-3 gap-4">
+        <dl class="mt-5 grid grid-cols-4 gap-4">
             <div class="bg-white shadow rounded-lg">
                 <div class="px-4 py-5 sm:p-6">
                     <dt class="font-medium text-gray-500 truncate">
