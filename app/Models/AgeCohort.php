@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Spatie\Translatable\HasTranslations;
 
 class AgeCohort extends Model
 {
     use HasFactory;
+    use HasTranslations;
 
     /**
      * The attributes that are mass assignable.
@@ -33,6 +35,12 @@ class AgeCohort extends Model
         'min_age' => 'integer',
         'max_age' => 'integer',
     ];
+    /**
+     * The attributes that should be translatable
+     *
+     * @var array
+     */
+    public $translatable = ['name', 'description'];
 
     public static function boot()
     {

@@ -32,6 +32,9 @@
         "owenvoke/blade-fontawesome": "^1.8",
         "pragmarx/tracker": "^4.0",
         "spatie/laravel-disable-floc": "^0.0.2",
+        "spatie/laravel-translatable": "^4.6",
+        "spatie/nova-translatable": "^3.0",
+        "troccoli/blade-health-icons": "^0.2.0",
         "vmitchell85/nova-links": "^1.0"
     },
     "require-dev": {
@@ -47,7 +50,8 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "platform-check": false
     },
     "extra": {
         "laravel": {

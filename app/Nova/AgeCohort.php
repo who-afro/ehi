@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
+use Spatie\NovaTranslatable\Translatable;
 
 class AgeCohort extends Resource
 {
@@ -40,8 +41,10 @@ class AgeCohort extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make(__('Name'), 'name')->sortable(),
-            Markdown::make(__('Description'), 'description')->alwaysShow(),
+            Translatable::make([
+                Text::make(__('Name'), 'name')->sortable(),
+                Markdown::make(__('Description'), 'description')->alwaysShow()
+            ]),
             Text::make("Interventions", function() {return $this->interventions()->count(); }),
         ];
     }
