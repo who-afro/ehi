@@ -21,215 +21,204 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body class="font-sans antialiased">
-<div class="h-screen flex overflow-hidden bg-gray-100">
-    <!-- Static sidebar for desktop -->
-    <div class="hidden bg-indigo-700 md:flex md:flex-shrink-0">
-        <div class="flex flex-col w-80">
-            <!-- Sidebar component, swap this element with another sidebar if you like -->
-            <div class="flex flex-col flex-grow border-r border-gray-200 pt-5 pb-4 bg-white overflow-y-auto">
-                <div class="flex items-center flex-shrink-0 px-4">
-                    <img class="h-32 w-auto" src="{{ asset('img/who-logo.svg') }}" alt="World Health Organization">
-                </div>
-                <div class="mt-5 flex-grow flex flex-col">
-                    <nav class="flex-1 px-2 space-y-1 bg-white" aria-label="Sidebar">
-                        @auth
-                            <div>
-                                <a href="{{url('nova')}}"
-                                   class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 py-2 font-medium rounded-md">
-                                    <x-heroicon-o-cog class="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
-                                    Administration
-                                </a>
-                            </div>
-                        @endauth
-                        <div>
+<div>
+    <nav class="bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 mb-2">
+                        <img class="h-20" src="{{ asset('img/who-logo.svg') }}" alt="World Health Organization">
+                    </div>
+                    <div class="md:block ml-4">
+                        <div class="ml-10 flex flex-wrap items-baseline space-x-4">
                             <a href="/"
-                               class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 py-2 font-medium rounded-md">
-                                <x-heroicon-o-home class="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
+                               class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center py-2 px-2 font-medium rounded-md">
+                                <x-heroicon-o-home class="h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
                                 Welcome
                             </a>
-                        </div>
-                        <div>
+                            @auth
+                                <a href="{{url('nova')}}"
+                                   class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center py-2 px-2 font-medium rounded-md">
+                                    <x-heroicon-o-cog class="h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
+                                    Administration
+                                </a>
+                            @endauth
+
                             <a href="{{ route('service-area-overview') }}"
-                               class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 py-2 font-medium rounded-md">
-                                <x-heroicon-o-view-grid class="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
+                               class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center py-2 px-2 font-medium rounded-md whitespace-nowrap">
+                                <x-heroicon-o-view-grid class="h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
                                 Service Areas
                             </a>
-                        </div>
 
-                        <div
-                            @if (Route::is('age-cohort*'))
-                            x-data="{ open: true }"
-                            @else
-                            x-data="{ open: false }"
-                            @endif
-                            class="space-y-1">
-                            <button type="button"
-                                    class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                    x-state:on="Current" x-state:off="Default" aria-controls="sub-menu-1"
-                                    @click="open = !open" aria-expanded="true" x-bind:aria-expanded="open.toString()"
-                                    x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
-                                <x-fas-child class="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
-                                Age Cohort
-                                <svg
-                                    class="ml-auto h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150 text-gray-400 rotate-90"
-                                    viewBox="0 0 20 20" x-state:on="Expanded" x-state:off="Collapsed" aria-hidden="true"
-                                    :class="{ 'text-gray-400 rotate-90': open, 'text-gray-300': !(open) }">
-                                    <path d="M6 6L14 10L6 14V6Z" fill="currentColor"></path>
-                                </svg>
-                            </button>
-                            <div x-description="Age Cohort" class="space-y-1" id="sub-menu-1" x-show="open">
-                                <a href="{{ route('age-cohort-overview') }}"
-                                   class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                    Overview
-                                </a>
-                                @foreach(App\Models\AgeCohort::all() as $ageCohort)
-                                    <a href="{{ route('age-cohort', ['age_cohort_id' => $ageCohort->id]) }}"
-                                       class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                        {{ $ageCohort->name }}
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div
-                            @if (Route::is('level-of-care*'))
-                            x-data="{ open: true }"
-                            @else
-                            x-data="{ open: false }"
-                            @endif
-                            class="space-y-1">
-                            <button type="button"
-                                    class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                    x-state:on="Current" x-state:off="Default" aria-controls="sub-menu-1"
-                                    @click="open = !open" aria-expanded="true" x-bind:aria-expanded="open.toString()"
-                                    x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
-                                <x-heroicon-o-users class="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
-                                Level of Care
-                                <svg
-                                    class="ml-auto h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150 text-gray-400 rotate-90"
-                                    viewBox="0 0 20 20" x-state:on="Expanded" x-state:off="Collapsed" aria-hidden="true"
-                                    :class="{ 'text-gray-400 rotate-90': open, 'text-gray-300': !(open) }">
-                                    <path d="M6 6L14 10L6 14V6Z" fill="currentColor"></path>
-                                </svg>
-                            </button>
-                            <div x-description="Level of Care" class="space-y-1" id="sub-menu-1" x-show="open">
-                                <a href="{{ route('level-of-care-overview') }}"
-                                   class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                    Overview
-                                </a>
-                                @foreach(App\Models\LevelOfCare::all() as $levelofCare)
-                                    <a href="{{ route('level-of-care', ['level_of_care_id' => $levelofCare->id]) }}"
-                                       class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                        {{ $levelofCare->name }}
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div @if (Route::is('public-health-function*'))
-                             x-data="{ open: true }"
-                             @else
-                             x-data="{ open: false }"
-                             @endif class="space-y-1">
-                            <button type="button"
-                                    class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                    x-state:on="Current" x-state:off="Default" aria-controls="sub-menu-1"
-                                    @click="open = !open" aria-expanded="true" x-bind:aria-expanded="open.toString()"
-                                    x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
-                                <x-heroicon-o-folder class="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
-                                Public Health Function
-                                <svg
-                                    class="ml-auto h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150 text-gray-400 rotate-90"
-                                    viewBox="0 0 20 20" x-state:on="Expanded" x-state:off="Collapsed" aria-hidden="true"
-                                    :class="{ 'text-gray-400 rotate-90': open, 'text-gray-300': !(open) }">
-                                    <path d="M6 6L14 10L6 14V6Z" fill="currentColor"></path>
-                                </svg>
-                            </button>
-                            <div x-description="Level of Care" class="space-y-1" id="sub-menu-1" x-show="open">
-                                <a href="{{ route('public-health-function-overview') }}"
-                                   class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                    Overview
-                                </a>
-                                @foreach(App\Models\PublicHealthFunction::all() as $publicHealthFunction)
-                                    <a href="{{ route('public-health-function', ['public_health_function_id' => $publicHealthFunction->id]) }}"
-                                       class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                        {{$publicHealthFunction->name}}
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div @if (Route::is('program-area*'))
-                             x-data="{ open: true }"
-                             @else
-                             x-data="{ open: false }"
-                             @endif class="space-y-1">
-                            <button type="button"
-                                    class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                    x-state:on="Current" x-state:off="Default" aria-controls="sub-menu-1"
-                                    @click="open = !open" aria-expanded="true" x-bind:aria-expanded="open.toString()"
-                                    x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
-                                <x-heroicon-o-calendar class="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
-                                Program Area
-                                <svg
-                                    class="ml-auto h-5 w-5 transform group-hover:text-gray-400 transition-colors ease-in-out duration-150 text-gray-400 rotate-90"
-                                    viewBox="0 0 20 20" x-state:on="Expanded" x-state:off="Collapsed" aria-hidden="true"
-                                    :class="{ 'text-gray-400 rotate-90': open, 'text-gray-300': !(open) }">
-                                    <path d="M6 6L14 10L6 14V6Z" fill="currentColor"></path>
-                                </svg>
-                            </button>
-                            <div x-description="Level of Care" class="space-y-1" id="sub-menu-1" x-show="open">
-                                <a href="{{ route('program-area-overview') }}"
-                                   class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                    Overview
-                                </a>
-                                @foreach(App\Models\ProgramArea::all() as $programArea)
-                                    <a href="{{ route('program-area', ['program_area_id' => $programArea->id]) }}"
-                                       class="group w-full flex items-center pl-11 pr-2 py-2 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                                        {{$programArea->name}}
-                                    </a>
-                                @endforeach
-                            </div>
-                            <div>
-                                <a href="{{ route('faqs') }}"
-                                   class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 py-2 font-medium rounded-md">
-                                    <x-bi-patch-question class="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
-                                    FAQs
-                                </a>
-                            </div>
-                            @auth
-                                <div>
-                                    <a href="{{ url('usage-statistics') }}"
-                                       class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 py-2 font-medium rounded-md">
-                                        <x-eos-query-stats class="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
-                                        Statistics
-                                    </a>
+                            <div x-data="{ isAgeCohortOpen: false }" x-on.click.away="isAgeCohortOpen = false"
+                                 class="relative inline-block text-left px-2 py-2 hover:bg-gray-50 hover:text-gray-900 rounded-md">
+                                <button type="button" @click="isAgeCohortOpen = !isAgeCohortOpen"
+                                        class="inline-flex justify-center w-full rounded-md font-medium text-gray-600 whitespace-nowrap focus:outline-none focus:ring-0"
+                                        id="age-cohort-button" aria-expanded="true" aria-haspopup="true">
+                                    <x-fas-child class="h-6 w-6"/>
+                                    Age Cohorts
+                                    <x-heroicon-o-chevron-down class="h-4 w-4 ml-2 -mb-2"/>
+                                </button>
+                                <div
+                                    x-show="isAgeCohortOpen"
+                                    x-transition:enter="transition ease-out duration-100"
+                                    x-transition:enter-start="transform opacity-0 scale-95"
+                                    x-transition:enter-end="transform opacity-100 scale-100"
+                                    x-transition:leave="transition ease-in duration-75"
+                                    x-transition:leave-start="transform opacity-100 scale-100"
+                                    x-transition:leave-end="transform opacity-0 scale-95"
+                                    class="origin-top-right absolute right-0 mt-2 w-72 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                    role="menu" aria-orientation="vertical" aria-labelledby="age-cohort-button"
+                                    tabindex="-1">
+                                    <div x-description="Age Cohort Menu" class="space-y-1" role="none">
+                                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                                        <a href="{{ route('age-cohort-overview') }}"
+                                           class="group w-full flex items-center px-2 py-2 text-gray-500  hover:text-gray-900 hover:bg-gray-100">
+                                            Overview
+                                        </a>
+                                        @foreach(App\Models\AgeCohort::all() as $ageCohort)
+                                            <a href="{{ route('age-cohort', ['age_cohort_id' => $ageCohort->id]) }}"
+                                               class="text-gray-500 block px-2 py-2 whitespace-nowrap hover:text-gray-900 hover:bg-gray-100"
+                                               title="{{ $ageCohort->name }}">
+                                                {{ $ageCohort->name }}
+                                            </a>
+                                        @endforeach
+                                    </div>
                                 </div>
-                            @endauth
+                            </div>
+                            <div x-data="{ isLevelOfCareOpen: false }"
+                                 class="relative inline-block text-left text-gray-600 hover:bg-gray-50 hover:text-gray-900 group items-center py-2 px-2 font-medium rounded-md">
+                                <button type="button" @click="isLevelOfCareOpen = !isLevelOfCareOpen"
+                                        class="inline-flex justify-center font-medium text-gray-600  whitespace-nowrap hover:bg-gray-50 hover:text-gray-900 outline-none"
+                                        id="level-of-care-button" aria-expanded="true" aria-haspopup="true">
+                                    <x-heroicon-o-users class="h-6 w-6"/>
+                                    Level of Care
+                                    <x-heroicon-o-chevron-down class="h-4 w-4 ml-2 -mb-2"/>
+                                </button>
+                                <div
+                                    x-show="isLevelOfCareOpen"
+                                    x-transition:enter="transition ease-out duration-100"
+                                    x-transition:enter-start="transform opacity-0 scale-95"
+                                    x-transition:enter-end="transform opacity-100 scale-100"
+                                    x-transition:leave="transition ease-in duration-75"
+                                    x-transition:leave-start="transform opacity-100 scale-100"
+                                    x-transition:leave-end="transform opacity-0 scale-95"
+                                    class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                    role="menu" aria-orientation="vertical" aria-labelledby="level-of-care-button"
+                                    tabindex="-1">
+                                    <div x-description="Level of Care Menu" class="space-y-1" role="none">
+                                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                                        <a href="{{ route('level-of-care-overview') }}"
+                                           class="group w-full flex items-center px-2 py-2 text-gray-500  hover:text-gray-900 hover:bg-gray-100">
+                                            Overview
+                                        </a>
+                                        @foreach(App\Models\LevelOfCare::all() as $levelofCare)
+                                            <a href="{{ route('level-of-care', ['level_of_care_id' => $levelofCare->id]) }}"
+                                               class="group w-full flex items-center px-2 py-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+                                               title="{{ $levelofCare->name }}">
+                                                {{ $levelofCare->name }}
+                                            </a>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                            <div x-data="{ isPublicHealthFunctionOpen: false }"
+                                 class="relative inline-block text-left text-gray-600 hover:bg-gray-50 hover:text-gray-900 group items-center py-2 px-2 font-medium rounded-md">
+                                <button type="button" @click="isPublicHealthFunctionOpen = !isPublicHealthFunctionOpen"
+                                        class="inline-flex justify-center font-medium text-gray-600  whitespace-nowrap hover:bg-gray-50 hover:text-gray-900 outline-none"
+                                        id="public-health-function-button" aria-expanded="true" aria-haspopup="true">
+                                    <x-heroicon-o-folder class="h-6 w-6"/>
+                                    Public Health Function
+                                    <x-heroicon-o-chevron-down class="h-4 w-4 ml-2 -mb-6"/>
+                                </button>
+                                <div
+                                    x-show="isPublicHealthFunctionOpen"
+                                    x-transition:enter="transition ease-out duration-100"
+                                    x-transition:enter-start="transform opacity-0 scale-95"
+                                    x-transition:enter-end="transform opacity-100 scale-100"
+                                    x-transition:leave="transition ease-in duration-75"
+                                    x-transition:leave-start="transform opacity-100 scale-100"
+                                    x-transition:leave-end="transform opacity-0 scale-95"
+                                    class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                    role="menu" aria-orientation="vertical"
+                                    aria-labelledby="public-health-function-button"
+                                    tabindex="-1">
+                                    <div x-description="Public Health Function Menu" class="space-y-1" role="none">
+                                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                                        <a href="{{ route('public-health-function-overview') }}"
+                                           class="group w-full flex items-center px-2 py-2 text-gray-500  hover:text-gray-900 hover:bg-gray-100">
+                                            Overview
+                                        </a>
+                                        @foreach(App\Models\PublicHealthFunction::all() as $publicHealthFunction)
+                                            <a href="{{ route('public-health-function', ['public_health_function_id' => $publicHealthFunction->id]) }}"
+                                               class="group w-full flex items-center px-2 py-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+                                               title="{{ $publicHealthFunction->name }}">
+                                                {{ $publicHealthFunction->name }}
+                                            </a>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                            <div x-data="{ isProgramAreaOpen: false }"
+                                 class="relative inline-block text-left text-gray-600 hover:bg-gray-50 hover:text-gray-900 group items-center py-2 px-2 font-medium rounded-md">
+                                <button type="button" @click="isProgramAreaOpen = !isProgramAreaOpen"
+                                        class="inline-flex justify-center font-medium text-gray-600  whitespace-nowrap hover:bg-gray-50 hover:text-gray-900 outline-none"
+                                        id="program-area-button" aria-expanded="true" aria-haspopup="true">
+                                    <x-heroicon-o-calendar class="h-6 w-6"/>
+                                    Program Area
+                                    <x-heroicon-o-chevron-down class="h-4 w-4 ml-2 -mb-2"/>
+                                </button>
+                                <div
+                                    x-show="isProgramAreaOpen"
+                                    x-transition:enter="transition ease-out duration-100"
+                                    x-transition:enter-start="transform opacity-0 scale-95"
+                                    x-transition:enter-end="transform opacity-100 scale-100"
+                                    x-transition:leave="transition ease-in duration-75"
+                                    x-transition:leave-start="transform opacity-100 scale-100"
+                                    x-transition:leave-end="transform opacity-0 scale-95"
+                                    class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                    role="menu" aria-orientation="vertical" aria-labelledby="program-area-button"
+                                    tabindex="-1">
+                                    <div x-description="Program Area Menu" class="space-y-1" role="none">
+                                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                                        <a href="{{ route('program-area-overview') }}"
+                                           class="group w-full flex items-center px-2 py-2 text-gray-500  hover:text-gray-900 hover:bg-gray-100">
+                                            Overview
+                                        </a>
+                                        @foreach(App\Models\ProgramArea::all() as $programArea)
+                                            <a href="{{ route('program-area', ['program_area_id' => $programArea->id]) }}"
+                                               class="group w-full flex items-center px-2 py-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+                                               title="{{ $programArea->name }}">
+                                                {{ $programArea->name }}
+                                            </a>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </nav>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="flex flex-col w-0 flex-1 overflow-hidden">
-        <main class="flex-1 relative overflow-y-auto focus:outline-none" tabindex="0">
-            <div>
-                <x-show-breakpoints></x-show-breakpoints>
-                <div class="max-w-7xl mx-auto">
-                    <h1 class="text-2xl font-semibold text-gray-900 pl-6"> {{ $header ?? '' }}</h1>
-                </div>
-                <div class="max-w-7xl mx-auto">
-                    <!-- Replace with your content -->
-                    <div class="h-full">
-                        {{ $slot }}
-                    </div>
-                    <!-- /End replace -->
-                </div>
+    </nav>
+
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-2xl font-semibold text-gray-900 pl-6"> {{ $header ?? '' }}</h1>
+        </div>
+    </header>
+    <x-show-breakpoints></x-show-breakpoints>
+    <main>
+        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <!-- Replace with your content -->
+            <div class="h-full">
+                {{ $slot }}
             </div>
-        </main>
-    </div>
+            <!-- /End replace -->
+        </div>
+    </main>
 </div>
+
 @stack('modals')
 
 @livewireScripts

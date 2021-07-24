@@ -1,15 +1,3 @@
-/* Change the default color of the logo background to make it visible */
-:root {
-    --logo: #b3c1d1;
-}
-/* Increase the width of the side bar to fit the menu text items on a single line */
-.w-sidebar {
-    width: 16rem;
-}
-/* Increase the height of the header to fit the logo */
-.h-header {
-    height: 5rem;
-}
 /* required for the accordion on the program area overview page to work - for now */
 .max-h-0 {
     max-height: 0;
