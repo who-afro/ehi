@@ -1,0 +1,10 @@
+{
+    "age_cohort.label": "Age Cohort",
+    "age_cohort.label.plural": "Age Cohorts",
+    "age_cohort.name": "Age Cohort",
+    "age_cohort.description": "Description",
+    "condition.label": "Condition",
+    "condition.name": "Condition",
+    "condition.description": "Description",
+    "intervention.count": "Interventions"
+}

@@ -42,10 +42,10 @@ class AgeCohort extends Resource
     {
         return [
             Translatable::make([
-                Text::make(__('Name'), 'name')->sortable(),
-                Markdown::make(__('Description'), 'description')->alwaysShow()
+                Text::make(__('age_cohort.name'), 'name')->sortable(),
+                Markdown::make(__('age_cohort.description'), 'description')->alwaysShow()
             ]),
-            Text::make("Interventions", function() {return $this->interventions()->count(); }),
+            Text::make(__("intervention.count"), function() {return $this->interventions()->count(); }),
         ];
     }
 
