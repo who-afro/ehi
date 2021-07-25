@@ -27,15 +27,11 @@
             <div class="flex items-center justify-between h-24">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 mb-2">
-                        <img class="h-20" src="{{ asset('img/who-logo.svg') }}" alt="World Health Organization">
+                        <a href="/"><img class="h-20" src="{{ asset('img/who-logo.svg') }}" alt="World Health Organization">
+                        </a>
                     </div>
                     <div class="md:block ml-4">
                         <div class="ml-10 flex flex-wrap items-baseline space-x-4">
-                            <a href="/"
-                               class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center py-2 px-2 font-medium rounded-md">
-                                <x-heroicon-o-home class="h-6 w-6 text-gray-500 group-hover:text-gray-600"/>
-                                Welcome
-                            </a>
                             @auth
                                 <a href="{{url('nova')}}"
                                    class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center py-2 px-2 font-medium rounded-md">
@@ -50,7 +46,7 @@
                                 Service Areas
                             </a>
 
-                            <div x-data="{ isAgeCohortOpen: false }" x-on.click.away="isAgeCohortOpen = false"
+                            <div x-data="{ isAgeCohortOpen: false }" @click.away="isAgeCohortOpen = false"
                                  class="relative inline-block text-left px-2 py-2 hover:bg-gray-50 hover:text-gray-900 rounded-md">
                                 <button type="button" @click="isAgeCohortOpen = !isAgeCohortOpen"
                                         class="inline-flex justify-center w-full rounded-md font-medium text-gray-600 whitespace-nowrap focus:outline-none focus:ring-0"
@@ -61,6 +57,7 @@
                                 </button>
                                 <div
                                     x-show="isAgeCohortOpen"
+                                    @click.away="isAgeCohortOpen = false"
                                     x-transition:enter="transition ease-out duration-100"
                                     x-transition:enter-start="transform opacity-0 scale-95"
                                     x-transition:enter-end="transform opacity-100 scale-100"
@@ -69,7 +66,7 @@
                                     x-transition:leave-end="transform opacity-0 scale-95"
                                     class="origin-top-right absolute right-0 mt-2 w-72 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                                     role="menu" aria-orientation="vertical" aria-labelledby="age-cohort-button"
-                                    tabindex="-1">
+                                    tabindex="-1" style="display: none;">
                                     <div x-description="Age Cohort Menu" class="space-y-1" role="none">
                                         <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
                                         <a href="{{ route('age-cohort-overview') }}"
@@ -87,9 +84,10 @@
                                 </div>
                             </div>
                             <div x-data="{ isLevelOfCareOpen: false }"
+                                 @click.away="isLevelOfCareOpen = false"
                                  class="relative inline-block text-left text-gray-600 hover:bg-gray-50 hover:text-gray-900 group items-center py-2 px-2 font-medium rounded-md">
                                 <button type="button" @click="isLevelOfCareOpen = !isLevelOfCareOpen"
-                                        class="inline-flex justify-center font-medium text-gray-600  whitespace-nowrap hover:bg-gray-50 hover:text-gray-900 outline-none"
+                                        class="inline-flex justify-center font-medium text-gray-600  whitespace-nowrap hover:bg-gray-50 hover:text-gray-900 focus:outline-none"
                                         id="level-of-care-button" aria-expanded="true" aria-haspopup="true">
                                     <x-heroicon-o-users class="h-6 w-6"/>
                                     Level of Care
@@ -97,6 +95,7 @@
                                 </button>
                                 <div
                                     x-show="isLevelOfCareOpen"
+                                    @click.away="isLevelOfCareOpen = false"
                                     x-transition:enter="transition ease-out duration-100"
                                     x-transition:enter-start="transform opacity-0 scale-95"
                                     x-transition:enter-end="transform opacity-100 scale-100"
@@ -105,7 +104,7 @@
                                     x-transition:leave-end="transform opacity-0 scale-95"
                                     class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                                     role="menu" aria-orientation="vertical" aria-labelledby="level-of-care-button"
-                                    tabindex="-1">
+                                    tabindex="-1" >
                                     <div x-description="Level of Care Menu" class="space-y-1" role="none">
                                         <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
                                         <a href="{{ route('level-of-care-overview') }}"
@@ -122,10 +121,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div x-data="{ isPublicHealthFunctionOpen: false }"
+                            <div x-data="{ isPublicHealthFunctionOpen: false }" @click.away="isPublicHealthFunctionOpen = false"
                                  class="relative inline-block text-left text-gray-600 hover:bg-gray-50 hover:text-gray-900 group items-center py-2 px-2 font-medium rounded-md">
                                 <button type="button" @click="isPublicHealthFunctionOpen = !isPublicHealthFunctionOpen"
-                                        class="inline-flex justify-center font-medium text-gray-600  whitespace-nowrap hover:bg-gray-50 hover:text-gray-900 outline-none"
+                                        class="inline-flex justify-center font-medium text-gray-600  whitespace-nowrap hover:bg-gray-50 hover:text-gray-900 focus:outline-none"
                                         id="public-health-function-button" aria-expanded="true" aria-haspopup="true">
                                     <x-heroicon-o-folder class="h-6 w-6"/>
                                     Public Health Function
@@ -133,6 +132,7 @@
                                 </button>
                                 <div
                                     x-show="isPublicHealthFunctionOpen"
+                                    @click.away="isPublicHealthFunctionOpen = false"
                                     x-transition:enter="transition ease-out duration-100"
                                     x-transition:enter-start="transform opacity-0 scale-95"
                                     x-transition:enter-end="transform opacity-100 scale-100"
@@ -160,6 +160,7 @@
                                 </div>
                             </div>
                             <div x-data="{ isProgramAreaOpen: false }"
+                                 @click.away="{ isProgramAreaOpen = false }"
                                  class="relative inline-block text-left text-gray-600 hover:bg-gray-50 hover:text-gray-900 group items-center py-2 px-2 font-medium rounded-md">
                                 <button type="button" @click="isProgramAreaOpen = !isProgramAreaOpen"
                                         class="inline-flex justify-center font-medium text-gray-600  whitespace-nowrap hover:bg-gray-50 hover:text-gray-900 outline-none"
@@ -170,6 +171,7 @@
                                 </button>
                                 <div
                                     x-show="isProgramAreaOpen"
+                                    @click.away="{ isProgramAreaOpen = false }"
                                     x-transition:enter="transition ease-out duration-100"
                                     x-transition:enter-start="transform opacity-0 scale-95"
                                     x-transition:enter-end="transform opacity-100 scale-100"
@@ -203,13 +205,13 @@
     </nav>
 
     <header class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto py-2 px-4 sm:px-6 lg:px-8">
             <h1 class="text-2xl font-semibold text-gray-900 pl-6"> {{ $header ?? '' }}</h1>
         </div>
     </header>
     <x-show-breakpoints></x-show-breakpoints>
     <main>
-        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <!-- Replace with your content -->
             <div class="h-full">
                 {{ $slot }}
