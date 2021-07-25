@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
+use Spatie\Translatable\HasTranslations;
 
 class Condition extends Model
 {
     use HasFactory;
+    use HasTranslations;
 
     /**
      * The attributes that are mass assignable.
@@ -22,6 +24,15 @@ class Condition extends Model
         'who',
         'snomed',
         'uuid',
+    ];
+    /**
+     * The attributes are translatable
+     *
+     * @var array
+     */
+    public $translatable = [
+        'name',
+        'description'
     ];
 
     /**
