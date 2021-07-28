@@ -1,4 +1,4 @@
-<div class="max-w-7xl mx-auto font-semibold grid grid-cols-5 gap-4 p-4">
+<div class="max-w-7xl mx-auto font-semibold grid grid-cols-5 gap-4 py-4">
     <div class="col-span-3">
         <x-input.text wire:model="filters.search" placeholder="Search Interventions..."
                       class="p-2 rounded border w-full appearance-none"/>
