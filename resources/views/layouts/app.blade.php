@@ -211,7 +211,7 @@
     </header>
     <x-show-breakpoints></x-show-breakpoints>
     <main>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
             <!-- Replace with your content -->
             <div class="h-full">
                 {{ $slot }}
