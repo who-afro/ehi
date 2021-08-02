@@ -6,5 +6,15 @@
     "condition.label": "Condition",
     "condition.name": "Condition",
     "condition.description": "Description",
-    "intervention.count": "Interventions"
+    "condition.intervention_count": "Interventions",
+    "condition.intervention_label": "Interventions",
+    "condition.program_area_count": "Program Areas",
+    "condition.program_area_label": "Program Area",
+    "program_area.label": "Program Area",
+    "program_area.label.plural": "Program Areas",
+    "program_area.name": "Program Area",
+    "program_area.description": "Description",
+    "program_area.program_group_label": "Program Groups",
+    "program_area.conditions_label": "Conditions",
+    "program_area.conditions_count": "Conditions Count"
 }

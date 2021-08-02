@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Spatie\Translatable\HasTranslations;
 
 class ProgramArea extends Model
 {
     use HasFactory;
+    use HasTranslations;
 
     /**
      * The attributes that are mass assignable.
@@ -21,6 +23,16 @@ class ProgramArea extends Model
         'description',
         'uuid',
         'program_group_id'
+    ];
+
+    /**
+     * The attributes are translatable
+     *
+     * @var array
+     */
+    public $translatable = [
+        'name',
+        'description'
     ];
 
     /**

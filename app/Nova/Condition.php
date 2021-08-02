@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
+use Spatie\NovaTranslatable\Translatable;
 
 class Condition extends Resource
 {
@@ -42,12 +43,14 @@ class Condition extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make(__('Name'), 'name')->sortable(),
-            Markdown::make(__('Description'), 'description')->alwaysShow(),
-            Text::make("Interventions", function() {return $this->interventions()->count(); }),
-            Text::make("Program Areas", function() {return $this->programAreas()->count(); }),
-            BelongsToMany::make("Program Areas", 'programAreas'),
-            HasMany::make("Interventions", 'interventions'),
+            Translatable::make([
+                Text::make(__('condition.name'), 'name')->sortable(),
+                Markdown::make(__('condition.description'), 'description')->alwaysShow()
+            ]),
+            Text::make(__('condition.intervention_count'), function() {return $this->interventions()->count(); }),
+            Text::make(__('condition.program_area_count'), function() {return $this->programAreas()->count(); }),
+            BelongsToMany::make(__("condition.program_area_label"), 'programAreas'),
+            HasMany::make(__("condition.intervention_label"), 'interventions'),
         ];
     }
 
