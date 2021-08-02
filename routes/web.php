@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', "welcome")->name("home");
+Route::view('/', "program-area-overview")->name("home");
 Route::view('/faqs', "frequently-asked-questions")->name("faqs");
 Route::view('/age-cohort-overview', 'age-cohort-overview')->name("age-cohort-overview");
 Route::get('/age-cohort/{age_cohort_id}', AgeCohortInterventions::class)->name("age-cohort");
