@@ -37,4 +37,4 @@ Route::get('/service-area/{service_area_id}', ServiceAreaInterventions::class)->
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('welcome');
-})->name('program-area-overview');
+})->name('dashboard');
