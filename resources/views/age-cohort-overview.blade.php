@@ -7,7 +7,7 @@
         @foreach(App\Models\AgeCohort::all() as $ageCohort)
             <h2>{{ $ageCohort->name }}</h2>
             <p>
-                {{ $ageCohort->description }}
+                {{ \Illuminate\Mail\Markdown::parse($ageCohort->description) }}
             </p>
             <a href="/age-cohort/${{ $ageCohort->id }}" title="{{ $ageCohort->name }}" class="flex items-center">
                 <x-far-hand-point-right class="mr-3 h-6 w-6 text-blue-500 group-hover:text-blue-600"/>
