@@ -8,7 +8,7 @@
         @foreach(App\Models\PublicHealthFunction::all() as $publicHealthFunction)
             <h2>{{ $publicHealthFunction->name }}</h2>
             <p>
-                {{ \Illuminate\Mail\Markdown::parse($publicHealthFunction->description) }}
+                {!! Str::markdown($publicHealthFunction->description) !!}
             </p>
             <a href="/public-health-function/${{ $publicHealthFunction->id }}" title="{{ $publicHealthFunction->name }}" class="flex items-center">
                 <x-far-hand-point-right class="mr-3 h-6 w-6 text-blue-500 group-hover:text-blue-600"/>

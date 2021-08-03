@@ -7,7 +7,7 @@
         @foreach(App\Models\LevelOfCare::all() as $levelOfCare)
             <h2>{{ $levelOfCare->name }}</h2>
             <p>
-                {{ \Illuminate\Mail\Markdown::parse($levelOfCare->description) }}
+                {!! Str::markdown($levelOfCare->description) !!}
             </p>
             <a href="/level-of-care/${{ $levelOfCare->id }}" title="{{ $levelOfCare->name }}" class="flex items-center">
                 <x-far-hand-point-right class="mr-3 h-6 w-6 text-blue-500 group-hover:text-blue-600"/>

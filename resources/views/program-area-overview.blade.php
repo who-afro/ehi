@@ -11,7 +11,7 @@
                     <div class="grid grid-cols-2 relative rounded-lg border border-gray-300 bg-white px-6 py-5 my-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500 cursor-pointer" @click="selected !== {{ $programArea->id }} ? selected = {{ $programArea->id }} : selected = null; ">
                         <div class="align-top">{{ $programArea->name }}
                             <span x-bind:style="selected == {{ $programArea->id }} ? '' : 'display:none'" style="display: none;">
-                                {!! \Illuminate\Mail\Markdown::parse($programArea->description) !!}
+                                {!! Str::markdown($programArea->description) !!}
                             </span>
                         </div>
 
