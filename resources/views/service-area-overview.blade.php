@@ -2,7 +2,7 @@
     <x-slot name="header">
             {{ __('Service Areas') }}
     </x-slot>
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 prose">
+    <div class="max-w-7xl mx-auto prose">
         The services areas are in the categories listed below:
         <ol>
             @foreach(App\Models\ServiceArea::whereNull('parent_id')->with('childServiceAreas')->get() as $serviceArea)

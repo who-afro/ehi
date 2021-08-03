@@ -3,7 +3,7 @@
             {{ __('Program Area') }}
     </x-slot>
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 prose">
+    <div class="max-w-7xl mx-auto prose">
         The program areas in the digital toolkit are derived from the WHO Global burden of diseases, click on a program area to show details
         <!-- accordian inspiration and code adapted from https://codepen.io/QJan84/pen/zYvRMMw -->
         <div class="mt-4" x-data="{selected:null}">
