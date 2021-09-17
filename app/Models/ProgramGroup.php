@@ -37,6 +37,10 @@ class ProgramGroup extends Model
         return $this->hasMany(ProgramArea::class);
     }
 
+    public function conditions() {
+        return $this->hasManyThrough(Condition::class, ProgramArea::class);
+    }
+
     public static function boot()
     {
         parent::boot();

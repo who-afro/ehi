@@ -24,6 +24,7 @@ Route::view('/', "welcome")->name("home");
 Route::view('/faqs', "frequently-asked-questions")->name("faqs");
 Route::view('/age-cohort-overview', 'age-cohort-overview')->name("age-cohort-overview");
 Route::get('/age-cohort/{age_cohort_id}', AgeCohortInterventions::class)->name("age-cohort");
+Route::view('/condition-overview', 'condition-overview')->name("condition-overview");
 Route::get('/interventions-list', Interventions::class)->name("interventions-list");
 Route::view('/level-of-care-overview', 'level-of-care-overview')->name("level-of-care-overview");
 Route::get('/level-of-care/{level_of_care_id}', LevelOfCareInterventions::class)->name("level-of-care");

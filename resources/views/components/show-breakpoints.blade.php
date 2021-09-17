@@ -1,5 +1,5 @@
 @if (config('app.debug'))
-<div class="flex space-x-2 mb-4 rounded border text-center text-sm font-bold">
+<div class="max-w-7xl mx-auto flex space-x-2 mb-4 rounded border text-center text-sm font-bold">
     <div class="flex-1 p-2"><span class="text-green-700 mr-1 xs:inline-block sm:hidden">&#x2713;</span><span
             class="text-red-700 mr-1 hidden sm:inline-block">&#x2717;</span><br>XS
     </div>

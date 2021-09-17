@@ -11,3 +11,9 @@ td > ul {
 .prose a {
     color: blue;
 }
+
+[x-cloak] { display: none !important; }
+
+.dropdown:hover > .dropdown-content {
+    display: block;
+}
