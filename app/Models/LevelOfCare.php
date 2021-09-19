@@ -20,6 +20,7 @@ class LevelOfCare extends Model
         'name',
         'description',
         'uuid',
+        'slug'
     ];
 
     /**
@@ -47,5 +48,9 @@ class LevelOfCare extends Model
         static::addGlobalScope('order', function (Builder $builder) {
             $builder->orderBy('name');
         });
+    }
+
+    public function getIconUrlAttribute() {
+        return asset('svg/'.$this->slug.'.svg');
     }
 }

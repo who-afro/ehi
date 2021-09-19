@@ -22,7 +22,8 @@ class ProgramArea extends Model
         'name',
         'description',
         'uuid',
-        'program_group_id'
+        'program_group_id',
+        'slug'
     ];
 
     /**
@@ -32,7 +33,7 @@ class ProgramArea extends Model
      */
     public $translatable = [
         'name',
-        'description'
+        'description',
     ];
 
     /**
@@ -67,5 +68,9 @@ class ProgramArea extends Model
         static::addGlobalScope('order', function (Builder $builder) {
             $builder->orderBy('name');
         });
+    }
+
+    public function getIconUrlAttribute() {
+        return asset('svg/'.$this->slug.'.svg');
     }
 }

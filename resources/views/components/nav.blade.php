@@ -14,12 +14,12 @@
              x-show="open_condition">
             <div class="bg-iaho-yellow text-iaho-deep-blue px-2 text-2xl font-light flex">
                 Disease condition groupings from the WHO Global burden of diseases
-                <a class="text-base font-semibold justify-end whitespace-nowrap" href="{{route('program-area-overview')}}">Learn more</a>
+                <a class="text-base font-semibold justify-end whitespace-nowrap" href="{{ route('condition-overview')}}">Learn more</a>
             </div>
             @foreach(\App\Models\ProgramGroup::all() as $group)
                 @php
                     $conditions = DB::table('conditions')
-                        ->select(['conditions.id', DB::raw('JSON_EXTRACT(conditions.name, "$.en") as condition_name'), 'program_area_conditions.condition_id', 'program_area_conditions.program_area_id', 'program_areas.program_group_id'])
+                        ->select(['conditions.id', DB::raw('JSON_UNQUOTE(JSON_EXTRACT(conditions.name, "$.en")) as condition_name'), 'program_area_conditions.condition_id', 'program_area_conditions.program_area_id', 'program_areas.program_group_id'])
                         ->join('program_area_conditions', 'conditions.id', '=', 'program_area_conditions.condition_id')
                         ->join('program_areas', 'program_area_conditions.program_area_id', '=', 'program_areas.id')
                         ->where('program_areas.program_group_id', $group->id)
@@ -34,7 +34,7 @@
                     <div class="dropdown-content absolute hidden ml-[300px] h-96 overflow-y-scroll">
                         @foreach($conditions as $condition)
                             <a class="bg-iaho-dark-blue text-white block p-2 hover:bg-iaho-light-blue hover:font-semibold"
-                               href="{{ route('condition', ['condition_id' => $condition->id, 'program_area_id' => $condition->program_area_id]) }}">{{ Str::remove('"', $condition->condition_name) }}</a>
+                               href="{{ route('condition', ['condition_id' => $condition->id, 'program_area_id' => $condition->program_area_id]) }}">{{ $condition->condition_name }}</a>
                         @endforeach
                     </div>
                 </div>

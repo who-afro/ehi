@@ -24,10 +24,8 @@
 <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
     <x-show-breakpoints></x-show-breakpoints>
     <x-nav />
-    <header class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto">
-            <h1 class="text-2xl font-semibold pl-6"> {{ $header ?? '' }}</h1>
-        </div>
+    <header class="py-4">
+        <h1 class="text-3xl font-semibold"> {{ $header ?? '' }}</h1>
     </header>
 
     <main>

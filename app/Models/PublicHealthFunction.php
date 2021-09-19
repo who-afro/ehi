@@ -20,6 +20,7 @@ class PublicHealthFunction extends Model
         'name',
         'description',
         'uuid',
+        'slug'
     ];
 
     /**
@@ -33,6 +34,10 @@ class PublicHealthFunction extends Model
 
     public function interventions() {
         return $this->hasMany(Intervention::class);
+    }
+
+    public function getIconUrlAttribute() {
+        return asset('svg/'.$this->slug.'.svg');
     }
 
     public static function boot()

@@ -8,10 +8,6 @@ td > ul {
     list-style: disc;
 }
 
-.prose a {
-    color: blue;
-}
-
 [x-cloak] { display: none !important; }
 
 .dropdown:hover > .dropdown-content {
