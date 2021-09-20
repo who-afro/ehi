@@ -1,4 +1,4 @@
-<div class="max-w-7xl mx-auto font-semibold grid grid-cols-5 py-4 px-2">
+<div class="max-w-7xl mx-auto font-semibold grid grid-cols-5 py-4 px-1">
     <div class="flex col-span-3">
         Download: <x-button.link wire:click="exportExcel" class="px-2 justify-center">
             <x-far-file-excel class="w-8 text-green-700" />
@@ -17,10 +17,10 @@
             @endif
         @endforeach
     </div>
-    <div class="flex col-span-2 justify-between">
+    <div class="flex col-span-2 justify-around">
         <x-input.text wire:model="filters.search" placeholder="Search Interventions..."
-                      class="p-2 rounded border appearance-none flex-1 w-80"/>
+                      class="px-2 rounded border appearance-none flex-1 w-72"/>
         <x-button.primary class="flex-initial" wire:click="applyFilter">Apply</x-button.primary>
-        <x-button.secondary class="flex-initial" wire:click="resetFilters">Reset Filters</x-button.secondary>
+        <x-button.secondary class="flex-initial" wire:click="resetFilters">Reset</x-button.secondary>
     </div>
 </div>
