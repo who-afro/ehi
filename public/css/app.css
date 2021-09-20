@@ -1149,6 +1149,9 @@ select {
 .col-span-2 {
 	grid-column: span 2 / span 2;
 }
+.col-span-4 {
+	grid-column: span 4 / span 4;
+}
 .m-4 {
 	margin: 1rem;
 }
@@ -1175,6 +1178,18 @@ select {
 .my-5 {
 	margin-top: 1.25rem;
 	margin-bottom: 1.25rem;
+}
+.my-24 {
+	margin-top: 6rem;
+	margin-bottom: 6rem;
+}
+.my-10 {
+	margin-top: 2.5rem;
+	margin-bottom: 2.5rem;
+}
+.my-20 {
+	margin-top: 5rem;
+	margin-bottom: 5rem;
 }
 .ml-3 {
 	margin-left: 0.75rem;
@@ -1269,6 +1284,9 @@ select {
 .mt-24 {
 	margin-top: 6rem;
 }
+.mt-20 {
+	margin-top: 5rem;
+}
 .block {
 	display: block;
 }
@@ -1337,6 +1355,9 @@ select {
 }
 .h-36 {
 	height: 9rem;
+}
+.h-\[720px\] {
+	height: 720px;
 }
 .max-h-60 {
 	max-height: 15rem;
@@ -1969,6 +1990,10 @@ select {
 .text-4xl {
 	font-size: 2.25rem;
 	line-height: 2.5rem;
+}
+.text-6xl {
+	font-size: 3.75rem;
+	line-height: 1;
 }
 .font-medium {
 	font-weight: 500;

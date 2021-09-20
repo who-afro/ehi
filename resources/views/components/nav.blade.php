@@ -13,7 +13,7 @@
              x-cloak
              x-show="open_condition">
             <div class="bg-iaho-yellow text-iaho-deep-blue px-2 text-2xl font-light flex">
-                Disease condition groupings from the WHO Global burden of diseases
+                Communicable condition grouping from the WHO Global burden of diseases
                 <a class="text-base font-semibold justify-end whitespace-nowrap" href="{{ route('condition-overview')}}">Learn more</a>
             </div>
             @foreach(\App\Models\ProgramGroup::all() as $group)
@@ -51,7 +51,7 @@
              x-cloak
              x-show="open_age_cohort">
             <div class="bg-iaho-yellow text-iaho-deep-blue px-2 text-2xl font-light mt-11 flex flex-col">
-                Age based groupings of children
+                Age based grouping of patients
                 <a class="text-base font-semibold justify-end" href="{{ route('age-cohort-overview') }}">Learn more</a>
             </div>
             <div class="text-left flex flex-col">
@@ -93,7 +93,7 @@
              x-cloak
              x-show="open_public_health_function">
             <div class="bg-iaho-yellow text-iaho-deep-blue px-2 text-2xl font-light mt-11 flex flex-col">
-                Groupings of interventions within the scope of public health
+                Groupings of interventions within the scope of public health response
                 <a class="text-base font-semibold justify-end" href="{{ route('public-health-function-overview') }}">Learn more</a>
             </div>
             <div class="text-left flex flex-col">
