@@ -5,10 +5,10 @@
             <div class="h-full"
                  style="background-image: url({{ asset('img/iaho-pattern.svg') }}); transform:scaleX(-1); background-repeat: repeat-y">
             </div>
-            <div class="col-span-3 flex text-2xl">
+            <div class="col-span-3 flex text-2xl justify-center">
                 <x-input.text wire:model="filters.search" placeholder="Search Interventions..."
-                              class="p-4 rounded border appearance-none flex-1 w-72 h-8 mt-[600px] text-2xl"/>
-                <x-button.primary class="flex-none mx-4 mt-[600px] text-xl p-4">Apply</x-button.primary>
+                              class="p-4 rounded border appearance-none flex-1 w-72 h-10 mt-[600px] text-lg"/>
+                <x-button.primary class="flex-none mx-4 mt-[600px] text-lg h-10">Apply</x-button.primary>
             </div>
             <div class="flex flex-col justify-end col-span-2 h-full">
                 <span class="text-6xl text-iaho-yellow font-extrabold my-10">
