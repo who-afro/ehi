@@ -16,7 +16,7 @@
                 <img src="{{ $levelOfCare->icon_url }}" alt="{{ $levelOfCare->name }}" class="mr-4 w-full !mt-1"/>
                 <div class="col-span-3 text-xl px-4 !mt-1">
                     {!! Str::markdown($levelOfCare->description) !!}
-                    <a href="/level-of-care/${{ $levelOfCare->id }}" title="{{ $levelOfCare->name }}"
+                    <a href="/level-of-care/{{ $levelOfCare->id }}" title="{{ $levelOfCare->name }}"
                        class="flex items-center text-xl">
                         <x-far-hand-point-right class="mr-3 h-6 w-6 text-blue-500 group-hover:text-blue-600"/>
                         Click here to view the {{ $levelOfCare->name }} interventions

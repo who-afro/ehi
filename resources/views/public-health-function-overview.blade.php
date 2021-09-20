@@ -19,7 +19,7 @@
                 <div class="col-span-3 text-xl px-4 !mt-1">
                     {!! Str::markdown($publicHealthFunction->description) !!}
 
-                    <a href="/public-health-function/${{ $publicHealthFunction->id }}"
+                    <a href="/public-health-function/{{ $publicHealthFunction->id }}"
                        title="{{ $publicHealthFunction->name }}" class="flex items-center">
                         <x-far-hand-point-right class="mr-3 h-6 w-6 text-blue-500 group-hover:text-blue-600"/>
                         Click here to view the {{ $publicHealthFunction->name }} interventions
