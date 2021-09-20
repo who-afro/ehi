@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'pill_age_cohort_id' => 'Age Cohorts',
-    'pill_condition_id' => 'Conditions',
+    'pill_age_cohort_id' => 'Age Cohort',
+    'pill_condition_id' => 'Disease Condition',
     'pill_level_of_care_id' => 'Level of Care',
-    'pill_public_health_function_id' => 'Public Health Functions',
-    'pill_service_area_id' => 'Service Areas',
+    'pill_public_health_function_id' => 'Public Health Function',
+    'pill_service_area_id' => 'Service Area',
     'pill_program_area_id' => 'Program Area',
 ];

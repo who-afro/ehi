@@ -1,9 +1,8 @@
-<div class="bg-white shadow rounded-lg">
-    <div class="px-4 py-5">
-        <dt class="font-medium text-gray-500 truncate">
+    <div class="px-4">
+        <dt class="text-xl font-semibold text-iaho-dark-blue py-2">
             Public Health Function
         </dt>
-        <dd class="mt-1 text-gray-700 px-1">
+        <dd class="mt-1 text-gray-700">
             @foreach(App\Models\PublicHealthFunction::all() as $publicHealthFunction)
                 <div class="flex items-start">
                     <div class="flex items-center">
@@ -16,4 +15,3 @@
             @endforeach
         </dd>
     </div>
-</div>

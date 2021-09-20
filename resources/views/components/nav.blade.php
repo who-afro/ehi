@@ -5,9 +5,9 @@
     </a>
     <div x-data="{open_condition: false}" class="inline-block relative">
         <button class="inline-flex items-center font-semibold"
-            x-on:click="open_condition = true"
+            x-on:click="open_condition = true; open_age_cohort = false; open_level_of_care = false; open_public_health_function = false"
             type="button">
-            Disease Condition<x-heroicon-o-chevron-down class="w-4 ml-2"/>
+            Disease Condition<x-heroicon-o-chevron-down class="w-4 ml-1"/>
         </button>
         <div class="absolute origin-bottom-left mt-2 z-10 shadow-xl w-[600px]"
              x-cloak
@@ -34,7 +34,7 @@
                     <div class="dropdown-content absolute hidden ml-[300px] h-96 overflow-y-scroll">
                         @foreach($conditions as $condition)
                             <a class="bg-iaho-dark-blue text-white block p-2 hover:bg-iaho-light-blue hover:font-semibold"
-                               href="{{ route('condition', ['condition_id' => $condition->id, 'program_area_id' => $condition->program_area_id]) }}">{{ $condition->condition_name }}</a>
+                               href="{{ route('condition', ['condition_id' => $condition->id]) }}">{{ $condition->condition_name }}</a>
                         @endforeach
                     </div>
                 </div>
@@ -44,8 +44,8 @@
     <div class="relative flex px-4" x-data="{open_age_cohort: false}">
         <button
             class="inline-flex justify-start text-left p-2 font-semibold tracking-tight transition hover:bg-iaho-yellow hover:text-iaho-dark-blue focus:bg-iaho-yellow focus:outline-none focus:ring-offset-2 focus:ring-offset-iaho-dark-blue focus:ring-2 focus:ring-white focus:ring-inset"
-            x-on:click="open_age_cohort = true"
-            type="button">Age Cohort&nbsp;<x-heroicon-o-chevron-down class="w-4"/>
+            x-on:click="open_age_cohort = true; open_condition = false; open_level_of_care = false; open_public_health_function = false"
+            type="button">Age Cohort<x-heroicon-o-chevron-down class="w-4 ml-1"/>
         </button>
         <div class="absolute origin-bottom-left shadow-xl w-[320px]"
              x-cloak
@@ -65,8 +65,8 @@
     <div class="relative flex px-4" x-data="{open_level_of_care: false}">
         <button
             class="inline-flex justify-start text-left p-2 font-semibold tracking-tight transition hover:bg-iaho-yellow hover:text-iaho-dark-blue focus:bg-iaho-yellow focus:outline-none focus:ring-offset-2 focus:ring-offset-iaho-dark-blue focus:ring-2 focus:ring-white focus:ring-inset"
-            x-on:click="open_level_of_care = true"
-            type="button">Level of Care&nbsp;<x-heroicon-o-chevron-down class="w-4"/>
+            x-on:click="open_level_of_care = true; open_condition = false; open_age_cohort = false; open_public_health_function = false"
+            type="button">Level of Care<x-heroicon-o-chevron-down class="w-4 ml-1"/>
         </button>
         <div class="absolute origin-bottom-left shadow-xl w-[320px]"
              x-cloak
@@ -87,7 +87,7 @@
         <button
             class="inline-flex justify-start text-left p-2 font-semibold tracking-tight transition hover:bg-iaho-yellow hover:text-iaho-dark-blue focus:bg-iaho-yellow focus:outline-none focus:ring-offset-2 focus:ring-offset-iaho-dark-blue focus:ring-2 focus:ring-white focus:ring-inset"
             x-on:click="open_public_health_function = true"
-            type="button">Public Health Function<x-heroicon-o-chevron-down class="w-4"/>
+            type="button">Public Health Function<x-heroicon-o-chevron-down class="w-4 ml-1"/>
         </button>
         <div class="absolute origin-bottom-left shadow-xl w-[320px] -right-48"
              x-cloak

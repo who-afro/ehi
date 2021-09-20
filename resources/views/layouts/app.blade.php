@@ -21,13 +21,12 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body class="font-sans antialiased">
-<div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+<div class="max-w-7xl mx-auto bg-iaho-map-country-background">
     <x-show-breakpoints></x-show-breakpoints>
     <x-nav />
-    <header class="py-4">
-        <h1 class="text-3xl font-semibold"> {{ $header ?? '' }}</h1>
+    <header class="@isset ($header) py-4 @endisset }}">
+        <h1 class="text-3xl font-semibold px-2"> {{ $header ?? '' }}</h1>
     </header>
-
     <main>
         <div class="max-w-7xl mx-automax-w-7xl mx-auto">
             <!-- Replace with your content -->
