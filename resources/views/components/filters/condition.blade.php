@@ -11,7 +11,7 @@
 <div class="">
     <div class="">
         <dt class="text-xl font-semibold text-iaho-dark-blue py-2">
-            Disease Condition
+            Conditions
         </dt>
         <dd class="mt-1 text-gray-700 overflow-y-scroll max-h-60 px-1">
             @forelse($conditions as $condition)
