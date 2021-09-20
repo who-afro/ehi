@@ -33,10 +33,12 @@
                         type="button">
                         {{ $group->name }}
                     </span>
-                    <div class="dropdown-content absolute hidden ml-[240px] w-[300px] h-96 overflow-y-scroll">
+                    <div class="dropdown-content absolute hidden ml-[240px] w-[606px] overflow-y-scroll flex flex-row bg-iaho-dark-blue align-top">
                         @foreach($conditions as $condition)
-                            <a class="bg-iaho-dark-blue text-white block p-2 hover:bg-iaho-light-blue hover:font-semibold"
-                               href="{{ route('condition', ['condition_id' => $condition->id]) }}">{{ $condition->condition_name }}</a>
+                            <a class="text-white p-2 inline-block hover:bg-iaho-light-blue hover:font-semibold w-[300px]"
+                               href="{{ route('condition', ['condition_id' => $condition->id]) }}">
+                                {{ $condition->condition_name }}
+                            </a>
                         @endforeach
                     </div>
                 </div>

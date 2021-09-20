@@ -1483,6 +1483,21 @@ select {
 .w-56 {
 	width: 14rem;
 }
+.w-\[280px\] {
+	width: 280px;
+}
+.w-\[610px\] {
+	width: 610px;
+}
+.w-\[608px\] {
+	width: 608px;
+}
+.w-\[66px\] {
+	width: 66px;
+}
+.w-\[606px\] {
+	width: 606px;
+}
 .min-w-full {
 	min-width: 100%;
 }
@@ -1593,6 +1608,9 @@ select {
 }
 .grid-cols-5 {
 	grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.flex-row {
+	flex-direction: row;
 }
 .flex-col {
 	flex-direction: column;
