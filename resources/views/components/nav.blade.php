@@ -26,6 +26,7 @@
                         ->orderBy('condition_name')
                         ->get();
                 @endphp
+                @if(count($conditions) > 0)
             <!-- This width here prevents the relative blocks for the group names from breaking the scrolling of the conditions -->
                 <div class="grid grid-cols-2 dropdown relative text-lg w-[240px]">
                     <span class="p-2 w-[240px] text-left bg-iaho-map-country-background text-iaho-dark-blue focus:outline-none hover:bg-iaho-dark-blue hover:text-iaho-yellow focus:bg-blue-700 focus:text-white dropdown inline-block"
@@ -39,6 +40,7 @@
                         @endforeach
                     </div>
                 </div>
+            @endif
             @endforeach
         </div>
     </div>
