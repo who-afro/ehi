@@ -9,12 +9,12 @@
             type="button">
             Disease Condition<x-heroicon-o-chevron-down class="w-4 ml-1"/>
         </button>
-        <div class="absolute origin-bottom-left mt-2 z-10 shadow-xl w-[600px]"
+        <div class="absolute origin-bottom-left mt-2 z-10 shadow-xl w-[540px]"
              x-cloak
              x-show="open_condition">
-            <div class="bg-iaho-yellow text-iaho-deep-blue px-2 text-2xl font-light flex">
-                Communicable condition grouping from the WHO Global burden of diseases
-                <a class="text-base font-semibold justify-end whitespace-nowrap" href="{{ route('condition-overview')}}">Learn more</a>
+            <div class="bg-iaho-yellow text-iaho-deep-blue px-2 text-lg font-light flex">
+                Condition grouping from the WHO Global burden of diseases
+                <a class="text-base font-semibold justify-end whitespace-nowrap px-2 py-1" href="{{ route('condition-overview')}}">Learn more</a>
             </div>
             @foreach(\App\Models\ProgramGroup::all() as $group)
                 @php
@@ -26,12 +26,13 @@
                         ->orderBy('condition_name')
                         ->get();
                 @endphp
-                <div class="grid grid-cols-2 dropdown relative">
-                    <span class="p-2 text-xl text-left bg-iaho-map-country-background text-iaho-dark-blue focus:outline-none hover:bg-iaho-dark-blue hover:text-iaho-yellow focus:bg-blue-700 focus:text-white dropdown w-[300px] inline-block"
+            <!-- This width here prevents the relative blocks for the group names from breaking the scrolling of the conditions -->
+                <div class="grid grid-cols-2 dropdown relative text-lg w-[240px]">
+                    <span class="p-2 w-[240px] text-left bg-iaho-map-country-background text-iaho-dark-blue focus:outline-none hover:bg-iaho-dark-blue hover:text-iaho-yellow focus:bg-blue-700 focus:text-white dropdown inline-block"
                         type="button">
                         {{ $group->name }}
                     </span>
-                    <div class="dropdown-content absolute hidden ml-[300px] h-96 overflow-y-scroll">
+                    <div class="dropdown-content absolute hidden ml-[240px] w-[300px] h-96 overflow-y-scroll">
                         @foreach($conditions as $condition)
                             <a class="bg-iaho-dark-blue text-white block p-2 hover:bg-iaho-light-blue hover:font-semibold"
                                href="{{ route('condition', ['condition_id' => $condition->id]) }}">{{ $condition->condition_name }}</a>
@@ -41,7 +42,7 @@
             @endforeach
         </div>
     </div>
-    <div class="relative flex px-4" x-data="{open_age_cohort: false}">
+    <div class="relative flex px-4 text-lg" x-data="{open_age_cohort: false}">
         <button
             class="inline-flex justify-start text-left p-2 font-semibold tracking-tight transition hover:bg-iaho-yellow hover:text-iaho-dark-blue focus:bg-iaho-yellow focus:outline-none focus:ring-offset-2 focus:ring-offset-iaho-dark-blue focus:ring-2 focus:ring-white focus:ring-inset"
             x-on:click="open_age_cohort = true; open_condition = false; open_level_of_care = false; open_public_health_function = false"
@@ -50,19 +51,19 @@
         <div class="absolute origin-bottom-left shadow-xl w-[320px]"
              x-cloak
              x-show="open_age_cohort">
-            <div class="bg-iaho-yellow text-iaho-deep-blue px-2 text-2xl font-light mt-11 flex flex-col">
+            <div class="bg-iaho-yellow text-iaho-deep-blue px-2 font-light mt-11 flex">
                 Age based grouping of patients
-                <a class="text-base font-semibold justify-end" href="{{ route('age-cohort-overview') }}">Learn more</a>
+                <a class="text-base font-semibold justify-end whitespace-nowrap" href="{{ route('age-cohort-overview') }}">Learn more</a>
             </div>
             <div class="text-left flex flex-col">
                 @foreach(\App\Models\AgeCohort::all() as $agecohort)
-                    <a class="p-2 bg-iaho-map-country-background text-iaho-dark-blue text-xl hover:bg-iaho-dark-blue hover:text-iaho-yellow"
+                    <a class="p-2 bg-iaho-map-country-background text-iaho-dark-blue hover:bg-iaho-dark-blue hover:text-iaho-yellow"
                        href="{{ route('age-cohort', ['age_cohort_id' => $agecohort->id]) }}">{{ $agecohort->name }}</a>
                 @endforeach
             </div>
         </div>
     </div>
-    <div class="relative flex px-4" x-data="{open_level_of_care: false}">
+    <div class="relative flex px-4 text-lg" x-data="{open_level_of_care: false}">
         <button
             class="inline-flex justify-start text-left p-2 font-semibold tracking-tight transition hover:bg-iaho-yellow hover:text-iaho-dark-blue focus:bg-iaho-yellow focus:outline-none focus:ring-offset-2 focus:ring-offset-iaho-dark-blue focus:ring-2 focus:ring-white focus:ring-inset"
             x-on:click="open_level_of_care = true; open_condition = false; open_age_cohort = false; open_public_health_function = false"
@@ -71,9 +72,9 @@
         <div class="absolute origin-bottom-left shadow-xl w-[320px]"
              x-cloak
              x-show="open_level_of_care">
-            <div class="bg-iaho-yellow text-iaho-deep-blue px-2 text-2xl font-light mt-11 flex flex-col">
+            <div class="bg-iaho-yellow text-iaho-deep-blue px-2 font-light mt-11 flex">
                 Locations where service delivery occurs
-                <a class="text-base font-semibold justify-end" href="{{ route('level-of-care-overview') }}">Learn more</a>
+                <a class="text-base font-semibold justify-end whitespace-nowrap" href="{{ route('level-of-care-overview') }}">Learn more</a>
             </div>
             <div class="text-left flex flex-col">
                 @foreach(\App\Models\LevelOfCare::all() as $level_of_care)
@@ -83,22 +84,22 @@
             </div>
         </div>
     </div>
-    <div class="relative flex px-4" x-data="{open_public_health_function: false}">
+    <div class="relative flex px-4 text-lg" x-data="{open_public_health_function: false}">
         <button
-            class="inline-flex justify-start text-left p-2 font-semibold tracking-tight transition hover:bg-iaho-yellow hover:text-iaho-dark-blue focus:bg-iaho-yellow focus:outline-none focus:ring-offset-2 focus:ring-offset-iaho-dark-blue focus:ring-2 focus:ring-white focus:ring-inset"
-            x-on:click="open_public_health_function = true"
+            class="inline-flex justify-start text-left p-2 font-semibold tracking-tight transition hover:bg-iaho-yellow hover:text-iaho-dark-blue focus:text-iaho-dark-blue focus:bg-iaho-yellow focus:outline-none focus:ring-offset-2 focus:ring-offset-iaho-dark-blue focus:ring-2 focus:ring-white focus:ring-inset"
+            x-on:click="open_public_health_function = true; open_level_of_care = false; open_condition = false; open_age_cohort = false"
             type="button">Public Health Function<x-heroicon-o-chevron-down class="w-4 ml-1"/>
         </button>
-        <div class="absolute origin-bottom-left shadow-xl w-[320px] -right-48"
+        <div class="absolute origin-bottom-left shadow-xl w-[320px] right-4"
              x-cloak
              x-show="open_public_health_function">
-            <div class="bg-iaho-yellow text-iaho-deep-blue px-2 text-2xl font-light mt-11 flex flex-col">
+            <div class="bg-iaho-yellow text-iaho-deep-blue px-2 font-light mt-11 flex">
                 Groupings of interventions within the scope of public health response
-                <a class="text-base font-semibold justify-end" href="{{ route('public-health-function-overview') }}">Learn more</a>
+                <a class="text-base font-semibold justify-end whitespace-nowrap" href="{{ route('public-health-function-overview') }}">Learn more</a>
             </div>
             <div class="text-left flex flex-col">
                 @foreach(\App\Models\PublicHealthFunction::all() as $public_health_function)
-                    <a class="p-2 bg-iaho-map-country-background text-iaho-dark-blue text-xl hover:bg-iaho-dark-blue hover:text-iaho-yellow"
+                    <a class="p-2 bg-iaho-map-country-background text-iaho-dark-blue hover:bg-iaho-dark-blue hover:text-iaho-yellow"
                        href="{{ route('public-health-function', ['public_health_function_id' => $public_health_function->id]) }}">{{ $public_health_function->name }}</a>
                 @endforeach
             </div>
