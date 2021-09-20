@@ -3,13 +3,13 @@
             {{ $levelOfCare->name }} Interventions
     </x-slot>
     <div class="max-w-7xl mx-auto bg-white rounded-t-xl mb-2 px-2" x-data="{ refine_search: false }">
-        <div class="flex justify-between text-iaho-light-blue font-semibold bg-white px-4 py-2">
-            <p class="text-2xl">Refine your search</p>
-            <p class="w-8" x-show="!refine_search" x-on:click="refine_search = true">
-                <x-heroicon-o-chevron-down/>
+        <div class="flex justify-between text-iaho-light-blue font-semibold bg-white">
+            <p class="text-2xl px-4 py-2">Refine your search</p>
+            <p class="w-32 cursor-pointer flex justify-end x-4 py-2" x-show="!refine_search" x-on:click="refine_search = true">
+                <x-heroicon-o-chevron-down class="w-10"/>
             </p>
-            <p class="w-8" x-show="refine_search" x-cloak x-on:click="refine_search = false">
-                <x-heroicon-o-chevron-up/>
+            <p class="w-32 cursor-pointer flex justify-end px-4 py-2" x-show="refine_search" x-cloak x-on:click="refine_search = false">
+                <x-heroicon-o-chevron-up class="w-10"/>
             </p>
         </div>
         <dl class="grid grid-cols-3 gap-x-8 max-h-80 px-4 py-2 mb-2 border-iaho-light-blue border-t-2 divide-x divide-iaho-dark-blue"

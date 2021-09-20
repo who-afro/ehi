@@ -1395,6 +1395,9 @@ select {
 .w-\[320px\] {
 	width: 320px;
 }
+.w-32 {
+	width: 8rem;
+}
 .min-w-full {
 	min-width: 100%;
 }
