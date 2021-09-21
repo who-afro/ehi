@@ -3,7 +3,7 @@
         {{ __('Disease Condition') }}
     </x-slot>
 
-    <div class="max-w-7xl mx-auto">
+    <div class="mx-auto">
         <p class="text-2xl">
             The program areas in the digital toolkit are derived from the WHO Global burden of diseases, click on a
             program area to show details

@@ -9,7 +9,7 @@
         {{ __('Public Health Function') }}
     </x-slot>
 
-    <div class="max-w-7xl mx-auto prose">
+    <div class="mx-auto prose">
         <p class="text-2xl">This thematic area covers public health based interventions</p>
         @foreach(App\Models\PublicHealthFunction::all() as $publicHealthFunction)
             <h2 class="text-2xl font-semibold !mt-1">{{ $publicHealthFunction->name }}</h2>

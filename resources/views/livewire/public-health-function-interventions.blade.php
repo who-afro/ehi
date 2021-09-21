@@ -2,7 +2,7 @@
     <x-slot name="header">
         {{ $publicHealthFunction->name }} Interventions
     </x-slot>
-    <div class="max-w-7xl mx-auto bg-white rounded-t-xl mb-2 px-2" x-data="{ refine_search: true }">
+    <div class="mx-auto bg-white rounded-t-xl mb-2 px-2" x-data="{ refine_search: true }">
         <div class="flex justify-between text-iaho-light-blue font-semibold bg-white">
             <p class="text-2xl px-4 py-2">Refine your search</p>
             <p class="w-32 cursor-pointer flex justify-end x-4 py-2" x-show="!refine_search" x-on:click="refine_search = true">
@@ -87,7 +87,7 @@
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-16 my-2">
+    <div class="mx-auto sm:px-6 lg:px-8 mb-16 my-2">
         {{ $interventions->links() }}
     </div>
 </div>

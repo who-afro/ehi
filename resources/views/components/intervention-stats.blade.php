@@ -1,5 +1,5 @@
 <div>
-    <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="mx-auto px-6 py-4">
         <h3 class="text-lg leading-6 font-medium text-gray-900">
             Intervention Statistics
         </h3>

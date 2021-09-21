@@ -1,4 +1,4 @@
-<div class="max-w-7xl mx-auto font-semibold grid grid-cols-5 py-4 px-1">
+<div class="mx-auto font-semibold grid grid-cols-5 py-4 px-1">
     <div class="flex col-span-3">
         Download: <x-button.link wire:click="exportExcel" class="px-2 justify-center">
             <x-far-file-excel class="w-8 text-green-700" />

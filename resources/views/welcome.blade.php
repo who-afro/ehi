@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="max-w-7xl mx-auto bg-local bg-cover h-[720px]"
+    <div class="mx-auto bg-local bg-cover h-[720px]"
          style="background-image: url({{ asset('img/home-page-background.svg') }})">
         <div class="grid grid-cols-6">
             <div class="h-full"

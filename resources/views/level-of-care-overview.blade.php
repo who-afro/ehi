@@ -8,7 +8,7 @@
     <x-slot name="header">
         {{ __('Level of Care (Service Delivery)') }}
     </x-slot>
-    <div class="max-w-7xl prose">
+    <div class="prose">
         <p class="text-2xl">This thematic area covers the areas in which service delivery occurs</p>
         @foreach(App\Models\LevelOfCare::all() as $levelOfCare)
             <h2 class="text-2xl font-semibold !mt-1">{{ $levelOfCare->name }}</h2>

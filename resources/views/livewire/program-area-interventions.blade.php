@@ -3,7 +3,7 @@
            Program Area Interventions for {{ $programArea->name }}
     </x-slot>
     <div>
-        <div class="max-w-7xl mx-auto pb-4">
+        <div class="mx-auto pb-4">
             <dl class="mt-5 grid grid-cols-5 gap-2 max-h-72">
                 <x-filters.age-cohort />
                 <x-filters.condition :programAreaId="$programArea->id" />
@@ -88,7 +88,7 @@
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-16 my-2">
+    <div class="mx-auto sm:px-6 lg:px-8 mb-16 my-2">
         {{ $interventions->links() }}
     </div>
 </div>

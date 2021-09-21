@@ -2,7 +2,7 @@
     <x-slot name="header">
         Age Cohorts
     </x-slot>
-    <div class="max-w-7xl mx-auto prose">
+    <div class="mx-auto prose">
         <p>The age cohorts covered in this menu of interventions are</p>
         @foreach(App\Models\AgeCohort::all() as $ageCohort)
             <h2>{{ $ageCohort->name }}</h2>
