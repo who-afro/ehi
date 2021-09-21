@@ -21,7 +21,7 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body class="font-sans antialiased">
-<div class="container mx-auto bg-iaho-map-country-background">
+<div class="container mx-auto bg-iaho-map-country-background text-lg">
     <x-show-breakpoints></x-show-breakpoints>
     <x-nav />
     <header class="@isset ($header) py-4 @endisset }}">

@@ -16,6 +16,7 @@ class Intervention extends Model
      * @var array
      */
     protected $fillable = [
+        'details_original',
         'details',
         'level_of_care_id',
         'public_health_function_id',
@@ -64,9 +65,5 @@ class Intervention extends Model
 
     public function programAreas() {
         return $this->belongsToMany(ProgramGroup::class);
-    }
-
-    public function serviceAreas() {
-        return $this->belongsToMany(ServiceArea::class)->withPivot('details');
     }
 }

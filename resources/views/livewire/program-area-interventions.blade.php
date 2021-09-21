@@ -61,16 +61,16 @@
                                     </td>
                                 @endauth
                                     <td class="px-6 py-4 text-left text-gray-500">
-                                        <a href="{{ route('condition', ['condition_id' => $v->intervention->condition->id, 'program_area_id' => $v->intervention->condition->programAreas[0]->id]) }}" class="text-blue-700 group-hover:text-blue-900">{{$v->intervention->condition->name}}</a>
+                                        <a href="{{ route('condition', ['condition_id' => $v->condition->id, 'program_area_id' => $v->condition->programAreas[0]->id]) }}" class="text-blue-700 group-hover:text-blue-900">{{$v->condition->name}}</a>
                                 </td>
                                 <td class="px-6 py-4 text-left text-gray-500">
-                                    <a href="{{ route('age-cohort', ['age_cohort_id' => $v->intervention->ageCohort->id]) }}" class="text-blue-700 group-hover:text-blue-900">{{$v->intervention->ageCohort->name}}</a>
+                                    <a href="{{ route('age-cohort', ['age_cohort_id' => $v->ageCohort->id]) }}" class="text-blue-700 group-hover:text-blue-900">{{$v->ageCohort->name}}</a>
                                 </td>
                                 <td class="px-6 py-4 text-left text-gray-500">
-                                    <a href="{{ route('public-health-function', ['public_health_function_id' => $v->intervention->publicHealthFunction->id]) }}" class="text-blue-700 group-hover:text-blue-900">{{$v->intervention->publicHealthFunction->name}}</a>
+                                    <a href="{{ route('public-health-function', ['public_health_function_id' => $v->publicHealthFunction->id]) }}" class="text-blue-700 group-hover:text-blue-900">{{$v->publicHealthFunction->name}}</a>
                                 </td>
                                 <td class="px-6 py-4 text-left text-gray-500">
-                                    <a href="{{ route('level-of-care', ['level_of_care_id' => $v->intervention->levelOfCare->id]) }}" class="text-blue-700 group-hover:text-blue-900">{{$v->intervention->levelOfCare->name}}</a>
+                                    <a href="{{ route('level-of-care', ['level_of_care_id' => $v->levelOfCare->id]) }}" class="text-blue-700 group-hover:text-blue-900">{{$v->levelOfCare->name}}</a>
                                 </td>
                                 <td class="px-6 py-4 text-left text-gray-500">
                                     <a href="{{ route('service-area', ['service_area_id' => $v->serviceArea->id]) }}" class="text-blue-700 group-hover:text-blue-900">{{$v->serviceArea->fullName}}</a>

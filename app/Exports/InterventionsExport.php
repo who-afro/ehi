@@ -15,7 +15,7 @@ class InterventionsExport implements FromCollection, WithHeadings
 
     public function __construct(Collection $interventions)
     {
-        $this->interventions = $interventions;
+        $thiss = $interventions;
     }
 
     /**
@@ -23,7 +23,7 @@ class InterventionsExport implements FromCollection, WithHeadings
     */
     public function collection()
     {
-        return $this->interventions;
+        return $thiss;
     }
 
     public function headings(): array

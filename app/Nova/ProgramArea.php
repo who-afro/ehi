@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
 use Spatie\NovaTranslatable\Translatable;
@@ -54,7 +55,7 @@ class ProgramArea extends Resource
                 Markdown::make(__('program_area.description'), 'description')->alwaysShow(),
             ]),
             BelongsTo::make(__('program_area.program_group_label'), 'programGroup'),
-            BelongsToMany::make(__('program_area.conditions_label'), "Conditions"),
+            HasMany::make(__('program_area.conditions_label'), "Conditions"),
             Text::make(__('program_area.conditions_count'), function() {return $this->conditions()->count(); })
         ];
     }

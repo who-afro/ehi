@@ -31,7 +31,7 @@
                         <tr class="{{ $loop->odd ? 'bg-white' : 'bg-gray-50' }}">
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
                                 <ul class="list-disc">
-                                    @forelse($v->intervention->condition->programAreas as $i => $p)
+                                    @forelse($v->condition->programAreas as $i => $p)
                                         <li>{{$p->name}}</li>
                                     @empty
 
@@ -39,13 +39,13 @@
                                 </ul>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
-                                {{$v->intervention->condition->name}}
+                                {{$v->condition->name}}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
-                                {{$v->intervention->ageCohort->name}}
+                                {{$v->ageCohort->name}}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-left text-gray-500">
-                                {{$v->intervention->publicHealthFunction->name}}
+                                {{$v->publicHealthFunction->name}}
                             </td>
                             <td class="px-6 py-4 text-sm text-left text-gray-500">
                                 {{$v->serviceArea->name}}

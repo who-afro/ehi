@@ -53,7 +53,7 @@ class ProgramArea extends Model
 
     public function conditions()
     {
-        return $this->belongsToMany(Condition::class, 'program_area_conditions');
+        return $this->hasMany(Condition::class);
     }
 
     public static function boot()

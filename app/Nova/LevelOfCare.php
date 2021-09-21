@@ -44,7 +44,7 @@ class LevelOfCare extends Resource
         return [
             Text::make(__('Name'), 'name')->sortable(),
             Markdown::make(__('Description'), 'description')->alwaysShow(),
-            Text::make("Interventions", function() {return $this->interventions()->count(); }),
+            Text::make("Interventions", function() {return $thiss()->count(); }),
             HasMany::make("Interventions", 'interventions'),
         ];
     }

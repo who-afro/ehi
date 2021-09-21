@@ -25,7 +25,7 @@ Route::view('/faqs', "frequently-asked-questions")->name("faqs");
 Route::view('/age-cohort-overview', 'age-cohort-overview')->name("age-cohort-overview");
 Route::get('/age-cohort/{age_cohort_id}', AgeCohortInterventions::class)->name("age-cohort");
 Route::view('/condition-overview', 'condition-overview')->name("condition-overview");
-Route::get('/interventions-list', Interventions::class)->name("interventions-list");
+Route::get('/interventions', Interventions::class)->name("interventions");
 Route::view('/level-of-care-overview', 'level-of-care-overview')->name("level-of-care-overview");
 Route::get('/level-of-care/{level_of_care_id}', LevelOfCareInterventions::class)->name("level-of-care");
 Route::view('/public-health-function-overview', 'public-health-function-overview')->name("public-health-function-overview");
@@ -33,8 +33,6 @@ Route::get('/public-health-function/{public_health_function_id}', PublicHealthFu
 Route::view('/program-area-overview', 'program-area-overview')->name("program-area-overview");
 Route::get('/program-area/{program_area_id}', ProgramAreaInterventions::class)->name("program-area");
 Route::get('/condition/{condition_id}', ConditionInterventions::class)->name("condition");
-Route::view('/service-area-overview', 'service-area-overview')->name("service-area-overview");
-Route::get('/service-area/{service_area_id}', ServiceAreaInterventions::class)->name("service-area");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('welcome');

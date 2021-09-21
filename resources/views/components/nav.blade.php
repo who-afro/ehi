@@ -17,16 +17,7 @@
                 <a class="text-base font-semibold justify-end whitespace-nowrap px-2 py-1" href="{{ route('condition-overview')}}">Learn more</a>
             </div>
             @foreach(\App\Models\ProgramGroup::all() as $group)
-                @php
-                    $conditions = DB::table('conditions')
-                        ->select(['conditions.id', DB::raw('JSON_UNQUOTE(JSON_EXTRACT(conditions.name, "$.en")) as condition_name'), 'program_area_conditions.condition_id', 'program_area_conditions.program_area_id', 'program_areas.program_group_id'])
-                        ->join('program_area_conditions', 'conditions.id', '=', 'program_area_conditions.condition_id')
-                        ->join('program_areas', 'program_area_conditions.program_area_id', '=', 'program_areas.id')
-                        ->where('program_areas.program_group_id', $group->id)
-                        ->orderBy('condition_name')
-                        ->get();
-                @endphp
-                @if(count($conditions) > 0)
+                @if(count($group->conditions) > 0)
             <!-- This width here prevents the relative blocks for the group names from breaking the scrolling of the conditions -->
                 <div class="grid grid-cols-2 dropdown relative text-lg w-[240px]">
                     <span class="p-2 w-[240px] text-left bg-iaho-map-country-background text-iaho-dark-blue focus:outline-none hover:bg-iaho-dark-blue hover:text-iaho-yellow focus:bg-blue-700 focus:text-white dropdown inline-block"
@@ -34,10 +25,10 @@
                         {{ $group->name }}
                     </span>
                     <div class="dropdown-content absolute hidden ml-[240px] w-[606px] overflow-y-scroll flex flex-row bg-iaho-dark-blue align-top">
-                        @foreach($conditions as $condition)
+                        @foreach($group->conditions as $condition)
                             <a class="text-white p-2 inline-block hover:bg-iaho-light-blue hover:font-semibold w-[300px]"
                                href="{{ route('condition', ['condition_id' => $condition->id]) }}">
-                                {{ $condition->condition_name }}
+                                {{ $condition->name }}
                             </a>
                         @endforeach
                     </div>

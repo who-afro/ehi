@@ -59,16 +59,9 @@ class Intervention extends Resource
             BelongsTo::make('LevelOfCare')->viewable(false),
             BelongsTo::make('AgeCohort')->viewable(false),
             BelongsTo::make('PublicHealthFunction')->sortable()->viewable(false),
+            Markdown::make('Original Details','original_details')->readonly()->alwaysShow(),
             Markdown::make('Details','details')->alwaysShow(),
-            BelongsToMany::make('Service Areas', 'serviceAreas')->fields(function () {
-                return [
-                    Markdown::make('Details', 'details')
-                        ->displayUsing(function(){
-                            return isset($this->pivot) ? $this->pivot->details : '';
-                        })->alwaysShow(),
-                ];
-            }),
-            Text::make("Service Area Count", function() {return $this->serviceAreas()->count(); })
+
         ];
     }
 

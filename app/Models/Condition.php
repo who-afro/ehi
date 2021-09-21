@@ -49,7 +49,7 @@ class Condition extends Model
     }
 
     public function programAreas() {
-        return $this->belongsToMany(ProgramArea::class, 'program_area_conditions');
+        return $this->belongsTo(ProgramArea::class);
     }
 
     public static function boot()
@@ -66,5 +66,3 @@ class Condition extends Model
         });
     }
 }
-
-

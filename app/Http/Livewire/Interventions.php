@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Exports\InterventionsExport;
+use App\Models\Intervention;
 use App\Models\InterventionServiceArea;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Livewire\Component;
@@ -18,12 +19,12 @@ class Interventions extends Component
         'age_cohort_id' => [],
         'public_health_function_id' => [],
         'level_of_care_id' => [],
-        'service_area_id' => [],
         'program_area_id' => [],
         'search' => null,
         'applyFilter' => '',
         'number_of_items_per_page' => 10
     ];
+
 
     /**
      * Return to the first page results each time the filters are updated, to prevent no results being displayed
@@ -47,29 +48,23 @@ class Interventions extends Component
 
     public function getInterventionListQuery()
     {
-        return InterventionServiceArea::with('intervention', 'serviceArea')
-            ->when($this->filters['service_area_id'], fn($query, $service_area_id) => $query->whereIn('service_area_id', $service_area_id))
-            ->when($this->filters['age_cohort_id'], fn($query, $age_cohort_id) => $query->whereHas('intervention.ageCohort',
+        return Intervention::with('condition', 'ageCohort', 'levelOfCare', 'publicHealthFunction')
+            ->when($this->filters['age_cohort_id'], fn($query, $age_cohort_id) => $query->whereHas('ageCohort',
                 function($query) use ($age_cohort_id) {
                     $query->whereIn('age_cohort_id', $age_cohort_id);
                 }))
-            ->when($this->filters['condition_id'], fn($query, $condition_id) => $query->whereHas('intervention.condition',
+            ->when($this->filters['condition_id'], fn($query, $condition_id) => $query->whereHas('condition',
                 function($query) use ($condition_id) {
                     $query->whereIn('condition_id', $condition_id);
                 }))
-            ->when($this->filters['level_of_care_id'], fn($query, $level_of_care_id) => $query->whereHas('intervention.levelOfCare',
+            ->when($this->filters['level_of_care_id'], fn($query, $level_of_care_id) => $query->whereHas('levelOfCare',
                 function($query) use ($level_of_care_id) {
                     $query->whereIn('level_of_care_id', $level_of_care_id);
                 }))
             ->when($this->filters['public_health_function_id'],
-                fn($query, $public_health_function_id) => $query->whereHas('intervention.publicHealthFunction',
+                fn($query, $public_health_function_id) => $query->whereHas('publicHealthFunction',
                     function($query) use ($public_health_function_id) {
                         $query->whereIn('public_health_function_id', $public_health_function_id);
-                    }))
-            ->when($this->filters['program_area_id'],
-                fn($query, $program_area_id) => $query->whereHas('intervention.condition.programAreas',
-                    function($query) use ($program_area_id) {
-                        $query->whereIn('program_area_id', $program_area_id);
                     }))
             ->when($this->filters['search'], fn($query, $search) => $query->where('details', 'like', '%' . $search . '%'));
     }
@@ -81,6 +76,9 @@ class Interventions extends Component
 
     public function render()
     {
+        if (request()->has('search')) {
+            $this->filters['search'] = request()->input('search');
+        }
         return view($this->getView(),
             [
                 'interventions' => $this->getInterventionList()
@@ -109,11 +107,10 @@ class Interventions extends Component
         return $this->getInterventionListQuery()->get()
             ->map(function($item) {
                 // rebuild the data export to match the expectations for the particular page
-                $row['Program Area'] = $item->intervention->condition->programAreas->pluck('name')->implode(', ');
-                $row['Condition'] = $item->intervention->condition->name;
-                $row['Age Cohort'] = $item->intervention->ageCohort->name;
-                $row['Public Health Function'] = $item->intervention->publicHealthFunction->name;
-                $row['Service Area'] = $item->serviceArea->name;
+                $row['Program Area'] = $item->condition->programAreas->pluck('name')->implode(', ');
+                $row['Condition'] = $item->condition->name;
+                $row['Age Cohort'] = $item->ageCohort->name;
+                $row['Public Health Function'] = $item->publicHealthFunction->name;
                 $row['Intervention'] = $item->details;
 
                 return $row;

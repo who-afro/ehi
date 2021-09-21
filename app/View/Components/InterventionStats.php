@@ -27,7 +27,7 @@ class InterventionStats extends Component
      */
     public function __construct()
     {
-        $this->interventions = DB::table('intervention_service_area')->count();
+        $thiss = DB::table('intervention_service_area')->count();
         $this->conditions = DB::table('conditions')->count();
         $this->program_areas = DB::table('program_areas')->count();
         $this->service_areas = DB::table('service_areas')->count();
