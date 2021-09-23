@@ -23,7 +23,7 @@
         @foreach(\App\Models\ProgramGroup::all() as $group)
             @if(count($group->conditions) > 0)
                 <!-- This width here prevents the relative blocks for the group names from breaking the scrolling of the conditions -->
-                    <div class="grid grid-cols-2 dropdown relative w-[240px] bg-iaho-map-country-background">
+                    <div class="grid grid-cols-2 dropdown relative w-[240px] bg-iaho-map-country-background" x-on:click.away="open_condition = false">
                     <span class="p-2 w-[240px] text-left bg-iaho-map-country-background text-iaho-dark-blue focus:outline-none hover:bg-iaho-dark-blue hover:text-iaho-yellow focus:bg-blue-700 focus:text-white dropdown inline-block"
                         type="button">
                         {{ $group->name }}
@@ -50,7 +50,8 @@
         </button>
         <div class="absolute left-0 top-full -mt-11 z-10 shadow-xl w-[400px]"
              x-cloak
-             x-show="open_age_cohort">
+             x-show="open_age_cohort"
+             x-on:click.away="open_age_cohort = false">
             <div class="bg-iaho-yellow text-iaho-deep-blue px-4 font-light mt-11 flex justify-between">
                 Age based grouping of patients
                 <a class="text-base font-semibold justify-end whitespace-nowrap ml-6"
@@ -73,7 +74,8 @@
         </button>
         <div class="absolute top-full left-0 -mt-11 z-10 shadow-xl w-[400px]"
              x-cloak
-             x-show="open_level_of_care">
+             x-show="open_level_of_care"
+             x-on:click.away="open_level_of_care = false">
             <div class="bg-iaho-yellow text-iaho-deep-blue px-4 font-light mt-11 flex justify-between">
                 Locations where service delivery occurs
                 <a class="text-base font-semibold justify-end whitespace-nowrap ml-6"
@@ -96,7 +98,8 @@
         </button>
         <div class="absolute right-0 top-full -mt-11 z-10 shadow-xl w-[420px]"
              x-cloak
-             x-show="open_public_health_function">
+             x-show="open_public_health_function"
+             x-on:click.away="open_public_health_function = false">
             <div class="bg-iaho-yellow text-iaho-deep-blue px-4 font-light mt-11 flex justify-between">
                 Groupings of interventions within the scope of public health response
                 <a class="text-base font-semibold justify-end whitespace-nowrap ml-6"
