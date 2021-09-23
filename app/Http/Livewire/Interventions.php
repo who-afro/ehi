@@ -109,7 +109,7 @@ class Interventions extends Component
         return $this->getInterventionListQuery()->get()
             ->map(function($item) {
                 // rebuild the data export to match the expectations for the particular page
-                $row['Program Area'] = $item->condition->programAreas->pluck('name')->implode(', ');
+                $row['Program Area'] = $item->condition->programArea->name;
                 $row['Condition'] = $item->condition->name;
                 $row['Age Cohort'] = $item->ageCohort->name;
                 $row['Public Health Function'] = $item->publicHealthFunction->name;

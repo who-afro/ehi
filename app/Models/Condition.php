@@ -48,7 +48,7 @@ class Condition extends Model
         return $this->hasMany(Intervention::class);
     }
 
-    public function programAreas() {
+    public function programArea() {
         return $this->belongsTo(ProgramArea::class);
     }
 
