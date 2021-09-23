@@ -7,7 +7,7 @@
     <div class="relative flex">
         <button
             class="px-8 py-4 inline-flex justify-start items-center font-semibold hover:bg-iaho-yellow hover:text-iaho-dark-blue focus:text-iaho-dark-blue focus:bg-iaho-yellow focus:outline-none"
-            x-on:click="open_condition = true; open_age_cohort = false; open_level_of_care = false; open_public_health_function = false"
+            x-on:click="open_condition = true"
             type="button">
             Disease Condition
             <x-heroicon-o-chevron-down class="w-4 ml-1"/>
@@ -44,7 +44,7 @@
     <div class="relative flex">
         <button
             class="px-8 py-4 inline-flex justify-start items-center font-semibold hover:bg-iaho-yellow hover:text-iaho-dark-blue focus:text-iaho-dark-blue focus:bg-iaho-yellow focus:outline-none"
-            x-on:click="open_age_cohort = true; open_condition = false; open_level_of_care = false; open_public_health_function = false"
+            x-on:click="open_age_cohort = true"
             type="button">Age Cohort
             <x-heroicon-o-chevron-down class="w-4 ml-1"/>
         </button>
@@ -68,7 +68,7 @@
     <div class="relative flex">
         <button
             class="px-8 py-4 inline-flex justify-start items-center font-semibold hover:bg-iaho-yellow hover:text-iaho-dark-blue focus:text-iaho-dark-blue focus:bg-iaho-yellow focus:outline-none"
-            x-on:click="open_level_of_care = true; open_condition = false; open_age_cohort = false; open_public_health_function = false"
+            x-on:click="open_level_of_care = true"
             type="button">Level of Care
             <x-heroicon-o-chevron-down class="w-4 ml-1"/>
         </button>
@@ -92,7 +92,7 @@
     <div class="relative flex">
         <button
             class="px-8 py-4 inline-flex justify-start items-center font-semibold hover:bg-iaho-yellow hover:text-iaho-dark-blue focus:text-iaho-dark-blue focus:bg-iaho-yellow focus:outline-none"
-            x-on:click="open_public_health_function = true; open_level_of_care = false; open_condition = false; open_age_cohort = false"
+            x-on:click="open_public_health_function = true"
             type="button">Public Health Function
             <x-heroicon-o-chevron-down class="w-4 ml-1"/>
         </button>
