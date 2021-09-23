@@ -1,14 +1,12 @@
-/* required for the accordion on the program area overview page to work - for now */
-.max-h-0 {
-    max-height: 0;
-}
 
 /* Add default styles to lists in table cells */
 td > ul {
     list-style: disc;
 }
 
-[x-cloak] { display: none !important; }
+[x-cloak] {
+    display: none !important;
+}
 
 .dropdown:hover > .dropdown-content {
     display: block;

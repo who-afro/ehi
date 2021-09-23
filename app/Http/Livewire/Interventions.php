@@ -4,7 +4,6 @@ namespace App\Http\Livewire;
 
 use App\Exports\InterventionsExport;
 use App\Models\Intervention;
-use App\Models\InterventionServiceArea;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -49,14 +48,16 @@ class Interventions extends Component
     public function getInterventionListQuery()
     {
         return Intervention::with('condition', 'ageCohort', 'levelOfCare', 'publicHealthFunction')
-            ->when($this->filters['age_cohort_id'], fn($query, $age_cohort_id) => $query->whereHas('ageCohort',
-                function($query) use ($age_cohort_id) {
+            ->when($this->filters['age_cohort_id'],
+                fn($query, $age_cohort_id) => $query->whereHas('ageCohort',
+                    function($query) use ($age_cohort_id) {
                     $query->whereIn('age_cohort_id', $age_cohort_id);
                 }))
-            ->when($this->filters['condition_id'], fn($query, $condition_id) => $query->whereHas('condition',
-                function($query) use ($condition_id) {
-                    $query->whereIn('condition_id', $condition_id);
-                }))
+            ->when($this->filters['condition_id'],
+                fn($query, $condition_id) => $query->whereHas('condition',
+                    function($query) use ($condition_id) {
+                        $query->whereIn('condition_id', $condition_id);
+                    }))
             ->when($this->filters['level_of_care_id'], fn($query, $level_of_care_id) => $query->whereHas('levelOfCare',
                 function($query) use ($level_of_care_id) {
                     $query->whereIn('level_of_care_id', $level_of_care_id);
@@ -68,6 +69,7 @@ class Interventions extends Component
                     }))
             ->when($this->filters['search'], fn($query, $search) => $query->where('details', 'like', '%' . $search . '%'));
     }
+
     public function getInterventionList(): LengthAwarePaginator
     {
         return $this->getInterventionListQuery()->paginate($this->filters['number_of_items_per_page']);

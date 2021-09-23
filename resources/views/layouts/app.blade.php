@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-    <link rel="shortcut icon" href="/favicon.ico"/>
+    <title>{{ config('app.name', 'WHO Afro - Digital Menu of Essential Services') }}</title>
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">

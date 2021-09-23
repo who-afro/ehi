@@ -1,8 +1,8 @@
-<div class="px-4">
-    <dt class="text-xl font-semibold text-iaho-dark-blue py-2">
+<div>
+    <dt class="text-xl font-semibold text-iaho-dark-blue py-2 px-4 bg-iaho-map-country-background opacity-75">
         Age Cohort
     </dt>
-    <dd class="mt-1 text-gray-700 px-1">
+    <dd class="text-gray-700 px-4">
         @foreach(App\Models\AgeCohort::all() as $ageCohort)
             <div class="flex items-start">
                 <div class="flex items-center">
