@@ -1,6 +1,6 @@
 <x-app-layout>
-    <div class="mx-auto bg-fixed bg-no-repeat bg-cover h-[720px]"
-         style="background-image: url({{ asset('img/home-page-background.svg') }}); width: 720px; ">
+    <div class="mx-auto bg-fixed bg-no-repeat bg-auto h-[720px]"
+         style="background-image: url({{ asset('img/home-page-background.svg') }});">
         <div class="grid grid-cols-6">
             <div class="h-full" style="background-image: url({{ asset('img/iaho-pattern.svg') }}); transform:scaleX(-1); background-repeat: repeat-y">
             </div>

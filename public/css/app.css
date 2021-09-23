@@ -1887,6 +1887,9 @@ select {
 .bg-contain {
 	background-size: contain;
 }
+.bg-auto {
+	background-size: auto;
+}
 .bg-fixed {
 	background-attachment: fixed;
 }
