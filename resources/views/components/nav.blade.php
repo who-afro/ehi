@@ -53,7 +53,7 @@
              x-show="open_age_cohort">
             <div class="bg-iaho-yellow text-iaho-deep-blue px-4 font-light mt-11 flex justify-between">
                 Age based grouping of patients
-                <a class="text-base font-semibold justify-end whitespace-nowrap"
+                <a class="text-base font-semibold justify-end whitespace-nowrap ml-6"
                    href="{{ route('age-cohort-overview') }}">Learn more</a>
             </div>
             <div class="text-left flex flex-col">
@@ -76,7 +76,7 @@
              x-show="open_level_of_care">
             <div class="bg-iaho-yellow text-iaho-deep-blue px-4 font-light mt-11 flex justify-between">
                 Locations where service delivery occurs
-                <a class="text-base font-semibold justify-end whitespace-nowrap"
+                <a class="text-base font-semibold justify-end whitespace-nowrap ml-6"
                    href="{{ route('level-of-care-overview') }}">Learn more</a>
             </div>
             <div class="text-left flex flex-col">
@@ -99,7 +99,7 @@
              x-show="open_public_health_function">
             <div class="bg-iaho-yellow text-iaho-deep-blue px-4 font-light mt-11 flex justify-between">
                 Groupings of interventions within the scope of public health response
-                <a class="text-base font-semibold justify-end whitespace-nowrap"
+                <a class="text-base font-semibold justify-end whitespace-nowrap ml-6"
                    href="{{ route('public-health-function-overview') }}">Learn more</a>
             </div>
             <div class="text-left flex flex-col">

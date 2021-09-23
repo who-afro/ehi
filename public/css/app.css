@@ -1798,6 +1798,9 @@ select {
 .bg-fixed {
 	background-attachment: fixed;
 }
+.bg-repeat-y {
+	background-repeat: repeat-y;
+}
 .fill-current {
 	fill: currentColor;
 }
