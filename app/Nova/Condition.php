@@ -3,7 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
@@ -47,8 +47,7 @@ class Condition extends Resource
                 Text::make(__('condition.name'), 'name')->sortable(),
                 Markdown::make(__('condition.description'), 'description')->alwaysShow()
             ]),
-            Text::make(__('condition.intervention_count'), function() {return $thiss()->count(); }),
-            Text::make(__('condition.program_area_count'), function() {return $this->programAreas()->count(); }),
+            Text::make(__('condition.intervention_count'), function() {return $this->count(); }),
             BelongsTo::make(__("condition.program_area_label"), 'programAreas'),
             HasMany::make(__("condition.intervention_label"), 'interventions'),
         ];

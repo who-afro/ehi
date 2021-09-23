@@ -12,7 +12,7 @@
             Disease Condition
             <x-heroicon-o-chevron-down class="w-4 ml-1"/>
         </button>
-        <div class="absolute top-full left-0 bottom-0 z-10 shadow-xl bg-iaho-map-country-background w-[540px]"
+        <div class="absolute top-full left-0 bottom-0 z-10 shadow-xl bg-iaho-dark-blue w-[540px]"
              x-cloak
              x-show="open_condition">
             <div class="bg-iaho-yellow text-iaho-deep-blue px-2 font-light flex">
@@ -28,6 +28,7 @@
                         type="button">
                         {{ $group->name }}
                     </span>
+                        <div class="absolute ml-[240px] w-[606px] bg-iaho-map-country-background"></div>
                         <div class="dropdown-content absolute hidden ml-[240px] w-[606px] overflow-y-scroll flex flex-row bg-iaho-dark-blue align-top">
                             @foreach($group->conditions as $condition)
                                 <a class="text-white p-2 inline-block hover:bg-iaho-light-blue hover:font-semibold w-[300px]"

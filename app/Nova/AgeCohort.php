@@ -45,7 +45,7 @@ class AgeCohort extends Resource
                 Text::make(__('age_cohort.name'), 'name')->sortable(),
                 Markdown::make(__('age_cohort.description'), 'description')->alwaysShow()
             ]),
-            Text::make(__("intervention.count"), function() {return $thiss()->count(); }),
+            Text::make(__("intervention.count"), function() {return $this->count(); }),
         ];
     }
 

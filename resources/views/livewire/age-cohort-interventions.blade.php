@@ -56,7 +56,7 @@
                     <tr class="{{ $loop->odd ? 'bg-white' : 'bg-gray-50' }}">
                         @auth
                             <td class="px-6 whitespace-nowrap text-left text-gray-500 whitespace-no-wrap">
-                                <a href="/nova/resources/intervention-service-areas/{{ $v->id }}/edit?viaResource&viaResourceId&viaRelationship"
+                                <a href="/nova/resources/interventions/{{ $v->id }}/edit?viaResource&viaResourceId&viaRelationship"
                                    title="Edit Intervention" target="_blank" class="inline-flex">
                                     <x-heroicon-o-pencil class="h-6 w-6 text-indigo-600"/>
                                 </a>

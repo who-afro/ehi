@@ -6,13 +6,9 @@ use App\Nova\Filters\AgeCohortFilter;
 use App\Nova\Filters\ConditionFilter;
 use App\Nova\Filters\LevelOfCareFilter;
 use App\Nova\Filters\PublicHealthFunctionFilter;
-use App\Nova\Filters\ServiceAreaFilter;
-use App\Nova\Lenses\InterventionServiceAreas;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Markdown;
-use Laravel\Nova\Fields\Text;
 
 class Intervention extends Resource
 {
@@ -60,7 +56,7 @@ class Intervention extends Resource
             BelongsTo::make('AgeCohort')->viewable(false),
             BelongsTo::make('PublicHealthFunction')->sortable()->viewable(false),
             Markdown::make('Original Details','original_details')->readonly()->alwaysShow(),
-            Markdown::make('Details','details')->alwaysShow(),
+            Markdown::make('Details','details')->alwaysShow()->showOnIndex(true),
 
         ];
     }
@@ -89,7 +85,6 @@ class Intervention extends Resource
             new LevelOfCareFilter,
             new AgeCohortFilter,
             new PublicHealthFunctionFilter,
-            new ServiceAreaFilter
         ];
     }
 
