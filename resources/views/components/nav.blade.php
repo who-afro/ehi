@@ -4,6 +4,12 @@
        class="px-4 py-2 hover:bg-iaho-yellow hover:text-iaho-dark-blue">
         <x-heroicon-o-home class="h-11"/>
     </a>
+    @auth
+        <a href="{{ url("nova") }}"
+           class="px-4 py-2 hover:bg-iaho-yellow hover:text-iaho-dark-blue">
+            <x-heroicon-o-cog class="h-11"/>
+        </a>
+    @endauth
     <div class="relative flex">
         <button
             class="px-8 py-4 inline-flex justify-start items-center font-semibold hover:bg-iaho-yellow hover:text-iaho-dark-blue focus:text-iaho-dark-blue focus:bg-iaho-yellow focus:outline-none"
