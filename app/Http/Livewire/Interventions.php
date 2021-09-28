@@ -24,7 +24,6 @@ class Interventions extends Component
         'number_of_items_per_page' => 10
     ];
 
-
     /**
      * Return to the first page results each time the filters are updated, to prevent no results being displayed
      * just because they are not as many as the page being shown
@@ -117,6 +116,10 @@ class Interventions extends Component
 
                 return $row;
         });
+    }
+
+    public function deleteIntervention($intervention_id) {
+        Intervention::destroy($intervention_id);
     }
 
     protected function getView() {
