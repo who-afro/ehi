@@ -16,7 +16,7 @@
         @foreach(App\Models\AgeCohort::all() as $ageCohort)
             <h2 class="text-2xl font-semibold">{{ $ageCohort->name }}</h2>
             <div class="flex">
-                <img src="{{ $ageCohort->icon_url }}" alt="{{ $ageCohort->name }}" class="mr-4 w-96 !mt-2 self-start"/>
+                <img src="{{ asset('img/'.$ageCohort->slug.'.jpg') }}" alt="{{ $ageCohort->name }}" class="mr-4 w-96 !mt-2 self-start"/>
                 <div class="text-xl px-4 !mt-1">
                     {!!  Str::markdown($ageCohort->description) !!}
                     <a href="/age-cohort/{{ $ageCohort->id }}" title="{{ $ageCohort->name }}" class="flex items-center">
