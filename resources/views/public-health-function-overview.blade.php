@@ -9,14 +9,14 @@
         {{ __('Public Health Function') }}
     </x-slot>
 
-    <div class="mx-auto prose">
+    <div class="max-w-7xl prose px-4">
         <p class="text-2xl">This thematic area covers public health based interventions</p>
         @foreach(App\Models\PublicHealthFunction::all() as $publicHealthFunction)
             <h2 class="text-2xl font-semibold !mt-1">{{ $publicHealthFunction->name }}</h2>
-            <div class="grid grid-cols-4">
+            <div class="flex">
                 <img src="{{ $publicHealthFunction->icon_url }}" alt="{{ $publicHealthFunction->name }}"
-                     class="mr-4 w-full !mt-1"/>
-                <div class="col-span-3 text-xl px-4 !mt-1">
+                     class="mr-4 w-96 !mt-2 self-start"/>
+                <div class="text-xl px-4 !mt-1">
                     {!! Str::markdown($publicHealthFunction->description) !!}
 
                     <a href="/public-health-function/{{ $publicHealthFunction->id }}"

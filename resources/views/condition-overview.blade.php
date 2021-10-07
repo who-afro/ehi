@@ -3,7 +3,7 @@
         {{ __('Disease Condition') }}
     </x-slot>
 
-    <div class="mx-auto">
+    <div class="max-w-7xl prose px-4">
         <p class="text-2xl">
             The program areas in the digital toolkit are derived from the WHO Global burden of diseases, click on a
             program area to show details
@@ -18,7 +18,7 @@
 
                     <div class="col-span-2 grid grid-cols-2">
                         @foreach($programArea->conditions as $condition)
-                            <a class="font-semibold text-iaho-light-blue p-2" href="{{ route('condition', ['program_area_id' => $programArea->id, 'condition_id' => $condition->id]) }}">{{ $condition->name }}</a>
+                            <a class="!font-black !text-iaho-light-blue p-2 !no-underline" href="{{ route('condition', ['program_area_id' => $programArea->id, 'condition_id' => $condition->id]) }}">{{ $condition->name }}</a>
                         @endforeach
                     </div>
                 </div>

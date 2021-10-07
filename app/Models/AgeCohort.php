@@ -23,6 +23,7 @@ class AgeCohort extends Model
         'min_age',
         'max_age',
         'uuid',
+        'slug'
     ];
 
     /**
@@ -53,5 +54,9 @@ class AgeCohort extends Model
 
     public function interventions() {
         return $this->hasMany(Intervention::class);
+    }
+
+    public function getIconUrlAttribute() {
+        return asset('svg/'.$this->slug.'.svg');
     }
 }
