@@ -7,7 +7,7 @@
 
     <title>{{ config('app.name', 'WHO Afro - Digital Menu of Essential Services') }}</title>
     <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap' rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
