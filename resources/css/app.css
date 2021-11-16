@@ -1,3 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.active-essential-package-tab {
+    @apply border-iaho-light-blue border-b-2 text-iaho-light-blue;
+}

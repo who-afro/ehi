@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\AgeCohortInterventions;
+use App\Http\Livewire\EssentialPackage;
 use App\Http\Livewire\Interventions;
 use App\Http\Livewire\LevelOfCareInterventions;
 use App\Http\Livewire\ConditionInterventions;
@@ -33,6 +34,8 @@ Route::get('/public-health-function/{public_health_function_id}', PublicHealthFu
 Route::view('/program-area-overview', 'program-area-overview')->name("program-area-overview");
 Route::get('/program-area/{program_area_id}', ProgramAreaInterventions::class)->name("program-area");
 Route::get('/condition/{condition_id}', ConditionInterventions::class)->name("condition");
+
+Route::get('/essential-package/{id?}', EssentialPackage::class)->name("essential-package");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('welcome');
