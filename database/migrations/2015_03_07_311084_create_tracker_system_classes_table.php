@@ -2,8 +2,7 @@
 
 use PragmaRX\Tracker\Support\Migration;
 
-class CreateTrackerSystemClassesTable extends Migration
-{
+return new class extends Migration {
     /**
      * Table related to this migration.
      *
@@ -41,4 +40,4 @@ class CreateTrackerSystemClassesTable extends Migration
     {
         $this->drop($this->table);
     }
-}
+};

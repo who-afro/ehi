@@ -2,8 +2,7 @@
 
 use PragmaRX\Tracker\Support\Migration;
 
-class CreateTrackerGeoipTable extends Migration
-{
+return new class extends Migration {
     /**
      * Table related to this migration.
      *
@@ -53,4 +52,4 @@ class CreateTrackerGeoipTable extends Migration
     {
         $this->drop($this->table);
     }
-}
+};

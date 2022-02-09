@@ -13,6 +13,6 @@ class InterventionCategorySeeder extends Seeder
      */
     public function run()
     {
-        InterventionCategorySeeder::factory()->count(5)->create();
+        self::factory()->count(5)->create();
     }
 }

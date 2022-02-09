@@ -12,6 +12,7 @@ class AgeCohortSeeder extends CsvSeeder
         $this->table = 'age_cohorts';
         $this->filename = base_path().'/database/seeders/csv/age_cohorts.csv';
     }
+
     /**
      * Run the database seeds.
      *

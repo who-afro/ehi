@@ -12,6 +12,7 @@ class PublicHealthFunctionSeeder extends CsvSeeder
         $this->table = 'public_health_functions';
         $this->filename = base_path().'/database/seeders/csv/public_health_functions.csv';
     }
+
     /**
      * Run the database seeds.
      *

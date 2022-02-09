@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Http\Livewire;
-
 
 use App\Models\LevelOfCare;
 
@@ -12,11 +10,12 @@ class LevelOfCareInterventions extends Interventions
 
     public function mount($level_of_care_id)
     {
-        $this->filters['level_of_care_id'] = array($level_of_care_id);
+        $this->filters['level_of_care_id'] = [$level_of_care_id];
         $this->levelOfCare = LevelOfCare::find($level_of_care_id);
     }
 
-    protected function getView() {
+    protected function getView()
+    {
         return 'livewire.level-of-care-interventions';
     }
 }

@@ -2,8 +2,7 @@
 
 use PragmaRX\Tracker\Support\Migration;
 
-class FixAgentName extends Migration
-{
+return new class extends Migration {
     /**
      * Table related to this migration.
      *
@@ -62,4 +61,4 @@ class FixAgentName extends Migration
         } catch (\Exception $e) {
         }
     }
-}
+};

@@ -14,6 +14,7 @@ class ProgramGroupSeeder extends CsvSeeder
         $this->table = 'program_groups';
         $this->filename = base_path().'/database/seeders/csv/program_groups.csv';
     }
+
     /**
      * Run the database seeds.
      *

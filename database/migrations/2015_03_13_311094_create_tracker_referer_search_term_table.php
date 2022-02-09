@@ -2,8 +2,7 @@
 
 use PragmaRX\Tracker\Support\Migration;
 
-class CreateTrackerRefererSearchTermTable extends Migration
-{
+return new class extends Migration {
     /**
      * Table related to this migration.
      *
@@ -42,4 +41,4 @@ class CreateTrackerRefererSearchTermTable extends Migration
     {
         $this->drop($this->table);
     }
-}
+};

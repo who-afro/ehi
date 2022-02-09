@@ -2,8 +2,7 @@
 
 use PragmaRX\Tracker\Support\Migration;
 
-class AddTrackerLanguageForeignKeyToSessions extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -31,4 +30,4 @@ class AddTrackerLanguageForeignKeyToSessions extends Migration
             $table->dropForeign(['language_id']);
         });
     }
-}
+};

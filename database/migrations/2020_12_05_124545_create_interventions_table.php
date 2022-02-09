@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInterventionsTable extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -27,8 +26,8 @@ class CreateInterventionsTable extends Migration
 
         Schema::disableForeignKeyConstraints();
         // run the baseline data seeder
-        Artisan::call('db:seed',[
-            '--class' => 'InterventionSeeder'
+        Artisan::call('db:seed', [
+            '--class' => 'InterventionSeeder',
         ]);
         Schema::enableForeignKeyConstraints();
     }
@@ -42,4 +41,4 @@ class CreateInterventionsTable extends Migration
     {
         Schema::dropIfExists('interventions');
     }
-}
+};

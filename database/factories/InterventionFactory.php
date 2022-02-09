@@ -8,13 +8,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class InterventionFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
-    protected $model = Intervention::class;
-
-    /**
      * Define the model's default state.
      *
      * @return array
@@ -22,7 +15,7 @@ class InterventionFactory extends Factory
     public function definition()
     {
         return [
-            'details' => $this->faker->text,
+            'details' => $this->faker->text(),
         ];
     }
 }

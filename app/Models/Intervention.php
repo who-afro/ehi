@@ -22,7 +22,7 @@ class Intervention extends Model
         'public_health_function_id',
         'condition_id',
         'age_cohort_id',
-        'uuid'
+        'uuid',
     ];
 
     /**
@@ -38,7 +38,7 @@ class Intervention extends Model
     {
         parent::boot();
 
-        self::creating(function($model){
+        self::creating(function ($model) {
             $model->uuid = Str::uuid();
         });
     }
@@ -63,7 +63,8 @@ class Intervention extends Model
         return $this->belongsTo(Condition::class);
     }
 
-    public function programAreas() {
+    public function programAreas()
+    {
         return $this->belongsToMany(ProgramGroup::class);
     }
 }

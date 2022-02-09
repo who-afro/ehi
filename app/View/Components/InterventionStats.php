@@ -7,19 +7,22 @@ use Illuminate\View\Component;
 
 class InterventionStats extends Component
 {
-
     /**
      * The count of available interventions
-     * @var integer
+     * @var int
      */
     public $interventions;
+
     /**
      * The count of available conditions
-     * @var integer
+     * @var int
      */
     public $conditions;
+
     public $service_areas;
+
     public $program_areas;
+
     /**
      * Create a new component instance.
      *

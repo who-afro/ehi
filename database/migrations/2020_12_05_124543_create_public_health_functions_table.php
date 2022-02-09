@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePublicHealthFunctionsTable extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -23,8 +22,8 @@ class CreatePublicHealthFunctionsTable extends Migration
 
         Schema::disableForeignKeyConstraints();
         // run the baseline data seeder
-        Artisan::call('db:seed',[
-            '--class' => 'PublicHealthFunctionSeeder'
+        Artisan::call('db:seed', [
+            '--class' => 'PublicHealthFunctionSeeder',
         ]);
         Schema::enableForeignKeyConstraints();
     }
@@ -38,4 +37,4 @@ class CreatePublicHealthFunctionsTable extends Migration
     {
         Schema::dropIfExists('public_health_functions');
     }
-}
+};

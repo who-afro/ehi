@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSlugToProgramArea extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -20,4 +19,4 @@ class AddSlugToProgramArea extends Migration
         // set the slug
         DB::statement('UPDATE program_areas SET slug = REPLACE(REPLACE(REPLACE(TRIM(LOWER(JSON_UNQUOTE(JSON_EXTRACT(name, "$.en")))), " ", "-"), ",", ""), "--", "-")');
     }
-}
+};

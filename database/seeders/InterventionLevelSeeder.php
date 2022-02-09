@@ -12,6 +12,7 @@ class InterventionLevelSeeder extends CsvSeeder
         $this->table = 'intervention_levels';
         $this->filename = base_path().'/database/seeders/csv/intervention_levels.csv';
     }
+
     /**
      * Run the database seeds.
      *

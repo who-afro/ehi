@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class MoveServiceAreaDataToInterventions extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -28,8 +27,6 @@ class MoveServiceAreaDataToInterventions extends Migration
         DB::statement("UPDATE interventions i SET details = (SELECT GROUP_CONCAT(DISTINCT isa.details SEPARATOR '\n') FROM intervention_service_area isa WHERE i.id = isa.intervention_id GROUP BY isa.intervention_id)");
 
         // add details_intervention for those with null values
-        DB::statement("UPDATE interventions SET details = details_original WHERE details IS NULL");
-
-
+        DB::statement('UPDATE interventions SET details = details_original WHERE details IS NULL');
     }
-}
+};

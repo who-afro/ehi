@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class MakeAgeCohortTranslatable extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -13,9 +12,8 @@ class MakeAgeCohortTranslatable extends Migration
      */
     public function up()
     {
-
         DB::beginTransaction();
-        Schema::table('age_cohorts', function(Blueprint $table){
+        Schema::table('age_cohorts', function (Blueprint $table) {
             $table->text('name')->change();
             $table->text('description')->change();
         });
@@ -25,4 +23,4 @@ class MakeAgeCohortTranslatable extends Migration
 
         DB::commit();
     }
-}
+};

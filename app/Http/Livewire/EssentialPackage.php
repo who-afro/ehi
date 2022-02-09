@@ -7,24 +7,27 @@ use Livewire\Component;
 class EssentialPackage extends Component
 {
     public array $package = [
-        'conditions' => array(),
-        'levels_of_care' => array(),
-        'public_health_functions' => array(),
-        'age_cohorts' => array(),
+        'conditions' => [],
+        'levels_of_care' => [],
+        'public_health_functions' => [],
+        'age_cohorts' => [],
         'title' => '',
         'description' => '',
-        'notification_emails' => ''
+        'notification_emails' => '',
     ];
 
-    public function savePackage() {
+    public function savePackage()
+    {
         // do nothing
     }
 
-    public function exportPDF() {
+    public function exportPDF()
+    {
         // do nothing
     }
 
-    public function exportExcel() {
+    public function exportExcel()
+    {
         // do nothing
     }
 

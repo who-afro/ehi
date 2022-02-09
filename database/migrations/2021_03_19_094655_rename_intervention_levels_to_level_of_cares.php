@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RenameInterventionLevelsToLevelOfCares extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -43,4 +42,4 @@ class RenameInterventionLevelsToLevelOfCares extends Migration
             $table->unique(['intervention_level_id', 'public_health_function_id', 'condition_id', 'age_cohort_id'], 'intervention_unique_categorization');
         });
     }
-}
+};

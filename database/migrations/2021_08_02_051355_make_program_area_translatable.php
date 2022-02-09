@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class MakeProgramAreaTranslatable extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -14,7 +13,7 @@ class MakeProgramAreaTranslatable extends Migration
     public function up()
     {
         DB::beginTransaction();
-        Schema::table('program_areas', function(Blueprint $table){
+        Schema::table('program_areas', function (Blueprint $table) {
             $table->text('name')->change();
             $table->text('description')->change();
         });
@@ -24,4 +23,4 @@ class MakeProgramAreaTranslatable extends Migration
 
         DB::commit();
     }
-}
+};

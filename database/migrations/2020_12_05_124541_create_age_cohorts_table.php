@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAgeCohortsTable extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -25,8 +24,8 @@ class CreateAgeCohortsTable extends Migration
 
         Schema::disableForeignKeyConstraints();
         // run the baseline data seeder
-        Artisan::call('db:seed',[
-            '--class' => 'AgeCohortSeeder'
+        Artisan::call('db:seed', [
+            '--class' => 'AgeCohortSeeder',
         ]);
         Schema::enableForeignKeyConstraints();
     }
@@ -40,4 +39,4 @@ class CreateAgeCohortsTable extends Migration
     {
         Schema::dropIfExists('age_cohorts');
     }
-}
+};

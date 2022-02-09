@@ -23,7 +23,7 @@ class AgeCohort extends Model
         'min_age',
         'max_age',
         'uuid',
-        'slug'
+        'slug',
     ];
 
     /**
@@ -36,6 +36,7 @@ class AgeCohort extends Model
         'min_age' => 'integer',
         'max_age' => 'integer',
     ];
+
     /**
      * The attributes that should be translatable
      *
@@ -47,16 +48,18 @@ class AgeCohort extends Model
     {
         parent::boot();
 
-        self::creating(function($model){
+        self::creating(function ($model) {
             $model->uuid = Str::uuid();
         });
     }
 
-    public function interventions() {
+    public function interventions()
+    {
         return $this->hasMany(Intervention::class);
     }
 
-    public function getIconUrlAttribute() {
+    public function getIconUrlAttribute()
+    {
         return asset('svg/'.$this->slug.'.svg');
     }
 }

@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class MakeConditionTranslatable extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -14,7 +13,7 @@ class MakeConditionTranslatable extends Migration
     public function up()
     {
         DB::beginTransaction();
-        Schema::table('conditions', function(Blueprint $table){
+        Schema::table('conditions', function (Blueprint $table) {
             $table->text('name')->change();
             $table->text('description')->change();
         });
@@ -24,5 +23,4 @@ class MakeConditionTranslatable extends Migration
 
         DB::commit();
     }
-
-}
+};

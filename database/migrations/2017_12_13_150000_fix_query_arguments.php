@@ -2,8 +2,7 @@
 
 use PragmaRX\Tracker\Support\Migration;
 
-class FixQueryArguments extends Migration
-{
+return new class extends Migration {
     /**
      * Table related to this migration.
      *
@@ -48,4 +47,4 @@ class FixQueryArguments extends Migration
             dd($e->getMessage());
         }
     }
-}
+};

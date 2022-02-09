@@ -2,6 +2,6 @@
 
 return [
     'links' => [
-        'End User Site' => '/'
+        'End User Site' => '/',
     ],
 ];

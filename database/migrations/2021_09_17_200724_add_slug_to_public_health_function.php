@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSlugToPublicHealthFunction extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -20,4 +19,4 @@ class AddSlugToPublicHealthFunction extends Migration
         // set the slug
         DB::statement("UPDATE public_health_functions SET slug = LOWER(REPLACE(name, ' ', '-'))");
     }
-}
+};

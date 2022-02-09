@@ -3,8 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 
-class RemoveInterventionCategoryProgramArea extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -14,4 +13,4 @@ class RemoveInterventionCategoryProgramArea extends Migration
     {
         Schema::drop('intervention_category_program_area');
     }
-}
+};

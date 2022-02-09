@@ -30,7 +30,7 @@ class LevelOfCare extends Resource
      * @var array
      */
     public static $search = [
-        'name', 'description'
+        'name', 'description',
     ];
 
     /**
@@ -44,8 +44,10 @@ class LevelOfCare extends Resource
         return [
             Text::make(__('Name'), 'name')->sortable(),
             Markdown::make(__('Description'), 'description')->alwaysShow(),
-            Text::make("Interventions", function() {return $this->count(); }),
-            HasMany::make("Interventions", 'interventions'),
+            Text::make('Interventions', function () {
+                return $this->count();
+            }),
+            HasMany::make('Interventions', 'interventions'),
         ];
     }
 

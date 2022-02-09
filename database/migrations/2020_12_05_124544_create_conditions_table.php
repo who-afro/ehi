@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateConditionsTable extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -25,8 +24,8 @@ class CreateConditionsTable extends Migration
 
         Schema::disableForeignKeyConstraints();
         // run the baseline data seeder
-        Artisan::call('db:seed',[
-            '--class' => 'ConditionSeeder'
+        Artisan::call('db:seed', [
+            '--class' => 'ConditionSeeder',
         ]);
         Schema::enableForeignKeyConstraints();
     }
@@ -40,4 +39,4 @@ class CreateConditionsTable extends Migration
     {
         Schema::dropIfExists('conditions');
     }
-}
+};
