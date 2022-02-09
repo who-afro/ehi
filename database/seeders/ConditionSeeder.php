@@ -12,6 +12,7 @@ class ConditionSeeder extends CsvSeeder
         $this->table = 'conditions';
         $this->filename = base_path().'/database/seeders/csv/conditions.csv';
     }
+
     /**
      * Run the database seeds.
      *

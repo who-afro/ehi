@@ -13,9 +13,8 @@ class MakeAgeCohortTranslatable extends Migration
      */
     public function up()
     {
-
         DB::beginTransaction();
-        Schema::table('age_cohorts', function(Blueprint $table){
+        Schema::table('age_cohorts', function (Blueprint $table) {
             $table->text('name')->change();
             $table->text('description')->change();
         });

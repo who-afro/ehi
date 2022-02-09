@@ -31,13 +31,13 @@ class ProgramGroup extends Model
         'id' => 'integer',
     ];
 
-
     public function programAreas()
     {
         return $this->hasMany(ProgramArea::class);
     }
 
-    public function conditions() {
+    public function conditions()
+    {
         return $this->hasManyThrough(Condition::class, ProgramArea::class);
     }
 
@@ -45,7 +45,7 @@ class ProgramGroup extends Model
     {
         parent::boot();
 
-        self::creating(function($model){
+        self::creating(function ($model) {
             $model->uuid = Str::uuid();
         });
 

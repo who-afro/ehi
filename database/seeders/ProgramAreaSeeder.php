@@ -14,6 +14,7 @@ class ProgramAreaSeeder extends CsvSeeder
         $this->table = 'program_areas';
         $this->filename = base_path().'/database/seeders/csv/program_areas.csv';
     }
+
     /**
      * Run the database seeds.
      *

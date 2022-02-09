@@ -29,7 +29,7 @@ class AgeCohort extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'description'
+        'id', 'name', 'description',
     ];
 
     /**
@@ -43,9 +43,11 @@ class AgeCohort extends Resource
         return [
             Translatable::make([
                 Text::make(__('age_cohort.name'), 'name')->sortable(),
-                Markdown::make(__('age_cohort.description'), 'description')->alwaysShow()
+                Markdown::make(__('age_cohort.description'), 'description')->alwaysShow(),
             ]),
-            Text::make(__("intervention.count"), function() {return $this->count(); }),
+            Text::make(__('intervention.count'), function () {
+                return $this->count();
+            }),
         ];
     }
 

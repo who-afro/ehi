@@ -27,8 +27,8 @@ class CreateInterventionsTable extends Migration
 
         Schema::disableForeignKeyConstraints();
         // run the baseline data seeder
-        Artisan::call('db:seed',[
-            '--class' => 'InterventionSeeder'
+        Artisan::call('db:seed', [
+            '--class' => 'InterventionSeeder',
         ]);
         Schema::enableForeignKeyConstraints();
     }

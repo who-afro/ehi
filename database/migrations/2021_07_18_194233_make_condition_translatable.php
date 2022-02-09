@@ -14,7 +14,7 @@ class MakeConditionTranslatable extends Migration
     public function up()
     {
         DB::beginTransaction();
-        Schema::table('conditions', function(Blueprint $table){
+        Schema::table('conditions', function (Blueprint $table) {
             $table->text('name')->change();
             $table->text('description')->change();
         });
@@ -24,5 +24,4 @@ class MakeConditionTranslatable extends Migration
 
         DB::commit();
     }
-
 }

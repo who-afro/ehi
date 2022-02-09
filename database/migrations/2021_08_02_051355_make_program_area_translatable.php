@@ -14,7 +14,7 @@ class MakeProgramAreaTranslatable extends Migration
     public function up()
     {
         DB::beginTransaction();
-        Schema::table('program_areas', function(Blueprint $table){
+        Schema::table('program_areas', function (Blueprint $table) {
             $table->text('name')->change();
             $table->text('description')->change();
         });

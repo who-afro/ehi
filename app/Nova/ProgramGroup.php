@@ -30,7 +30,7 @@ class ProgramGroup extends Resource
      * @var array
      */
     public static $search = [
-        'name', 'description'
+        'name', 'description',
     ];
 
     /**
@@ -44,8 +44,10 @@ class ProgramGroup extends Resource
         return [
             Text::make(__('Name'), 'name')->sortable(),
             Markdown::make(__('Description'), 'description')->alwaysShow(),
-            HasMany::make("ProgramAreas"),
-            Text::make("Program Areas", function() {return $this->programAreas()->count(); })
+            HasMany::make('ProgramAreas'),
+            Text::make('Program Areas', function () {
+                return $this->programAreas()->count();
+            }),
         ];
     }
 

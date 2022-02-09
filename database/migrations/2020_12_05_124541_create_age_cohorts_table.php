@@ -25,8 +25,8 @@ class CreateAgeCohortsTable extends Migration
 
         Schema::disableForeignKeyConstraints();
         // run the baseline data seeder
-        Artisan::call('db:seed',[
-            '--class' => 'AgeCohortSeeder'
+        Artisan::call('db:seed', [
+            '--class' => 'AgeCohortSeeder',
         ]);
         Schema::enableForeignKeyConstraints();
     }

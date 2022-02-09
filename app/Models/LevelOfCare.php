@@ -20,7 +20,7 @@ class LevelOfCare extends Model
         'name',
         'description',
         'uuid',
-        'slug'
+        'slug',
     ];
 
     /**
@@ -32,7 +32,8 @@ class LevelOfCare extends Model
         'id' => 'integer',
     ];
 
-    public function interventions() {
+    public function interventions()
+    {
         return $this->hasMany(Intervention::class);
     }
 
@@ -40,7 +41,7 @@ class LevelOfCare extends Model
     {
         parent::boot();
 
-        self::creating(function($model){
+        self::creating(function ($model) {
             $model->uuid = Str::uuid();
         });
 
@@ -50,7 +51,8 @@ class LevelOfCare extends Model
         });
     }
 
-    public function getIconUrlAttribute() {
+    public function getIconUrlAttribute()
+    {
         return asset('svg/'.$this->slug.'.svg');
     }
 }

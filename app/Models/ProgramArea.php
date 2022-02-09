@@ -23,7 +23,7 @@ class ProgramArea extends Model
         'description',
         'uuid',
         'program_group_id',
-        'slug'
+        'slug',
     ];
 
     /**
@@ -45,7 +45,6 @@ class ProgramArea extends Model
         'id' => 'integer',
     ];
 
-
     public function programGroup()
     {
         return $this->belongsTo(ProgramGroup::class);
@@ -60,7 +59,7 @@ class ProgramArea extends Model
     {
         parent::boot();
 
-        self::creating(function($model){
+        self::creating(function ($model) {
             $model->uuid = Str::uuid();
         });
 
@@ -70,7 +69,8 @@ class ProgramArea extends Model
         });
     }
 
-    public function getIconUrlAttribute() {
+    public function getIconUrlAttribute()
+    {
         return asset('svg/'.$this->slug.'.svg');
     }
 }

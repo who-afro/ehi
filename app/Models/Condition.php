@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Spatie\Translatable\HasTranslations;
 
@@ -25,6 +25,7 @@ class Condition extends Model
         'snomed',
         'uuid',
     ];
+
     /**
      * The attributes are translatable
      *
@@ -32,7 +33,7 @@ class Condition extends Model
      */
     public $translatable = [
         'name',
-        'description'
+        'description',
     ];
 
     /**
@@ -44,11 +45,13 @@ class Condition extends Model
         'id' => 'integer',
     ];
 
-    public function interventions() {
+    public function interventions()
+    {
         return $this->hasMany(Intervention::class);
     }
 
-    public function programArea() {
+    public function programArea()
+    {
         return $this->belongsTo(ProgramArea::class);
     }
 
@@ -56,7 +59,7 @@ class Condition extends Model
     {
         parent::boot();
 
-        self::creating(function($model){
+        self::creating(function ($model) {
             $model->uuid = Str::uuid();
         });
 

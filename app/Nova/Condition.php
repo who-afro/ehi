@@ -31,7 +31,7 @@ class Condition extends Resource
      * @var array
      */
     public static $search = [
-        'name', 'description'
+        'name', 'description',
     ];
 
     /**
@@ -45,11 +45,13 @@ class Condition extends Resource
         return [
             Translatable::make([
                 Text::make(__('condition.name'), 'name')->sortable(),
-                Markdown::make(__('condition.description'), 'description')->alwaysShow()
+                Markdown::make(__('condition.description'), 'description')->alwaysShow(),
             ]),
-            Text::make(__('condition.intervention_count'), function() {return $this->count(); }),
-            BelongsTo::make(__("condition.program_area_label"), 'programAreas'),
-            HasMany::make(__("condition.intervention_label"), 'interventions'),
+            Text::make(__('condition.intervention_count'), function () {
+                return $this->count();
+            }),
+            BelongsTo::make(__('condition.program_area_label'), 'programAreas'),
+            HasMany::make(__('condition.intervention_label'), 'interventions'),
         ];
     }
 

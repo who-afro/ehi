@@ -23,8 +23,8 @@ class CreatePublicHealthFunctionsTable extends Migration
 
         Schema::disableForeignKeyConstraints();
         // run the baseline data seeder
-        Artisan::call('db:seed',[
-            '--class' => 'PublicHealthFunctionSeeder'
+        Artisan::call('db:seed', [
+            '--class' => 'PublicHealthFunctionSeeder',
         ]);
         Schema::enableForeignKeyConstraints();
     }

@@ -29,7 +29,7 @@ class PublicHealthFunction extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'description'
+        'id', 'name', 'description',
     ];
 
     /**
@@ -43,8 +43,10 @@ class PublicHealthFunction extends Resource
         return [
             Text::make(__('Name'), 'name')->sortable(),
             Markdown::make(__('Description'), 'description')->alwaysShow(),
-            Text::make("Interventions", function() {return $this->count(); }),
-            HasMany::make("Interventions", 'interventions'),
+            Text::make('Interventions', function () {
+                return $this->count();
+            }),
+            HasMany::make('Interventions', 'interventions'),
         ];
     }
 

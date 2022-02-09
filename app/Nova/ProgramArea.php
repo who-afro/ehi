@@ -25,6 +25,7 @@ class ProgramArea extends Resource
      * @var string
      */
     public static $title = 'name';
+
     /**
      * The number of resources to show per page via relationships.
      *
@@ -38,7 +39,7 @@ class ProgramArea extends Resource
      * @var array
      */
     public static $search = [
-        'name', 'description'
+        'name', 'description',
     ];
 
     /**
@@ -55,8 +56,10 @@ class ProgramArea extends Resource
                 Markdown::make(__('program_area.description'), 'description')->alwaysShow(),
             ]),
             BelongsTo::make(__('program_area.program_group_label'), 'programGroup'),
-            HasMany::make(__('program_area.conditions_label'), "Conditions"),
-            Text::make(__('program_area.conditions_count'), function() {return $this->conditions()->count(); })
+            HasMany::make(__('program_area.conditions_label'), 'Conditions'),
+            Text::make(__('program_area.conditions_count'), function () {
+                return $this->conditions()->count();
+            }),
         ];
     }
 

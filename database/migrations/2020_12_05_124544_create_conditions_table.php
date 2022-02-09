@@ -25,8 +25,8 @@ class CreateConditionsTable extends Migration
 
         Schema::disableForeignKeyConstraints();
         // run the baseline data seeder
-        Artisan::call('db:seed',[
-            '--class' => 'ConditionSeeder'
+        Artisan::call('db:seed', [
+            '--class' => 'ConditionSeeder',
         ]);
         Schema::enableForeignKeyConstraints();
     }

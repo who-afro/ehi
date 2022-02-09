@@ -19,8 +19,8 @@ class InterventionsExport implements FromCollection, WithHeadings
     }
 
     /**
-    * @return \Illuminate\Support\Collection
-    */
+     * @return \Illuminate\Support\Collection
+     */
     public function collection()
     {
         return $this->interventions;
@@ -33,7 +33,7 @@ class InterventionsExport implements FromCollection, WithHeadings
             'Condition',
             'Age Cohort',
             'Public Health Function',
-            'Intervention'
+            'Intervention',
         ];
     }
 }

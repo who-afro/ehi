@@ -52,7 +52,6 @@ class RouteServiceProvider extends ServiceProvider
             // Route model binding
             Route::model('condition', Condition::class);
             Route::model('program-area', ProgramArea::class);
-
         });
     }
 

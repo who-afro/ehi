@@ -16,13 +16,13 @@ class EssentialPackage extends Model
         'age_cohorts',
         'title',
         'description',
-        'notification_emails'
+        'notification_emails',
     ];
 
     public $casts = [
-        'conditions' => array(),
-        'levels_of_care' => array(),
-        'public_health_functions' => array(),
-        'age_cohorts' => array(),
+        'conditions' => [],
+        'levels_of_care' => [],
+        'public_health_functions' => [],
+        'age_cohorts' => [],
     ];
 }

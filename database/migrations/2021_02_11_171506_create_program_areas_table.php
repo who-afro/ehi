@@ -23,8 +23,8 @@ class CreateProgramAreasTable extends Migration
 
         Schema::disableForeignKeyConstraints();
         // run the baseline data seeder
-        Artisan::call('db:seed',[
-            '--class' => 'ProgramAreaSeeder'
+        Artisan::call('db:seed', [
+            '--class' => 'ProgramAreaSeeder',
         ]);
         Schema::enableForeignKeyConstraints();
     }

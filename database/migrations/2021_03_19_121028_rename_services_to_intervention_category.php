@@ -41,6 +41,5 @@ class RenameServicesToInterventionCategory extends Migration
         Schema::table('intervention_service', function (Blueprint $table) {
             $table->renameColumn('intervention_category_id', 'service_id');
         });
-
     }
 }
