@@ -3,7 +3,7 @@
 use PragmaRX\Tracker\Support\Migration;
 use PragmaRX\Tracker\Vendor\Laravel\Models\Agent;
 
-class AddAgentNameHash extends Migration
+return new class extends Migration
 {
     /**
      * Table related to this migration.
@@ -67,4 +67,4 @@ class AddAgentNameHash extends Migration
         } catch (\Exception $e) {
         }
     }
-}
+};

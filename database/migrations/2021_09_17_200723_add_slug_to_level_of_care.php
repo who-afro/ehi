@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSlugToLevelOfCare extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -20,4 +20,4 @@ class AddSlugToLevelOfCare extends Migration
         // set the slug
         DB::statement("UPDATE level_of_cares SET slug = LOWER(REPLACE(REPLACE(name, ' ', '-'), ':', ''))");
     }
-}
+};

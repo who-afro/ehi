@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RenameServicesToInterventionCategory extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -42,4 +42,4 @@ class RenameServicesToInterventionCategory extends Migration
             $table->renameColumn('intervention_category_id', 'service_id');
         });
     }
-}
+};

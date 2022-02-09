@@ -2,7 +2,7 @@
 
 use PragmaRX\Tracker\Support\Migration;
 
-class AddTrackerRefererColumns extends Migration
+return new class extends Migration
 {
     /**
      * Table related to this migration.
@@ -61,4 +61,4 @@ class AddTrackerRefererColumns extends Migration
             }
         );
     }
-}
+};

@@ -2,7 +2,7 @@
 
 use PragmaRX\Tracker\Support\Migration;
 
-class CreateTrackerLanguagesTable extends Migration
+return new class extends Migration
 {
     /**
      * Table related to this migration.
@@ -44,4 +44,4 @@ class CreateTrackerLanguagesTable extends Migration
     {
         $this->drop($this->table);
     }
-}
+};

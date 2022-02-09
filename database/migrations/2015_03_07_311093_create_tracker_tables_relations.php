@@ -2,7 +2,7 @@
 
 use PragmaRX\Tracker\Support\Migration;
 
-class CreateTrackerTablesRelations extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -181,4 +181,4 @@ class CreateTrackerTablesRelations extends Migration
     {
         // Tables will be dropped in the correct order... :)
     }
-}
+};

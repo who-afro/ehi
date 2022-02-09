@@ -2,7 +2,7 @@
 
 use PragmaRX\Tracker\Support\Migration;
 
-class CreateTrackerDomainsTable extends Migration
+return new class extends Migration
 {
     /**
      * Table related to this migration.
@@ -41,4 +41,4 @@ class CreateTrackerDomainsTable extends Migration
     {
         $this->drop($this->table);
     }
-}
+};

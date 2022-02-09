@@ -2,7 +2,7 @@
 
 use PragmaRX\Tracker\Support\Migration;
 
-class AddLanguageIdColumnToSessions extends Migration
+return new class extends Migration
 {
     /**
      * Table related to this migration.
@@ -40,4 +40,4 @@ class AddLanguageIdColumnToSessions extends Migration
             }
         );
     }
-}
+};

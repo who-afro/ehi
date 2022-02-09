@@ -2,7 +2,7 @@
 
 use PragmaRX\Tracker\Support\Migration;
 
-class CreateTrackerSqlQueriesLogTable extends Migration
+return new class extends Migration
 {
     /**
      * Table related to this migration.
@@ -42,4 +42,4 @@ class CreateTrackerSqlQueriesLogTable extends Migration
     {
         $this->drop($this->table);
     }
-}
+};

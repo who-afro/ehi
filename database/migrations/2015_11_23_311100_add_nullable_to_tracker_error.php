@@ -2,7 +2,7 @@
 
 use PragmaRX\Tracker\Support\Migration;
 
-class AddNullableToTrackerError extends Migration
+return new class extends Migration
 {
     /**
      * Table related to this migration.
@@ -37,4 +37,4 @@ class AddNullableToTrackerError extends Migration
     public function migrateDown()
     {
     }
-}
+};

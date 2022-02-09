@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\DB;
 
-class AssignProgramAreasAndInterventionGroups extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -42,4 +42,4 @@ SELECT id, 7 FROM interventions WHERE condition_id IN (14, 55, 27, 18,17,56,13)'
     {
         //
     }
-}
+};

@@ -2,7 +2,7 @@
 
 use PragmaRX\Tracker\Support\Migration;
 
-class CreateTrackerRoutePathParametersTable extends Migration
+return new class extends Migration
 {
     /**
      * Table related to this migration.
@@ -43,4 +43,4 @@ class CreateTrackerRoutePathParametersTable extends Migration
     {
         $this->drop($this->table);
     }
-}
+};

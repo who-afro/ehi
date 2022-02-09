@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RenameServiceProgramAreaToProgramAreaService extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -25,4 +25,4 @@ class RenameServiceProgramAreaToProgramAreaService extends Migration
     {
         Schema::rename('program_area_service', 'service_program_area');
     }
-}
+};
