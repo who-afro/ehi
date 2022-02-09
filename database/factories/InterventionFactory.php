@@ -22,7 +22,7 @@ class InterventionFactory extends Factory
     public function definition()
     {
         return [
-            'details' => $this->faker->text,
+            'details' => $this->faker->text(),
         ];
     }
 }

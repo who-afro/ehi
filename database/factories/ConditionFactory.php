@@ -22,11 +22,11 @@ class ConditionFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'description' => $this->faker->text,
-            'who' => $this->faker->word,
-            'snomed' => $this->faker->word,
-            'uuid' => $this->faker->uuid,
+            'name' => $this->faker->name(),
+            'description' => $this->faker->text(),
+            'who' => $this->faker->word(),
+            'snomed' => $this->faker->word(),
+            'uuid' => $this->faker->uuid(),
         ];
     }
 }

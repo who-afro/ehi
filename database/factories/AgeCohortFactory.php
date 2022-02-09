@@ -22,11 +22,11 @@ class AgeCohortFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'description' => $this->faker->text,
+            'name' => $this->faker->name(),
+            'description' => $this->faker->text(),
             'min_age' => $this->faker->numberBetween(-10000, 10000),
             'max_age' => $this->faker->numberBetween(-10000, 10000),
-            'uuid' => $this->faker->uuid,
+            'uuid' => $this->faker->uuid(),
         ];
     }
 }

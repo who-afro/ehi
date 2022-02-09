@@ -22,9 +22,9 @@ class LevelOfCareFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'description' => $this->faker->text,
-            'uuid' => $this->faker->uuid,
+            'name' => $this->faker->name(),
+            'description' => $this->faker->text(),
+            'uuid' => $this->faker->uuid(),
         ];
     }
 }
