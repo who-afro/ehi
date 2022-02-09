@@ -2,8 +2,7 @@
 
 use PragmaRX\Tracker\Support\Migration;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Table related to this migration.
      *

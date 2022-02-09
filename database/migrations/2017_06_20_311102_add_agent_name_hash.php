@@ -3,8 +3,7 @@
 use PragmaRX\Tracker\Support\Migration;
 use PragmaRX\Tracker\Vendor\Laravel\Models\Agent;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Table related to this migration.
      *
