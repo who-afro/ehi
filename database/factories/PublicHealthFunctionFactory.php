@@ -8,13 +8,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class PublicHealthFunctionFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
-    protected $model = PublicHealthFunction::class;
-
-    /**
      * Define the model's default state.
      *
      * @return array
