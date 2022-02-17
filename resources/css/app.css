@@ -5,3 +5,7 @@
 .active-essential-package-tab {
     @apply border-iaho-light-blue border-b-2 text-iaho-light-blue;
 }
+
+.error {
+    @apply border-dashed border-red-600 text-red-600;
+}

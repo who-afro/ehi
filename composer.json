@@ -17,6 +17,7 @@
         "codeat3/blade-iconpark": "^1.2",
         "codeat3/blade-line-awesome-icons": "^1.0",
         "dompdf/dompdf": "^1.2",
+        "dyrynda/laravel-model-uuid": "^6.6",
         "flagstudio/nova-actions-left": "^0.3.0",
         "flynsarmy/csv-seeder": "^2.0",
         "fruitcake/laravel-cors": "^2.0.5",
@@ -30,20 +31,21 @@
         "livewire/livewire": "^2.0",
         "maatwebsite/excel": "^3.1",
         "owenvoke/blade-fontawesome": "dev-main",
+        "spatie/laravel-ignition": "^1.0",
         "spatie/laravel-ray": "^1.29",
         "spatie/laravel-translatable": "^5.2",
+        "spatie/laravel-validation-rules": "^3.2",
         "spatie/nova-translatable": "^3.0",
-        "vmitchell85/nova-links": "^1.0",
-        "spatie/laravel-ignition": "^1.0"
+        "vmitchell85/nova-links": "^1.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.6",
         "barryvdh/laravel-ide-helper": "^2.12",
         "fakerphp/faker": "^1.9.1",
-        "laravel-shift/blueprint": "dev-l9-compatibility",
+        "laravel-shift/blueprint": "^2.3",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10"
-
     },
     "config": {
         "optimize-autoloader": true,

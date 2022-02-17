@@ -121,7 +121,7 @@
         </div>
     </div>
     <div class="relative flex">
-        <a href="{{ route('essential-package') }}"
+        <a href="{{ route('build-essential-package') }}"
             class="px-8 py-4 inline-flex justify-start items-center font-semibold hover:bg-iaho-yellow hover:text-iaho-dark-blue focus:text-iaho-dark-blue focus:bg-iaho-yellow focus:outline-none"
             type="button">Build Package
             <x-zondicon-box class="w-4 ml-1"/>
