@@ -361,7 +361,7 @@
                     </x-button.secondary>
                     <x-button.primary wire:click="save"
                                       class="px-8 py-2 whitespace-nowrap flex bg-iaho-light-blue border-iaho-light-blue text-lg hover:bg-iaho-dark-blue">
-                        Save Package
+                        Save Package&nbsp;
                         <x-heroicon-o-check-circle class="w-6"/>
                     </x-button.primary>
                 </div>

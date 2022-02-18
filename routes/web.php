@@ -37,10 +37,8 @@ Route::get('/program-area/{program_area_id}', ProgramAreaInterventions::class)->
 Route::get('/condition/{condition_id}', ConditionInterventions::class)->name('condition');
 
 Route::get('/build-essential-package/{id?}', EssentialPackageComponent::class)->name('build-essential-package');
-Route::get('/show-essential-package/{package}', function(EssentialPackage $package){
-    return view('show-package', compact($package));
-})->name('show-essential-package');
-Route::get('/download-essential-package/{package}', \App\Http\Controllers\DownloadEssentialsPackage::class)->name('download-essential-package');
+Route::get('/show-essential-package/{package:uuid}', \App\Http\Controllers\ShowEssentialPackageController::class)->name('show-essential-package');
+Route::get('/download-essential-package/{package:uuid}', \App\Http\Controllers\DownloadEssentialsPackage::class)->name('download-essential-package');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('welcome');
