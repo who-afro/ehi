@@ -5,9 +5,13 @@ namespace App\Exports;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithColumnWidths;
 use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\WithStyles;
+use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
-class InterventionsExport implements FromCollection, WithHeadings
+class InterventionsExport implements FromCollection, WithHeadings, ShouldAutoSize, WithStyles, WithColumnWidths
 {
     private $interventions;
 
@@ -34,6 +38,38 @@ class InterventionsExport implements FromCollection, WithHeadings
             'Age Cohort',
             'Public Health Function',
             'Intervention',
+        ];
+    }
+
+    public function columnWidths(): array
+    {
+        return [
+            'A' => 45,
+            'B' => 45,
+            'C' => 35,
+            'D' => 35,
+        ];
+    }
+
+    public function styles(Worksheet $sheet)
+    {
+        return [
+            // header row
+            '1' => ['font' => ['bold' => true]],
+            // Styling an entire column.
+            'A' => ['font' => ['size' => 16],
+                'wrapText' => true
+            ],
+            'B' => ['font' => ['size' => 16],
+                'wrapText' => true],
+            'C' => ['font' => ['size' => 16],
+                'wrapText' => true],
+            'D' => ['font' => ['size' => 16],
+                'wrapText' => true
+            ],
+            'E' => ['font' => ['size' => 16],
+                'wrapText' => true
+            ],
         ];
     }
 }
