@@ -16,7 +16,7 @@
                     <li class="relative md:flex-1 md:flex cursor-pointer" x-on:click="step = 1">
                         <!-- Completed Step -->
                         <div class="group flex items-center w-full">
-        <span class="px-4 py-4 flex items-center font-medium"  x-show="step > 1">
+        <span class="px-4 py-4 flex items-center font-medium" x-show="step > 1">
           <span
               class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-iaho-light-blue rounded-full">
             <!-- Heroicon name: solid/check -->
@@ -29,8 +29,10 @@
           </span>
           <span class="ml-4 font-medium text-iaho-deep-blue uppercase">CONDITIONS</span>
         </span>
-                            <div class="px-4 py-4 flex items-center font-medium" aria-current="step" x-show="step === 1">
-        <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-iaho-dark-blue rounded-full">
+                            <div class="px-4 py-4 flex items-center font-medium" aria-current="step"
+                                 x-show="step === 1">
+        <span
+            class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-iaho-dark-blue rounded-full">
           <span class="text-iaho-dark-blue">01</span>
         </span>
                                 <span class="ml-4 font-medium text-iaho-dark-blue">CONDITIONS</span>
@@ -49,7 +51,7 @@
                     <li class="relative md:flex-1 md:flex cursor-pointer" x-on:click="if (step > 2) {step = 2}">
                         <!-- Completed Step -->
                         <div class="group flex items-center w-full">
-        <span class="px-4 py-4 flex items-center font-medium"  x-show="step > 2">
+        <span class="px-4 py-4 flex items-center font-medium" x-show="step > 2">
           <span
               class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-iaho-light-blue rounded-full">
             <!-- Heroicon name: solid/check -->
@@ -62,8 +64,10 @@
           </span>
           <span class="ml-4 font-medium text-iaho-deep-blue uppercase">LEVEL OF CARE</span>
         </span>
-                            <div class="px-4 py-4 flex items-center font-medium" aria-current="step" x-show="step === 2 ">
-        <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-iaho-dark-blue rounded-full">
+                            <div class="px-4 py-4 flex items-center font-medium" aria-current="step"
+                                 x-show="step === 2 ">
+        <span
+            class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-iaho-dark-blue rounded-full">
           <span class="text-iaho-dark-blue">02</span>
         </span>
                                 <span class="ml-4 font-medium text-iaho-dark-blue">LEVEL OF CARE</span>
@@ -87,7 +91,7 @@
                     <li class="relative md:flex-1 md:flex cursor-pointer" x-on:click="if (step > 3) {step = 3}">
                         <!-- Completed Step -->
                         <div class="group flex items-center w-full">
-        <span class="px-4 py-4 flex items-center font-medium"  x-show="step > 3">
+        <span class="px-4 py-4 flex items-center font-medium" x-show="step > 3">
           <span
               class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-iaho-light-blue rounded-full">
             <!-- Heroicon name: solid/check -->
@@ -100,8 +104,10 @@
           </span>
           <span class="ml-4 font-medium text-iaho-deep-blue uppercase whitespace-nowrap">PUBLIC HEALTH FUNCTION</span>
         </span>
-                            <div class="px-4 py-4 flex items-center font-medium" aria-current="step" x-show="step === 3 ">
-        <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-iaho-dark-blue rounded-full">
+                            <div class="px-4 py-4 flex items-center font-medium" aria-current="step"
+                                 x-show="step === 3 ">
+        <span
+            class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-iaho-dark-blue rounded-full">
           <span class="text-iaho-dark-blue">03</span>
         </span>
                                 <span class="ml-4 font-medium text-iaho-dark-blue whitespace-nowrap">PUBLIC HEALTH FUNCTION</span>
@@ -110,7 +116,8 @@
         <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-gray-400 rounded-full">
           <span class="text-gray-400">03</span>
         </span>
-                                <span class="ml-4 font-medium text-gray-400 whitespace-nowrap">PUBLIC HEALTH FUNCTION</span>
+                                <span
+                                    class="ml-4 font-medium text-gray-400 whitespace-nowrap">PUBLIC HEALTH FUNCTION</span>
                             </div>
                         </div>
 
@@ -126,7 +133,7 @@
                     <li class="relative md:flex-1 md:flex cursor-pointer" x-on:click="if (step > 4) {step = 4}">
                         <!-- Completed Step -->
                         <div class="group flex items-center w-full">
-        <span class="px-4 py-4 flex items-center font-medium"  x-show="step > 4">
+        <span class="px-4 py-4 flex items-center font-medium" x-show="step > 4">
           <span
               class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-iaho-light-blue rounded-full">
             <!-- Heroicon name: solid/check -->
@@ -139,8 +146,10 @@
           </span>
           <span class="ml-4 font-medium text-iaho-deep-blue uppercase">AGE COHORT</span>
         </span>
-                            <div class="px-4 py-4 flex items-center font-medium" aria-current="step" x-show="step === 4 ">
-        <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-iaho-dark-blue rounded-full">
+                            <div class="px-4 py-4 flex items-center font-medium" aria-current="step"
+                                 x-show="step === 4 ">
+        <span
+            class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-iaho-dark-blue rounded-full">
           <span class="text-iaho-dark-blue">04</span>
         </span>
                                 <span class="ml-4 font-medium text-iaho-dark-blue">AGE COHORT</span>
@@ -164,7 +173,7 @@
                     <li class="relative md:flex-1 md:flex">
                         <!-- Completed Step -->
                         <div class="group flex items-center w-full">
-        <span class="px-4 py-4 flex items-center font-medium"  x-show="step > 5">
+        <span class="px-4 py-4 flex items-center font-medium" x-show="step > 5">
           <span
               class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-iaho-light-blue rounded-full">
             <!-- Heroicon name: solid/check -->
@@ -177,8 +186,10 @@
           </span>
           <span class="ml-4 font-medium text-iaho-deep-blue uppercase">SUMMARY</span>
         </span>
-                            <div class="px-4 py-4 flex items-center font-medium" aria-current="step" x-show="step === 5 ">
-        <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-iaho-dark-blue rounded-full">
+                            <div class="px-4 py-4 flex items-center font-medium" aria-current="step"
+                                 x-show="step === 5 ">
+        <span
+            class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-iaho-dark-blue rounded-full">
           <span class="text-iaho-dark-blue">05</span>
         </span>
                                 <span class="ml-4 font-medium text-iaho-dark-blue">SUMMARY</span>
@@ -201,13 +212,23 @@
                     $conditions = \App\Models\Condition::all();
                 @endphp
                 <div class="grid grid-cols-4 p-4">
+                    <div class="flex items-start col-span-4" x-data="selectAllForConditions()">
+                        <div class="flex items-center">
+                            <!-- Zero-width space character, used to align checkbox properly -->
+                            &#8203;
+                            <input id="condition_select_all" type="checkbox" x-on:click="selectAllConditionCheckboxes()"
+                                   class="form-checkbox text-iaho-dark-blue border-2 rounded-md shadow-sm"/>
+                        </div>
+                        <label for="condition_select_all"
+                               class="ml-2 text-gray-700">Select All Conditions</label>
+                        </div>
                     @foreach($conditions as $condition)
                         <div class="flex items-start">
                             <div class="flex items-center">
                                 <!-- Zero-width space character, used to align checkbox properly -->
                                 &#8203;
                                 <input id="condition_{{ $condition->id }}" type="checkbox"
-                                       class="form-checkbox text-iaho-dark-blue border-2 rounded-md shadow-sm"
+                                       class="form-checkbox text-iaho-dark-blue border-2 rounded-md shadow-sm condition-checkbox"
                                        wire:model="conditions.{{ $condition->id }}" value="{{ $condition->id }}"/>
                             </div>
                             <label for="condition_{{ $condition->id }}"
@@ -368,4 +389,20 @@
             </div>
         </div>
     </div>
+    <script>
+        function selectAllForConditions() {
+            return {
+                selectall: false,
+
+                selectAllConditionCheckboxes() {
+                    this.selectall = !this.selectall
+
+                    checkboxes = document.querySelectorAll('.condition-checkbox');
+                    [...checkboxes].map((el) => {
+                        el.checked = this.selectall;
+                    })
+                }
+            }
+        }
+    </script>
 </div>

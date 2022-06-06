@@ -16,6 +16,7 @@ class EssentialPackageComponent extends Component
     public string $description;
     public string $notification_emails;
     public EssentialPackage $package;
+    public $selectAllConditions = false;
 
     protected $messages = [
         'title.required' => "The title of the package is required",

@@ -115,6 +115,7 @@ class Interventions extends Component
                 $row['Condition'] = $item->condition->name;
                 $row['Age Cohort'] = $item->ageCohort->name;
                 $row['Public Health Function'] = $item->publicHealthFunction->name;
+                $row['Level of Care'] = $item->levelOfCare->name;
                 $row['Intervention'] = $item->details;
 
                 return $row;

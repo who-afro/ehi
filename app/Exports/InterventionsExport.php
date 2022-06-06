@@ -37,6 +37,7 @@ class InterventionsExport implements FromCollection, WithHeadings, ShouldAutoSiz
             'Condition',
             'Age Cohort',
             'Public Health Function',
+            'Level of Care',
             'Intervention',
         ];
     }
@@ -48,6 +49,7 @@ class InterventionsExport implements FromCollection, WithHeadings, ShouldAutoSiz
             'B' => 45,
             'C' => 35,
             'D' => 35,
+            'E' => 35,
         ];
     }
 
@@ -68,6 +70,9 @@ class InterventionsExport implements FromCollection, WithHeadings, ShouldAutoSiz
                 'wrapText' => true
             ],
             'E' => ['font' => ['size' => 16],
+                'wrapText' => true
+            ],
+            'F' => ['font' => ['size' => 16],
                 'wrapText' => true
             ],
         ];

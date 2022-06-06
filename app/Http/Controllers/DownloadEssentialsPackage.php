@@ -49,6 +49,7 @@ class DownloadEssentialsPackage extends Controller
                 $row['Condition'] = $item->condition->name;
                 $row['Age Cohort'] = $item->ageCohort->name;
                 $row['Public Health Function'] = $item->publicHealthFunction->name;
+                $row['Level Of Care'] = $item->levelOfCare->name;
                 $row['Intervention'] = trim(Str::replace(PHP_EOL.PHP_EOL, PHP_EOL,
                                                 Str::replace('<br/>', PHP_EOL,
                                                     Str::replace('*', PHP_EOL."*", $item->details))));
