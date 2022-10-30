@@ -52,9 +52,9 @@
                         </thead>
                         <tbody>
                         @forelse($interventions as $k => $v)
-                            <tr class="{{ $loop->odd ? 'bg-white' : 'bg-gray-50' }}">
+                            <tr class="{{ $loop->odd ? 'bg-white' : 'bg-gray-50' }} @php  $text_color = $v->confirmed_with_evidence ? 'text-iaho-green':'text-gray-500' @endphp">
                                 @auth
-                                    <td class="px-6 whitespace-nowrap text-gray-500">
+                                    <td class="px-6 whitespace-nowrap {{ $text_color }}">
                                         <div class="flex items-center justify-center">
                                             <a href="/nova/resources/interventions/{{ $v->id }}/edit?viaResource&viaResourceId&viaRelationship"
                                                title="Edit Intervention" target="_blank">
@@ -66,19 +66,19 @@
                                         </div>
                                     </td>
                                 @endauth
-                                <td class="px-6 py-4 whitespace-nowrap text-left text-gray-500">
+                                <td class="px-6 py-4 whitespace-nowrap text-left {{ $text_color }}">
                                     <a href="{{ route('age-cohort', ['age_cohort_id' => $v->ageCohort->id]) }}"
-                                       class="text-blue-700 group-hover:text-blue-900">{{$v->ageCohort->name}}</a>
+                                       class="{{ $text_color }} group-hover:text-blue-900">{{$v->ageCohort->name}}</a>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-left text-gray-500">
+                                <td class="px-6 py-4 whitespace-nowrap text-left {{ $text_color }}">
                                     <a href="{{ route('public-health-function', ['public_health_function_id' => $v->publicHealthFunction->id]) }}"
-                                       class="text-blue-700 group-hover:text-blue-900">{{$v->publicHealthFunction->name}}</a>
+                                       class="{{ $text_color }} group-hover:text-blue-900">{{$v->publicHealthFunction->name}}</a>
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-left text-gray-500">
+                                <td class="px-6 py-4 whitespace-nowrap text-left {{ $text_color }}">
                                     <a href="{{ route('level-of-care', ['level_of_care_id' => $v->levelOfCare->id]) }}"
-                                       class="text-blue-700 group-hover:text-blue-900">{{$v->levelOfCare->name}}</a>
+                                       class="{{ $text_color }} group-hover:text-blue-900">{{$v->levelOfCare->name}}</a>
                                 </td>
-                                <td class="px-6 py-4 text-left text-gray-500 bg-iaho-map-country-background {{ $loop->odd ? 'bg-opacity-30' : 'bg-opacity-60' }}">
+                                <td class="px-6 py-4 text-left {{ $text_color }} bg-iaho-map-country-background {{ $loop->odd ? 'bg-opacity-30' : 'bg-opacity-60' }}">
                                     {!! Str::markdown($v->details)!!}
                                 </td>
                             </tr>
