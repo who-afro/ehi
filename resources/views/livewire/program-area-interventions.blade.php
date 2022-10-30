@@ -9,7 +9,6 @@
                 <x-filters.condition :programAreaId="$programArea->id" />
                 <x-filters.public-health-function />
                 <x-filters.level-of-care />
-                <x-filters.service-area />
             </dl>
         </div>
     </div>
