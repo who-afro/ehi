@@ -12,11 +12,12 @@
                 <x-heroicon-o-chevron-up class="w-10"/>
             </p>
         </div>
-        <dl class="grid grid-cols-3 max-h-80 bg-white divide-x divide-iaho-dark-blue"
+        <dl class="grid grid-cols-4 max-h-80 bg-white divide-x divide-iaho-dark-blue"
             x-cloak x-show="refine_search">
                 <x-filters.condition />
                 <x-filters.age-cohort />
                 <x-filters.public-health-function />
+            <x-filters.confirmed-with-evidence/>
             </dl>
         </div>
     <x-search-and-export :filters="$filters"/>

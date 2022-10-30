@@ -6,7 +6,6 @@
         Follow the steps to generate the starting point for your essential package
     </div>
 
-
     <div class="flex flex-col px-2"
          x-data="{step: 1}">
         <div class="lg:border-t lg:border-b lg:border-gray-200">

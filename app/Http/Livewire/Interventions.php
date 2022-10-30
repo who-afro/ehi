@@ -22,6 +22,7 @@ class Interventions extends Component
         'search' => null,
         'applyFilter' => '',
         'number_of_items_per_page' => 10,
+        'confirmed_with_evidence' => 0
     ];
 
     /**
@@ -66,7 +67,8 @@ class Interventions extends Component
                     function ($query) use ($public_health_function_id) {
                         $query->whereIn('public_health_function_id', $public_health_function_id);
                     }))
-            ->when($this->filters['search'], fn ($query, $search) => $query->where('details', 'like', '%'.$search.'%'));
+            ->when($this->filters['search'], fn ($query, $search) => $query->where('details', 'like', '%'.$search.'%'))
+            ->when($this->filters['confirmed_with_evidence'], fn ($query, $confirmed_with_evidence) => $query->where('confirmed_with_evidence', $confirmed_with_evidence));
     }
 
     public function getInterventionList(): LengthAwarePaginator
