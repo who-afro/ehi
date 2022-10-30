@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Filters\AgeCohortFilter;
 use App\Nova\Filters\ConditionFilter;
+use App\Nova\Filters\ConfirmedWithEvidenceFilter;
 use App\Nova\Filters\LevelOfCareFilter;
 use App\Nova\Filters\PublicHealthFunctionFilter;
 use Illuminate\Http\Request;
@@ -86,6 +87,7 @@ class Intervention extends Resource
             new LevelOfCareFilter,
             new AgeCohortFilter,
             new PublicHealthFunctionFilter,
+            new ConfirmedWithEvidenceFilter
         ];
     }
 
