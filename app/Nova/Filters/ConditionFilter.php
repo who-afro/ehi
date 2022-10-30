@@ -36,6 +36,6 @@ class ConditionFilter extends Filter
      */
     public function options(Request $request)
     {
-        return Condition::pluck('id', 'name');
+        return Condition::pluck('id', 'name->en AS name');
     }
 }
