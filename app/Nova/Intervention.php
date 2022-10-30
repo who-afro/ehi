@@ -8,6 +8,7 @@ use App\Nova\Filters\LevelOfCareFilter;
 use App\Nova\Filters\PublicHealthFunctionFilter;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Markdown;
 
 class Intervention extends Resource
@@ -57,7 +58,7 @@ class Intervention extends Resource
             BelongsTo::make('PublicHealthFunction')->sortable()->viewable(false),
             Markdown::make('From MS Word', 'details_original')->readonly()->showOnIndex(true),
             Markdown::make('Details', 'details')->alwaysShow()->showOnIndex(true),
-
+            Boolean::make('Confirmed by Evidence')
         ];
     }
 

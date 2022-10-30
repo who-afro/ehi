@@ -50,8 +50,6 @@ class Condition extends Resource
             Text::make(__('condition.intervention_count'), function () {
                 return $this->count();
             }),
-            BelongsTo::make(__('condition.program_area_label'), 'programAreas'),
-            HasMany::make(__('condition.intervention_label'), 'interventions'),
         ];
     }
 

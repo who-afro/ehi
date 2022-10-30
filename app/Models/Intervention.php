@@ -23,6 +23,7 @@ class Intervention extends Model
         'condition_id',
         'age_cohort_id',
         'uuid',
+        'confirmed_with_evidence'
     ];
 
     /**
