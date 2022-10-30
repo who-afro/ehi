@@ -13,6 +13,10 @@
                     <button type="button" class="inline-flex items-center ml-2 px-2 py-1 border border-transparent text-base font-medium rounded-full shadow-sm text-black bg-iaho-yellow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-iaho-yellow">
                         {{ trans("messages.pill_".$key) }}
                     </button>
+                @elseif(Str::contains($key, 'confirmed_with_evidence'))
+                    <button type="button" class="inline-flex items-center ml-2 px-2 py-1 border border-transparent text-base font-medium rounded-full shadow-sm text-black bg-iaho-yellow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-iaho-yellow">
+                        {{ trans("messages.confirmed_with_evidence") }}
+                    </button>
                 @endif
             @endif
         @endforeach
