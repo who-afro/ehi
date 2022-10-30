@@ -57,9 +57,9 @@ class Intervention extends Resource
             BelongsTo::make('LevelOfCare')->viewable(false),
             BelongsTo::make('AgeCohort')->viewable(false),
             BelongsTo::make('PublicHealthFunction')->sortable()->viewable(false),
-            Markdown::make('From MS Word', 'details_original')->readonly()->showOnIndex(true),
+            Markdown::make('From MS Word', 'details_original')->readonly()->showOnIndex(true)->default(' '),
             Markdown::make('Details', 'details')->alwaysShow()->showOnIndex(true),
-            Boolean::make('Confirmed by Evidence')
+            Boolean::make('Confirmed With Evidence')
         ];
     }
 
