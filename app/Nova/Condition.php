@@ -47,6 +47,7 @@ class Condition extends Resource
                 Text::make(__('condition.name'), 'name')->sortable(),
                 Markdown::make(__('condition.description'), 'description')->alwaysShow(),
             ]),
+            BelongsTo::make('ProgramArea')->viewable(false),
             Text::make(__('condition.intervention_count'), function () {
                 return $this->count();
             }),
