@@ -36,7 +36,7 @@
                     </span>
                         <div class="absolute ml-[240px] w-[606px] bg-iaho-map-country-background"></div>
                         <div class="dropdown-content absolute hidden ml-[240px] w-[606px] overflow-y-scroll flex flex-row bg-iaho-dark-blue align-top">
-                            @foreach($group->conditions as $condition)
+                            @foreach($group->conditions->sortBy('name') as $condition)
                                 <a class="text-white p-2 inline-block hover:bg-iaho-light-blue hover:font-semibold w-[300px]"
                                    href="{{ route('condition', ['condition_id' => $condition->id]) }}">
                                     {{ $condition->name }}
