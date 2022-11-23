@@ -39,6 +39,7 @@ class InterventionsExport implements FromCollection, WithHeadings, ShouldAutoSiz
             'Public Health Function',
             'Level of Care',
             'Intervention',
+            'Published Evidence'
         ];
     }
 
@@ -50,6 +51,8 @@ class InterventionsExport implements FromCollection, WithHeadings, ShouldAutoSiz
             'C' => 35,
             'D' => 35,
             'E' => 35,
+            'F' => 75,
+            'G' => 35,
         ];
     }
 
@@ -60,20 +63,19 @@ class InterventionsExport implements FromCollection, WithHeadings, ShouldAutoSiz
             '1' => ['font' => ['bold' => true]],
             // Styling an entire column.
             'A' => ['font' => ['size' => 16],
-                'wrapText' => true
             ],
             'B' => ['font' => ['size' => 16],
-                'wrapText' => true],
+            ],
             'C' => ['font' => ['size' => 16],
-                'wrapText' => true],
+            ],
             'D' => ['font' => ['size' => 16],
-                'wrapText' => true
             ],
             'E' => ['font' => ['size' => 16],
-                'wrapText' => true
             ],
             'F' => ['font' => ['size' => 16],
-                'wrapText' => true
+                'alignment' => ['wrapText' => true]
+            ],
+            'G' => ['font' => ['size' => 16],
             ],
         ];
     }

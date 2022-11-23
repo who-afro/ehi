@@ -119,7 +119,7 @@ class Interventions extends Component
                 $row['Public Health Function'] = $item->publicHealthFunction->name;
                 $row['Level of Care'] = $item->levelOfCare->name;
                 $row['Intervention'] = $item->details;
-                $row['Confirmed with Evidence'] = $item->confirmed_with_evidence;
+                $row['Published Evidence'] = $item->confirmed_with_evidence;
 
                 return $row;
             });

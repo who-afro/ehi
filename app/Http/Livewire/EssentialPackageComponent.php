@@ -52,6 +52,7 @@ class EssentialPackageComponent extends Component
     public function save()
     {
         $this->package = EssentialPackage::create($this->validate());
+        // TODO: Email the link to the essential package to the provided addresses
         $this->redirectRoute('show-essential-package', ['package' => $this->package->uuid]);
     }
 

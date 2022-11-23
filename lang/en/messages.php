@@ -19,5 +19,5 @@ return [
     'pill_public_health_function_id' => 'Public Health Function',
     'pill_service_area_id' => 'Service Area',
     'pill_program_area_id' => 'Program Area',
-    'confirmed_with_evidence' => 'Confirmed with Evidence'
+    'confirmed_with_evidence' => 'Published Evidence'
 ];

@@ -53,7 +53,7 @@ class DownloadEssentialsPackage extends Controller
                 $row['Intervention'] = trim(Str::replace(PHP_EOL.PHP_EOL, PHP_EOL,
                                                 Str::replace('<br/>', PHP_EOL,
                                                     Str::replace('*', PHP_EOL."*", $item->details))));
-                $row['Confirmed with Evidence'] = $item->confirmed_with_evidence? 'Yes' : 'No';
+                $row['Published Evidence'] = $item->confirmed_with_evidence? 'Yes' : '';
 
                 return $row;
             });;
