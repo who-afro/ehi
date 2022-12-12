@@ -51,7 +51,7 @@
 
                             <tr>
                                 @auth
-                                    <td class="px-6 whitespace-nowrap {{ $text_color }}">
+                                    <td class="px-6 whitespace-nowrap">
                                         <div class="flex items-center justify-center">
                                             <a href="/nova/resources/interventions/{{ $v->id }}/edit?viaResource&viaResourceId&viaRelationship"
                                                title="Edit Intervention" target="_blank">
