@@ -38,7 +38,6 @@
                         @php
                             $level_of_care_interventions = $age_cohort_interventions->where('level_of_care_id', $level_of_care->id)
                         @endphp
-                        @if($level_of_care_interventions->isNotEmpty())
                             <tr class="bg-iaho-dark-blue">
                                 @auth
                                     <td class="p-2 text-left text-white font-medium whitespace-nowrap">
@@ -75,7 +74,6 @@
                                     </td>
                                 @endforeach
                             </tr>
-                        @endif
                     @endforeach
                     </tbody>
                 </table>
