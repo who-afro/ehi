@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Exports\InterventionsExport;
+use App\Models\Condition;
 use App\Models\Intervention;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Livewire\Component;
@@ -21,7 +22,8 @@ class Interventions extends Component
         'program_area_id' => [],
         'search' => null,
         'applyFilter' => '',
-        'number_of_items_per_page' => 10,
+        'number_of_interventions_per_page' => 10,
+        'number_of_conditions_per_page' => 1,
         'confirmed_with_evidence' => ''
     ];
 
@@ -71,9 +73,40 @@ class Interventions extends Component
             ->when($this->filters['confirmed_with_evidence'], fn ($query, $confirmed_with_evidence) => $query->where('confirmed_with_evidence', $confirmed_with_evidence));
     }
 
+    public function getConditionListQuery()
+    {
+        return Condition::with('interventions', 'interventions.ageCohort', 'interventions.levelOfCare', 'interventions.publicHealthFunction')
+            ->when($this->filters['age_cohort_id'],
+                fn ($query, $age_cohort_id) => $query->whereHas('interventions.ageCohort',
+                    function ($query) use ($age_cohort_id) {
+                        $query->whereIn('interventions.age_cohort_id', $age_cohort_id);
+                    }))
+            ->when($this->filters['condition_id'],
+                fn ($query, $condition_id) => $query->whereHas('interventions.condition',
+                    function ($query) use ($condition_id) {
+                        $query->whereIn('condition_id', $condition_id);
+                    }))
+            ->when($this->filters['level_of_care_id'], fn ($query, $level_of_care_id) => $query->whereHas('interventions.levelOfCare',
+                function ($query) use ($level_of_care_id) {
+                    $query->whereIn('level_of_care_id', $level_of_care_id);
+                }))
+            ->when($this->filters['public_health_function_id'],
+                fn ($query, $public_health_function_id) => $query->whereHas('interventions.publicHealthFunction',
+                    function ($query) use ($public_health_function_id) {
+                        $query->whereIn('public_health_function_id', $public_health_function_id);
+                    }))
+            ->when($this->filters['search'], fn ($query, $search) => $query->where('interventions.details', 'like', '%'.$search.'%'))
+            ->when($this->filters['confirmed_with_evidence'], fn ($query, $confirmed_with_evidence) => $query->where('interventions.confirmed_with_evidence', $confirmed_with_evidence));
+    }
+
     public function getInterventionList(): LengthAwarePaginator
     {
-        return $this->getInterventionListQuery()->paginate($this->filters['number_of_items_per_page']);
+        return $this->getInterventionListQuery()->paginate($this->filters['number_of_interventions_per_page']);
+    }
+
+    public function getConditionList(): LengthAwarePaginator
+    {
+        return $this->getConditionListQuery()->paginate($this->filters['number_of_conditions_per_page']);
     }
 
     public function render()
@@ -85,6 +118,8 @@ class Interventions extends Component
         return view($this->getView(),
             [
                 'interventions' => $this->getInterventionList(),
+                'conditions' => $this->getConditionList(),
+                'filters' => $this->filters
             ]);
     }
 
