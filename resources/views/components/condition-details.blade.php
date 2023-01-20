@@ -53,16 +53,7 @@
                                 @auth
                                     <td class="px-6 whitespace-nowrap">
                                         <div class="flex items-center justify-center">
-                                            <a href="/nova/resources/interventions/{{ $v->id }}/edit?viaResource&viaResourceId&viaRelationship"
-                                               title="Edit Intervention" target="_blank">
-                                                <x-heroicon-o-pencil class="h-6 w-6 text-indigo-600"/>
-                                            </a>
-                                            <button type="button" class="cursor-pointer w-12 px-4"
-                                                    onclick="confirm('Are you sure you want to delete this Intervention?') || stopImmediatePropagation()"
-                                                    wire:click="deleteIntervention({{$v->id}})">
-                                                <x-heroicon-o-trash class="h-6 w-6 text-indigo-600"
-                                                                    title="Delete Intervention"/>
-                                            </button>
+
                                         </div>
                                     </td>
                                 @endauth
