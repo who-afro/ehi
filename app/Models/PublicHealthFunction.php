@@ -21,6 +21,7 @@ class PublicHealthFunction extends Model
         'description',
         'uuid',
         'slug',
+        'sort_order'
     ];
 
     /**

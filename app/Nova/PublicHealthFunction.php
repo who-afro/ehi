@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Markdown;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 
 class PublicHealthFunction extends Resource
@@ -47,6 +48,7 @@ class PublicHealthFunction extends Resource
             Text::make('Interventions', function () {
                 return $this->count();
             }),
+            Number::make('sort_order'),
             HasMany::make('Interventions', 'interventions'),
         ];
     }
