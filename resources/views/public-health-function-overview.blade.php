@@ -11,7 +11,7 @@
 
     <div class="max-w-7xl prose px-4">
         <p class="text-2xl">This thematic area covers public health based interventions</p>
-        @foreach(App\Models\PublicHealthFunction::all() as $publicHealthFunction)
+        @foreach(App\Models\PublicHealthFunction::all()->sortBy('sort_order') as $publicHealthFunction)
             <h2 class="text-2xl font-semibold !mt-1">{{ $publicHealthFunction->name }}</h2>
             <div class="flex">
                 <img src="{{ $publicHealthFunction->icon_url }}" alt="{{ $publicHealthFunction->name }}"

@@ -276,7 +276,7 @@
             </div>
             <div x-show="step === 3">
                 <div class="p-4">
-                    @foreach(App\Models\PublicHealthFunction::all() as $publicHealthFunction)
+                    @foreach(App\Models\PublicHealthFunction::all()->sortBy('sort_order') as $publicHealthFunction)
                         <div class="flex items-start">
                             <div class="flex items-center">
                                 <!-- Zero-width space character, used to align checkbox properly -->
