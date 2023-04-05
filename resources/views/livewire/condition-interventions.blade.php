@@ -23,11 +23,9 @@
     <x-search-and-export :filters="$filters"></x-search-and-export>
     <x-loading-indicator/>
     <div class="flex flex-col overflow-y-auto" wire:loading.remove>
-        @foreach($conditions as $loop_condition)
-            <x-condition-details :condition="$loop_condition" ::interventions="$interventions"></x-condition-details>
-        @endforeach
+            <x-condition-details :filters="$filters" :interventions="$interventions"></x-condition-details>
     </div>
     <div class="mx-auto sm:px-6 lg:px-8 mb-16 my-4">
-        {{ $conditions->links() }}
+        {{ $interventions->links() }}
     </div>
 </div>

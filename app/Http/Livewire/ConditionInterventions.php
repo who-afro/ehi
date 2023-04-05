@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use App\Models\Condition;
-use App\Models\ProgramArea;
 
 class ConditionInterventions extends Interventions
 {
