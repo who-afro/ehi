@@ -9,10 +9,10 @@
 @endif
 
 <div>
-    <dt class="text-xl font-semibold text-iaho-dark-blue px-4 py-2 bg-iaho-map-country-background opacity-75">
+    <dt class="text-lg font-semibold text-iaho-dark-blue px-4 py-2 bg-iaho-map-country-background opacity-75">
         Conditions
     </dt>
-    <dd class="mt-1 text-gray-700 overflow-y-scroll max-h-60 px-4">
+    <dd class="mt-1 text-gray-700 text-base overflow-y-scroll max-h-60 px-4">
         @forelse($conditions as $condition)
             <div class="flex items-start">
                 <div class="flex items-center">

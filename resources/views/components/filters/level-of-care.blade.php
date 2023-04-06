@@ -1,8 +1,8 @@
 <div>
-    <dt class="text-xl font-semibold text-iaho-dark-blue py-2 px-4 bg-iaho-map-country-background opacity-75">
+    <dt class="text-lg font-semibold text-iaho-dark-blue py-2 px-4 bg-iaho-map-country-background opacity-75">
         Level of Care
     </dt>
-    <dd class="text-gray-700 px-4">
+    <dd class="text-gray-700 text-base px-4">
         @foreach(App\Models\LevelOfCare::all() as $levelOfCare)
             <div class="flex items-start">
                 <div class="flex items-center">
