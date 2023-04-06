@@ -59,11 +59,20 @@
                                     @php
                                         # $public_health_interventions = $level_of_care_interventions->where('public_health_function_id', $public_health_function->id)->groupBy(['condition_id', 'age_cohort_id', 'level_of_care_id', 'public_health_function_id']);
                                         $public_health_interventions = $level_of_care_interventions->where('public_health_function_id', $public_health_function->id);
-                                        ray($public_health_interventions);
+                                        $interventions_data = array();
+                                        foreach ($public_health_interventions as $intervention) {
+                                            $detail = '<span class="intervention-details'.($intervention->confirmed_with_evidence? ' text-iaho-green':'').'">'.Str::markdown($intervention->details)."</span>";
+                                            if (array_key_exists($intervention->public_health_function_id, $interventions_data)) {
+                                                $interventions_data[$intervention->public_health_function_id] = $interventions_data[$intervention->public_health_function_id].$detail;
+                                            } else {
+                                                $interventions_data[$intervention->public_health_function_id] = $detail;
+                                            }
+                                        }
+
                                     @endphp
-                                        @foreach($public_health_interventions as $intervention)
+                                        @foreach($interventions_data as $data )
                                             <td class="px-6 py-4 text-left align-top bg-iaho-map-country-background bg-opacity-60">
-                                              {!! Str::markdown($intervention->details)!!}
+                                              {!! $data!!}
                                             </td>
                                         @endforeach
                                 @endforeach
