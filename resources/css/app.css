@@ -9,3 +9,17 @@
 .error {
     @apply border-dashed border-red-600 text-red-600;
 }
+
+/* Add default styles to lists in table cells */
+td > ul, span.intervention-details > ul {
+    list-style: disc;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+.dropdown:hover > .dropdown-content {
+    display: block;
+}
+
