@@ -1,9 +1,9 @@
 <div>
     @php
-       $age_cohorts = $interventions->unique('age_cohort_id')->pluck('age_cohort_id');
-       # $interventions = $interventions->groupBy(['condition_id', 'age_cohort_id', 'level_of_care_id', 'public_health_function_id']);
-       $levels_of_care = \App\Models\LevelOfCare::all();
-       $public_health_functions = \App\Models\PublicHealthFunction::all();
+        $age_cohorts = $interventions->unique('age_cohort_id')->pluck('age_cohort_id');
+        # $interventions = $interventions->groupBy(['condition_id', 'age_cohort_id', 'level_of_care_id', 'public_health_function_id']);
+        $levels_of_care = \App\Models\LevelOfCare::all();
+        $public_health_functions = \App\Models\PublicHealthFunction::all();
     @endphp
 
     @foreach($age_cohorts as $age_cohort_id)
@@ -41,21 +41,22 @@
                                 @auth
                                     <td class="p-2 text-left text-white font-medium whitespace-nowrap">
 
-                                    </td>
-                                @endauth
-                                <td colspan="6"
-                                    class="p-2 text-left text-white font-medium whitespace-nowrap">{{ $level_of_care->name }}
                                 </td>
-                            </tr>
-                            <tr>
-                                @auth
-                                    <td class="px-6 whitespace-nowrap">
-                                        <div class="flex items-center justify-center">
+                            @endauth
+                            <td colspan="6"
+                                class="p-2 text-left text-lg text-white font-medium whitespace-nowrap">{{ $level_of_care->name }}
+                            </td>
+                        </tr>
+                        <tr>
+                            @auth
+                                <td class="px-6 whitespace-nowrap">
+                                    <div class="flex items-center justify-center">
 
-                                        </div>
-                                    </td>
-                                @endauth
-                                @foreach( $public_health_functions as $public_health_function)
+                                    </div>
+                                </td>
+                            @endauth
+
+                            @foreach( $public_health_functions as $public_health_function)
                                     @php
                                         # $public_health_interventions = $level_of_care_interventions->where('public_health_function_id', $public_health_function->id)->groupBy(['condition_id', 'age_cohort_id', 'level_of_care_id', 'public_health_function_id']);
                                         $public_health_interventions = $level_of_care_interventions->where('public_health_function_id', $public_health_function->id);
@@ -70,13 +71,11 @@
                                         }
 
                                     @endphp
-                                        @foreach($interventions_data as $data )
-                                            <td class="px-6 py-4 text-left align-top bg-iaho-map-country-background bg-opacity-60">
-                                              {!! $data!!}
-                                            </td>
-                                        @endforeach
-                                @endforeach
-                            </tr>
+                                <td class="px-6 py-4 text-left text-base align-top bg-iaho-map-country-background bg-opacity-60">
+                                    {!! Arr::get($interventions_data, $public_health_function->id, '')!!}
+                                </td>
+                            @endforeach
+                        </tr>
                     @endforeach
                     </tbody>
                 </table>
