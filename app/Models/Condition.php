@@ -66,7 +66,7 @@ class Condition extends Model
 
     public function scopeSorted($query)
     {
-        return $query->orderBy('name');
+        return $query->orderBy('name->en');
     }
 
 }
