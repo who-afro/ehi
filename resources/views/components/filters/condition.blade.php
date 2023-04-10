@@ -1,6 +1,6 @@
 @if(isset($programAreaId))
     @php
-        $conditions = \App\Models\ProgramArea::find($programAreaId)->conditions()->get();
+        $conditions = \App\Models\ProgramArea::find($programAreaId)->conditions()->sorted()->get();
     @endphp
 @else
     @php
