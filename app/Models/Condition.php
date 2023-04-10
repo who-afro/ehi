@@ -62,10 +62,11 @@ class Condition extends Model
         self::creating(function ($model) {
             $model->uuid = Str::uuid();
         });
-
-        // Order by name ASC
-        static::addGlobalScope('order', function (Builder $builder) {
-            $builder->orderBy('name');
-        });
     }
+
+    public function scopeSorted($query)
+    {
+        return $query->orderBy('name');
+    }
+
 }

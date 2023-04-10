@@ -4,7 +4,7 @@
     @endphp
 @else
     @php
-        $conditions = \App\Models\Condition::all();
+        $conditions = \App\Models\Condition::sorted()->get();
     @endphp
 @endif
 

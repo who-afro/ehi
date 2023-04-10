@@ -22,7 +22,7 @@ class Interventions extends Component
         'program_area_id' => [],
         'search' => null,
         'applyFilter' => '',
-        'number_of_interventions_per_page' => 500,
+        'number_of_interventions_per_page' => 1000,
         'number_of_conditions_per_page' => 1,
         'confirmed_with_evidence' => ''
     ];
