@@ -3,7 +3,7 @@
         $age_cohorts = $interventions->unique('age_cohort_id')->pluck('age_cohort_id');
         # $interventions = $interventions->groupBy(['condition_id', 'age_cohort_id', 'level_of_care_id', 'public_health_function_id']);
         $levels_of_care = \App\Models\LevelOfCare::all();
-        $public_health_functions = \App\Models\PublicHealthFunction::all();
+        $public_health_functions = \App\Models\PublicHealthFunction::sorted()->get();
     @endphp
 
     @foreach($age_cohorts as $age_cohort_id)

@@ -51,4 +51,9 @@ class PublicHealthFunction extends Model
             $model->uuid = Str::uuid();
         });
     }
+    public function scopeSorted($query)
+    {
+        return $query->orderBy('sort_order');
+    }
+
 }

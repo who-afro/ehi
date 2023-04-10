@@ -113,7 +113,7 @@
                    href="{{ route('public-health-function-overview') }}">Learn more</a>
             </div>
             <div class="text-left flex flex-col">
-                @foreach(\App\Models\PublicHealthFunction::all()->sortBy('sort_order') as $public_health_function)
+                @foreach(\App\Models\PublicHealthFunction::sorted()->get() as $public_health_function)
                     <a class="p-2 bg-iaho-map-country-background text-iaho-dark-blue hover:bg-iaho-dark-blue hover:text-iaho-yellow"
                        href="{{ route('public-health-function', ['public_health_function_id' => $public_health_function->id]) }}">{{ $public_health_function->name }}</a>
                 @endforeach
