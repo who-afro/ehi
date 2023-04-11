@@ -23,7 +23,7 @@
     <x-search-and-export :filters="$filters"/>
     <x-loading-indicator/>
     <div class="flex flex-col overflow-y-auto" wire:loading.remove>
-        <x-level-of-care-details :filters="$filters" :interventions="$interventions"></x-level-of-care-details>
+        <x-details.level-of-care :filters="$filters" :interventions="$interventions"></x-details.level-of-care>
     </div>
     <div class="mx-auto sm:px-6 lg:px-8 mb-16 my-4">
         {{ $interventions->links() }}

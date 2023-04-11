@@ -25,7 +25,7 @@
     <x-search-and-export :filters="$filters"></x-search-and-export>
     <x-loading-indicator/>
     <div class="flex flex-col overflow-y-auto" wire:loading.remove>
-        <x-age-cohort-details :filters="$filters" :interventions="$interventions"></x-age-cohort-details>
+        <x-details.age-cohort :filters="$filters" :interventions="$interventions"></x-details.age-cohort>
     </div>
     <div class="mx-auto sm:px-6 lg:px-8 mb-16 my-4">
         {{ $interventions->links() }}
