@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DownloadEssentialsPackage;
+use App\Http\Controllers\ShowEssentialPackageController;
 use App\Http\Livewire\AgeCohortInterventions;
 use App\Http\Livewire\ConditionInterventions;
 use App\Http\Livewire\EssentialPackageComponent;
@@ -8,7 +10,6 @@ use App\Http\Livewire\LevelOfCareInterventions;
 use App\Http\Livewire\ProgramAreaInterventions;
 use App\Http\Livewire\PublicHealthFunctionInterventions;
 use App\Http\Livewire\ServiceAreaInterventions;
-use App\Models\EssentialPackage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,8 +38,8 @@ Route::get('/program-area/{program_area_id}', ProgramAreaInterventions::class)->
 Route::get('/condition/{condition_id}', ConditionInterventions::class)->name('condition');
 
 Route::get('/build-essential-package/{id?}', EssentialPackageComponent::class)->name('build-essential-package');
-Route::get('/show-essential-package/{package:uuid}', \App\Http\Controllers\ShowEssentialPackageController::class)->name('show-essential-package');
-Route::get('/download-essential-package/{package:uuid}', \App\Http\Controllers\DownloadEssentialsPackage::class)->name('download-essential-package');
+Route::get('/show-essential-package/{package:uuid}', ShowEssentialPackageController::class)->name('show-essential-package');
+Route::get('/download-essential-package/{package:uuid}', DownloadEssentialsPackage::class)->name('download-essential-package');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('welcome');
