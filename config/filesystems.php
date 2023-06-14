@@ -45,7 +45,7 @@ return [
         'exports' => [
             'driver' => 'local',
             'root' => storage_path('app/public/exports'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL').'/storage/exports',
             'visibility' => 'public',
         ],
 

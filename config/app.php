@@ -179,6 +179,7 @@ return [
         App\Providers\JetstreamServiceProvider::class,
         App\Providers\TelescopeServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        ZanySoft\Zip\ZipServiceProvider::class,
         # PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
 
     ],
@@ -233,6 +234,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'ZipArchive' => ZanySoft\Zip\Facades\Zip::class,
+
         # 'Tracker' => 'PragmaRX\Tracker\Vendor\Laravel\Facade',
 
     ],

@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\InterventionsExport;
 use App\Models\EssentialPackage;
 use App\Models\Intervention;
-use Str;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Spatie\SimpleExcel\SimpleExcelWriter;
+use ZanySoft\Zip\Zip;
 
 class DownloadEssentialsPackage extends Controller
 {
@@ -16,7 +20,14 @@ class DownloadEssentialsPackage extends Controller
     public function __invoke(EssentialPackage $package)
     {
 
-        $file_name = Str::kebab($package->title).now()->toDateString().'-'.now()->secondsSinceMidnight().'.xlsx';
+        $folder_name = Str::kebab($package->uuid).now()->toDateString().'-'.now()->secondsSinceMidnight();
+        // create the zip folder
+        $folder_path = Storage::disk('exports')->path('').$folder_name;
+        $zip_file_name = $folder_name.".zip";
+        $zip_file_name_with_path = Storage::disk('exports')->path('').$zip_file_name;
+        $zip_file_url = Storage::disk('exports')->url($zip_file_name);
+        File::makeDirectory($folder_path);
+
         $age_cohorts = $package->age_cohorts;
         $levels_of_care = $package->levels_of_care;
         $conditions = $package->conditions;
@@ -45,7 +56,6 @@ class DownloadEssentialsPackage extends Controller
             ->get()
             ->map(function ($item) {
                 // rebuild the data export to match the expectations for the particular page
-                $row['Program Area'] = $item->condition->programArea->name;
                 $row['Condition'] = $item->condition->name;
                 $row['Age Cohort'] = $item->ageCohort->name;
                 $row['Public Health Function'] = $item->publicHealthFunction->name;
@@ -56,8 +66,42 @@ class DownloadEssentialsPackage extends Controller
                 $row['Published Evidence'] = $item->confirmed_with_evidence? 'Yes' : '';
 
                 return $row;
-            });;
+            })
+        ->groupBy(['Age Cohort', 'Condition'])
+        ->all();
 
-        return(new InterventionsExport($interventions))->download($file_name);
+        # ray($interventions);
+        $zip_file = new Zip();
+
+        $zip_file->create($zip_file_name_with_path);
+
+        // now create the folder
+        foreach ($interventions as $age_cohort => $data) {
+            // now write the age-cohort data to each file
+            $excel_file_name = $folder_path.DIRECTORY_SEPARATOR.$age_cohort.".xlsx";
+            ray("creating export file at ".$excel_file_name);
+            $writer = SimpleExcelWriter::create($excel_file_name);
+            foreach ($data as $condition => $values) {
+                // remove special characters from the sheet name and limit it to 30 characters
+                $sheet_name = Str::limit(preg_replace('/[^A-Za-z0-9. -]/', '', $condition), 30, '');
+                $writer->addNewSheetAndMakeItCurrent($sheet_name);
+                // Prepare the array data for formatting
+                $cleaned_values = $values->each(function ($item) {
+                    Arr::forget($item, 'Condition');
+                    Arr::forget($item, 'Age Cohort');
+                });
+
+                ray($values->toArray());
+                $writer->addRows($values->toArray());
+
+            }
+        }
+
+        // Zip the generated files
+        $zip_file->add($folder_path);
+
+        # dd();
+
+        return redirect($zip_file_url);
     }
 }
