@@ -131,9 +131,9 @@ class DownloadEssentialsPackage extends Controller
         });
 
         // Zip the generated files
-        Log::debug("Creating zip file at ".$folder_path);
+        Log::debug("Creating zip file for files in folder at ".$folder_path);
         $zip_file->add($folder_path);
-        Log::debug("Zip file created at ".$folder_path);
+        Log::debug("Zip file created at ".$zip_file_name_with_path);
 
         return redirect($zip_file_url);
     }
