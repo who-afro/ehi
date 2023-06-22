@@ -42,10 +42,16 @@ return [
             'visibility' => 'public',
         ],
 
-        'exports' => [
+        'package-exports' => [
             'driver' => 'local',
-            'root' => storage_path('app/public/exports'),
-            'url' => env('APP_URL').'/storage/exports',
+            'root' => storage_path('app/public/package-exports'),
+            'url' => env('APP_URL').'/storage/package-exports',
+            'visibility' => 'public',
+        ],
+        'data-exports' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/data-exports'),
+            'url' => env('APP_URL').'/storage/data-exports',
             'visibility' => 'public',
         ],
 
