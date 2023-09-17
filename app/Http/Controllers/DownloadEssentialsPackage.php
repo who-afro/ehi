@@ -37,21 +37,21 @@ class DownloadEssentialsPackage extends Controller
 
         $interventions = Intervention::with('condition', 'ageCohort', 'levelOfCare', 'publicHealthFunction')
             ->when($age_cohort_ids,
-                fn ($query, $age_cohort_ids) => $query->orWhereHas('ageCohort',
+                fn ($query, $age_cohort_ids) => $query->whereHas('ageCohort',
                     function ($query) use ($age_cohort_ids) {
                         $query->whereIn('age_cohort_id', $age_cohort_ids);
                     }))
             ->when($condition_ids,
-                fn ($query, $condition_ids) => $query->orWhereHas('condition',
+                fn ($query, $condition_ids) => $query->whereHas('condition',
                     function ($query) use ($condition_ids) {
                         $query->whereIn('condition_id', $condition_ids);
                     }))
-            ->when($levels_of_care_ids, fn ($query,  $levels_of_care_ids) => $query->orWhereHas('levelOfCare',
+            ->when($levels_of_care_ids, fn ($query,  $levels_of_care_ids) => $query->whereHas('levelOfCare',
                 function ($query) use ($levels_of_care_ids) {
                     $query->whereIn('level_of_care_id', $levels_of_care_ids);
                 }))
             ->when($public_health_function_ids,
-                fn ($query, $public_health_function_ids) => $query->orWhereHas('publicHealthFunction',
+                fn ($query, $public_health_function_ids) => $query->whereHas('publicHealthFunction',
                     function ($query) use ($public_health_function_ids) {
                         $query->whereIn('public_health_function_id', $public_health_function_ids);
                     }))
