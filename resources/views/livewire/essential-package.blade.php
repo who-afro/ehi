@@ -220,7 +220,7 @@
                         </div>
                         <label for="condition_select_all"
                                class="ml-2 text-gray-700">Select All Conditions</label>
-                        </div>
+                    </div>
                     @foreach($conditions as $condition)
                         <div class="flex items-start">
                             <div class="flex items-center">
@@ -245,13 +245,23 @@
             </div>
             <div x-show="step === 2">
                 <div class="p-4">
+                    <div class="flex items-start col-span-4" x-data="selectAllForLevelOfCare()">
+                        <div class="flex items-center">
+                            <!-- Zero-width space character, used to align checkbox properly -->
+                            &#8203;
+                            <input id="level_of_care_select_all" type="checkbox" x-on:click="selectAllLevelOfCareCheckboxes()"
+                                   class="form-checkbox text-iaho-dark-blue border-2 rounded-md shadow-sm"/>
+                        </div>
+                        <label for="condition_select_all"
+                               class="ml-2 text-gray-700">Select All Level Of Care</label>
+                    </div>
                     @foreach(App\Models\LevelOfCare::all() as $levelOfCare)
                         <div class="flex items-start">
                             <div class="flex items-center">
                                 <!-- Zero-width space character, used to align checkbox properly -->
                                 &#8203;
                                 <input id="level_of_care_{{ $levelOfCare->id }}" type="checkbox"
-                                       class="form-checkbox text-iaho-dark-blue border-2 rounded-md shadow-sm"
+                                       class="form-checkbox text-iaho-dark-blue border-2 rounded-md shadow-sm level-of-care-checkbox"
                                        wire:model="levels_of_care.{{ $levelOfCare->id }}"
                                        value="{{ $levelOfCare->id }}"/>
                             </div>
@@ -276,13 +286,23 @@
             </div>
             <div x-show="step === 3">
                 <div class="p-4">
+                    <div class="flex items-start col-span-4" x-data="selectAllForPublicHealthFunction()">
+                        <div class="flex items-center">
+                            <!-- Zero-width space character, used to align checkbox properly -->
+                            &#8203;
+                            <input id="public_health_function_select_all" type="checkbox" x-on:click="selectAllPublicHealthFunctionCheckboxes()"
+                                   class="form-checkbox text-iaho-dark-blue border-2 rounded-md shadow-sm"/>
+                        </div>
+                        <label for="public_health_function_select_all"
+                               class="ml-2 text-gray-700">Select All Public Health Functions</label>
+                    </div>
                     @foreach(App\Models\PublicHealthFunction::all()->sortBy('sort_order') as $publicHealthFunction)
                         <div class="flex items-start">
                             <div class="flex items-center">
                                 <!-- Zero-width space character, used to align checkbox properly -->
                                 &#8203;
                                 <input id="public_health_functions_{{ $publicHealthFunction->id }}" type="checkbox"
-                                       class="form-checkbox text-iaho-dark-blue border-2 rounded-md shadow-sm"
+                                       class="form-checkbox text-iaho-dark-blue border-2 rounded-md shadow-sm public-health-function-checkbox"
                                        wire:model="public_health_functions.{{ $publicHealthFunction->id }}"
                                        value="{{ $publicHealthFunction->id }}"/>
                             </div>
@@ -308,13 +328,23 @@
             </div>
             <div x-show="step === 4">
                 <div class="p-4">
+                    <div class="flex items-start col-span-4" x-data="selectAllForAgeCohortFunction()">
+                        <div class="flex items-center">
+                            <!-- Zero-width space character, used to align checkbox properly -->
+                            &#8203;
+                            <input id="age_cohort_select_all" type="checkbox" x-on:click="selectAllAgeCohortCheckboxes()"
+                                   class="form-checkbox text-iaho-dark-blue border-2 rounded-md shadow-sm"/>
+                        </div>
+                        <label for="age_cohort_select_all"
+                               class="ml-2 text-gray-700">Select All Age Cohorts</label>
+                    </div>
                     @foreach(App\Models\AgeCohort::all() as $ageCohort)
                         <div class="flex items-start">
                             <div class="flex items-center">
                                 <!-- Zero-width space character, used to align checkbox properly -->
                                 &#8203;
                                 <input id="age_cohorts_{{ $ageCohort->id }}" type="checkbox"
-                                       class="form-checkbox text-iaho-dark-blue border-2 rounded-md shadow-sm"
+                                       class="form-checkbox text-iaho-dark-blue border-2 rounded-md shadow-sm age-cohort-checkbox"
                                        wire:model="age_cohorts.{{ $ageCohort->id }}"
                                        value="{{ $ageCohort->id }}"/>
                             </div>
@@ -397,6 +427,48 @@
                     this.selectall = !this.selectall
 
                     checkboxes = document.querySelectorAll('.condition-checkbox');
+                    [...checkboxes].map((el) => {
+                        el.checked = this.selectall;
+                    })
+                }
+            }
+        }
+        function selectAllForLevelOfCare() {
+            return {
+                selectall: false,
+
+                selectAllLevelOfCareCheckboxes() {
+                    this.selectall = !this.selectall
+
+                    checkboxes = document.querySelectorAll('.level-of-care-checkbox');
+                    [...checkboxes].map((el) => {
+                        el.checked = this.selectall;
+                    })
+                }
+            }
+        }
+        function selectAllForPublicHealthFunction() {
+            return {
+                selectall: false,
+
+                selectAllPublicHealthFunctionCheckboxes() {
+                    this.selectall = !this.selectall
+
+                    checkboxes = document.querySelectorAll('.public-health-function-checkbox');
+                    [...checkboxes].map((el) => {
+                        el.checked = this.selectall;
+                    })
+                }
+            }
+        }
+        function selectAllForAgeCohortFunction() {
+            return {
+                selectall: false,
+
+                selectAllAgeCohortCheckboxes() {
+                    this.selectall = !this.selectall
+
+                    checkboxes = document.querySelectorAll('.age-cohort-checkbox');
                     [...checkboxes].map((el) => {
                         el.checked = this.selectall;
                     })
