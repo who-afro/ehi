@@ -208,7 +208,7 @@
         <div class="align-middle inline-block min-w-full border-b border-gray-200">
             <div x-show="step === 1">
                 @php
-                    $conditions = \App\Models\Condition::all();
+                    $conditions = \App\Models\Condition::orderBy('name->en')->get();
                 @endphp
                 <div class="grid grid-cols-4 p-4">
                     <div class="flex items-start col-span-4" x-data="selectAllForConditions()">
