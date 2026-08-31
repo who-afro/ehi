@@ -7,7 +7,10 @@ use App\Actions\Jetstream\CreateTeam;
 use App\Actions\Jetstream\DeleteTeam;
 use App\Actions\Jetstream\DeleteUser;
 use App\Actions\Jetstream\UpdateTeamName;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 use Laravel\Jetstream\Jetstream;
 
 class JetstreamServiceProvider extends ServiceProvider
@@ -29,6 +32,7 @@ class JetstreamServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->configureComponents();
         $this->configurePermissions();
 
         Jetstream::createTeamsUsing(CreateTeam::class);
@@ -36,6 +40,15 @@ class JetstreamServiceProvider extends ServiceProvider
         Jetstream::addTeamMembersUsing(AddTeamMember::class);
         Jetstream::deleteTeamsUsing(DeleteTeam::class);
         Jetstream::deleteUsersUsing(DeleteUser::class);
+    }
+
+    protected function configureComponents(): void
+    {
+        foreach (File::files(resource_path('views/vendor/jetstream/components')) as $component) {
+            $name = Str::before($component->getFilename(), '.blade.php');
+
+            Blade::component("vendor.jetstream.components.{$name}", "jet-{$name}");
+        }
     }
 
     /**
