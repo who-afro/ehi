@@ -7,7 +7,7 @@ This Laravel application publishes and manages the WHO Regional Menu of Essentia
 - PHP 8.4 with the ZIP, DOM, GD, Intl, and database extensions
 - MySQL 5.7 or newer
 - Composer 2
-- Node.js and npm
+- Node.js 20.19 or newer and npm
 
 ## Installation
 
@@ -49,6 +49,12 @@ php artisan serve
 
 ```bash
 npm run dev
+```
+
+Create optimized production assets with Vite:
+
+```bash
+npm run build
 ```
 
 The public application is available at the configured `APP_URL`. The Filament administration panel is available at `/admin` and uses the application's normal user accounts.
@@ -108,6 +114,7 @@ php artisan migrate:fresh --seed
 - Laravel 13
 - Livewire 4
 - Filament 5
+- Vite 8
 - MySQL
 
 ## License

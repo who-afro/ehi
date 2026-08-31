@@ -9,14 +9,10 @@
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap' rel='stylesheet' type='text/css'>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 @livewireStyles
 
-<!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
-    <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body class="font-sans antialiased">
 <div class="container mx-auto bg-iaho-map-country-background text-lg">
