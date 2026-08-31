@@ -1,4 +1,4 @@
 id,name,description,uuid,created_at,updated_at
-1,"Communicable, maternal and Infectious conditions  and nutritional disorders ",,ecf529c7-19ee-4fed-9693-1a1843904e42,2021-02-11 19:10:09,2021-02-11 19:10:09
-2,Non communicable conditions ,,b85e1ab3-3611-468a-9caf-67dd4768725c,2021-02-11 19:10:24,2021-02-11 19:10:24
-3,Injuries,,cb70090d-6213-4013-bb85-dc7f6b7bf5dd,2021-02-11 19:10:37,2021-02-11 19:10:37
+1,"Communicable Conditions",,ecf529c7-19ee-4fed-9693-1a1843904e42,"2021-02-11 21:10:09","2021-09-20 21:28:42"
+2,"Non communicable conditions ",,b85e1ab3-3611-468a-9caf-67dd4768725c,"2021-02-11 21:10:24","2021-02-11 21:10:24"
+3,Injuries,,cb70090d-6213-4013-bb85-dc7f6b7bf5dd,"2021-02-11 21:10:37","2021-02-11 21:10:37"

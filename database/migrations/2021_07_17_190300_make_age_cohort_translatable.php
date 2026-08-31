@@ -12,7 +12,6 @@ return new class extends Migration {
      */
     public function up()
     {
-        DB::beginTransaction();
         Schema::table('age_cohorts', function (Blueprint $table) {
             $table->text('name')->change();
             $table->text('description')->change();
@@ -20,7 +19,5 @@ return new class extends Migration {
 
         // move the name and text to JSON format
         DB::statement("UPDATE age_cohorts set `name` = JSON_OBJECT('en', name), `description` = JSON_OBJECT('en', description)");
-
-        DB::commit();
     }
 };

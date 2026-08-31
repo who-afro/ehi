@@ -25,16 +25,5 @@ return new class extends Migration {
             $table->foreignId('program_group_id')->after('description');
         });
 
-        Schema::disableForeignKeyConstraints();
-        // run the baseline data seeder
-        Artisan::call('db:seed', [
-            '--class' => 'ProgramGroupSeeder',
-        ]);
-
-        // reset the program area data which also includes program groups
-        Artisan::call('db:seed', [
-            '--class' => 'ProgramAreaSeeder',
-        ]);
-        Schema::enableForeignKeyConstraints();
     }
 };

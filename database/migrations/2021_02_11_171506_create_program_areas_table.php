@@ -20,12 +20,6 @@ return new class extends Migration {
             $table->timestamps();
         });
 
-        Schema::disableForeignKeyConstraints();
-        // run the baseline data seeder
-        Artisan::call('db:seed', [
-            '--class' => 'ProgramAreaSeeder',
-        ]);
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

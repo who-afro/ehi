@@ -9,7 +9,6 @@ use App\Http\Livewire\Interventions;
 use App\Http\Livewire\LevelOfCareInterventions;
 use App\Http\Livewire\ProgramAreaInterventions;
 use App\Http\Livewire\PublicHealthFunctionInterventions;
-use App\Http\Livewire\ServiceAreaInterventions;
 use Illuminate\Support\Facades\Route;
 
 /*

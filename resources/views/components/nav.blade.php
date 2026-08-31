@@ -5,7 +5,7 @@
         <x-heroicon-o-home class="h-11"/>
     </a>
     @auth
-        <a href="{{ url("nova") }}"
+        <a href="{{ url('admin') }}"
            class="px-4 py-2 hover:bg-iaho-yellow hover:text-iaho-dark-blue">
             <x-heroicon-o-cog class="h-11"/>
         </a>

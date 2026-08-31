@@ -44,7 +44,8 @@ class DownloadEssentialsPackage extends Controller
             ->when($condition_ids,
                 fn ($query, $condition_ids) => $query->whereHas('condition',
                     function ($query) use ($condition_ids) {
-                        $query->whereIn('condition_id', $condition_ids);
+                        $query->whereIn('condition_id', $condition_ids)
+                        ->orderBy('name->en');
                     }))
             ->when($levels_of_care_ids, fn ($query,  $levels_of_care_ids) => $query->whereHas('levelOfCare',
                 function ($query) use ($levels_of_care_ids) {

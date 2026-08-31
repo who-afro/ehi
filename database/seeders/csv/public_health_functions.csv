@@ -1,6 +1,26 @@
-id,name,description,uuid,created_at,updated_at
-1,Health Promotion,<div>Interventions across sectors important for health living and wellbeing. Consult PEN and PEN+ to ensure risk factors are included</div>,133cf495-2275-4810-9207-7aa2d7cd8588,2020-12-05 18:47:52,2020-12-05 19:00:06
-2,Disease Prevention,<div>Intervention targeted at preventing the condition from occurring or limiting its severity. E.g. Measles immunization<br /><br /></div>,6f9dd69b-3c23-4736-a5c6-f67dc3e05304,2020-12-05 18:48:48,2020-12-05 19:00:47
-3,Curative,<div>Interventions to directly respond to the condition aimed at its resolution </div>,6fa60b61-f01f-426f-8b06-7a6e9583391d,2020-12-05 18:49:03,2020-12-05 19:04:09
-4,Rehabilitative,<div>Interventions aimed at managing the residual effects of the condition </div>,4eda472c-a4bd-43b8-89b4-90b1ce2b9162,2020-12-05 18:49:16,2020-12-05 19:04:24
-5,Pallative,"<div>Interventions aimed at easing the death process, where other interventions have not stopped it</div>",00cf17a2-4595-493f-a9c6-b9433bd705c1,2020-12-05 18:49:29,2020-12-05 19:04:40
+id,name,description,slug,sort_order,uuid,created_at,updated_at
+1,"Health Promotion","Health promotion is about empowering people and communities to increase control over their own health. The Health promotion interventions are focused on enabling people to live a healthy life. It includes ensuring that people acquire the relevant knowledge, skills and information to make healthy choices, for example about the food they eat and healthcare services that they need. In includes ensuring that they have opportunities to make those choices. And that they are assured of an environment in which people can demand further policy actions to further improve their health",health-promotion,1,133cf495-2275-4810-9207-7aa2d7cd8588,"2020-12-05 20:47:52","2023-04-01 11:18:16"
+2,"Disease Prevention","Prevention, as it relates to health, is about avoiding disease before it starts. It is defined as the plans for, and the measures taken, to prevent the onset of a disease or other health problem before the occurrence of the undesirable health event. There are three distinct levels of prevention.
+            
+The primordial level of prevention is a population health approach which includes actions that are taken to prevent future hazards to health and to decrease those factors which are known to increase
+the risks of disease. In this case the broad determinants of health are addressed rather than individual exposure to risk factors. Examples of primordial prevention initiatives include improving sanitation, promoting healthy lifestyles in childhood
+
+1. Primary prevention—those preventive measures that prevent the onset of illness or injury before the disease process begins.e.g. immunization and regular exercise.
+2. Secondary prevention—those preventive measures that lead to early diagnosis and prompt treatment of a disease, illness, or injury to prevent more severe problems developing. e.g., screening for high blood pressure and breast self-examination.
+3. Tertiary prevention—those preventive measures aimed at reversing, arresting or delaying disease. It helps to lessen the impact of disease on the patient’s overall life. The patient has more contact with the healthcare system, and care providers in many roles and settings.",disease-prevention,2,6f9dd69b-3c23-4736-a5c6-f67dc3e05304,"2020-12-05 20:48:48","2023-04-01 11:18:41"
+3,Curative,"Curative care refers to treatment and therapies provided to a patient with the main intent of fully resolving an illness and the goal of bringing the patient—ideally—to their status of health before the illness presented itself. 
+
+The care is therefore focused on intent of curing and not just reducing pain or stress. For instance, when a patient receives curative care for Breast Cancer, the goal is for any anatomical evidence of the cancer to disappear and for that patient's overall health to return to its status from before the cancer was diagnosed.",curative,4,6fa60b61-f01f-426f-8b06-7a6e9583391d,"2020-12-05 20:49:03","2023-04-01 11:19:14"
+4,Rehabilitative,"Rehabilitative/Rehabilitation Services Health care services are aimed at helping one to get back or improve skills and functioning for daily living that have been lost or impaired because sickness, injury or disability.
+        
+The services are meant to restore abilities that were lost and minimise physical or mental limitations. The rehabilitation measures therefore promote optimum attainable levels of physical, cognitive, emotional, psychological, social, and economic usefulness, and also to maintain the individual at the maximal functional level. 
+
+Rehabilitation services help people return to daily life and live in a normal or near-normal way. The examples of types of rehabilitation services include, occupational, physical and speech. Each form of rehabilitation serves a unique purpose in helping a person reach full recovery, but all share the ultimate goal of helping the patient return to a healthy and active lifestyle",rehabilitative,5,4eda472c-a4bd-43b8-89b4-90b1ce2b9162,"2020-12-05 20:49:16","2023-04-01 11:19:32"
+5,Palliative,"Palliative care is an interdisciplinary medical caregiving approach aimed at optimizing quality of life and mitigating suffering among people with serious, complex illness. 
+
+The World Health Organization describes palliative care as ""an approach that improves the quality of life of patients and their families facing the problems associated with life-threatening illness, through the prevention and relief of suffering by means of early identification and impeccable assessment and treatment of pain and other problems, physical, psychosocial, and spiritual"". 
+
+Palliative care is therefore aimed at providing relief from the symptoms and stress of the illness. The goal is to improve quality of life for both the patient and the family.",palliative,6,00cf17a2-4595-493f-a9c6-b9433bd705c1,"2020-12-05 20:49:29","2023-04-01 11:19:41"
+6,Diagnostic,"The process of identifying a disease, condition, or injury from its signs and symptoms. 
+
+A health history, physical exam, and tests, such as blood tests, imaging tests, and biopsies, may be used to help make a diagnosis.",diagnostic,3,c97008ad-7c6b-4e2c-9fcb-21f5c428fddc,"2023-03-01 10:05:09","2023-04-01 11:18:57"

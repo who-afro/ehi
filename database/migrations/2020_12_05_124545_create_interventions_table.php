@@ -24,12 +24,6 @@ return new class extends Migration {
             $table->unique(['intervention_level_id', 'public_health_function_id', 'condition_id', 'age_cohort_id'], 'intervention_unique_categorization');
         });
 
-        Schema::disableForeignKeyConstraints();
-        // run the baseline data seeder
-        Artisan::call('db:seed', [
-            '--class' => 'InterventionSeeder',
-        ]);
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

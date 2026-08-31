@@ -1,12 +1,12 @@
-id,name,description,uuid,created_at,updated_at,program_group_id
-1,"Reproductive, Maternal and Neonatal Health ",,97d36b10-fdf3-45b0-9cee-6cadeb23ea7e,2021-02-11 19:10:09,2021-02-11 19:10:09,1
-2,Child and adolescent  Health,,fa83ef72-355c-4bef-bffd-29ee8c8e6307,2021-02-11 19:10:24,2021-02-11 19:10:24,1
-3,Infectious Diseases,,42f6308a-5a9b-47c7-81df-4f371d01914c,2021-02-11 19:10:37,2021-02-11 19:10:37,1
-4,"Neglected, Tropical and Vector borne Diseases",,9d77174b-9dfe-4156-a077-5332b7581936,2021-02-11 19:10:53,2021-02-11 19:10:53,1
-5,Nutrition,,294e981b-58b0-432d-bd6d-098094f44248,2021-02-11 19:11:05,2021-02-11 19:11:05,1
-6,Non-communicable Conditions,,197a4333-3b1e-4dd9-93aa-5fc1144d295d,2021-02-11 19:11:25,2021-02-11 19:11:25,2
-7,Mental Health,,017a1dc8-a19d-4f8f-b7a1-c36a04874cfc,2021-02-11 19:11:40,2021-02-11 19:11:40,2
-8,Cancer,,95917787-8fa3-4391-96bd-6f9bc8b9b254,2021-02-11 19:12:00,2021-02-11 19:12:00,2
-9,Oral Health,,7f23b50d-2b85-41fb-978f-dc6ce7932eea,2021-02-11 19:12:14,2021-02-11 19:12:14,2
-10,Opthalmic and ENT Services,,68c2bbea-f411-4414-ab1f-3e959169a930,2021-02-11 19:12:14,2021-02-11 19:12:14,2
-11,Injuries,,18d3cc62-344e-4116-8512-c0fd7c172b65,2021-02-11 19:12:14,2021-02-11 19:12:14,3
+id,name,description,slug,uuid,created_at,updated_at,program_group_id
+1,"{""en"":""Reproductive, Maternal and Neonatal Health"",""pt"":null}","{""en"":""<img class=\""w-32 h-32 text-indigo-600\"" src=\""vendor\/blade-health-icons\/o-rmnh.svg\"">"",""pt"":null}",reproductive-maternal-and-neonatal-health,97d36b10-fdf3-45b0-9cee-6cadeb23ea7e,"2021-02-11 21:10:09","2021-08-03 21:37:13",1
+2,"{""en"":""Child and adolescent  Health"",""pt"":null}","{""en"":""<img class=\""w-32 h-32 text-indigo-600\"" src=\""vendor\/blade-health-icons\/f-child-program.svg\"">"",""pt"":null}",child-and-adolescent-health,fa83ef72-355c-4bef-bffd-29ee8c8e6307,"2021-02-11 21:10:24","2021-08-03 21:36:33",1
+3,"{""en"":""Infectious Diseases"",""pt"":null}","{""en"":""<img class=\""w-32 h-32 text-indigo-600\"" src=\""vendor\/blade-health-icons\/o-coughing.svg\"">\r\n<img class=\""w-32 h-32 text-indigo-600\"" src=\""vendor\/blade-health-icons\/o-measles.svg\"">\r\n<img class=\""w-32 h-32 text-indigo-600\"" src=\""vendor\/blade-health-icons\/o-expectorate.svg\"">"",""pt"":null}",infectious-diseases,42f6308a-5a9b-47c7-81df-4f371d01914c,"2021-02-11 21:10:37","2021-08-03 21:35:00",1
+4,"{""en"":""Neglected, Tropical and Vector borne Diseases"",""pt"":null}","{""en"":""<img class=\""w-32 h-32 text-indigo-600\"" src=\""vendor\/blade-health-icons\/o-insecticide-resistance.svg\"">"",""pt"":null}",neglected-tropical-and-vector-borne-diseases,9d77174b-9dfe-4156-a077-5332b7581936,"2021-02-11 21:10:53","2021-08-03 21:21:54",1
+5,"{""en"":""Nutrition"",""pt"":null}","{""en"":""<img class=\""w-32 h-32 text-indigo-600\"" src=\""vendor\/blade-health-icons\/o-nutrition.svg\"">"",""pt"":null}",nutrition,294e981b-58b0-432d-bd6d-098094f44248,"2021-02-11 21:11:05","2021-08-03 21:09:05",1
+6,"{""en"":""Non-communicable Conditions"",""pt"":null}","{""en"":""<img class=\""w-32 h-32 text-indigo-600\"" src=\""vendor\/blade-health-icons\/o-lungs.svg\"">\r\n<img class=\""w-32 h-32 text-indigo-600\"" src=\""vendor\/blade-iconpark\/heart.svg\"">"",""pt"":null}",non-communicable-conditions,197a4333-3b1e-4dd9-93aa-5fc1144d295d,"2021-02-11 21:11:25","2021-08-03 21:19:41",2
+7,"{""en"":""Mental Health"",""pt"":null}","{""en"":""<img class=\""w-32 h-32 text-indigo-600\"" src=\""vendor\/blade-health-icons\/o-neurology.svg\"">"",""pt"":null}",mental-health,017a1dc8-a19d-4f8f-b7a1-c36a04874cfc,"2021-02-11 21:11:40","2021-08-03 21:28:05",2
+8,"{""en"":""Cancer"",""pt"":null}","{""en"":""<img class=\""w-32 h-32 text-indigo-600\"" src=\""vendor\/blade-health-icons\/o-symptom.svg\"">"",""pt"":null}",cancer,95917787-8fa3-4391-96bd-6f9bc8b9b254,"2021-02-11 21:12:00","2021-08-03 21:39:08",2
+9,"{""en"":""Oral Health"",""pt"":null}","{""en"":""<img class=\""w-32 h-32 text-indigo-600\"" src=\""vendor\/blade-line-awesome-icons\/teeth-open-solid.svg\"">"",""pt"":null}",oral-health,7f23b50d-2b85-41fb-978f-dc6ce7932eea,"2021-02-11 21:12:14","2021-08-03 11:16:33",2
+10,"{""en"":""Opthalmic and ENT Services"",""pt"":null}","{""en"":""<img class=\""w-32 h-32 text-indigo-600\"" src=\""vendor\/blade-line-awesome-icons\/eye.svg\"">"",""pt"":null}",opthalmic-and-ent-services,68c2bbea-f411-4414-ab1f-3e959169a930,"2021-02-11 21:12:14","2021-08-03 21:05:30",2
+11,"{""en"": ""Injuries""}","{""en"": null}",injuries,18d3cc62-344e-4116-8512-c0fd7c172b65,"2021-02-11 21:12:14","2021-02-11 21:12:14",3

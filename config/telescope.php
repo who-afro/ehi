@@ -96,7 +96,7 @@ return [
     ],
 
     'ignore_paths' => [
-        'nova-api*',
+        'admin*',
     ],
 
     'ignore_commands' => [

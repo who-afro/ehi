@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Flynsarmy\CsvSeeder\CsvSeeder;
 use Illuminate\Support\Facades\DB;
 
 class ConditionSeeder extends CsvSeeder
@@ -10,17 +9,13 @@ class ConditionSeeder extends CsvSeeder
     public function __construct()
     {
         $this->table = 'conditions';
-        $this->filename = base_path().'/database/seeders/csv/conditions.csv';
+        $this->filename = database_path('seeders/csv/conditions.csv');
     }
 
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
+    public function run(): void
     {
         DB::table($this->table)->truncate();
+
         parent::run();
     }
 }

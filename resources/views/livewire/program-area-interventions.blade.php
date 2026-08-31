@@ -55,7 +55,7 @@
                             <tr class="{{ $loop->odd ? 'bg-white' : 'bg-gray-50' }} @php  $text_color = $v->confirmed_with_evidence ? 'text-iaho-green':'{{ $text_color }}' @endphp">
                                 @auth
                                     <td class="px-6 whitespace-nowrap text-left {{ $text_color }} whitespace-no-wrap">
-                                        <a href="/nova/resources/interventions/{{ $v->id }}/edit?viaResource&viaResourceId&viaRelationship" title="Edit Intervention" target="_blank"><x-heroicon-o-pencil class="h-6 w-6 text-indigo-600" />
+                                        <a href="{{ route('filament.admin.resources.interventions.edit', $v) }}" title="Edit Intervention" target="_blank"><x-heroicon-o-pencil class="h-6 w-6 text-indigo-600" />
                                         </a>
                                     </td>
                                 @endauth
