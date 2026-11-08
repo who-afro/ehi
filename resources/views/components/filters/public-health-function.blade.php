@@ -3,7 +3,7 @@
         Public Health Function
     </dt>
     <dd class="text-gray-700 text-base px-4">
-        @foreach(App\Models\PublicHealthFunction::sorted()->get() as $publicHealthFunction)
+        @foreach($referencePublicHealthFunctions as $publicHealthFunction)
             <div class="flex items-start">
                 <div class="flex items-center">
                     <!-- Zero-width space character, used to align checkbox properly -->

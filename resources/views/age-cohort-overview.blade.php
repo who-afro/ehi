@@ -13,7 +13,7 @@
             <img src="{{ asset('svg/overview-age-cohort.svg') }}" class="h-40 justify-self-end px-6" alt="Age Cohort Overview" />
         </div>
 
-        @foreach(App\Models\AgeCohort::all() as $ageCohort)
+        @foreach($referenceAgeCohorts as $ageCohort)
             <span class="text-2xl font-semibold">{{ $ageCohort->name }}</span>
             <div class="flex">
                 <img src="{{ asset('img/'.$ageCohort->slug.'.jpg') }}" alt="{{ $ageCohort->name }}" class="mr-4 w-96 !mt-2 self-start"/>

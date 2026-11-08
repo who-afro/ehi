@@ -1,10 +1,10 @@
 @if(isset($programAreaId))
     @php
-        $conditions = \App\Models\ProgramArea::find($programAreaId)->conditions()->sorted()->get();
+        $conditions = $referenceConditions->where('program_area_id', $programAreaId);
     @endphp
 @else
     @php
-        $conditions = \App\Models\Condition::sorted()->get();
+        $conditions = $referenceConditions;
     @endphp
 @endif
 

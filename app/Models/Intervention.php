@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 
 class Intervention extends Model
@@ -42,6 +43,14 @@ class Intervention extends Model
         self::creating(function ($model) {
             $model->uuid = Str::uuid();
         });
+    }
+
+    public function getRenderedDetailsAttribute(): string
+    {
+        $content = $this->details ?? '';
+        $key = 'intervention-markdown:v1:'.app()->getLocale().':'.hash('sha256', $content);
+
+        return Cache::memo()->remember($key, now()->addDays(7), fn (): string => Str::markdown($content));
     }
 
     public function ageCohort()

@@ -75,7 +75,7 @@
                                     <a href="{{ route('service-area', ['service_area_id' => $v->serviceArea->id]) }}" class="{{ $text_color }} group-hover:text-blue-900">{{$v->serviceArea->fullName}}</a>
                                 </td>
                                 <td class="px-6 py-4 text-left {{ $text_color }}">
-                                    {!! Str::markdown($v->details)!!}
+                                    {!! $v->rendered_details!!}
                                 </td>
                             </tr>
                         @empty

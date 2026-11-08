@@ -26,7 +26,7 @@
                 <a class="text-base font-semibold justify-end whitespace-nowrap px-2 py-1"
                    href="{{ route('condition-overview')}}">Learn more</a>
             </div>
-        @foreach(\App\Models\ProgramGroup::all() as $group)
+        @foreach($referenceProgramGroups as $group)
             @if(count($group->conditions) > 0)
                 <!-- This width here prevents the relative blocks for the group names from breaking the scrolling of the conditions -->
                     <div class="grid grid-cols-2 dropdown relative w-[240px] bg-iaho-map-country-background" x-on:click.away="open_condition = false">
@@ -65,7 +65,7 @@
                    href="{{ route('age-cohort-overview') }}">Learn more</a>
             </div>
             <div class="text-left flex flex-col">
-                @foreach(\App\Models\AgeCohort::all() as $agecohort)
+                @foreach($referenceAgeCohorts as $agecohort)
                     <a class="p-2 bg-iaho-map-country-background text-iaho-dark-blue hover:bg-iaho-dark-blue hover:text-iaho-yellow"
                        href="{{ route('age-cohort', ['age_cohort_id' => $agecohort->id]) }}">{{ $agecohort->name }}</a>
                 @endforeach
@@ -89,7 +89,7 @@
                    href="{{ route('level-of-care-overview') }}">Learn more</a>
             </div>
             <div class="text-left flex flex-col">
-                @foreach(\App\Models\LevelOfCare::all() as $level_of_care)
+                @foreach($referenceLevelsOfCare as $level_of_care)
                     <a class="p-2 bg-iaho-map-country-background text-iaho-dark-blue hover:bg-iaho-dark-blue hover:text-iaho-yellow"
                        href="{{ route('level-of-care', ['level_of_care_id' => $level_of_care->id]) }}">{{ $level_of_care->name }}</a>
                 @endforeach
@@ -113,7 +113,7 @@
                    href="{{ route('public-health-function-overview') }}">Learn more</a>
             </div>
             <div class="text-left flex flex-col">
-                @foreach(\App\Models\PublicHealthFunction::sorted()->get() as $public_health_function)
+                @foreach($referencePublicHealthFunctions as $public_health_function)
                     <a class="p-2 bg-iaho-map-country-background text-iaho-dark-blue hover:bg-iaho-dark-blue hover:text-iaho-yellow"
                        href="{{ route('public-health-function', ['public_health_function_id' => $public_health_function->id]) }}">{{ $public_health_function->name }}</a>
                 @endforeach

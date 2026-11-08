@@ -1,19 +1,10 @@
 <div>
-    @php
-        $conditions = $interventions->unique('condition_id')->pluck('condition_id');
-        $levels_of_care = \App\Models\LevelOfCare::all();
-        $public_health_functions = \App\Models\PublicHealthFunction::sorted()->get();
-    @endphp
-
-    @foreach($conditions as $condition_id)
-        @php
-            $condition_interventions = $interventions->where('condition_id', $condition_id)
-        @endphp
+    @foreach($interventionGroups as $condition_id => $condition_interventions)
         @if($condition_interventions->isNotEmpty())
             <div class="align-middle min-w-full border-b border-gray-200">
                 <div class="bg-white text-xs">&nbsp;</div>
                 <div class="text-xl font-semibold px-2 py-4 rounded-t-xl bg-iaho-deep-blue text-white">
-                    Condition: {{ \App\Models\Condition::find($condition_id)->name }}
+                    Condition: {{ $conditionLabels->get($condition_id)?->name }}
                 </div>
                 <table class="min-w-full border-t border-t-gray-200 divide-y divide-gray-200">
                     <thead class="bg-gray-50">
@@ -23,7 +14,7 @@
                                 Actions
                             </th>
                         @endauth
-                        @foreach( $public_health_functions as $public_health_function)
+                        @foreach( $referencePublicHealthFunctions as $public_health_function)
                             <th scope="col"
                                 class="p-2 text-left font-medium text-gray-900 whitespace-nowrap">
                                 {{ $public_health_function->name }}
@@ -32,9 +23,9 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach( $levels_of_care as $level_of_care)
+                    @foreach( $referenceLevelsOfCare as $level_of_care)
                         @php
-                            $level_of_care_interventions = $condition_interventions->where('level_of_care_id', $level_of_care->id)
+                            $level_of_care_interventions = $condition_interventions->get($level_of_care->id, collect())
                         @endphp
                         <tr class="bg-iaho-dark-blue">
                             @auth
@@ -55,23 +46,11 @@
                                 </td>
                             @endauth
 
-                            @foreach( $public_health_functions as $public_health_function)
-                                @php
-                                    # $public_health_interventions = $level_of_care_interventions->where('public_health_function_id', $public_health_function->id)->groupBy(['condition_id', 'age_cohort_id', 'level_of_care_id', 'public_health_function_id']);
-                                    $public_health_interventions = $level_of_care_interventions->where('public_health_function_id', $public_health_function->id);
-                                    $interventions_data = array();
-                                    foreach ($public_health_interventions as $intervention) {
-                                        $detail = '<span class="intervention-details'.($intervention->confirmed_with_evidence? ' text-iaho-green':'').'">'.Str::markdown($intervention->details)."</span>";
-                                        if (array_key_exists($intervention->public_health_function_id, $interventions_data)) {
-                                            $interventions_data[$intervention->public_health_function_id] = $interventions_data[$intervention->public_health_function_id].$detail;
-                                        } else {
-                                            $interventions_data[$intervention->public_health_function_id] = $detail;
-                                        }
-                                    }
-
-                                @endphp
+                            @foreach( $referencePublicHealthFunctions as $public_health_function)
                                 <td class="px-6 py-4 text-left text-base align-top bg-iaho-map-country-background bg-opacity-60">
-                                    {!! Arr::get($interventions_data, $public_health_function->id, '')!!}
+                                    @foreach($level_of_care_interventions->get($public_health_function->id, collect()) as $intervention)
+                                        <span class="intervention-details{{ $intervention->confirmed_with_evidence ? ' text-iaho-green' : '' }}">{!! $intervention->rendered_details !!}</span>
+                                    @endforeach
                                 </td>
                             @endforeach
                         </tr>

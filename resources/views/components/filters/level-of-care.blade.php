@@ -3,7 +3,7 @@
         Level of Care
     </dt>
     <dd class="text-gray-700 text-base px-4">
-        @foreach(App\Models\LevelOfCare::all() as $levelOfCare)
+        @foreach($referenceLevelsOfCare as $levelOfCare)
             <div class="flex items-start">
                 <div class="flex items-center">
                     <!-- Zero-width space character, used to align checkbox properly -->

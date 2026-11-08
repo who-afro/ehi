@@ -10,7 +10,7 @@
     </x-slot>
     <div class="max-w-7xl prose px-4">
         <p class="text-2xl">This thematic area covers the areas in which service delivery occurs</p>
-        @foreach(App\Models\LevelOfCare::all() as $levelOfCare)
+        @foreach($referenceLevelsOfCare as $levelOfCare)
             <h2 class="text-2xl font-semibold">{{ $levelOfCare->name }}</h2>
             <div class="flex">
                 <img src="{{ $levelOfCare->icon_url }}" alt="{{ $levelOfCare->name }}" class="mr-4 w-96 !mt-2 self-start"/>

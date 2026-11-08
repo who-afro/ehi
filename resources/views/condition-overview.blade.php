@@ -9,7 +9,7 @@
             program area to show details
         </p>
         <div class="mt-4 text-xl">
-            @foreach(App\Models\ProgramArea::has('conditions')->get() as $programArea)
+            @foreach($referenceProgramAreas as $programArea)
                 <div class="grid grid-cols-3 border-t-2 border-iaho-light-blue py-4">
                     <div class="align-top text-2xl font-semibold flex flex-col">
                         {{ $programArea->name }}

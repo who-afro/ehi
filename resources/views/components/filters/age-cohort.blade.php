@@ -3,7 +3,7 @@
         Age Cohort
     </dt>
     <dd class="text-gray-700 px-4 text-base">
-        @foreach(App\Models\AgeCohort::all() as $ageCohort)
+        @foreach($referenceAgeCohorts as $ageCohort)
             <div class="flex items-start">
                 <div class="flex items-center">
                     <!-- Zero-width space character, used to align checkbox properly -->

@@ -208,7 +208,7 @@
         <div class="align-middle inline-block min-w-full border-b border-gray-200">
             <div x-show="step === 1">
                 @php
-                    $conditions = \App\Models\Condition::orderBy('name->en')->get();
+                    $conditions = $referenceConditions;
                 @endphp
                 <div class="grid grid-cols-4 p-4">
                     <div class="flex items-start col-span-4" x-data="selectAllForConditions()">
@@ -255,7 +255,7 @@
                         <label for="condition_select_all"
                                class="ml-2 text-gray-700">Select All Level Of Care</label>
                     </div>
-                    @foreach(App\Models\LevelOfCare::all() as $levelOfCare)
+                    @foreach($referenceLevelsOfCare as $levelOfCare)
                         <div class="flex items-start">
                             <div class="flex items-center">
                                 <!-- Zero-width space character, used to align checkbox properly -->
@@ -296,7 +296,7 @@
                         <label for="public_health_function_select_all"
                                class="ml-2 text-gray-700">Select All Public Health Functions</label>
                     </div>
-                    @foreach(App\Models\PublicHealthFunction::all()->sortBy('sort_order') as $publicHealthFunction)
+                    @foreach($referencePublicHealthFunctions as $publicHealthFunction)
                         <div class="flex items-start">
                             <div class="flex items-center">
                                 <!-- Zero-width space character, used to align checkbox properly -->
@@ -338,7 +338,7 @@
                         <label for="age_cohort_select_all"
                                class="ml-2 text-gray-700">Select All Age Cohorts</label>
                     </div>
-                    @foreach(App\Models\AgeCohort::all() as $ageCohort)
+                    @foreach($referenceAgeCohorts as $ageCohort)
                         <div class="flex items-start">
                             <div class="flex items-center">
                                 <!-- Zero-width space character, used to align checkbox properly -->
