@@ -177,7 +177,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
-        App\Providers\TelescopeServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         ZanySoft\Zip\ZipServiceProvider::class,
         # PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
